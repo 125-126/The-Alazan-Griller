@@ -1,0 +1,24 @@
+:root{
+  /* === COLORES PRINCIPALES === */
+  --vino: #0ea5a4;
+  --madera: #0284c7;
+  --dorado: #facc15;
+
+  /* === TEXTO === */
+  --texto-principal: #ffffff;
+  --texto-secundario: #cbd5e1;
+
+  /* === FONDOS === */
+  --bg-principal: #061722;
+  --bg-card: rgba(255,255,255,0.06);
+  --bg-card-soft: rgba(255,255,255,0.04);
+
+  /* === SOMBRAS === */
+  --shadow-soft: 0 10px 35px rgba(0,0,0,0.35);
+  --shadow-strong: 0 28px 55px rgba(0,0,0,0.6);
+
+  /* === RADIOS === */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+}

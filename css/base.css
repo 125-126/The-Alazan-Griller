@@ -1,0 +1,24 @@
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(135deg,#1c1c1c,#2a2a2a);
+  color:var(--texto-principal);
+  line-height:1.6;
+}
+
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+section{
+  padding:55px 7%;
+}
+
+.center-title{
+  text-align:center;
+  margin-bottom:35px;
+}

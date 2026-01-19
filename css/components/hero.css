@@ -1,0 +1,36 @@
+/* =====================
+   HERO – MARCA DE AGUA (FUNCIONA)
+===================== */
+
+.hero{
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Overlay oscuro (YA EXISTE, SOLO ASEGURAMOS CAPA) */
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+}
+
+/* 🔥 MARCA DE AGUA REAL */
+.hero-overlay::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background: url("../img/hero/foto1.jpeg")
+              right center / contain no-repeat;
+
+  opacity:0.12;
+  z-index:2;
+  pointer-events:none;
+}
+
+/* Texto siempre arriba */
+.hero-inner{
+  position:relative;
+  z-index:3;
+}

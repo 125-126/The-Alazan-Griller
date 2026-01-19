@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Alazan Griller</title>
+
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="main-header">
+  <div class="header-container">
+
+    <div class="logo">
+      <span>The</span> Alazan Griller
+    </div>
+
+<nav class="main-nav" id="mainNav">
+  <a href="index.html">Inicio</a>
+  <a href="menu.html">Menú</a>
+  <a href="eventos.html">Eventos</a>
+  <a href="quienes.html">Quiénes Somos</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+    <div class="header-actions">
+      <a href="#menu" class="btn-header">Ordenar</a>
+
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<section class="hero" style="background: url('img/hero/foto1.jpeg') center/cover no-repeat; height:100vh;">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-inner reveal">
+    <span class="hero-tag">Parrilla • Sabor • Tradición</span>
+
+    <h1>
+      Carnes al punto perfecto<br>
+      <strong>que se sienten desde el primer bocado</strong>
+    </h1>
+
+    <p>
+      En The Alazan Griller llevamos la parrilla a otro nivel con ingredientes
+      frescos y recetas que marcan la diferencia.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#menu" class="btn primary">Ver Menú</a>
+      <a href="contacto.html" class="btn outline">Reservar</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MENÚ ================= -->
+<section id="menu" class="menu-section">
+
+  <!-- 🔥 REVEAL -->
+  <div class="section-header reveal">
+    <span class="section-tag">Nuestro Menú</span>
+    <h2>Platos que hablan por sí solos</h2>
+    <p>Carnes seleccionadas, recetas auténticas y el sabor que nos representa.</p>
+  </div>
+
+  <div class="menu-grid">
+
+    <article class="menu-card reveal">
+      <img src="img/bebida7.jpg" alt="Classic Burger">
+      <div class="menu-info">
+        <h3>Classic Burger</h3>
+      </div>
+    </article>
+
+    <article class="menu-card reveal">
+      <img src="img/bebida3.jpg" alt="Grilled Steak">
+      <div class="menu-info">
+        <h3>Grilled Steak</h3>
+      </div>
+    </article>
+
+    <article class="menu-card reveal">
+      <img src="img/menu10.jpg" alt="BBQ Ribs">
+      <div class="menu-info">
+        <h3>BBQ Ribs</h3>
+      </div>
+    </article>
+
+    <article class="menu-card reveal">
+      <img src="img/menu11.jpg" alt="Grilled Chicken">
+      <div class="menu-info">
+        <h3>Grilled Chicken</h3>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="menu-cta reveal">
+    <a href="menu.html" class="btn primary">Ver Menú Completo</a>
+  </div>
+</section>
+
+<!-- ================= GALERÍA ================= -->
+<section class="gallery-section">
+
+  <!-- 🔥 REVEAL -->
+  <div class="section-header reveal">
+    <span class="section-tag">Nuestro Ambiente</span>
+    <h2>Nuestras instalaciones</h2>
+    <p>Espacios pensados para compartir, celebrar y disfrutar.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <img src="img/eve/restaurante1.jpg" class="reveal" alt="Ambiente del restaurante">
+    <img src="img/eve/restaurante2.jpg" class="reveal" alt="Ambiente del restaurante">
+    <img src="img/eve/restaurante3.jpg" class="reveal" alt="Ambiente del restaurante">
+    <img src="img/eve/restaurante4.jpg" class="reveal" alt="Ambiente del restaurante">
+    <img src="img/eve/restaurante5.jpg" class="reveal" alt="Ambiente del restaurante">
+    <img src="img/eve/restaurante6.jpg" class="reveal" alt="Ambiente del restaurante">
+    <img src="img/eve/restaurante7.jpg" class="reveal" alt="Ambiente del restaurante">
+    <img src="img/eve/restaurante8.jpg" class="reveal" alt="Ambiente del restaurante">
+  </div>
+
+</section>
+
+
+<!-- ================= EVENTOS ================= -->
+<section class="events-section">
+  <div class="section-header reveal">
+    <span class="section-tag">Eventos</span>
+    <h2>Celebrá con nosotros</h2>
+    <p>
+      Cumpleaños, reuniones empresariales y eventos especiales
+      en un ambiente único con el mejor sabor a parrilla.
+    </p>
+  </div>
+
+  <div class="events-grid">
+
+    <article class="event-card reveal left">
+      <img src="img/eve/evento4.jpg" alt="Cumpleaños">
+      <div class="event-content">
+        <h3>Cumpleaños</h3>
+        <p>
+          Viví tu día especial con un menú personalizado y atención dedicada
+          para vos y tus invitados.
+        </p>
+      </div>
+    </article>
+
+    <article class="event-card reveal right">
+      <img src="img/eve/evento1.jpg" alt="Eventos corporativos">
+      <div class="event-content">
+        <h3>Eventos Corporativos</h3>
+        <p>
+          Reuniones, cenas empresariales y celebraciones en un espacio
+          profesional y cómodo.
+        </p>
+      </div>
+    </article>
+
+    <article class="event-card reveal left">
+      <img src="img/eve/aire3.jpg" alt="Reuniones familiares">
+      <div class="event-content">
+        <h3>Reuniones Familiares</h3>
+        <p>
+          Compartí momentos inolvidables con quienes más querés
+          alrededor de buena comida.
+        </p>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="events-cta reveal">
+    <a href="contacto.html" class="btn primary">
+      Consultar disponibilidad
+    </a>
+  </div>
+</section>
+
+
+<!-- ================= CONTACTO ================= -->
+<section class="contact-section">
+  <div class="contact-container">
+
+    <!-- INFO -->
+    <div class="contact-info reveal left">
+      <span class="section-tag">Contacto</span>
+      <h2>Reservas & Consultas</h2>
+      <p>
+        Estamos listos para atenderte. Reservá tu mesa, consultá por eventos
+        privados o escribinos para cualquier información.
+      </p>
+
+      <ul class="contact-details">
+        <li>📍 San Salvador, El Salvador</li>
+        <li>📞 +503 7000 0000</li>
+        <li>✉️ contacto@alazangriller.com</li>
+      </ul>
+    </div>
+
+    <!-- FORM -->
+    <form class="contact-form reveal right" id="indexContactForm">
+      <h2>Envíanos un mensaje</h2>
+
+      <label for="nombreIndex">Nombre</label>
+      <input type="text" id="nombreIndex" placeholder="Tu nombre" required>
+
+      <label for="duiIndex">DUI</label>
+      <input type="text" id="duiIndex" placeholder="00000000-0" required>
+
+      <label for="telefonoIndex">Teléfono</label>
+      <input type="tel" id="telefonoIndex" placeholder="+503 7000 0000" required>
+
+      <label for="emailIndex">Correo</label>
+      <input type="email" id="emailIndex" placeholder="ejemplo@correo.com" required>
+
+      <label for="comentarioIndex">Comentario</label>
+      <textarea id="comentarioIndex" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+
+      <button type="submit" class="btn primary">
+        Enviar por WhatsApp
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer reveal">
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <h3>The <span>Alazan</span> Griller</h3>
+      <p>
+        Parrilla premium, carnes seleccionadas y sabores que se recuerdan.
+        Tradición, fuego y pasión en cada plato.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Horarios</h4>
+      <ul>
+        <li>Lunes - Jueves: 12:00 PM – 10:00 PM</li>
+        <li>Viernes - Sábado: 12:00 PM – 11:00 PM</li>
+        <li>Domingo: 12:00 PM – 9:00 PM</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Contacto</h4>
+      <ul>
+        <li>📍 San Salvador, El Salvador</li>
+        <li>📞 +503 7000 0000</li>
+        <li>✉️ contacto@alazangriller.com</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Síguenos</h4>
+      <div class="footer-socials">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 The Alazan Griller. Todos los derechos reservados.</p>
+  </div>
+
+
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="js/menu.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/sliders.js"></script>
+
+<!-- ================= WHATSAPP FLOAT ================= -->
+<a
+  href="https://wa.me/50370000000?text=Hola%20quiero%20hacer%20una%20reserva%20en%20The%20Alazan%20Griller"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="WhatsApp"
+>
+  <span>WhatsApp</span>
+</a>
+<script>
+  const indexForm = document.getElementById("indexContactForm");
+
+  indexForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombreIndex").value;
+    const dui = document.getElementById("duiIndex").value;
+    const telefono = document.getElementById("telefonoIndex").value;
+    const email = document.getElementById("emailIndex").value;
+    const comentario = document.getElementById("comentarioIndex").value;
+
+    let text = `📩 *Nueva consulta*%0A`;
+    text += `*Nombre:* ${nombre}%0A`;
+    text += `*DUI:* ${dui}%0A`;
+    text += `*Teléfono:* ${telefono}%0A`;
+    text += `*Correo:* ${email}%0A`;
+    text += `*Comentario:* ${comentario}`;
+
+    const url = `https://wa.me/50360014234?text=${text}`;
+    window.open(url, "_blank");
+
+    // LIMPIAR FORMULARIO
+    indexForm.reset();
+  });
+</script>
+</body>
+</html>
+```

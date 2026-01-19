@@ -1,0 +1,47 @@
+.menu-card {
+  background: #0b1220;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 50px rgba(0,0,0,0.6);
+}
+
+/* Contenedor para que la imagen se vea completa */
+.menu-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.menu-image-wrapper img {
+  width: auto;
+  height: 220px;       /* altura fija para que las cards queden alineadas */
+  object-fit: contain;  /* muestra la imagen completa */
+  display: block;
+}
+
+.menu-info {
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-info h3 {
+  font-size: 18px;
+  color: #fff;
+}
+
+.menu-info span {
+  color: var(--dorado);
+  font-weight: 600;
+}
