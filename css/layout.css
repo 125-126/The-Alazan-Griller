@@ -877,16 +877,36 @@ footer{
   border-radius: 15px;
   margin-bottom: 1.5rem;
 }
-/* ===== EVENTOS MEDIA (IMAGEN / VIDEO) ===== */
+/* ================= EVENTOS – IMAGEN COMPLETA ================= */
 
-.event-card{
-  overflow:hidden;
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-.event-card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  display:block;
+.event-card {
+  background: #0b1220;
+  border-radius: 20px;
+  overflow: hidden;
 }
+
+/* Contenedor de imagen / video */
+.event-card img,
+.event-card video {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;   /* 👈 CLAVE: imagen completa */
+  background: #000;      /* fondo elegante si sobra espacio */
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .event-card img,
+  .event-card video {
+    height: 180px;
+  }
+}
+
+
 
