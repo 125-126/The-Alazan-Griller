@@ -1,0 +1,25 @@
+/* ================= CORPORATIVOS ================= */
+
+.corporativo-hero{
+  background: url("../img/eve/evento2.jpg") center/cover no-repeat;
+}
+
+.corp-slogan{
+  margin-top: 25px;
+  font-weight: 600;
+  color: var(--dorado);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Ajustes finos solo para esta página */
+.about-card{
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.event-card strong{
+  display: block;
+  margin-top: 10px;
+  color: var(--dorado);
+}
