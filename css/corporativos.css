@@ -1,25 +1,118 @@
-/* ================= CORPORATIVOS ================= */
+/* =============================
+   CORPORATIVOS – ESTILO CATÁLOGO
+============================= */
 
-.corporativo-hero{
-  background: url("../img/eve/evento2.jpg") center/cover no-repeat;
+.corporativo-hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.85)),
+    url("../img/eve/evento2.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
 }
 
-.corp-slogan{
-  margin-top: 25px;
-  font-weight: 600;
-  color: var(--dorado);
-  letter-spacing: 1px;
+.corporativo-hero .hero-inner {
+  max-width: 800px;
+  margin: auto;
   text-align: center;
 }
 
-/* Ajustes finos solo para esta página */
-.about-card{
-  font-size: 15px;
-  line-height: 1.5;
+.corporativo-hero h1 {
+  font-size: 52px;
 }
 
-.event-card strong{
-  display: block;
-  margin-top: 10px;
+.corporativo-hero p {
+  font-size: 18px;
+  color: #d1d5db;
+}
+
+/* =============================
+   BLOQUE INCLUYE
+============================= */
+
+.about-section {
+  background: #0b1220;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-card {
+  background: #020617;
+  border-radius: 18px;
+  padding: 22px;
+  font-size: 15px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,.45);
+}
+
+/* =============================
+   PAQUETES
+============================= */
+
+#paquetes {
+  background: #020617;
+}
+
+#paquetes .event-card {
+  text-align: center;
+}
+
+#paquetes h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+#paquetes strong {
   color: var(--dorado);
+  font-size: 16px;
+}
+
+/* =============================
+   MENÚ CATÁLOGO
+============================= */
+
+.menu-section {
+  background: #0b1220;
+}
+
+.menu-card {
+  text-align: center;
+}
+
+.menu-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.menu-card p {
+  font-size: 15px;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* =============================
+   BLOQUE FINAL
+============================= */
+
+.events-cta {
+  background: #020617;
+  text-align: center;
+}
+
+.events-cta p {
+  font-size: 15px;
+  color: #d1d5db;
+}
+
+.corp-slogan {
+  margin-top: 30px;
+  font-weight: 600;
+  color: var(--dorado);
+  letter-spacing: 1px;
 }
