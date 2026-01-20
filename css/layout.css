@@ -878,31 +878,33 @@ footer{
   margin-bottom: 1.5rem;
 }
 
-/* EVENTOS - IMÁGENES COMPLETAS */
-.event-card img {
-  width: 100%;
-  height: auto;      /* 👈 CLAVE */
-  display: block;
-  border-radius: 24px 24px 0 0;
-}
+/* ================= EVENTOS – VIDEO EN TARJETA ================= */
 
-/* VIDEO APARTE */
-.event-video-section {
-  padding: 80px 20px;
+.event-card {
   background: #0b1220;
-  text-align: center;
-}
-
-.event-video-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  margin-bottom: 30px;
-  color: #fff;
-}
-
-.event-video-section video {
-  width: 100%;
-  max-width: 900px;
   border-radius: 24px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+/* contenedor del video */
+.event-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* 🔥 CLAVE */
+  background: #000;
+  overflow: hidden;
+}
+
+/* video correcto */
+.event-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* no se estira */
+  display: block;
+}
+
+/* móvil */
+@media (max-width: 768px) {
+  .event-media {
+    aspect-ratio: 4 / 3;
+  }
 }
