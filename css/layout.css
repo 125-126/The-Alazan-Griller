@@ -877,4 +877,10 @@ footer{
   border-radius: 15px;
   margin-bottom: 1.5rem;
 }
-
+.event-video{
+  width:100%;
+  height:220px; /* ajusta según tu diseño */
+  object-fit:cover;
+  border-radius:16px 16px 0 0;
+  display:block;
+}
