@@ -934,3 +934,15 @@ footer{
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+/* =====================
+   GALERIA - HOVER
+===================== */
+
+.gallery-grid img {
+  transition: filter .4s ease;
+  filter: brightness(0.9);
+}
+
+.gallery-grid img:hover {
+  filter: brightness(1.05);
+}
