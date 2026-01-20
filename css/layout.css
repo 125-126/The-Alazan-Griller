@@ -946,3 +946,14 @@ footer{
 .gallery-grid img:hover {
   filter: brightness(1.05);
 }
+section {
+  scroll-margin-top: 120px;
+}
+
+@media (min-width: 1200px) {
+  .menu-section,
+  .events-section,
+  .gallery-section {
+    padding: 120px 20px;
+  }
+}
