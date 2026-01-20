@@ -34,3 +34,17 @@
   position:relative;
   z-index:3;
 }
+
+/* =====================
+   HERO - EFECTO CINEMÁTICO
+===================== */
+
+.hero {
+  background-size: 105%;
+  animation: heroZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from { background-size: 105%; }
+  to   { background-size: 115%; }
+}
