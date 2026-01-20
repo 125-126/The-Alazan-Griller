@@ -890,19 +890,3 @@ footer{
   display:block;
 }
 
-/* ===== EVENTOS MEDIA DEFINITIVO ===== */
-
-.event-media{
-  width:100%;
-  aspect-ratio: 16 / 9;   /* MISMO TAMAÑO SIEMPRE */
-  overflow:hidden;
-  border-radius:20px 20px 0 0;
-}
-
-.event-media img,
-.event-media video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
