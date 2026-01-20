@@ -45,3 +45,24 @@
   color: var(--dorado);
   font-weight: 600;
 }
+
+/* =====================
+   MENU CARDS - DEPTH
+===================== */
+
+.menu-card {
+  position: relative;
+}
+
+.menu-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(0,0,0,.25)
+  );
+  pointer-events: none;
+}
