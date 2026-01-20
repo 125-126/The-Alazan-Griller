@@ -884,3 +884,18 @@ footer{
   border-radius:16px 16px 0 0;
   display:block;
 }
+/* Video eventos */
+.event-video{
+  width:100%;
+  height:220px;      /* PC */
+  object-fit:cover;
+  border-radius:16px 16px 0 0;
+  display:block;
+}
+
+/* 📱 CELULAR */
+@media (max-width: 768px){
+  .event-video{
+    height:160px;   /* ajusta a gusto */
+  }
+}
