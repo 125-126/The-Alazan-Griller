@@ -2,73 +2,103 @@
    CORPORATIVOS – ESTILO CATÁLOGO
 ============================= */
 
-.corporativo-hero {
+/* =============================
+   HERO CORPORATIVO
+============================= */
+
+.corporativo-hero{
   min-height: 100vh;
   background:
     linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.85)),
-    url("../img/eve/evento2.jpg") center/cover no-repeat;
+    url("../img/eve/evento2.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
+  padding: 0 20px;
 }
 
-.corporativo-hero .hero-inner {
-  max-width: 800px;
+.corporativo-hero .hero-inner{
+  max-width: 820px;
   margin: auto;
   text-align: center;
 }
 
-.corporativo-hero h1 {
+.corporativo-hero h1{
+  font-family: 'Playfair Display', serif;
   font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 18px;
 }
 
-.corporativo-hero p {
+.corporativo-hero h1 strong{
+  color: var(--dorado);
+}
+
+.corporativo-hero p{
   font-size: 18px;
   color: #d1d5db;
+  max-width: 640px;
+  margin: auto;
 }
 
 /* =============================
    BLOQUE INCLUYE
 ============================= */
 
-.about-section {
+.about-section{
+  padding: 90px 20px;
   background: #0b1220;
 }
 
-.about-grid {
+.about-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-card{
+  background: #020617;
+  border-radius: 18px;
+  padding: 26px 22px;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,.45);
+  color: #e5e7eb;
+}
+
+/* =============================
+   PAQUETES CORPORATIVOS
+============================= */
+
+#paquetes{
+  padding: 90px 20px;
+  background: #020617;
+}
+
+#paquetes .events-grid{
   max-width: 1200px;
   margin: auto;
 }
 
-.about-card {
-  background: #020617;
-  border-radius: 18px;
-  padding: 22px;
-  font-size: 15px;
+#paquetes .event-card{
   text-align: center;
-  box-shadow: 0 15px 35px rgba(0,0,0,.45);
+  padding: 28px 24px;
 }
 
-/* =============================
-   PAQUETES
-============================= */
-
-#paquetes {
-  background: #020617;
-}
-
-#paquetes .event-card {
-  text-align: center;
-}
-
-#paquetes h3 {
+#paquetes h3{
   font-size: 22px;
   margin-bottom: 10px;
 }
 
-#paquetes strong {
+#paquetes p{
+  font-size: 15px;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+#paquetes strong{
   color: var(--dorado);
   font-size: 16px;
 }
@@ -77,42 +107,76 @@
    MENÚ CATÁLOGO
 ============================= */
 
-.menu-section {
+.menu-section{
+  padding: 90px 20px;
   background: #0b1220;
 }
 
-.menu-card {
-  text-align: center;
+.menu-grid{
+  max-width: 1000px;
+  margin: auto;
 }
 
-.menu-card h3 {
+.menu-card{
+  text-align: center;
+  padding: 26px;
+}
+
+.menu-card h3{
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-.menu-card p {
+.menu-card p{
   font-size: 15px;
   color: #9ca3af;
   line-height: 1.6;
 }
 
 /* =============================
-   BLOQUE FINAL
+   BLOQUE FINAL / CONTACTO
 ============================= */
 
-.events-cta {
+.events-cta{
+  padding: 90px 20px;
   background: #020617;
   text-align: center;
 }
 
-.events-cta p {
+.events-cta p{
   font-size: 15px;
   color: #d1d5db;
+  margin-bottom: 14px;
 }
 
-.corp-slogan {
-  margin-top: 30px;
+.events-cta .btn{
+  margin-top: 20px;
+}
+
+.corp-slogan{
+  margin-top: 32px;
   font-weight: 600;
   color: var(--dorado);
   letter-spacing: 1px;
+  font-size: 14px;
 }
+
+/* =============================
+   RESPONSIVE FINO
+============================= */
+
+@media (max-width: 768px){
+
+  .corporativo-hero h1{
+    font-size: 36px;
+  }
+
+  .corporativo-hero p{
+    font-size: 16px;
+  }
+
+  .about-grid{
+    gap: 18px;
+  }
+}
+
