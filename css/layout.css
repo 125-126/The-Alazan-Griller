@@ -877,14 +877,26 @@ footer{
   border-radius: 15px;
   margin-bottom: 1.5rem;
 }
-/* CONTENEDOR DEL VIDEO (como imagen) */
-.event-media{
-  width:100%;
-  height:220px;       /* igual que tus imágenes */
+/* ===== EVENTOS MEDIA (IMAGEN / VIDEO) ===== */
+
+.event-card{
   overflow:hidden;
 }
 
-/* VIDEO */
+.event-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+/* VIDEO SOLO PARA CUMPLEAÑOS */
+.event-media{
+  width:100%;
+  height:220px;
+  overflow:hidden;
+}
+
 .event-media video{
   width:100%;
   height:100%;
@@ -894,7 +906,8 @@ footer{
 
 /* 📱 MOBILE */
 @media(max-width:768px){
+  .event-card img,
   .event-media{
-    height:140px;   /* MÁS BAJO = más elegante */
+    height:120px;
   }
 }
