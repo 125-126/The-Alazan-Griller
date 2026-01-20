@@ -2,94 +2,190 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventos Corporativos | The Alazan Griller</title>
-  <link rel="stylesheet" href="css/estilos.css">
+
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS GLOBAL -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- CSS CORPORATIVOS -->
+  <link rel="stylesheet" href="css/corporativos.css">
 </head>
+
 <body>
 
-<section class="corp-hero">
-  <h1>Eventos Corporativos</h1>
-  <p>Exquisita gastronomía en un ambiente profesional</p>
-</section>
+<!-- ================= HEADER ================= -->
+<header class="main-header">
+  <div class="header-container">
 
-<section class="corp-includes">
-  <h2>Nuestros paquetes incluyen</h2>
-  <ul>
-    <li>Uso de salón con aire acondicionado</li>
-    <li>Montaje según capacidad del salón</li>
-    <li>Sillas y mesas</li>
-    <li>Mesa para proyección</li>
-    <li>Mesa de apoyo</li>
-    <li>Extensión y regleta</li>
-    <li>Pizarra y plumón</li>
-    <li>Mantelería blanca</li>
-    <li>Estación de agua</li>
-    <li>Estación de café</li>
-    <li>Amplio parqueo</li>
-  </ul>
-</section>
+    <div class="logo">
+      <span>The</span> Alazan Griller
+    </div>
 
-<section class="corp-packages">
-  <h2>Paquetes disponibles</h2>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Inicio</a>
+      <a href="menu.html">Menú</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="eventos-corporativos.html" class="active">Corporativos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
 
-  <div class="package-card">
-    <h3>Break sencillo</h3>
-    <p>Uso de salón por 4, 6 u 8 horas</p>
-    <span>Precio: Consultar</span>
+    <div class="header-actions">
+      <a href="contacto.html" class="btn-header">Cotizar</a>
+      <button class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
   </div>
+</header>
 
-  <div class="package-card">
-    <h3>Break doble</h3>
-    <p>1 dulce y 1 salado</p>
-    <span>Precio: Consultar</span>
-  </div>
+<!-- ================= HERO ================= -->
+<section class="hero corporativo-hero">
+  <div class="hero-overlay"></div>
 
-  <div class="package-card">
-    <h3>Media jornada</h3>
-    <p>Break AM + Almuerzo</p>
-    <span>Precio: Consultar</span>
-  </div>
+  <div class="hero-inner reveal">
+    <span class="hero-tag">Eventos Corporativos</span>
+    <h1>
+      Gastronomía profesional<br>
+      <strong>para reuniones de alto nivel</strong>
+    </h1>
+    <p>Exquisita gastronomía en un ambiente cómodo, elegante y profesional.</p>
 
-  <div class="package-card">
-    <h3>Jornada completa</h3>
-    <p>Break AM + Almuerzo + Break PM</p>
-    <span>Precio: Consultar</span>
+    <div class="hero-actions">
+      <a href="#paquetes" class="btn primary">Ver Paquetes</a>
+      <a href="contacto.html" class="btn outline">Solicitar cotización</a>
+    </div>
   </div>
 </section>
 
-<section class="corp-menu">
-  <h2>Menú</h2>
+<!-- ================= INCLUYE ================= -->
+<section class="about-section">
+  <div class="section-header reveal">
+    <span class="section-tag">Incluye</span>
+    <h2>Nuestros paquetes incluyen</h2>
+  </div>
 
-  <h3>Break AM</h3>
-  <ul>
-    <li>Croissant</li>
-    <li>Sandwich de jamón y queso</li>
-  </ul>
-
-  <h3>Almuerzos</h3>
-  <ul>
-    <li>Lomo de cerdo en salsa barbacoa</li>
-    <li>Filete de pollo en salsa de hongos o jalapeña</li>
-    <li>Churrasquito</li>
-    <li>Punta de res en salsa jalapeña</li>
-  </ul>
-
-  <h3>Break PM</h3>
-  <ul>
-    <li>Pera al vino o a la moda</li>
-    <li>Empanada de leche</li>
-    <li>Quesadilla</li>
-    <li>Pastel de chocolate</li>
-    <li>Cheesecake</li>
-    <li>Pie de limón</li>
-  </ul>
+  <div class="about-grid">
+    <div class="about-card">Uso de salón con aire acondicionado</div>
+    <div class="about-card">Montaje según capacidad del salón</div>
+    <div class="about-card">Sillas y mesas</div>
+    <div class="about-card">Mesa para proyección y apoyo</div>
+    <div class="about-card">Extensión, regleta, pizarra y plumón</div>
+    <div class="about-card">Mantelería blanca</div>
+    <div class="about-card">Estación de agua y café</div>
+    <div class="about-card">Amplio parqueo</div>
+  </div>
 </section>
 
-<section class="corp-contact">
-  <p><strong>Email:</strong> elrodeo.restaurant2024@gmail.com</p>
-  <p><strong>Dirección:</strong> Carretera a Sonsonate km 28, polígono B #130</p>
+<!-- ================= PAQUETES ================= -->
+<section id="paquetes" class="events-section">
+  <div class="section-header reveal">
+    <span class="section-tag">Paquetes</span>
+    <h2>Opciones corporativas</h2>
+  </div>
+
+  <div class="events-grid">
+    <article class="event-card reveal">
+      <div class="event-content">
+        <h3>Break sencillo</h3>
+        <p>Uso de salón por 4, 6 u 8 horas</p>
+        <strong>Precio: Consultar</strong>
+      </div>
+    </article>
+
+    <article class="event-card reveal">
+      <div class="event-content">
+        <h3>Break doble</h3>
+        <p>1 dulce y 1 salado</p>
+        <strong>Precio: Consultar</strong>
+      </div>
+    </article>
+
+    <article class="event-card reveal">
+      <div class="event-content">
+        <h3>Media jornada</h3>
+        <p>Break AM + Almuerzo</p>
+        <strong>Precio: Consultar</strong>
+      </div>
+    </article>
+
+    <article class="event-card reveal">
+      <div class="event-content">
+        <h3>Jornada completa</h3>
+        <p>Break AM + Almuerzo + Break PM</p>
+        <strong>Precio: Consultar</strong>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= MENÚ ================= -->
+<section class="menu-section">
+  <div class="section-header reveal">
+    <span class="section-tag">Menú</span>
+    <h2>Opciones gastronómicas</h2>
+  </div>
+
+  <div class="menu-grid">
+    <article class="menu-card reveal">
+      <div class="menu-info">
+        <h3>Break AM</h3>
+        <p>Croissant · Sándwich de jamón y queso</p>
+      </div>
+    </article>
+
+    <article class="menu-card reveal">
+      <div class="menu-info">
+        <h3>Almuerzos</h3>
+        <p>
+          Lomo de cerdo BBQ · Filete de pollo · Churrasquito · Punta de res
+        </p>
+      </div>
+    </article>
+
+    <article class="menu-card reveal">
+      <div class="menu-info">
+        <h3>Break PM</h3>
+        <p>
+          Postres: cheesecake, pastel de chocolate, pie de limón, quesadilla
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="events-cta reveal">
+  <p>
+    <strong>Email:</strong> elrodeo.restaurant2024@gmail.com<br>
+    <strong>Dirección:</strong> Carretera a Sonsonate km 28, polígono B #130
+  </p>
+
+  <a href="https://wa.me/50369578713" class="btn primary">
+    Cotizar por WhatsApp
+  </a>
+
   <p class="corp-slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
 </section>
 
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer">
+  <div class="footer-bottom">
+    <p>© 2026 The Alazan Griller. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="js/menu.js"></script>
+<script src="js/animations.js"></script>
+
 </body>
 </html>
+
+
