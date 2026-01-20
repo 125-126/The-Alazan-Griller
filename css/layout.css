@@ -877,25 +877,24 @@ footer{
   border-radius: 15px;
   margin-bottom: 1.5rem;
 }
-.event-video{
+/* CONTENEDOR DEL VIDEO (como imagen) */
+.event-media{
   width:100%;
-  height:220px; /* ajusta según tu diseño */
-  object-fit:cover;
-  border-radius:16px 16px 0 0;
-  display:block;
+  height:220px;       /* igual que tus imágenes */
+  overflow:hidden;
 }
-/* Video eventos */
-.event-video{
+
+/* VIDEO */
+.event-media video{
   width:100%;
-  height:220px;      /* PC */
+  height:100%;
   object-fit:cover;
-  border-radius:16px 16px 0 0;
   display:block;
 }
 
-/* 📱 CELULAR */
-@media (max-width: 768px){
-  .event-video{
-    height:160px;   /* ajusta a gusto */
+/* 📱 MOBILE */
+@media(max-width:768px){
+  .event-media{
+    height:140px;   /* MÁS BAJO = más elegante */
   }
 }
