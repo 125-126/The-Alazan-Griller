@@ -804,6 +804,18 @@ footer{
   padding: 1.5rem;
 }
 
+.menu-section {
+  padding: 6rem 0;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
 
 .menu-card {
   border-radius: 20px;
@@ -930,6 +942,13 @@ section {
   scroll-margin-top: 120px;
 }
 
+@media (min-width: 1200px) {
+  .menu-section,
+  .events-section,
+  .gallery-section {
+    padding: 120px 20px;
+  }
+}
 /* ===============================
    REGLA GLOBAL DE MEDIOS (CLAVE)
 ================================ */
@@ -1098,47 +1117,4 @@ section + section {
   }
 }
 
-/* ======================================
-   MOBILE – MENÚ Y GALERÍA IGUALES
-====================================== */
-@media (max-width: 768px) {
-
-  /* Ambos grids iguales */
-  .menu-grid,
-  .gallery-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-  }
-
-  /* Todas las tarjetas cuadradas */
-  .menu-card,
-  .gallery-grid img {
-    aspect-ratio: 1 / 1 !important;
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 14px !important;
-    overflow: hidden !important;
-  }
-
-  /* Imágenes dentro */
-  .menu-card img,
-  .gallery-grid img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-  }
-
-  /* Quitar textos del menú */
-  .menu-info {
-    display: none !important;
-  }
-
-  /* Headers más compactos */
-  .menu-section .section-header,
-  .gallery-section .section-header {
-    margin-bottom: 30px !important;
-  }
-}
 
