@@ -1,5 +1,26 @@
 /* =====================
-   HEADER PRO
+   VARIABLES
+===================== */
+:root{
+  --dorado:#facc15;
+  --primary:#facc15;
+}
+
+/* =====================
+   RESET
+===================== */
+*{
+  box-sizing:border-box;
+}
+body{
+  margin:0;
+  background:#020617;
+  color:#fff;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+/* =====================
+   HEADER
 ===================== */
 
 .main-header{
@@ -9,14 +30,7 @@
   background:#0b1220;
   box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
-.event-card{
-  background:#0b1220;
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
-  transition:0.3s;
-  position:relative; /* 👈 lo movemos aquí */
-}
+
 .header-container{
   max-width:1200px;
   margin:auto;
@@ -48,6 +62,7 @@
   color:#e5e7eb;
   font-weight:500;
   position:relative;
+  text-decoration:none;
 }
 
 .main-nav a::after{
@@ -58,70 +73,19 @@
   width:0;
   height:2px;
   background:var(--dorado);
-  transition:0.3s;
+  transition:.3s;
 }
 
 .main-nav a:hover::after{
   width:100%;
 }
 
-.header-actions{
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
-
-.btn-header{
-  background:var(--dorado);
-  color:#081226;
-  padding:8px 18px;
-  border-radius:20px;
-  font-weight:600;
-}
-
-/* ===== HAMBURGUESA ===== */
 .menu-toggle{
   display:none;
-  flex-direction:column;
-  gap:5px;
-  background:none;
-  border:none;
-  cursor:pointer;
-}
-
-.menu-toggle span{
-  width:24px;
-  height:3px;
-  background:#fff;
-  border-radius:2px;
-}
-
-/* ===== MOBILE HEADER ===== */
-@media(max-width:768px){
-
-  .main-nav{
-    position:fixed;
-    top:0;
-    right:-100%;
-    height:100vh;
-    width:75%;
-    background:#020617;
-    flex-direction:column;
-    padding:100px 24px;
-    transition:0.3s;
-  }
-
-  .main-nav.show{
-    right:0;
-  }
-
-  .menu-toggle{
-    display:flex;
-  }
 }
 
 /* =====================
-   HERO PRO
+   HERO
 ===================== */
 
 .hero{
@@ -136,134 +100,41 @@
 .hero-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(0,0,0,0.45),
-    rgba(0,0,0,0.75)
-  );
+  background:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.8));
 }
 
 .hero-inner{
   position:relative;
   max-width:700px;
   margin-left:8%;
-  color:#fff;
-}
-
-.hero-tag{
-  display:inline-block;
-  background:rgba(250,204,21,0.15);
-  color:var(--dorado);
-  padding:6px 14px;
-  border-radius:20px;
-  font-size:13px;
-  margin-bottom:18px;
 }
 
 .hero-inner h1{
   font-family:'Playfair Display', serif;
   font-size:48px;
-  line-height:1.1;
-  margin-bottom:20px;
 }
 
-.hero-inner h1 strong{
+.hero-inner strong{
   color:var(--dorado);
-}
-
-.hero-inner p{
-  font-size:18px;
-  color:#e5e7eb;
-  max-width:520px;
-  margin-bottom:28px;
-}
-
-.hero-actions{
-  display:flex;
-  gap:14px;
-}
-
-/* ===== BOTONES ===== */
-
-.btn{
-  padding:12px 26px;
-  border-radius:30px;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.btn.primary{
-  background:var(--dorado);
-  color:#081226;
-}
-
-.btn.primary:hover{
-  transform:translateY(-3px);
-}
-
-.btn.outline{
-  border:2px solid #fff;
-  color:#fff;
-}
-
-.btn.outline:hover{
-  background:#fff;
-  color:#081226;
-}
-
-/* ===== MOBILE HERO ===== */
-@media(max-width:768px){
-
-  .hero{
-    min-height:75vh;
-    text-align:center;
-  }
-
-  .hero-inner{
-    margin:0 auto;
-  }
-
-  .hero-inner h1{
-    font-size:34px;
-  }
-
-  .hero-actions{
-    justify-content:center;
-    flex-wrap:wrap;
-  }
 }
 
 /* =====================
-   MENÚ PREMIUM
+   SECCIONES
 ===================== */
 
-.menu-section{
-  padding:90px 20px;
-  background:#020617;
+section{
+  scroll-margin-top:120px;
 }
 
-.section-header{
-  text-align:center;
-  max-width:600px;
-  margin:0 auto 60px;
+.menu-section,
+.events-section,
+.gallery-section{
+  padding:100px 20px;
 }
 
-.section-tag{
-  color:var(--dorado);
-  font-size:14px;
-  letter-spacing:1px;
-}
-
-.section-header h2{
-  font-family:'Playfair Display', serif;
-  font-size:38px;
-  margin:12px 0;
-}
-
-.section-header p{
-  color:#9ca3af;
-  font-size:16px;
-}
+/* =====================
+   MENU
+===================== */
 
 .menu-grid{
   max-width:1200px;
@@ -277,63 +148,86 @@
   background:#0b1220;
   border-radius:22px;
   overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
-  transition:0.3s;
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+  transition:.3s;
 }
 
 .menu-card:hover{
   transform:translateY(-8px);
 }
 
-
-.menu-card:hover img{
-  transform:scale(1.05);
-}
-
-.menu-info{
-  padding:18px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.menu-info h3{
-  font-size:18px;
-}
-
-.menu-info span{
-  color:var(--dorado);
-  font-weight:600;
-}
-
-.menu-cta{
-  text-align:center;
-  margin-top:60px;
+.menu-card img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
 }
 
 /* =====================
-   FOOTER
+   EVENTOS
 ===================== */
 
-footer{
-  background:#020617;
-  color:#9ca3af;
-  text-align:center;
-  padding:50px 20px;
+.events-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
 
-/* =====================
-   GALERÍA PREMIUM
-===================== */
-
-.gallery-section{
-  padding:90px 20px;
+.event-card{
+  position:relative;
   background:#0b1220;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+  transition:.3s;
 }
+
+.event-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 30px 60px rgba(0,0,0,.55);
+}
+
+/* video */
+.event-media{
+  width:100%;
+  aspect-ratio:16/9;
+  background:#000;
+}
+
+.event-media video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+/* overlay PROFESIONAL */
+.event-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.35));
+  z-index:1;
+  pointer-events:none;
+}
+
+/* contenido encima */
+.event-card > *{
+  position:relative;
+  z-index:2;
+}
+
+.event-content{
+  padding:22px;
+}
+
+/* =====================
+   GALERIA
+===================== */
 
 .gallery-grid{
   max-width:1200px;
-  margin:0 auto;
+  margin:auto;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:18px;
@@ -344,405 +238,30 @@ footer{
   height:260px;
   object-fit:cover;
   border-radius:18px;
-  box-shadow:0 15px 35px rgba(0,0,0,0.35);
-  transition:0.4s ease;
+  filter:brightness(.9);
+  transition:.4s;
 }
 
 .gallery-grid img:hover{
   transform:scale(1.05);
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .gallery-grid img{
-    height:200px;
-  }
+  filter:brightness(1.05);
 }
 
 /* =====================
-   FOOTER PREMIUM
+   WHATSAPP
 ===================== */
 
-.main-footer{
-  background:#020617;
-  color:#9ca3af;
-  padding:80px 20px 30px;
-}
-
-.footer-container{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:40px;
-}
-
-.footer-brand h3{
-  font-family:'Playfair Display', serif;
-  font-size:26px;
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
   color:#fff;
-  margin-bottom:16px;
-}
-
-.footer-brand span{
-  color:var(--dorado);
-}
-
-.footer-brand p{
-  font-size:15px;
-  line-height:1.6;
-}
-
-.footer-column h4{
-  color:#fff;
-  font-size:18px;
-  margin-bottom:16px;
-}
-
-.footer-column ul{
-  list-style:none;
-  padding:0;
-}
-
-.footer-column li{
-  margin-bottom:10px;
-  font-size:15px;
-}
-
-.footer-socials{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.footer-socials a{
-  color:#9ca3af;
-  transition:0.3s;
-}
-
-.footer-socials a:hover{
-  color:var(--dorado);
-  transform:translateX(4px);
-}
-
-/* BARRA INFERIOR */
-.footer-bottom{
-  margin-top:60px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,0.1);
-  text-align:center;
-  font-size:14px;
-  color:#6b7280;
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-  .main-footer{
-    text-align:center;
-  }
-
-  .footer-socials{
-    align-items:center;
-  }
-}
-
-/* =====================
-   EVENTOS
-===================== */
-
-.events-section{
-  padding:90px 20px;
-  background:#020617;
-}
-
-.events-grid{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-}
-
-
-
-.event-card:hover{
-  transform:translateY(-10px);
-}
-
-
-.event-content{
-  padding:22px;
-}
-
-.event-content h3{
-  font-size:20px;
-  margin-bottom:10px;
-}
-
-.event-content p{
-  font-size:15px;
-  color:#9ca3af;
-  margin-bottom:18px;
-}
-
-/* CTA FINAL */
-.events-cta{
-  padding:80px 20px;
-  text-align:center;
-  background:#0b1220;
-}
-
-.events-cta h2{
-  font-family:'Playfair Display', serif;
-  font-size:36px;
-  margin-bottom:14px;
-}
-
-.events-cta p{
-  color:#9ca3af;
-  margin-bottom:26px;
-}
-
-/* =====================
-   CONTACTO
-===================== */
-
-.contact-container{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-}
-
-.contact-form{
-  background:#0b1220;
-  padding:40px;
-  border-radius:24px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
-}
-
-.contact-form h2{
-  margin-bottom:20px;
-}
-
-.form-group{
-  margin-bottom:18px;
-}
-
-.form-group input,
-.form-group textarea{
-  width:100%;
-  padding:14px;
-  border-radius:12px;
-  border:none;
-  background:#020617;
-  color:#fff;
-}
-
-.form-group textarea{
-  min-height:120px;
-  resize:none;
-}
-
-.contact-info{
-  color:#e5e7eb;
-}
-
-.contact-info h3{
-  margin-bottom:16px;
-}
-
-.contact-info h4{
-  margin-top:24px;
-  margin-bottom:10px;
-}
-
-.contact-info ul{
-  list-style:none;
-  padding:0;
-}
-
-.contact-info li{
-  margin-bottom:6px;
-  color:#9ca3af;
-}
-
-/* MAPA */
-.map-section iframe{
-  width:100%;
-  height:420px;
-  border:0;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .contact-container{
-    grid-template-columns:1fr;
-  }
-}
-
-/* =====================
-   ANIMACIONES SCROLL
-===================== */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.9s ease;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* VARIANTES */
-.reveal.left {
-  transform: translateX(-40px);
-}
-
-.reveal.right {
-  transform: translateX(40px);
-}
-
-.reveal.left.show,
-.reveal.right.show {
-  transform: translateX(0);
-}
-
-
-.menu-card:hover,
-.event-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.55);
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.05);
-}
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #25D366;
-  color: #fff;
-  padding: 14px 22px;
-  border-radius: 50px;
-  font-weight: 500;
-  text-decoration: none;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-  z-index: 999;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.whatsapp-float:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0,0,0,.35);
-}
-
-
-
-.form-alert {
-  padding: 12px 20px;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  font-weight: 500;
-  text-align: center;
-}
-
-.form-alert.error {
-  background: #ff4c4c;
-  color: #fff;
-}
-
-.form-alert.success {
-  background: #facc15;
-  color: #081226;
-}
-   
-
-/* ================= EVENTOS – VIDEO EN TARJETA ================= */
-
-.event-card {
-  background: #0b1220;
-  border-radius: 24px;
-  overflow: hidden;
-}
-
-/* contenedor del video */
-.event-media {
-  width: 100%;
-  aspect-ratio: 16 / 9;   /* 🔥 CLAVE */
-  background: #000;
-  overflow: hidden;
-}
-
-.event-media video {
-  width: 100%;
-  height: 100%;
-object-fit: contain;  /* ✅ SE VE COMPLETO */
-  display: block;
-}
-
-/* móvil */
-@media (max-width: 768px) {
-  .event-media {
-    aspect-ratio: 4 / 3;
-  }
-}
-
-/* =====================
-   EVENT CARDS - DEPTH
-===================== */
-
-
-.event-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    rgba(0,0,0,.25)
-  );
-  pointer-events: none;
-}
-
-.event-media {
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-/* =====================
-   GALERIA - HOVER
-===================== */
-
-section {
-  scroll-margin-top: 120px;
-}
-
-@media (min-width: 1200px) {
-  .menu-section,
-  .events-section,
-  .gallery-section {
-    padding: 100px 20px;
-  }
-}
-/* ===============================
-   MENÚ – PLATOS
-================================ */
-
-.menu-card img{
-  width:100%;
-  aspect-ratio:4 / 5;
-  object-fit:cover;
-}
-
-.nav-highlight{
-  color: var(--primary);
-  font-weight: 600;
+  padding:14px 22px;
+  border-radius:50px;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  z-index:999;
 }
 
 
