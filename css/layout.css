@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
+
 :root{
   --dorado:#facc15;
   --bg:#020617;
@@ -6,9 +8,11 @@
 }
 
 /* RESET */
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui;background:var(--bg);color:var(--text);line-height:1.5}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui;background:var(--bg);color:var(--text)}
+img{width:100%;display:block;object-fit:cover}
 a{text-decoration:none;color:inherit}
+section{scroll-margin-top:120px}
 
 /* ================= HEADER ================= */
 
@@ -24,11 +28,11 @@ a{text-decoration:none;color:inherit}
   display:flex;align-items:center;justify-content:space-between;
 }
 
-.logo{font-family:'Playfair Display',serif;font-size:22px}
+.logo{font-family:'Playfair Display',serif;font-size:22px;color:#fff}
 .logo span{color:var(--dorado);font-size:14px;display:block}
 
 .main-nav{display:flex;gap:24px}
-.main-nav a{position:relative}
+.main-nav a{position:relative;color:#e5e7eb}
 .main-nav a::after{
   content:"";position:absolute;left:0;bottom:-6px;
   width:0;height:2px;background:var(--dorado);transition:.3s;
@@ -42,8 +46,10 @@ a{text-decoration:none;color:inherit}
   .menu-toggle{display:flex}
   .main-nav{
     position:fixed;top:0;right:-100%;
-    width:75%;height:100vh;background:#020617;
-    flex-direction:column;padding:100px 24px;
+    width:75%;height:100vh;
+    background:#020617;
+    flex-direction:column;
+    padding:100px 24px;
     transition:.3s;
   }
   .main-nav.show{right:0}
@@ -58,74 +64,179 @@ a{text-decoration:none;color:inherit}
   display:flex;align-items:center;
 }
 
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.8))}
-.hero-inner{position:relative;max-width:700px;margin-left:8%}
-.hero h1{font-family:'Playfair Display',serif;font-size:48px}
-.hero strong{color:var(--dorado)}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.75));
+}
+
+.hero-inner{
+  position:relative;
+  max-width:700px;
+  margin-left:8%;
+  color:#fff;
+}
+
+.hero-inner h1{
+  font-family:'Playfair Display',serif;
+  font-size:48px;
+}
+
+.hero-inner h1 strong{color:var(--dorado)}
+
+@media(max-width:768px){
+  .hero{min-height:75vh;text-align:center}
+  .hero-inner{margin:auto}
+  .hero-inner h1{font-size:34px}
+}
 
 /* ================= SECTIONS ================= */
 
-section{padding:100px 20px;scroll-margin-top:120px}
-.section-header{text-align:center;max-width:600px;margin:auto  auto 60px}
-
-/* ================= GRID ================= */
-
-.menu-grid,.events-grid,.gallery-grid{
-  max-width:1200px;margin:auto;
-  display:grid;gap:28px;
+.menu-section,
+.events-section,
+.gallery-section,
+.contact-section{
+  padding:90px 20px;
+  background:#020617;
 }
+
+.section-header{text-align:center;max-width:600px;margin:0 auto 60px}
+
+/* ================= GRIDS ================= */
+
+.menu-grid,
+.events-grid,
+.gallery-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  gap:28px;
+}
+
 .menu-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .events-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .gallery-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 
 /* ================= CARDS ================= */
 
-.menu-card,.event-card{
+.menu-card,
+.event-card{
   background:var(--card);
   border-radius:22px;
   overflow:hidden;
   box-shadow:0 20px 40px rgba(0,0,0,.4);
   transition:.3s;
 }
-.menu-card:hover,.event-card:hover{transform:translateY(-10px)}
 
-/* ================= MEDIA RULES ================= */
+.menu-card:hover,
+.event-card:hover{
+  transform:translateY(-10px);
+}
 
-/* IMAGENES */
-img{width:100%;display:block;object-fit:cover}
+/* MENU */
+.menu-card img{aspect-ratio:4/5}
+.menu-info{
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.menu-info span{color:var(--dorado);font-weight:600}
+
+/* EVENTOS */
+.event-media{
+  aspect-ratio:16/9;
+  background:#000;
+  overflow:hidden;
+}
+.event-media video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
 
 /* GALERIA */
 .gallery-grid img{
   aspect-ratio:1/1;
   border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
+  transition:.4s;
+}
+.gallery-grid img:hover{transform:scale(1.05)}
+
+/* ================= CONTACTO ================= */
+
+.contact-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
 }
 
-/* MENU */
-.menu-card img{aspect-ratio:4/5}
+.contact-form,
+.contact-info{
+  background:#0b1220;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
 
-/* EVENTOS */
-.event-media{aspect-ratio:16/9;background:#000}
-.event-media video{
-  width:100%;height:100%;
-  object-fit:contain; /* NO SE CORTA */
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  background:#020617;
+  color:#fff;
+}
+
+@media(max-width:768px){
+  .contact-container{grid-template-columns:1fr}
 }
 
 /* ================= FOOTER ================= */
 
 .main-footer{
-  background:#020617;color:#9ca3af;
+  background:#020617;
+  color:#9ca3af;
   padding:80px 20px 30px;
 }
+
 .footer-container{
-  max-width:1200px;margin:auto;
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:40px;
 }
 
 /* ================= ANIMACIONES ================= */
 
-.reveal{opacity:0;transform:translateY(40px);transition:.8s}
-.reveal.show{opacity:1;transform:translateY(0)}
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
 .reveal.left{transform:translateX(-40px)}
 .reveal.right{transform:translateX(40px)}
-.reveal.left.show,.reveal.right.show{transform:translateX(0)}
+.reveal.left.show,
+.reveal.right.show{transform:translateX(0)}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 22px;
+  border-radius:50px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  z-index:999;
+}
