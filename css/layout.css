@@ -1070,3 +1070,33 @@ section + section {
     margin-top: -30px;
   }
 }
+
+/* ======================================
+   MENÚ en móvil como GALERÍA
+   ====================================== */
+@media (max-width: 768px) {
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .menu-card {
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+  }
+
+  .menu-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Elimina overlays raros del menú */
+  .menu-info {
+    display: none;
+  }
+}
