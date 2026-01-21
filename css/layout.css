@@ -1092,3 +1092,28 @@ section + section {
     display: none;
   }
 }
+
+/* ======================================
+   GALERÍA (Nuestro Ambiente) estilo MENÚ en móvil
+   ====================================== */
+@media (max-width: 768px) {
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .gallery-grid img {
+    aspect-ratio: 1 / 1;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  .gallery-section .section-header {
+    margin-bottom: 30px;
+  }
+}
+
