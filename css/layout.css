@@ -1,4 +1,4 @@
-/* =====================
+MIRA ESTA BIEN? PORQUE NO ME CARGO =====================
    HEADER PRO
 ===================== */
 
@@ -758,10 +758,7 @@ footer{
   transition: all 0.8s ease-out;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+
 
 /* Para eventos que entran desde izquierda/derecha */
 .reveal.left {
@@ -769,10 +766,6 @@ footer{
 }
 .reveal.right {
   transform: translateX(50px);
-}
-.reveal.left.active,
-.reveal.right.active {
-  transform: translateX(0);
 }
 
 
@@ -897,8 +890,7 @@ footer{
 .event-media video {
   width: 100%;
   height: 100%;
-- object-fit: cover;
-+ object-fit: contain;  /* ✅ SE VE COMPLETO */
+  object-fit: contain;
   display: block;
 }
 
@@ -1015,4 +1007,88 @@ video{
   color: var(--primary);
   font-weight: 600;
 }
+/* ===============================
+   SISTEMA DE ESPACIADO GLOBAL
+   =============================== */
 
+section,
+.menu-section,
+.events-section,
+.gallery-section,
+.contact-section,
+.instalaciones-section,
+.about-section,
+.team-section {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+/* No duplicar aire entre secciones */
+section + section {
+  margin-top: -40px;
+}
+
+/* CTA no empuja tanto */
+.menu-cta {
+  margin-top: 30px !important;
+}
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+  section,
+  .menu-section,
+  .events-section,
+  .gallery-section,
+  .contact-section,
+  .instalaciones-section {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+  }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  section,
+  .menu-section,
+  .events-section,
+  .gallery-section,
+  .contact-section,
+  .instalaciones-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  section + section {
+    margin-top: -30px;
+  }
+}
+
+/* ======================================
+   MENÚ en móvil como GALERÍA
+   ====================================== */
+@media (max-width: 768px) {
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .menu-card {
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+  }
+
+  .menu-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Elimina overlays raros del menú */
+  .menu-info {
+    display: none;
+  }
+}
