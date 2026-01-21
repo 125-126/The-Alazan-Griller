@@ -804,18 +804,6 @@ footer{
   padding: 1.5rem;
 }
 
-.menu-section {
-  padding: 6rem 0;
-  background: #0b0b0b;
-  color: #fff;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
 
 .menu-card {
   border-radius: 20px;
@@ -942,13 +930,6 @@ section {
   scroll-margin-top: 120px;
 }
 
-@media (min-width: 1200px) {
-  .menu-section,
-  .events-section,
-  .gallery-section {
-    padding: 120px 20px;
-  }
-}
 /* ===============================
    REGLA GLOBAL DE MEDIOS (CLAVE)
 ================================ */
