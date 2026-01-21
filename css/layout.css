@@ -9,7 +9,14 @@
   background:#0b1220;
   box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
-
+.event-card{
+  background:#0b1220;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  transition:0.3s;
+  position:relative; /* 👈 lo movemos aquí */
+}
 .header-container{
   max-width:1200px;
   margin:auto;
@@ -278,12 +285,6 @@
   transform:translateY(-8px);
 }
 
-.menu-card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  transition:0.4s ease;
-}
 
 .menu-card:hover img{
   transform:scale(1.05);
@@ -462,23 +463,12 @@ footer{
   gap:30px;
 }
 
-.event-card{
-  background:#0b1220;
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
-  transition:0.3s;
-}
+
 
 .event-card:hover{
   transform:translateY(-10px);
 }
 
-.event-card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-}
 
 .event-content{
   padding:22px;
@@ -516,11 +506,6 @@ footer{
 /* =====================
    CONTACTO
 ===================== */
-
-.contact-section{
-  padding:90px 20px;
-  background:#020617;
-}
 
 .contact-container{
   max-width:1200px;
@@ -626,12 +611,6 @@ footer{
   transform: translateX(0);
 }
 
-/* HOVER FINO GLOBAL */
-.menu-card,
-.event-card,
-.gallery-grid img {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
 
 .menu-card:hover,
 .event-card:hover {
@@ -663,76 +642,7 @@ footer{
   box-shadow: 0 15px 40px rgba(0,0,0,.35);
 }
 
-.contact-section {
-  background: #020617;
-  padding: 80px 20px;
-}
 
-.contact-container {
-  display: flex;
-  gap: 60px;
-  max-width: 1200px;
-  margin: auto;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  color: #e5e7eb;
-}
-
-.contact-form, .contact-info {
-  flex: 1 1 400px;
-  background: #0b1220;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-.contact-form h2, .contact-info h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.contact-form label {
-  display: block;
-  margin: 12px 0 6px;
-  font-weight: 500;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: none;
-  background: #1c1c1c;
-  color: #fff;
-  font-size: 16px;
-  margin-bottom: 16px;
-}
-
-.contact-form button {
-  padding: 12px 28px;
-  border-radius: 25px;
-  border: none;
-  background: var(--dorado);
-  color: #081226;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.contact-form button:hover {
-  transform: translateY(-3px);
-}
-
-@media(max-width:768px){
-  .contact-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-}
 
 .form-alert {
   padding: 12px 20px;
@@ -751,65 +661,7 @@ footer{
   background: #facc15;
   color: #081226;
 }
-
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
-
-
-/* Para eventos que entran desde izquierda/derecha */
-.reveal.left {
-  transform: translateX(-50px);
-}
-.reveal.right {
-  transform: translateX(50px);
-}
-
-
-.instalacion-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-}
-
-.instalacion-card:hover {
-  transform: translateY(-8px);
-}
-
-
-
-.menu-card {
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-  transition: transform 0.3s ease;
-}
-
-.menu-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-}
-
-.menu-card:hover {
-  transform: translateY(-8px);
-}
-
-.menu-info {
-  padding: 1.5rem;
-  text-align: center;
-}
-
-
-.team-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 1.5rem;
-}
+   
 
 /* ================= EVENTOS – VIDEO EN TARJETA ================= */
 
@@ -830,8 +682,7 @@ footer{
 .event-media video {
   width: 100%;
   height: 100%;
-- object-fit: cover;
-+ object-fit: contain;  /* ✅ SE VE COMPLETO */
+object-fit: contain;  /* ✅ SE VE COMPLETO */
   display: block;
 }
 
@@ -846,9 +697,6 @@ footer{
    EVENT CARDS - DEPTH
 ===================== */
 
-.event-card {
-  position: relative;
-}
 
 .event-card::after {
   content: "";
@@ -871,14 +719,6 @@ footer{
    GALERIA - HOVER
 ===================== */
 
-.gallery-grid img {
-  transition: filter .4s ease;
-  filter: brightness(0.9);
-}
-
-.gallery-grid img:hover {
-  filter: brightness(1.05);
-}
 section {
   scroll-margin-top: 120px;
 }
@@ -887,39 +727,15 @@ section {
   .menu-section,
   .events-section,
   .gallery-section {
-    padding: 120px 20px;
+    padding: 100px 20px;
   }
 }
-/* ===============================
-   REGLA GLOBAL DE MEDIOS (CLAVE)
-================================ */
-
-
-/* ===============================
-   EVENTOS – NO CAMBIA AL GIRAR
-================================ */
-
-.event-card{
-  overflow:hidden;
-  border-radius:18px;
-}
-
-
-
-/* ===============================
-   GALERÍA – FIRME
-================================ */
-
-.gallery-grid img{
-  aspect-ratio:1 / 1;
-  object-fit:cover;
-}
-
 /* ===============================
    MENÚ – PLATOS
 ================================ */
 
 .menu-card img{
+  width:100%;
   aspect-ratio:4 / 5;
   object-fit:cover;
 }
