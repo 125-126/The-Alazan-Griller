@@ -1015,4 +1015,58 @@ video{
   color: var(--primary);
   font-weight: 600;
 }
+/* ===============================
+   SISTEMA DE ESPACIADO GLOBAL
+   =============================== */
 
+section,
+.menu-section,
+.events-section,
+.gallery-section,
+.contact-section,
+.instalaciones-section,
+.about-section,
+.team-section {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+/* No duplicar aire entre secciones */
+section + section {
+  margin-top: -40px;
+}
+
+/* CTA no empuja tanto */
+.menu-cta {
+  margin-top: 30px !important;
+}
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+  section,
+  .menu-section,
+  .events-section,
+  .gallery-section,
+  .contact-section,
+  .instalaciones-section {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+  }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  section,
+  .menu-section,
+  .events-section,
+  .gallery-section,
+  .contact-section,
+  .instalaciones-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  section + section {
+    margin-top: -30px;
+  }
+}
