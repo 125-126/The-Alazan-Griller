@@ -1,4 +1,4 @@
-=====================
+TODO LO QUE NO SIRVE ES BUENO QUE LO BORREMOS /* =====================
    HEADER PRO
 ===================== */
 
@@ -758,7 +758,10 @@ footer{
   transition: all 0.8s ease-out;
 }
 
-
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* Para eventos que entran desde izquierda/derecha */
 .reveal.left {
@@ -766,6 +769,10 @@ footer{
 }
 .reveal.right {
   transform: translateX(50px);
+}
+.reveal.left.active,
+.reveal.right.active {
+  transform: translateX(0);
 }
 
 
@@ -804,6 +811,40 @@ footer{
   padding: 1.5rem;
 }
 
+.menu-section {
+  padding: 6rem 0;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.menu-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+  transition: transform 0.3s ease;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+}
+
+.menu-info {
+  padding: 1.5rem;
+  text-align: center;
+}
 
 .about-section,
 .team-section {
@@ -856,7 +897,8 @@ footer{
 .event-media video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+- object-fit: cover;
++ object-fit: contain;  /* ✅ SE VE COMPLETO */
   display: block;
 }
 
@@ -919,6 +961,14 @@ section {
    REGLA GLOBAL DE MEDIOS (CLAVE)
 ================================ */
 
+/* IMÁGENES Y VIDEOS SIEMPRE RECORTADOS */
+img,
+video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 
 /* ===============================
    EVENTOS – NO CAMBIA AL GIRAR
@@ -965,80 +1015,4 @@ section {
   color: var(--primary);
   font-weight: 600;
 }
-/* ===============================
-   SISTEMA DE ESPACIADO GLOBAL
-   =============================== */
 
-section,
-.menu-section,
-.events-section,
-.gallery-section,
-.contact-section,
-.instalaciones-section,
-.about-section,
-.team-section {
-  padding-top: 80px !important;
-  padding-bottom: 80px !important;
-}
-
-/* No duplicar aire entre secciones */
-
-/* CTA no empuja tanto */
-.menu-cta {
-  margin-top: 30px !important;
-}
-
-/* Desktop grande */
-@media (min-width: 1200px) {
-  section,
-  .menu-section,
-  .events-section,
-  .gallery-section,
-  .contact-section,
-  .instalaciones-section {
-    padding-top: 100px !important;
-    padding-bottom: 100px !important;
-  }
-}
-
-/* Móvil */
-@media (max-width: 768px) {
-  section,
-  .menu-section,
-  .events-section,
-  .gallery-section,
-  .contact-section,
-  .instalaciones-section {
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
-  }
-
-/* ======================================
-   MENÚ en móvil como GALERÍA
-   ====================================== */
-@media (max-width: 768px) {
-
-  .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .menu-card {
-    border-radius: 14px;
-    overflow: hidden;
-    aspect-ratio: 1 / 1;
-  }
-
-  .menu-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* Elimina overlays raros del menú */
-  .menu-info {
-    display: none;
-  }
-}
