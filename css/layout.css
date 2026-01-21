@@ -758,10 +758,6 @@ footer{
   transition: all 0.8s ease-out;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Para eventos que entran desde izquierda/derecha */
 .reveal.left {
@@ -770,32 +766,7 @@ footer{
 .reveal.right {
   transform: translateX(50px);
 }
-.reveal.left.active,
-.reveal.right.active {
-  transform: translateX(0);
-}
 
-
-.instalaciones-section {
-  padding: 6rem 0;
-  background: #0b0b0b;
-  color: #fff;
-  text-align: center;
-}
-
-.instalaciones-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.instalacion-card {
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-  transition: transform 0.3s ease;
-}
 
 .instalacion-card img {
   width: 100%;
@@ -807,22 +778,7 @@ footer{
   transform: translateY(-8px);
 }
 
-.instalacion-info {
-  padding: 1.5rem;
-}
 
-.menu-section {
-  padding: 6rem 0;
-  background: #0b0b0b;
-  color: #fff;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
 
 .menu-card {
   border-radius: 20px;
@@ -846,29 +802,6 @@ footer{
   text-align: center;
 }
 
-.about-section,
-.team-section {
-  padding: 6rem 0;
-  background: #0b0b0b;
-  color: #fff;
-}
-
-.about-grid,
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.about-card,
-.team-card {
-  border-radius: 20px;
-  background: #111;
-  padding: 2rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-  text-align: center;
-}
 
 .team-card img {
   width: 100%;
@@ -961,14 +894,6 @@ section {
    REGLA GLOBAL DE MEDIOS (CLAVE)
 ================================ */
 
-/* IMÁGENES Y VIDEOS SIEMPRE RECORTADOS */
-img,
-video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
 
 /* ===============================
    EVENTOS – NO CAMBIA AL GIRAR
@@ -979,19 +904,7 @@ video{
   border-radius:18px;
 }
 
-/* CAJA DEL VIDEO / IMAGEN */
-.event-card > img,
-.event-media{
-  aspect-ratio:16 / 9;
-  overflow:hidden;
-}
 
-/* VIDEO DENTRO */
-.event-media video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
 
 /* ===============================
    GALERÍA – FIRME
