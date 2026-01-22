@@ -24,6 +24,26 @@
   font-size:22px;
   color:#fff;
 }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* imagen del logo */
+.logo-img{
+  height:42px;
+  max-height:42px;
+  width:auto;
+  object-fit:contain;
+}
+
+/* texto del logo */
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
 
 .logo span{
   color:var(--dorado);
@@ -32,9 +52,10 @@
   line-height:1;
 }
 
-.main-nav{
-  display:flex;
-  gap:24px;
+.logo-text span{
+  color:var(--dorado);
+  font-size:12px;
+  letter-spacing:2px;
 }
 
 .main-nav a{
