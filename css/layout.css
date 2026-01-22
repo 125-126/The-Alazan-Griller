@@ -1268,3 +1268,25 @@ body video{
   letter-spacing: 2px;
   color: var(--dorado);
 }
+
+/* ===============================
+   PROTECCIÓN DE LOGO
+=============================== */
+
+.main-header img{
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.main-header .logo-img{
+  height: 42px !important;
+  max-height: 42px !important;
+  width: auto !important;
+}
+
+/* Evita que la regla global afecte el header */
+.main-header video,
+.main-header img{
+  max-height: 60px;
+}
