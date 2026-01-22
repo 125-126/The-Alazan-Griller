@@ -1096,3 +1096,41 @@ video{
 
 }
 
+/* ===============================
+   MENÚ – CARDS COMPACTAS (MOBILE)
+================================ */
+
+@media (max-width: 768px) {
+
+  /* La tarjeta no puede crecer de más */
+  body .menu-card{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Imagen más compacta */
+  body .menu-card img{
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    max-height: 180px !important;
+  }
+
+  /* Texto sin tanto aire */
+  body .menu-info{
+    padding: 10px 12px !important;
+    gap: 6px !important;
+  }
+
+  body .menu-info h3{
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  body .menu-info span{
+    font-size: 14px !important;
+  }
+
+}
+
+
