@@ -148,7 +148,7 @@ section{scroll-margin-top:120px;}
   .contact-form h2{font-size:22px;}
 }
 /* ========================== 
-   NUESTRA HISTORIA TARJETAS
+   NUESTRA HISTORIA TARJETAS MEJORADAS
 ========================== */
 .about-grid {
   max-width: 1200px;
@@ -159,12 +159,13 @@ section{scroll-margin-top:120px;}
 }
 
 .about-card {
-  background: #0b1220; /* fondo oscuro */
+  background: #111827; /* más contraste con el fondo */
   border-radius: 24px;
   padding: 30px 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.4);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 25px 60px rgba(0,0,0,.6); /* sombra más marcada */
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
   text-align: center;
+  border: 1px solid rgba(250,204,21,0.3); /* borde dorado sutil */
 }
 
 .about-card h3 {
@@ -182,8 +183,9 @@ section{scroll-margin-top:120px;}
 
 /* Hover efecto */
 .about-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0,0,0,.5);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(250,204,21,0.5); /* sombra dorada al pasar mouse */
+  background: #161b2a; /* ligero cambio de fondo al hover */
 }
 
 /* Responsive */
