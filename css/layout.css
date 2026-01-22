@@ -1132,37 +1132,46 @@ video{
   }
 
 }
-/* ===============================
-   MOBILE – ESPACIO VERTICAL
-   (EVENTOS + CTA)
-================================ */
+/* =====================================
+   MOBILE – FIX DEFINITIVO DE ALTURAS
+===================================== */
 
 @media (max-width: 768px) {
 
-  /* Sección de eventos */
-  body .events-section{
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
+  /* Quita la regla global destructiva */
+  body img,
+  body video{
+    height: auto !important;
   }
 
-  /* Cards de eventos */
+  /* EVENTOS */
   body .event-card{
-    margin-bottom: 20px !important;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Bloque CTA (donde está DISPONIBILIDAD) */
+  body .event-media,
+  body .event-card > img{
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+  }
+
+  /* CTA DISPONIBILIDAD */
   body .events-cta{
-    padding-top: 30px !important;
-    padding-bottom: 30px !important;
-    margin: 0 !important;
+    padding: 30px 20px !important;
+    min-height: unset !important;
   }
 
-  /* Botón grande */
-  body .events-cta .btn,
-  body .events-cta a{
-    margin: 0 auto !important;
+  /* Evita secciones gigantes */
+  body .events-section,
+  body .contact-section,
+  body .menu-section,
+  body .gallery-section{
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
   }
 
 }
+
 
 
