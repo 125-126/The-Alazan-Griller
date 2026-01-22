@@ -1172,6 +1172,16 @@ video{
   }
 
 }
+/* ===============================
+   VIDEO EVENTOS – NO RECORTAR
+================================ */
+
+.event-media video{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;   /* 🔥 muestra el video completo */
+  background: #000;
+}
 
 
 
