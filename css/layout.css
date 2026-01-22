@@ -1016,3 +1016,17 @@ video{
   font-weight: 600;
 }
 
+
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-grid img {
+    aspect-ratio: 1 / 1;   /* cuadradas y elegantes */
+    height: auto;
+  }
+}
+
