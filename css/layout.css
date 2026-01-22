@@ -147,3 +147,55 @@ section{scroll-margin-top:120px;}
   .contact-form input,.contact-form textarea{font-size:16px;padding:14px;}
   .contact-form h2{font-size:22px;}
 }
+/* ========================== 
+   NUESTRA HISTORIA TARJETAS
+========================== */
+.about-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.about-card {
+  background: #0b1220; /* fondo oscuro */
+  border-radius: 24px;
+  padding: 30px 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.about-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--dorado);
+  margin-bottom: 16px;
+}
+
+.about-card p {
+  font-size: 15px;
+  color: #e5e7eb;
+  line-height: 1.7;
+}
+
+/* Hover efecto */
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,.5);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .about-card {
+    padding: 24px 16px;
+  }
+  .about-card h3 {
+    font-size: 20px;
+  }
+}
