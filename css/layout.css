@@ -1398,3 +1398,25 @@ body video{
   max-height: none !important;
   object-fit: cover !important;
 }
+
+/* ===================================
+   FIX MENU MÓVIL – NO SE DESBORDA
+=================================== */
+
+@media (max-width: 768px){
+
+  body{
+    overflow-x: hidden !important;
+  }
+
+  .main-nav{
+    width: 75% !important;
+    max-width: 300px !important;
+    right: -100% !important;
+  }
+
+  .main-nav.show{
+    right: 0 !important;
+  }
+
+}
