@@ -1407,3 +1407,90 @@ body video{
   }
 
 }
+/* ==================================================
+   FIX GLOBAL — LOGO, HEADER y MENÚ MÓVIL
+   NO ROMPE NADA EXISTENTE
+================================================== */
+
+/* Evita que imágenes y videos rompan el layout */
+.main-header img,
+.main-header video{
+  width:auto !important;
+  height:auto !important;
+  max-width:100%;
+}
+
+/* =====================================
+   LOGO REDONDO Y RESPONSIVE
+===================================== */
+
+.main-header .logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
+}
+
+.main-header .logo-img{
+  width:48px !important;
+  height:48px !important;
+  max-width:48px !important;
+  max-height:48px !important;
+  border-radius:50%;
+  object-fit:cover;
+  overflow:hidden;
+  display:block;
+}
+
+/* En celular un poco más pequeño */
+@media(max-width:768px){
+  .main-header .logo-img{
+    width:40px !important;
+    height:40px !important;
+    max-width:40px !important;
+    max-height:40px !important;
+  }
+}
+
+/* =====================================
+   TEXTO DEL LOGO
+===================================== */
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-text span{
+  font-size:12px;
+  color:var(--dorado);
+  letter-spacing:2px;
+}
+
+/* =====================================
+   FIX DEL MENÚ MÓVIL
+   (el espacio negro a la derecha)
+===================================== */
+
+body{
+  overflow-x:hidden;
+}
+
+@media(max-width:768px){
+  .main-nav{
+    width:75% !important;
+    max-width:320px !important;
+    right:-100% !important;
+  }
+
+  .main-nav.show{
+    right:0 !important;
+  }
+}
+
+/* Evita que el logo empuje el menú */
+.main-header{
+  overflow:hidden;
+}
+
