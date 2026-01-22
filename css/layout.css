@@ -1231,3 +1231,78 @@ body video{
   background: #000 !important;
 }
 
+/* ===================================================
+   FIX DEFINITIVO — HEADER, LOGO y MENÚ MÓVIL
+   (bloquea todos los conflictos anteriores)
+=================================================== */
+
+/* Protege el header de reglas globales */
+.main-header img,
+.main-header video{
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+}
+
+/* ---------- LOGO ---------- */
+
+.main-header .logo{
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-shrink: 0;
+}
+
+/* Logo circular real */
+.main-header .logo-img{
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  background: #000;
+  display: block !important;
+}
+
+/* Texto del logo */
+.main-header .logo-text{
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1 !important;
+}
+
+.main-header .logo-text span{
+  font-size: 12px !important;
+  letter-spacing: 2px !important;
+  color: var(--dorado) !important;
+}
+
+/* Tamaño en celular */
+@media (max-width: 768px){
+  .main-header .logo-img{
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+}
+
+/* ---------- MENÚ MÓVIL ---------- */
+
+body{
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 768px){
+  .main-nav{
+    width: 75% !important;
+    max-width: 320px !important;
+    right: -100% !important;
+  }
+
+  .main-nav.show{
+    right: 0 !important;
+  }
+}
