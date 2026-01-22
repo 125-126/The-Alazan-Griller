@@ -184,8 +184,8 @@ video{background:#000;}
 .events-cta{margin-top:40px;text-align:center;}
 
 .logo-img { 
-  height: 70px; /* más grande que antes */
-  max-height: 70px; 
+  height: 90px; /* más grande que antes */
+  max-height: 90px; 
   width: auto; 
   object-fit: contain; 
 } 
