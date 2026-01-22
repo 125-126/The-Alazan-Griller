@@ -307,20 +307,12 @@
 <script src="js/modal.js"></script>
 <script src="js/sliders.js"></script>
 
-<!-- ================= WHATSAPP FLOAT ================= -->
-<a
-  href="https://wa.me/50369578713?text=Hola%20quiero%20hacer%20una%20reservación%20en%20The%20Alazan%20Griller"
-  class="whatsapp-float"
-  target="_blank"
-  aria-label="WhatsApp"
->
-  <span>WhatsApp</span>
-</a>
 <script>
   const indexForm = document.getElementById("indexContactForm");
 
   indexForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    
 
     const nombre = document.getElementById("nombreIndex").value;
     const dui = document.getElementById("duiIndex").value;
