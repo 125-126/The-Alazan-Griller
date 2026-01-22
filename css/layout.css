@@ -1206,4 +1206,17 @@ body video{
   background: #000 !important;
 }
 
+/* ===============================
+   VIDEO MÁS GRANDE
+================================ */
+
+.event-media{
+  max-width: 100% !important;
+  margin: 0 auto 20px auto !important;
+}
+
+.event-media video{
+  transform: scale(1.15);   /* 🔥 agranda el video */
+  transform-origin: center;
+}
 
