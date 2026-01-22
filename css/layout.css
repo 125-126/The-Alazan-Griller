@@ -1231,15 +1231,22 @@ body video{
   background: #000 !important;
 }
 
-/* =================================================
-   HEADER – LOGO REDONDO + MENÚ MÓVIL (FINAL LIMPIO)
-================================================= */
+/* ===================================================
+   FIX DEFINITIVO — HEADER, LOGO y MENÚ MÓVIL
+   (no rompe el resto del sitio)
+=================================================== */
 
-.main-header{
-  overflow: hidden;
+/* Protege el header de reglas globales */
+.main-header img,
+.main-header video{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 
-/* CONTENEDOR DEL LOGO */
+/* ---------------- LOGO ---------------- */
+
 .main-header .logo{
   display: flex;
   align-items: center;
@@ -1247,40 +1254,42 @@ body video{
   flex-shrink: 0;
 }
 
-/* IMAGEN DEL LOGO */
+/* Logo redondo real */
 .main-header .logo-img{
   width: 48px;
   height: 48px;
-  border-radius: 50%;        /* 🔥 círculo perfecto */
-  object-fit: cover;        /* 🔥 recorte sin deformar */
-  background: #000;         /* por si la imagen tiene transparencia */
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #000;
   display: block;
 }
 
-/* TEXTO DEL LOGO */
-.logo-text{
+/* Texto del logo */
+.main-header .logo-text{
   display: flex;
   flex-direction: column;
   line-height: 1;
 }
 
-.logo-text span{
+.main-header .logo-text span{
   font-size: 12px;
   letter-spacing: 2px;
   color: var(--dorado);
 }
 
-/* TAMAÑO EN CELULAR */
+/* Tamaño en celular */
 @media (max-width: 768px){
   .main-header .logo-img{
     width: 40px;
     height: 40px;
+    min-width: 40px;
+    min-height: 40px;
   }
 }
 
-/* =========================
-   MENÚ MÓVIL — FIX
-========================= */
+/* ---------------- MENÚ MÓVIL ---------------- */
 
 body{
   overflow-x: hidden;
@@ -1297,4 +1306,3 @@ body{
     right: 0;
   }
 }
-
