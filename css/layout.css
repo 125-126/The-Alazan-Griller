@@ -1216,7 +1216,7 @@ body video{
 }
 
 .event-media video{
-  transform: scale(1.15);   /* 🔥 agranda el video */
+  transform: scale(2.15);   /* 🔥 agranda el video */
   transform-origin: center;
 }
 
