@@ -1290,3 +1290,39 @@ body video{
 .main-header img{
   max-height: 60px;
 }
+
+/* =====================================
+   LOGO – FIX DESKTOP + CÍRCULO
+===================================== */
+
+/* Tamaño correcto SOLO en computadora */
+@media (min-width: 769px) {
+  .main-header .logo-img{
+    height: 48px !important;
+    width: 48px !important;
+    max-height: 48px !important;
+    max-width: 48px !important;
+  }
+}
+
+/* En móvil lo dejamos como está */
+@media (max-width: 768px) {
+  .main-header .logo-img{
+    height: 42px !important;
+    width: auto !important;
+  }
+}
+
+/* Forma circular del logo */
+.main-header .logo-img{
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  background: #000;
+  padding: 2px; /* pequeño marco elegante */
+}
+
+/* Evita que reglas globales lo deformen */
+.main-header img{
+  width: auto !important;
+  height: auto !important;
+}
