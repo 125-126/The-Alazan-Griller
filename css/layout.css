@@ -1231,329 +1231,70 @@ body video{
   background: #000 !important;
 }
 
-/* ===============================
-   FIX LOGO HEADER
-=============================== */
+/* =================================================
+   HEADER – LOGO REDONDO + MENÚ MÓVIL (FINAL LIMPIO)
+================================================= */
 
-.main-header .logo-img{
-  width: auto !important;
-  height: 42px !important;
-  max-height: 42px !important;
-  object-fit: contain !important;
-  display: block;
+.main-header{
+  overflow: hidden;
 }
 
+/* CONTENEDOR DEL LOGO */
 .main-header .logo{
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
-.main-header .logo span{
-  display: inline;
+/* IMAGEN DEL LOGO */
+.main-header .logo-img{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;        /* 🔥 círculo perfecto */
+  object-fit: cover;        /* 🔥 recorte sin deformar */
+  background: #000;         /* por si la imagen tiene transparencia */
+  display: block;
+}
+
+/* TEXTO DEL LOGO */
+.logo-text{
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-text span{
   font-size: 12px;
   letter-spacing: 2px;
   color: var(--dorado);
 }
 
-/* ===============================
-   PROTECCIÓN DE LOGO
-=============================== */
-
-.main-header img{
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain !important;
-}
-
-.main-header .logo-img{
-  height: 42px !important;
-  max-height: 42px !important;
-  width: auto !important;
-}
-
-/* Evita que la regla global afecte el header */
-.main-header video,
-.main-header img{
-  max-height: 60px;
-}
-
-/* =====================================
-   LOGO – FIX DESKTOP + CÍRCULO
-===================================== */
-
-/* Tamaño correcto SOLO en computadora */
-@media (min-width: 769px) {
-  .main-header .logo-img{
-    height: 48px !important;
-    width: 48px !important;
-    max-height: 48px !important;
-    max-width: 48px !important;
-  }
-}
-
-/* En móvil lo dejamos como está */
-@media (max-width: 768px) {
-  .main-header .logo-img{
-    height: 42px !important;
-    width: auto !important;
-  }
-}
-
-/* Forma circular del logo */
-.main-header .logo-img{
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  background: #000;
-  padding: 2px; /* pequeño marco elegante */
-}
-
-/* Evita que reglas globales lo deformen */
-.main-header img{
-  width: auto !important;
-  height: auto !important;
-}
-
-/* =====================================
-   LOGO – FOTO 100% REDONDA
-===================================== */
-
-.main-header .logo-img{
-  width: 48px !important;
-  height: 48px !important;
-  border-radius: 50% !important;   /* círculo perfecto */
-  object-fit: cover !important;   /* recorta sin deformar */
-  overflow: hidden !important;
-  background: #000;               /* si la imagen tiene transparencia */
-}
-
-/* En móvil un poco más pequeño */
+/* TAMAÑO EN CELULAR */
 @media (max-width: 768px){
   .main-header .logo-img{
-    width: 40px !important;
-    height: 40px !important;
+    width: 40px;
+    height: 40px;
   }
 }
 
-/* Protege el logo de reglas globales */
-.main-header img{
-  width: auto !important;
-  height: auto !important;
-}
-
-/* ================================
-   LOGO – BLOQUEO DEFINITIVO
-================================ */
-
-/* El contenedor del logo */
-.main-header .logo{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* La imagen del logo */
-.main-header .logo-img{
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  min-height: 48px !important;
-
-  border-radius: 50% !important;     /* 🔥 círculo perfecto */
-  object-fit: cover !important;      /* 🔥 recorte limpio */
-  overflow: hidden !important;
-
-  background: #000;
-  padding: 2px;
-}
-
-/* En móvil */
-@media (max-width: 768px){
-  .main-header .logo-img{
-    width: 40px !important;
-    height: 40px !important;
-    min-width: 40px !important;
-    min-height: 40px !important;
-  }
-}
-
-/* Desactiva TODAS las reglas globales que lo rompen */
-.main-header img{
-  width: 48px !important;
-  height: 48px !important;
-  max-width: none !important;
-  max-height: none !important;
-  object-fit: cover !important;
-}
-
-/* ===================================
-   FIX MENU MÓVIL – NO SE DESBORDA
-=================================== */
-
-@media (max-width: 768px){
-
-  body{
-    overflow-x: hidden !important;
-  }
-
-  .main-nav{
-    width: 75% !important;
-    max-width: 300px !important;
-    right: -100% !important;
-  }
-
-  .main-nav.show{
-    right: 0 !important;
-  }
-
-}
-/* ==================================================
-   FIX GLOBAL — LOGO, HEADER y MENÚ MÓVIL
-   NO ROMPE NADA EXISTENTE
-================================================== */
-
-/* Evita que imágenes y videos rompan el layout */
-.main-header img,
-.main-header video{
-  width:auto !important;
-  height:auto !important;
-  max-width:100%;
-}
-
-/* =====================================
-   LOGO REDONDO Y RESPONSIVE
-===================================== */
-
-.main-header .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-shrink:0;
-}
-
-.main-header .logo-img{
-  width:48px !important;
-  height:48px !important;
-  max-width:48px !important;
-  max-height:48px !important;
-  border-radius:50%;
-  object-fit:cover;
-  overflow:hidden;
-  display:block;
-}
-
-/* En celular un poco más pequeño */
-@media(max-width:768px){
-  .main-header .logo-img{
-    width:40px !important;
-    height:40px !important;
-    max-width:40px !important;
-    max-height:40px !important;
-  }
-}
-
-/* =====================================
-   TEXTO DEL LOGO
-===================================== */
-
-.logo-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1;
-}
-
-.logo-text span{
-  font-size:12px;
-  color:var(--dorado);
-  letter-spacing:2px;
-}
-
-/* =====================================
-   FIX DEL MENÚ MÓVIL
-   (el espacio negro a la derecha)
-===================================== */
+/* =========================
+   MENÚ MÓVIL — FIX
+========================= */
 
 body{
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
-@media(max-width:768px){
+@media (max-width: 768px){
   .main-nav{
-    width:75% !important;
-    max-width:320px !important;
-    right:-100% !important;
+    width: 75%;
+    max-width: 320px;
+    right: -100%;
   }
 
   .main-nav.show{
-    right:0 !important;
-  }
-}
-
-/* Evita que el logo empuje el menú */
-.main-header{
-  overflow:hidden;
-}
-
-
-/* =====================================
-   HEADER – LOGO Y MENÚ (FIX LIMPIO)
-===================================== */
-
-.main-header{
-  overflow:hidden;
-}
-
-/* Logo */
-.main-header .logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-/* Imagen del logo */
-.main-header .logo-img{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  object-fit:cover;
-  background:#000;
-}
-
-/* Texto del logo */
-.logo-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1;
-}
-
-.logo-text span{
-  font-size:12px;
-  letter-spacing:2px;
-  color:var(--dorado);
-}
-
-/* Móvil */
-@media (max-width:768px){
-  .main-header .logo-img{
-    width:40px;
-    height:40px;
-  }
-}
-
-/* Menú móvil */
-@media (max-width:768px){
-  body{
-    overflow-x:hidden;
-  }
-
-  .main-nav{
-    width:75%;
-    max-width:320px;
-    right:-100%;
-  }
-
-  .main-nav.show{
-    right:0;
+    right: 0;
   }
 }
 
