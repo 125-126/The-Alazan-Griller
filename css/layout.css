@@ -1206,17 +1206,18 @@ body video{
   background: #000 !important;
 }
 
-/* ===============================
-   VIDEO MÁS GRANDE
-================================ */
+/* =====================================
+   VIDEO EVENTOS – TAMAÑO REAL GRANDE
+===================================== */
 
 .event-media{
-  max-width: 100% !important;
-  margin: 0 auto 20px auto !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 7 !important;   /* más alto que 16:9 */
 }
 
 .event-media video{
-  transform: scale(8.15);   /* 🔥 agranda el video */
-  transform-origin: center;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
 }
 
