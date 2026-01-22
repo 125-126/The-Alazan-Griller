@@ -163,3 +163,38 @@ video{background:#000;}
     max-height:36px;
   }
 }
+@media (max-width:768px){
+
+  .menu-grid{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .gallery-grid{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .events-grid{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .menu-card img,
+  .gallery-grid img,
+  .event-card img,
+  .event-media{
+    height:170px !important;
+  }
+
+}
+
+@media (max-width:768px){
+  .contact-form{
+    padding:20px !important;
+  }
+
+  .contact-form h2{
+    font-size:22px;
+  }
+}
