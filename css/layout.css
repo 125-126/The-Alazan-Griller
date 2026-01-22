@@ -1243,3 +1243,28 @@ body video{
   height: 100% !important;
   background: #000 !important;
 }
+
+/* ===============================
+   FIX LOGO HEADER
+=============================== */
+
+.main-header .logo-img{
+  width: auto !important;
+  height: 42px !important;
+  max-height: 42px !important;
+  object-fit: contain !important;
+  display: block;
+}
+
+.main-header .logo{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.main-header .logo span{
+  display: inline;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--dorado);
+}
