@@ -1189,5 +1189,21 @@ body video{
   object-fit: contain !important;
 }
 
+/* =====================================
+   EVENT VIDEO – ALTURA AUTOMÁTICA
+===================================== */
+
+.event-media{
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  overflow: visible !important;
+}
+
+.event-media video{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background: #000 !important;
+}
 
 
