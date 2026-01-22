@@ -1060,4 +1060,39 @@ video{
 
 }
 
+/* ==============================
+   MOBILE LOCK – NO SE ROMPE NADA
+============================== */
+
+@media (max-width: 768px) {
+
+  /* MENÚ */
+  body .menu-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  body .menu-card img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+  }
+
+  /* GALERÍA */
+  body .gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  body .gallery-grid img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+  }
+
+}
 
