@@ -1172,15 +1172,21 @@ video{
   }
 
 }
-/* ===============================
-   VIDEO EVENTOS – NO RECORTAR
-================================ */
+/* ======================================
+   FIX FINAL VIDEO EVENTOS – NO CORTAR
+====================================== */
 
-.event-media video{
+.event-media video,
+.event-card video{
+  object-fit: contain !important;
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain !important;   /* 🔥 muestra el video completo */
-  background: #000;
+  background: #000 !important;
+}
+
+/* Evita que la regla global lo vuelva a cortar */
+body video{
+  object-fit: contain !important;
 }
 
 
