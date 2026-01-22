@@ -122,7 +122,7 @@ video{background:#000;}
 ========================== */
 section{scroll-margin-top:120px;}
 .section-header{text-align:center;max-width:700px;margin:0 auto 60px;}
-.section-tag{display:inline-block;background:rgba(250,204,21,.15);color:var(--dorado);padding:6px 16px;border-radius:20px;font-size:13px;margin-bottom:14px;}
+.section-tag{display:inline-block;background:rgba(250,204,21,.15);color:var(--dorado);padding:6px 16px;border-radius:20px;font-size:13px;margin-bottom:14px;font-weight:700;}
 .section-header h2{font-family:'Playfair Display',serif;font-size:36px;margin-bottom:10px;}
 .section-header p{color:#9ca3af;font-size:16px;}
 .reveal{opacity:0;transform:translateY(40px);transition:1s;}
