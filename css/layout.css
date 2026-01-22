@@ -1326,3 +1326,30 @@ body video{
   width: auto !important;
   height: auto !important;
 }
+
+/* =====================================
+   LOGO – FOTO 100% REDONDA
+===================================== */
+
+.main-header .logo-img{
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;   /* círculo perfecto */
+  object-fit: cover !important;   /* recorta sin deformar */
+  overflow: hidden !important;
+  background: #000;               /* si la imagen tiene transparencia */
+}
+
+/* En móvil un poco más pequeño */
+@media (max-width: 768px){
+  .main-header .logo-img{
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+/* Protege el logo de reglas globales */
+.main-header img{
+  width: auto !important;
+  height: auto !important;
+}
