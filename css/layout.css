@@ -87,3 +87,42 @@ video{background:#000;}
 
 @media(max-width:1024px){.hero-inner{margin-left:4%;}} 
 @media(max-width:768px){.footer-container{text-align:center;} .footer-col{align-items:center;} .whatsapp-float{right:15px;bottom:15px;padding:12px 18px;font-size:14px;}} 
+
+/* ===== FIX STRUCTURE ===== */
+.section-header{text-align:center;max-width:700px;margin:0 auto 60px;}
+.section-tag{display:inline-block;background:rgba(250,204,21,.15);color:var(--dorado);padding:6px 16px;border-radius:20px;font-size:13px;margin-bottom:14px;}
+.section-header h2{font-family:'Playfair Display',serif;font-size:36px;margin-bottom:10px;}
+.section-header p{color:#9ca3af;font-size:16px;}
+
+/* ===== MENU CTA ===== */
+.menu-cta{text-align:center;margin-top:60px;}
+
+/* ===== EVENTS FIX ===== */
+.event-card img{width:100%;height:260px;object-fit:cover;}
+.event-content{padding:22px;}
+.event-content h3{font-size:20px;margin-bottom:10px;}
+.event-content p{color:#9ca3af;font-size:15px;}
+
+/* ===== CONTACT FIX ===== */
+.contact-section{background:#0b1220;padding:100px 20px;}
+.contact-container{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+.contact-form{background:#020617;padding:40px;border-radius:24px;display:flex;flex-direction:column;gap:12px;}
+.contact-form input,.contact-form textarea{background:#0b1220;border:none;padding:14px 16px;border-radius:12px;color:#fff;}
+.contact-form label{font-size:14px;color:#9ca3af;}
+
+/* ===== FOOTER FIX ===== */
+.footer-brand h3 span{color:var(--dorado);}
+.footer-column ul{list-style:none;padding:0;}
+.footer-column li{margin-bottom:10px;}
+.footer-socials a{margin-right:12px;}
+
+/* ===== LOGO LOCK ===== */
+.logo-img{height:42px;max-height:42px;width:auto;object-fit:contain;}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:1s;}
+.reveal.active{opacity:1;transform:translateY(0);}
+.reveal.left{transform:translateX(-40px);}
+.reveal.right{transform:translateX(40px);}
+.reveal.active.left,.reveal.active.right{transform:translateX(0);}
+
