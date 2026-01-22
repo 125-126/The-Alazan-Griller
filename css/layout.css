@@ -1353,3 +1353,48 @@ body video{
   width: auto !important;
   height: auto !important;
 }
+
+/* ================================
+   LOGO – BLOQUEO DEFINITIVO
+================================ */
+
+/* El contenedor del logo */
+.main-header .logo{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* La imagen del logo */
+.main-header .logo-img{
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+
+  border-radius: 50% !important;     /* 🔥 círculo perfecto */
+  object-fit: cover !important;      /* 🔥 recorte limpio */
+  overflow: hidden !important;
+
+  background: #000;
+  padding: 2px;
+}
+
+/* En móvil */
+@media (max-width: 768px){
+  .main-header .logo-img{
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+}
+
+/* Desactiva TODAS las reglas globales que lo rompen */
+.main-header img{
+  width: 48px !important;
+  height: 48px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+}
