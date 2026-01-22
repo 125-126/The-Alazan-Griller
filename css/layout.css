@@ -1494,3 +1494,66 @@ body{
   overflow:hidden;
 }
 
+
+/* =====================================
+   HEADER – LOGO Y MENÚ (FIX LIMPIO)
+===================================== */
+
+.main-header{
+  overflow:hidden;
+}
+
+/* Logo */
+.main-header .logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* Imagen del logo */
+.main-header .logo-img{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#000;
+}
+
+/* Texto del logo */
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-text span{
+  font-size:12px;
+  letter-spacing:2px;
+  color:var(--dorado);
+}
+
+/* Móvil */
+@media (max-width:768px){
+  .main-header .logo-img{
+    width:40px;
+    height:40px;
+  }
+}
+
+/* Menú móvil */
+@media (max-width:768px){
+  body{
+    overflow-x:hidden;
+  }
+
+  .main-nav{
+    width:75%;
+    max-width:320px;
+    right:-100%;
+  }
+
+  .main-nav.show{
+    right:0;
+  }
+}
+
