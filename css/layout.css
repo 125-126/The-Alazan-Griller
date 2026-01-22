@@ -1206,18 +1206,19 @@ body video{
   background: #000 !important;
 }
 
-/* =====================================
-   VIDEO EVENTOS – TAMAÑO REAL GRANDE
-===================================== */
+
+/* =========================================
+   VIDEO EVENTOS – TAMAÑO GRANDE (FINAL)
+========================================= */
 
 .event-media{
-  width: 100% !important;
-  aspect-ratio: 16 / 7 !important;   /* más alto que 16:9 */
+  aspect-ratio: 16 / 6 !important;   /* 🔥 mucho más alto */
+  overflow: visible !important;
 }
 
 .event-media video{
+  object-fit: contain !important;
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain !important;
+  background: #000 !important;
 }
-
