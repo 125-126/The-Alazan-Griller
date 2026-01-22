@@ -1132,5 +1132,37 @@ video{
   }
 
 }
+/* ===============================
+   MOBILE – ESPACIO VERTICAL
+   (EVENTOS + CTA)
+================================ */
+
+@media (max-width: 768px) {
+
+  /* Sección de eventos */
+  body .events-section{
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Cards de eventos */
+  body .event-card{
+    margin-bottom: 20px !important;
+  }
+
+  /* Bloque CTA (donde está DISPONIBILIDAD) */
+  body .events-cta{
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    margin: 0 !important;
+  }
+
+  /* Botón grande */
+  body .events-cta .btn,
+  body .events-cta a{
+    margin: 0 auto !important;
+  }
+
+}
 
 
