@@ -978,18 +978,9 @@ section {
     padding: 120px 20px;
   }
 }
-/* ===============================
-   REGLA GLOBAL DE MEDIOS (CLAVE)
-================================ */
 
-/* IMÁGENES Y VIDEOS SIEMPRE RECORTADOS */
-img,
-video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+
+
 
 /* ===============================
    EVENTOS – NO CAMBIA AL GIRAR
@@ -1159,11 +1150,7 @@ video{
 
 @media (max-width: 768px) {
 
-  /* Quita la regla global destructiva */
-  body img,
-  body video{
-    height: auto !important;
-  }
+
 
   /* EVENTOS */
   body .event-card{
