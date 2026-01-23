@@ -56,3 +56,9 @@ body{background:white;counter-reset:page}
     color:#444;
   }
 }
+@media print{
+  .content-block{
+    page-break-inside:avoid;
+    break-inside:avoid;
+  }
+}
