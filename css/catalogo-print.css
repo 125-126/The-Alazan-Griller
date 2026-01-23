@@ -25,17 +25,24 @@ body{
 /* Cada página = una hoja A4 */
 .pagina{
   width:210mm !important;
-  height:297mm !important;
   min-height:297mm !important;
-  max-height:297mm !important;
   margin:0 !important;
   padding:45mm 32mm 40mm !important;
-  box-shadow:none !important;
   page-break-after:always !important;
   break-after:page !important;
-  overflow:hidden !important;
 }
 
+   .content-block,
+.menu-list,
+ul,
+p,
+h2,
+h3,
+h4{
+  page-break-inside:avoid;
+}
+
+   
 /* Quitar header web */
 .main-header,.pdf-bar,.main-footer{
   display:none !important;
@@ -48,10 +55,13 @@ body{
 }
 
 /* Mantener franjas */
-.pagina::before,.pagina::after{
+.pagina::before,
+   .pagina::after{
   position:absolute !important;
 }
-
+body{
+  counter-reset:page;
+}
 /* Mantener bloques alineados */
 .content-block{
   page-break-inside:avoid;
