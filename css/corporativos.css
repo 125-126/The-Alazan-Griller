@@ -1,21 +1,22 @@
-/* ============================
-   CATÁLOGO BASE (WEB)
-============================ */
+/* ======================
+   CATÁLOGO WEB MEJORADO
+====================== */
 
-.catalogo{
+.catalogo {
   background:#eaeaea;
   padding:60px 0;
   font-family:'Inter',sans-serif;
   color:#2b2b2b;
 }
 
-.pdf-bar{
+/* PDF BAR */
+.pdf-bar {
   text-align:center;
   padding:20px;
   background:#111;
 }
 
-.pdf-bar button{
+.pdf-bar button {
   background:#c89b3c;
   color:#111;
   border:none;
@@ -23,225 +24,173 @@
   font-weight:600;
   letter-spacing:2px;
   cursor:pointer;
+  border-radius:6px;
+  transition:0.3s;
 }
 
-/* ============================
-   PAGINAS WEB
-============================ */
+.pdf-bar button:hover {
+  background:#e8c97a;
+}
 
-.pagina{
+/* ======================
+   PAGINAS
+====================== */
+.pagina {
   position:relative;
-  max-width:210mm;
+  max-width:900px;
   margin:60px auto;
-  padding:50px 40px 60px;
+  padding:50px 40px;
   background:#fff;
-  box-shadow:0 20px 45px rgba(0,0,0,.18);
+  border-radius:16px;
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+  transition:0.3s;
 }
-.page-body{
+.page-body {
   display:flex;
   flex-direction:column;
-  gap:24px;
+  gap:28px;
 }
 
-.content-block{
-  display:flex;
-  gap:24px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-
-
-/* ============================
+/* ======================
    PORTADA
-============================ */
-
-.portada{
+====================== */
+.portada {
   background:#f7f2ed;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
   text-align:center;
+  padding:60px 20px;
+  border-radius:16px;
 }
-
-.portada h1{
+.portada h1 {
   font-family:'Playfair Display',serif;
-  font-size:52px;
-  letter-spacing:2px;
+  font-size:48px;
   color:#1f1f1f;
-  margin-bottom:20px;
+  margin-bottom:16px;
 }
-
-.portada .slogan{
-  margin-top:40px;
-  font-size:14px;
+.portada .slogan {
+  font-size:16px;
   letter-spacing:4px;
   color:#777;
 }
 
-/* ============================
+/* ======================
    BLOQUES DE CONTENIDO
-============================ */
-
-.content-block{
+====================== */
+.content-block {
   display:flex;
   gap:20px;
   align-items:center;
-  margin:20px 0;
-  break-inside:avoid;
-  page-break-inside:avoid;
+  flex-wrap:wrap;
+  background:#f9fafb;
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  transition:0.3s;
+}
+.content-block:hover {
+  transform:translateY(-4px);
 }
 
-.content-block.reverse{
+.content-block.reverse {
   flex-direction:row-reverse;
 }
 
-/* Imagen compacta */
-.content-block .image{
-  flex:0 0 34%;
-  height:150px;
+.content-block .image {
+  flex:0 0 35%;
+  height:180px;
   background-size:cover;
   background-position:center;
-  border-radius:8px;
+  border-radius:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.1);
 }
 
-/* Texto */
-.content-block .text{
+.content-block .text {
   flex:1;
 }
-
-/* Tipografía compacta */
-.content-block p,
-.content-block li{
+.intro-text {
+  font-size:14px;
+  line-height:1.6;
+  color:#374151;
+}
+.lista-ejecutiva li,
+.menu-list li {
+  font-size:14px;
+  margin-bottom:4px;
+}
+.titulo-seccion {
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  color:#7a1f1f;
+  margin-bottom:14px;
+}
+.detalle {
   font-size:13px;
-  line-height:1.4;
+  color:#6b7280;
+}
+.precio {
+  font-size:18px;
+  font-weight:700;
+  color:#7a1f1f;
+  margin-top:6px;
 }
 
-/* ============================
-   IMAGENES
-============================ */
-
-.image{
-  width:100%;
-  background-size:cover;
-  background-position:center;
-  border-radius:8px;
-}
-
-/* ============================
-   LISTAS
-============================ */
-
-ul{
-  margin:6px 0;
-  padding-left:18px;
-}
-
-/* ============================
-   MOBILE (TELÉFONO)
-============================ */
-
-
-  .catalogo{
-    padding:10px;
-  }
-
-@media (max-width:768px){
-  .pagina{
-    max-width:100%;
-    margin:20px 0;
+/* ======================
+   RESPONSIVE
+====================== */
+@media (max-width:768px) {
+  .pagina {
+    margin:20px 16px;
     padding:24px;
     box-shadow:none;
   }
-
-  .content-block{
+  .content-block {
     flex-direction:column;
+    gap:16px;
   }
-
-  .content-block .image{
+  .content-block .image {
     width:100%;
-    height:200px;
+    height:auto;
+    aspect-ratio:16/9;
+  }
+  .portada h1 {
+    font-size:32px;
+  }
+  .portada .slogan {
+    font-size:14px;
+  }
+  .titulo-seccion {
+    font-size:22px;
   }
 }
 
-/* ============================
-   IMPRESIÓN PDF
-============================ */
-
-@media print{
-
-  body{
-    background:#fff;
-    counter-reset:page;
-  }
-
-  .main-header,
-  .pdf-bar,
-  .main-footer{
-    display:none !important;
-  }
-
-  .catalogo{
-    width:210mm;
-    margin:0;
-    padding:0;
-    background:#fff;
-  }
-
-  .pagina{
-    width:210mm;
-    min-height:297mm;
-    padding:32mm 22mm 30mm;
-    page-break-after:always;
-    break-after:page;
-    box-shadow:none;
-    overflow:visible;
-  }
-
-  /* Encabezado */
-  .pagina::before{
-    content:"THE ALAZAN GRILLER";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:28px;
-    background:linear-gradient(90deg,#e8c97a,#c89b3c,#e8c97a);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:'Playfair Display',serif;
-    font-size:11px;
-    letter-spacing:3px;
-    color:#2b2b2b;
-  }
-
-  /* Pie */
-  .pagina::after{
-    content:"Página " counter(page);
-    counter-increment:page;
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:26px;
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    padding-right:22mm;
-    font-size:11px;
-    color:#444;
-  }
-
-  /* Evitar cortes */
-  h2,h3,h4,p,ul,.content-block{
-    break-inside:avoid;
-    page-break-inside:avoid;
-  }
-
+/* ======================
+   MENÚ HAMBURGUESA MÓVIL
+====================== */
+.mobile-menu-toggle {
+  display:none;
+  cursor:pointer;
+  font-size:24px;
+  color:#fff;
 }
 
-
-
-
-
-
+@media (max-width:768px){
+  .mobile-menu-toggle {
+    display:block;
+  }
+  .main-nav {
+    display:flex;
+    flex-direction:column;
+    background:#0b1220;
+    position:absolute;
+    top:64px;
+    right:0;
+    width:200px;
+    padding:16px;
+    display:none;
+  }
+  .main-nav.open {
+    display:flex;
+  }
+  .main-nav a {
+    margin:8px 0;
+  }
+}
