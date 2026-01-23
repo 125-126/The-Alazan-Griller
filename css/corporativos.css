@@ -23,11 +23,37 @@ a { text-decoration:none; color:inherit; }
   align-items:center;
   box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
-.logo { display:flex; align-items:center; gap:12px; font-family:'Playfair Display', serif; color:#fff; font-size:22px; }
-.logo span { font-size:14px; color:#c89b3c; }
-.main-nav { display:flex; gap:20px; }
-.main-nav a { color:#fff; padding:6px 12px; border-radius:6px; font-weight:500; transition:0.3s; }
-.main-nav a:hover, .main-nav a.nav-highlight { background:#c89b3c; color:#111; }
+
+/* LOGO igual que otras páginas */
+.logo {
+  display:inline-block; /* antes era flex */
+  font-family:'Playfair Display', serif;
+  color:#fff;
+  font-size:20px; /* tamaño igual al de otras páginas */
+  line-height:1.1; /* para separar líneas de texto */
+}
+.logo span {
+  display:block; /* cada palabra en línea diferente */
+  font-size:14px;
+  color:#c89b3c;
+}
+
+/* MENÚ principal igual que otras páginas */
+.main-nav {
+  display:flex;
+  gap:12px; /* igual que tus otras páginas */
+}
+.main-nav a {
+  color:#fff;
+  padding:4px 10px; /* igual que tus otras páginas */
+  border-radius:0; /* sin redondeo */
+  font-weight:500;
+  transition:0.3s;
+}
+.main-nav a:hover, .main-nav a.nav-highlight {
+  background:#c89b3c;
+  color:#111;
+}
 
 /* -----------------------
    MENÚ MÓVIL
@@ -37,16 +63,17 @@ a { text-decoration:none; color:inherit; }
   .mobile-menu-toggle { display:block; }
   .main-nav {
     position:absolute;
-    top:64px; right:0;
+    top:60px; /* ajustado al header */
+    right:0;
     background:#0b1220;
     flex-direction:column;
-    width:200px;
-    padding:16px;
-    border-radius:0 0 12px 12px;
+    width:100%; /* igual que otras páginas */
+    padding:16px 0;
+    border-radius:0; /* sin borde redondeado */
     display:none;
   }
   .main-nav.open { display:flex; }
-  .main-nav a { margin:8px 0; }
+  .main-nav a { margin:8px 0; padding:8px 16px; } /* consistente con otras páginas */
 }
 
 /* -----------------------
@@ -151,4 +178,3 @@ a { text-decoration:none; color:inherit; }
   .content-block.reverse { flex-direction:row-reverse; }
   .content-block .image { border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.12); }
 }
-
