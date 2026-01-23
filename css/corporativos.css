@@ -31,15 +31,25 @@
 
 .pagina{
   position:relative;
-  width:210mm;
-  min-height:297mm;      /* CLAVE: NO altura fija */
-  margin:40px auto;
-  padding:40mm 32mm 40mm;
+  max-width:210mm;
+  margin:60px auto;
+  padding:50px 40px 60px;
   background:#fff;
   box-shadow:0 20px 45px rgba(0,0,0,.18);
-  box-sizing:border-box;
-  overflow:visible;     /* DEJA CRECER */
 }
+.page-body{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.content-block{
+  display:flex;
+  gap:24px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
 
 /* ============================
    PORTADA
@@ -130,34 +140,27 @@ ul{
    MOBILE (TELÉFONO)
 ============================ */
 
-@media (max-width:768px){
 
   .catalogo{
     padding:10px;
   }
 
+@media (max-width:768px){
   .pagina{
-    width:100%;
-    min-height:auto;
-    margin:12px 0;
-    padding:20px 16px 30px;
+    max-width:100%;
+    margin:20px 0;
+    padding:24px;
     box-shadow:none;
   }
 
   .content-block{
     flex-direction:column;
-    gap:12px;
-  }
-
-  .content-block.reverse{
-    flex-direction:column;
   }
 
   .content-block .image{
     width:100%;
-    height:160px;
+    height:200px;
   }
-
 }
 
 /* ============================
@@ -236,6 +239,7 @@ ul{
   }
 
 }
+
 
 
 
