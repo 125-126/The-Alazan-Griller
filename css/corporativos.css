@@ -28,9 +28,28 @@ ul li{margin-bottom:8px;font-size:15px}
 .menu-list{padding-left:18px}
 .menu-list li{font-size:15px;color:#444;margin-bottom:6px}
 @media print{.main-header,.pdf-bar,.main-footer{display:none}.pagina{margin:0;box-shadow:none}@page{margin:0}}
-@media (max-width:1024px){body{overflow-x:auto}.catalogo{width:210mm;transform:scale(.7);transform-origin:top center;margin:0 auto}}
-@media (max-width:768px){.catalogo{transform:scale(.55)}}
-@media (max-width:500px){.catalogo{transform:scale(.45)}}
+/* ===== MOBILE VIEW ===== */
+@media (max-width:768px){
+  .catalogo{padding:20px}
+  .pagina{
+    width:100%;
+    min-height:auto;
+    margin:20px 0;
+    padding:30px 20px 40px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    page-break-after:auto;
+  }
+  .pagina::before,
+  .pagina::after{position:static;height:auto;padding:8px 0}
+  .content-block{grid-template-columns:1fr}
+  h2{font-size:28px}
+  h3{font-size:22px}
+}
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pagina{background:#fff}
+}
+
 
 
 
