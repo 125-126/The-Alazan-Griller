@@ -401,5 +401,77 @@ ul li {
   color: #c89b3c;
 }
 
+/* ========================= */
+/* BLOQUES CON IMAGEN + TEXTO */
+/* ========================= */
+.content-block {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 40px;
+  margin: 50px 0;
+  align-items: center;
+}
+
+.content-block.reverse {
+  grid-template-columns: 55% 45%;
+}
+
+.content-block.reverse .image {
+  order: 2;
+}
+
+/* IMÁGENES */
+.image {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+}
+
+/* TEXTO */
+.text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.detalle {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.descripcion {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.descripcion.extra {
+  font-style: italic;
+}
+
+.precio {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  border-left: 4px solid #c89b3c;
+  padding-left: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .content-block,
+  .content-block.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .image {
+    height: 220px;
+  }
+}
+
 
 
