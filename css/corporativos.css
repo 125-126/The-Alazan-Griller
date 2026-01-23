@@ -1,109 +1,37 @@
-/* ========================= */
-/* CONTENEDOR GENERAL */
-/* ========================= */
 .catalogo{background:#eaeaea;padding:60px 0;font-family:'Inter',sans-serif;color:#2b2b2b}
-
-/* ========================= */
-/* BARRA PDF */
-/* ========================= */
 .pdf-bar{text-align:center;padding:20px;background:#111}
 .pdf-bar button{background:#c89b3c;color:#111;border:none;padding:12px 28px;font-weight:600;letter-spacing:2px;cursor:pointer}
-
-/* ========================= */
-/* CONTADOR */
-/* ========================= */
 body{counter-reset:page}
-
-/* ========================= */
-/* PÁGINAS */
-/* ========================= */
 .pagina{position:relative;width:210mm;min-height:297mm;margin:60px auto;padding:45mm 32mm 40mm;background:#fff;box-shadow:0 20px 45px rgba(0,0,0,.18);line-height:1.8;page-break-after:always;break-after:page;overflow:hidden;counter-increment:page}
 .pagina:last-child{page-break-after:auto;break-after:auto}
-
-/* ========================= */
-/* FRANJA SUPERIOR */
-/* ========================= */
-.pagina::before{content:"THE ALAZAN GRILLER";position:absolute;top:0;left:0;width:100%;height:38px;background:#2b2b2b;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;letter-spacing:3px;color:#fff;z-index:10}
-
-/* ========================= */
-/* FRANJA INFERIOR */
-/* ========================= */
-.pagina::after{content:"Página " counter(page);position:absolute;bottom:0;left:0;width:100%;height:32px;background:#f0f0f0;display:flex;align-items:center;justify-content:flex-end;padding-right:25mm;font-size:12px;color:#444;z-index:10}
-
-/* ========================= */
-/* PORTADA */
-/* ========================= */
+.pagina::before{content:"THE ALAZAN GRILLER";position:absolute;top:0;left:0;width:100%;height:38px;background:linear-gradient(90deg,#e8c97a,#c89b3c,#e8c97a);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;letter-spacing:3px;color:#2b2b2b;z-index:10}
+.pagina::after{content:"Página " counter(page);position:absolute;bottom:0;left:0;width:100%;height:32px;background:#eaeaea;display:flex;align-items:center;justify-content:flex-end;padding-right:25mm;font-size:12px;color:#444;z-index:10}
 .portada{background:#f7f2ed;display:flex;flex-direction:column;justify-content:center;text-align:center}
 .portada h1{font-family:'Playfair Display',serif;font-size:52px;letter-spacing:2px;color:#1f1f1f;margin-bottom:20px}
 .portada h1 span{font-style:italic;font-weight:500}
 .portada .slogan{margin-top:60px;font-size:14px;letter-spacing:4px;color:#777}
-
-/* ========================= */
-/* ETIQUETAS */
-/* ========================= */
-.section-tag{display:inline-block;background:#2b2b2b;color:#fff;padding:6px 14px;font-size:12px;letter-spacing:1px;border-radius:2px;margin-bottom:25px;text-transform:uppercase}
-
-/* ========================= */
-/* TÍTULOS */
-/* ========================= */
+.section-tag{display:inline-block;background:#7a1f1f;color:#fff;padding:6px 14px;font-size:12px;letter-spacing:1px;border-radius:4px;margin-bottom:25px;text-transform:uppercase}
 h2{font-family:'Playfair Display',serif;font-size:42px;color:#2b2b2b;margin:0 0 30px}
 h3{font-family:'Playfair Display',serif;font-size:26px;margin-top:30px;color:#1f1f1f}
 h4{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:10px}
-
-/* ========================= */
-/* TEXTO */
-/* ========================= */
 p{font-size:15px;color:#444;max-width:90%}
 .intro-text{margin-bottom:20px}
-
-/* ========================= */
-/* LISTAS */
-/* ========================= */
 ul{padding-left:22px;max-width:90%}
 ul li{margin-bottom:8px;font-size:15px}
 .lista-ejecutiva li::marker{color:#c89b3c}
-
-/* ========================= */
-/* BLOQUES TEXTO + IMAGEN */
-/* ========================= */
-.content-block{display:grid;grid-template-columns:45% 55%;gap:30px;margin:40px 0;align-items:center;background:#faf9f7;padding:24px;border:1px solid #e5e5e5;border-radius:4px}
+.content-block{display:grid;grid-template-columns:45% 55%;gap:30px;margin:40px 0;align-items:center;background:#faf9f7;padding:24px;border-radius:8px;box-sizing:border-box}
 .content-block.reverse{grid-template-columns:55% 45%}
 .content-block.reverse .image{order:2}
-
-/* ========================= */
-/* IMÁGENES */
-/* ========================= */
-.image{height:260px;background-size:cover;background-position:center;border-radius:4px;width:100%}
-.image-block{height:260px;border:1px solid #ddd;margin:40px 0;display:flex;align-items:center;justify-content:center;color:#999;font-style:italic}
-
-/* ========================= */
-/* PAQUETES */
-/* ========================= */
+.image{height:260px;background-size:cover;background-position:center;border-radius:8px;width:100%}
 .detalle{font-size:14px;letter-spacing:1px;text-transform:uppercase;color:#777;margin-bottom:10px}
-.descripcion{font-size:15px;margin-bottom:12px}
-.descripcion.extra{font-style:italic}
-.precio{font-size:18px;font-weight:600;color:#2b2b2b;border-left:4px solid #c89b3c;padding-left:12px}
-
-/* ========================= */
-/* MENÚ */
-/* ========================= */
-.menu-title{font-family:'Playfair Display',serif;font-size:30px;margin:40px 0 20px;border-bottom:2px solid #c89b3c;padding-bottom:8px}
+.precio{font-size:16px;font-weight:600;color:#000;border-left:4px solid #c89b3c;padding-left:12px}
 .menu-list{padding-left:18px}
 .menu-list li{font-size:15px;color:#444;margin-bottom:6px}
-
-/* ========================= */
-/* IMPRESIÓN */
-/* ========================= */
 @media print{.main-header,.pdf-bar,.main-footer{display:none}.pagina{margin:0;box-shadow:none}@page{margin:0}}
+@media (max-width:1024px){body{overflow-x:auto}.catalogo{width:210mm;transform:scale(.7);transform-origin:top center;margin:0 auto}}
+@media (max-width:768px){.catalogo{transform:scale(.55)}}
+@media (max-width:500px){.catalogo{transform:scale(.45)}}
 
-/* ========================= */
-/* MODO CELULAR */
-/* ========================= */
-@media (max-width:768px){
-.catalogo{width:100%;padding:20px}
-.pagina{width:100%;min-height:auto;margin:20px auto;padding:80px 20px 60px}
-.content-block{grid-template-columns:1fr}
-}
 
 
 
