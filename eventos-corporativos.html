@@ -8,28 +8,24 @@
   <!-- FUENTES -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS GLOBAL -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
-
-  <!-- CSS CATÁLOGO -->
   <link rel="stylesheet" href="css/corporativos.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="main-header">
   <div class="header-container">
-
     <div class="logo">
       <img src="img/logores1.png" alt="Logo" class="logo-img">
       <div class="logo-text"><span>The</span> Alazan Griller</div>
     </div>
 
-    <nav class="main-nav" id="mainNav">
+    <nav class="main-nav">
       <a href="index.html">Inicio</a>
       <a href="menu.html">Menú</a>
       <a href="eventos.html">Eventos</a>
@@ -37,42 +33,29 @@
       <a href="quienes.html">Quiénes Somos</a>
       <a href="contacto.html">Contacto</a>
     </nav>
-
-    <div class="header-actions">
-      <button class="menu-toggle" id="menuToggle">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
   </div>
 </header>
 
-<!-- ================= BOTÓN PDF ================= -->
 <section class="pdf-bar">
   <button onclick="window.print()">📄 Descargar catálogo en PDF</button>
 </section>
 
-<!-- ================= CATÁLOGO ================= -->
 <main class="catalogo">
 
-  <!-- ===== PÁGINA 1 · PORTADA ===== -->
-  <section class="pagina portada">
-    <span class="section-tag">EVENTOS CORPORATIVOS</span>
-    <h1><span>Eventos</span><br>CORPORATIVOS</h1>
-    <p class="slogan">THE ALAZAN GRILLER</p>
-  </section>
+<!-- ================= PORTADA ================= -->
+<section class="pagina portada">
+  <span class="section-tag">EVENTOS CORPORATIVOS</span>
+  <h1><span>Eventos</span><br>CORPORATIVOS</h1>
+  <p class="slogan">THE ALAZAN GRILLER</p>
+</section>
 
- <!-- ===== PÁGINA · NUESTROS PAQUETES INCLUYEN ===== -->
+<!-- ================= INCLUYE ================= -->
 <section class="pagina">
   <span class="section-tag">INCLUYE</span>
   <h2>Nuestros paquetes incluyen</h2>
 
   <div class="content-block">
-    
-    <!-- IMAGEN -->
     <div class="image" style="background-image:url('img/cor1.png');"></div>
-
-    <!-- TEXTO -->
     <div class="text">
       <p class="intro-text">
         Nuestros paquetes corporativos están diseñados para ofrecer una experiencia
@@ -83,10 +66,10 @@
       <ul class="lista-ejecutiva">
         <li>Exquisita gastronomía</li>
         <li>Uso de salón con aire acondicionado</li>
-        <li>Montaje según la cantidad de participantes y capacidad del salón</li>
+        <li>Montaje según capacidad del salón</li>
         <li>Sillas plásticas</li>
         <li>Mesa para proyección</li>
-        <li>Mesa de apoyo para materiales</li>
+        <li>Mesa de apoyo</li>
         <li>Extensión eléctrica y regleta</li>
         <li>Pizarra y plumón</li>
         <li>Mantelería blanca</li>
@@ -95,86 +78,69 @@
         <li>Amplio parqueo</li>
       </ul>
     </div>
-
   </div>
 </section>
 
-  <!-- ===== PÁGINA 3 · PAQUETES ===== -->
+<!-- ================= PAQUETES ================= -->
 <section class="pagina">
   <span class="section-tag">PAQUETES</span>
   <h2>Nuestros paquetes</h2>
 
-  <!-- ===== PAQUETE 1 ===== -->
   <div class="content-block">
     <div class="image" style="background-image:url('img/cor2.png');"></div>
     <div class="text">
       <h3>Break Sencillo</h3>
       <p class="detalle">Uso de salón por 4 horas</p>
-      <p class="descripcion">Ideal para reuniones breves y presentaciones ejecutivas.</p>
-      <p class="precio">BREAK SENCILLO &nbsp; <strong>$ XXX</strong></p>
+      <p class="precio">$ XXX</p>
     </div>
   </div>
 
-  <!-- ===== PAQUETE 2 ===== -->
   <div class="content-block reverse">
     <div class="image" style="background-image:url('img/cor3.png');"></div>
     <div class="text">
       <h3>Break Doble</h3>
-      <p class="detalle">Uso de salón por 4 horas</p>
-      <p class="descripcion">(1 dulce y 1 salado)</p>
-      <p class="precio">BREAK DOBLE &nbsp; <strong>$ XXX</strong></p>
+      <p class="detalle">1 dulce y 1 salado</p>
+      <p class="precio">$ XXX</p>
     </div>
   </div>
 
-  <!-- ===== PAQUETE 3 ===== -->
   <div class="content-block">
     <div class="image" style="background-image:url('img/cor4.png');"></div>
     <div class="text">
       <h3>Media Jornada</h3>
-      <p class="detalle">Uso de salón por 6 horas</p>
-      <p class="descripcion">Break AM + Almuerzo</p>
+      <p class="detalle">6 horas · Break AM + Almuerzo</p>
       <p class="precio">$ XXX</p>
     </div>
   </div>
 
-  <!-- ===== PAQUETE 4 ===== -->
   <div class="content-block reverse">
-    <div class="image" style="background-image:url('img/corporativo/jornada-completa.jpg');"></div>
+    <div class="image" style="background-image:url('img/cor11.png');"></div>
     <div class="text">
       <h3>Jornada Completa</h3>
-      <p class="detalle">Uso de salón por 8 horas</p>
-      <p class="descripcion">Break AM + Almuerzo + Break PM</p>
+      <p class="detalle">8 horas · Break AM + Almuerzo + Break PM</p>
       <p class="precio">$ XXX</p>
-      <p class="descripcion extra">Desayuno + Almuerzo + Break PM</p>
     </div>
   </div>
-
 </section>
 
-<!-- ===== PÁGINA 4 · MENÚ ===== -->
+<!-- ================= BREAK AM ================= -->
 <section class="pagina">
   <span class="section-tag">MENÚ</span>
-  <h2>Opciones gastronómicas</h2>
+  <h2>Break AM</h2>
 
-  <!-- ================= BREAK AM ================= -->
-  <h3 class="menu-title">Break AM</h3>
-
-  <!-- Croissant -->
   <div class="content-block">
-    <div class="image" style="background-image:url('img/corporativo/cor5.png');"></div>
+    <div class="image" style="background-image:url('img/cor5.png');"></div>
     <div class="text">
       <h4>Croissant</h4>
       <ul class="menu-list">
-        <li>Suave pan croissant</li>
         <li>Jamón de pavo</li>
-        <li>Lechuga fresca</li>
+        <li>Lechuga</li>
         <li>Tomate</li>
         <li>Mayonesa</li>
       </ul>
     </div>
   </div>
 
-  <!-- Sandwich jamón y queso -->
   <div class="content-block reverse">
     <div class="image" style="background-image:url('img/cor6.png');"></div>
     <div class="text">
@@ -183,174 +149,103 @@
         <li>Pan Pullman</li>
         <li>Jamón de pavo</li>
         <li>Queso amarillo</li>
-        <li>Mayonesa</li>
-        <li>Lechuga</li>
-        <li>Tomate</li>
       </ul>
     </div>
   </div>
-
 </section>
 
-<!-- ===== PÁGINA · ALMUERZOS Y BREAK PM ===== -->
+<!-- ================= ALMUERZOS ================= -->
 <section class="pagina">
-
-  <!-- ================= ALMUERZOS ================= -->
   <span class="section-tag">MENÚ</span>
   <h2>Almuerzos</h2>
 
-  <!-- Lomo de cerdo -->
   <div class="content-block">
     <div class="image" style="background-image:url('img/cor7.png');"></div>
     <div class="text">
       <h4>Lomo de cerdo en salsa barbacoa</h4>
       <ul class="menu-list">
-        <li>4 onzas de lomo de cerdo a la parrilla con salsa barbacoa</li>
+        <li>4 oz lomo de cerdo</li>
         <li>Papa al horno</li>
-        <li>Vegetales al vapor</li>
+        <li>Vegetales</li>
         <li>2 panes</li>
       </ul>
     </div>
   </div>
 
-  <!-- Pollo -->
   <div class="content-block reverse">
     <div class="image" style="background-image:url('img/cor8.png');"></div>
     <div class="text">
       <h4>Filete de pollo en salsa de hongos o jalapeña</h4>
       <ul class="menu-list">
-        <li>4 onzas de filete de pollo a la plancha</li>
-        <li>Salsa de hongos o jalapeña</li>
+        <li>4 oz filete de pollo</li>
         <li>Arroz con vegetales</li>
-        <li>Ensalada fresca</li>
+        <li>Ensalada</li>
         <li>2 panes</li>
       </ul>
     </div>
   </div>
+</section>
 
-  <!-- Punta de res -->
-  <div class="content-block">
-    <div class="image" style="background-image:url('img/cor9.png');"></div>
-    <div class="text">
-      <h4>Punta de res en salsa jalapeña</h4>
-      <ul class="menu-list">
-        <li>4 onzas de punta de lomo de res con salsa jalapeña</li>
-        <li>Arroz</li>
-        <li>Vegetales al vapor</li>
-        <li>2 panes</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Churrasquito -->
-  <div class="content-block reverse">
-    <div class="image" style="background-image:url('img/cor10.png');"></div>
-    <div class="text">
-      <h4>Churrasquito</h4>
-      <ul class="menu-list">
-        <li>4 onzas de lomo de res</li>
-        <li>1 chorizo argentino</li>
-        <li>Arroz con vegetales</li>
-        <li>Chirimol</li>
-        <li>2 panes</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ===== PÁGINA · BREAK PM ===== -->
-<section class="pagina pagina-breakpm">
-
+<!-- ================= BREAK PM (PÁGINA PROPIA) ================= -->
+<section class="pagina">
   <span class="section-tag">MENÚ</span>
   <h2>Break PM</h2>
+
   <p class="intro-text">
-    Delicadas opciones dulces ideales para cerrar la jornada con un toque
-    gourmet y una experiencia reconfortante.
+    Delicadas opciones dulces ideales para cerrar la jornada con un toque gourmet.
   </p>
 
-  <!-- Pera al vino -->
   <div class="content-block">
     <div class="image" style="background-image:url('img/cor12.png');"></div>
     <div class="text">
       <h4>Pera al vino o a la moda</h4>
-      <ul class="menu-list">
-        <li>Pera cocida en vino especiado o versión tradicional</li>
-        <li>Presentación individual tipo postre gourmet</li>
-      </ul>
+      <p>Presentación individual gourmet</p>
     </div>
   </div>
 
-  <!-- Canoa -->
   <div class="content-block reverse">
-    <div class="image" style="background-image:url('img/corporativo/canoa.jpg');"></div>
+    <div class="image" style="background-image:url('img/cor13.png');"></div>
     <div class="text">
       <h4>Canoa</h4>
-      <ul class="menu-list">
-        <li>Postre tradicional horneado</li>
-        <li>Presentación individual</li>
-      </ul>
+      <p>Postre tradicional horneado</p>
     </div>
   </div>
 
-  <!-- Empanada de leche -->
   <div class="content-block">
-    <div class="image" style="background-image:url('img/corporativo/empanada-leche.jpg');"></div>
+    <div class="image" style="background-image:url('img/cor14.png');"></div>
     <div class="text">
       <h4>Empanada de leche</h4>
-      <ul class="menu-list">
-        <li>Empanada rellena de leche</li>
-        <li>2 unidades por porción</li>
-      </ul>
+      <p>2 unidades por porción</p>
     </div>
   </div>
 
-  <!-- Quesadilla -->
   <div class="content-block reverse">
-    <div class="image" style="background-image:url('img/corporativo/quesadilla.jpg');"></div>
+    <div class="image" style="background-image:url('img/cor15.png');"></div>
     <div class="text">
       <h4>Quesadilla</h4>
-      <ul class="menu-list">
-        <li>Textura suave</li>
-        <li>Sabor artesanal</li>
-      </ul>
+      <p>Textura suave · Sabor artesanal</p>
     </div>
   </div>
-
 </section>
-  
-  <!-- ===== PÁGINA 5 · CONTACTO ===== -->
-  <section class="pagina">
-    <span class="section-tag">CONTACTO</span>
-    <h2>Contáctanos</h2>
 
-    <p><strong>Email:</strong> elrodeo.restaurant2024@gmail.com</p>
-    <p><strong>Dirección:</strong> Carretera a Sonsonate km 28, polígono B #130</p>
+<!-- ================= CONTACTO ================= -->
+<section class="pagina">
+  <span class="section-tag">CONTACTO</span>
+  <h2>Contáctanos</h2>
 
-    <div class="image-block">
-      Imagen del restaurante o ubicación
-    </div>
+  <p><strong>Email:</strong> elrodeo.restaurant2024@gmail.com</p>
+  <p><strong>Dirección:</strong> Carretera a Sonsonate km 28</p>
 
-    <p class="slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
-  </section>
+  <div class="image-block">Imagen del restaurante</div>
+
+  <p class="slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
+</section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer class="main-footer">
-  <div class="footer-bottom">
-    <p>© 2026 The Alazan Griller. Todos los derechos reservados.</p>
-  </div>
+  <p>© 2026 The Alazan Griller</p>
 </footer>
-
-<script src="js/menu.js"></script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
