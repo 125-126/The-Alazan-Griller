@@ -190,3 +190,39 @@ a { text-decoration:none; color:inherit; }
   font-size:14px; /* tamaño consistente */
   line-height:1.1; 
 }
+
+/* -----------------------
+   LOGO & PÁGINA CORPORATIVOS
+----------------------- */
+body.eventos-corporativos .logo {
+  flex-direction: column; /* texto debajo de la imagen */
+  align-items: center;
+  gap: 4px;
+}
+
+body.eventos-corporativos .logo-text {
+  text-align: center;
+}
+
+/* Ajuste menú móvil */
+body.eventos-corporativos .mobile-menu-toggle {
+  display: block; /* aseguramos que se vea en móvil */
+}
+
+/* Asegurar que nav se abra en móvil */
+body.eventos-corporativos .main-nav {
+  display: none;
+}
+
+body.eventos-corporativos .main-nav.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  width: 200px;
+  padding: 16px;
+  background: #0b1220;
+  border-radius: 0 0 12px 12px;
+  gap: 8px;
+}
