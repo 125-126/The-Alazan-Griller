@@ -220,3 +220,36 @@ body{
     all:unset;
   }
 }
+/* ==========================
+   CONTROL REAL DE PAGINAS A4
+========================== */
+
+.pagina{
+  width:210mm;
+  height:297mm;              /* 🔥 ALTURA FIJA A4 */
+  max-height:297mm;
+  overflow:hidden;           /* 🔥 NADA puede estirar la página */
+  page-break-after:always;
+  break-after:page;
+}
+
+/* Evita que bloques rompan la página */
+.content-block,
+.image,
+ul,
+p,
+h2,
+h3,
+h4{
+  page-break-inside:avoid;
+  break-inside:avoid;
+}
+
+/* Ajuste visual si el contenido queda justo */
+.content-block{
+  margin:24px 0;
+}
+
+.image{
+  height:220px;              /* 🔥 evita imágenes más altas */
+}
