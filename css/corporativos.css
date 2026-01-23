@@ -91,3 +91,22 @@ ul li { margin-bottom:8px; font-size:15px; }
   .main-header,.pdf-bar,.main-footer{ display:none; }
   .pagina{ margin:0; box-shadow:none; border-radius:0; }
 }
+
+/* ========================= */
+/* ENCABEZADO Y PIE DE PÁGINA */
+/* ========================= */
+.pagina::before { content:"THE ALAZAN GRILLER"; position:absolute; top:18px; left:0; width:100%; text-align:center; font-family:'Playfair Display',serif; font-size:13px; letter-spacing:3px; color:#7a5a1e; }
+.pagina::after { content:counter(page); position:absolute; bottom:18px; right:40px; font-size:12px; color:#555; }
+
+/* ========================= */
+/* FRANJAS DECORATIVAS */
+/* ========================= */
+.pagina { counter-increment:page; }
+.pagina-header-bar { position:absolute; top:0; left:0; width:100%; height:6px; background:linear-gradient(90deg,#e6c36a,#c89b3c,#e6c36a); }
+.pagina-footer-bar { position:absolute; bottom:0; left:0; width:100%; height:6px; background:linear-gradient(90deg,#e6c36a,#c89b3c,#e6c36a); }
+
+@media print{
+  body { counter-reset:page; }
+  .pagina::after { content:"Página " counter(page); }
+}
+
