@@ -474,4 +474,40 @@ ul li {
 }
 
 
+/* ========================= */
+/* MENÚ GASTRONÓMICO */
+/* ========================= */
+.menu-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  margin: 40px 0 20px;
+  border-bottom: 2px solid #c89b3c;
+  padding-bottom: 8px;
+}
+
+/* TÍTULO DE CADA PLATILLO */
+.text h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* LISTA DE INGREDIENTES */
+.menu-list {
+  padding-left: 18px;
+}
+
+.menu-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* AJUSTE IMÁGENES MENÚ */
+.image {
+  height: 240px;
+  border-radius: 6px;
+}
+
 
