@@ -162,3 +162,132 @@ h2,h3,h4,p,ul,.content-block{
 }
 
 }
+/* ===========================================
+   ESTILO VISUAL PREMIUM PARA PDF
+=========================================== */
+
+@media print {
+
+/* Márgenes más elegantes */
+.pagina{
+  padding:42mm 26mm 36mm;
+}
+
+/* Fuente base */
+.page-body{
+  font-family:'Inter', sans-serif;
+  color:#1f2937;
+}
+
+/* Título principal */
+.portada h1{
+  font-family:'Playfair Display', serif;
+  font-size:58px;
+  letter-spacing:4px;
+  color:#1f2937;
+}
+
+.portada .slogan{
+  margin-top:40px;
+  font-size:14px;
+  letter-spacing:6px;
+  color:#9a7c2f;
+}
+
+/* Etiqueta de sección (INCLUYE, MENÚ, etc) */
+.section-tag{
+  display:inline-block;
+  background:#c89b3c;
+  color:#111;
+  padding:6px 16px;
+  font-size:11px;
+  letter-spacing:3px;
+  font-weight:600;
+  margin-bottom:14px;
+}
+
+/* Títulos de sección */
+.titulo-seccion{
+  font-family:'Playfair Display', serif;
+  font-size:28px;
+  color:#7a1f1f;
+  margin-bottom:18px;
+}
+
+/* Subtítulos (Break AM, platos, etc) */
+h3, h4{
+  font-family:'Playfair Display', serif;
+  color:#1f2937;
+}
+
+/* Texto introductorio */
+.intro-text{
+  font-size:14px;
+  line-height:1.6;
+  color:#374151;
+  max-width:85%;
+}
+
+/* Listas */
+.lista-ejecutiva li,
+.menu-list li{
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+/* Precio */
+.precio{
+  font-size:18px;
+  font-weight:700;
+  color:#7a1f1f;
+  margin-top:6px;
+}
+
+/* Detalle */
+.detalle{
+  font-size:13px;
+  color:#6b7280;
+}
+
+/* Bloques */
+.content-block{
+  background:#f9fafb;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:18px;
+}
+
+/* Alternar estilo */
+.content-block.reverse{
+  flex-direction:row-reverse;
+}
+
+/* Imágenes */
+.content-block .image{
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,.12);
+}
+
+/* Footer (número de página) */
+.pagina::after{
+  background:#f8f8f8;
+  color:#7a1f1f;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+/* Header */
+.pagina::before{
+  font-size:12px;
+  letter-spacing:4px;
+  color:#2b2b2b;
+}
+
+/* Evitar que quede aire */
+.page-body{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+}
