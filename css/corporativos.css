@@ -222,5 +222,164 @@ ul li {
   }
 }
 
+.catalogo {
+  background: #f2f2f2;
+  padding-bottom: 80px;
+  font-family: 'Inter', sans-serif;
+  color: #2b2b2b;
+}
+
+/* ================= PDF BAR ================= */
+.pdf-bar {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+}
+
+.pdf-bar button {
+  background: #c89b3c;
+  color: #111;
+  border: none;
+  padding: 12px 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* ================= PÁGINAS ================= */
+.pagina {
+  background: #fff;
+  margin: 50px auto;
+  padding: 32mm;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  width: 90%;
+  max-width: 900px;
+  min-height: 1100px;
+  line-height: 1.8;
+}
+
+/* ================= PORTADA ================= */
+.portada {
+  background: #f7f2ed;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portada h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  letter-spacing: 2px;
+  color: #1f1f1f;
+}
+
+.portada h1 span {
+  font-style: italic;
+}
+
+.portada .slogan {
+  margin-top: 60px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ================= TÍTULOS ================= */
+.section-tag {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #c89b3c;
+  margin-bottom: 15px;
+  display: block;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 30px;
+}
+
+/* ================= LISTAS ================= */
+ul {
+  padding-left: 22px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* ================= PAQUETES ================= */
+.paquete {
+  border-left: 4px solid #c89b3c;
+  padding: 14px 18px;
+  background: #fafafa;
+  margin-bottom: 15px;
+}
+
+/* ================= TEXTO + IMAGEN ================= */
+.content-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.content-block.reverse .image {
+  order: 2;
+}
+
+.content-block.reverse .text {
+  order: 1;
+}
+
+.image {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #ddd;
+}
+
+.image-block {
+  height: 260px;
+  border: 1px solid #ddd;
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-style: italic;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .content-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= IMPRESIÓN ================= */
+@media print {
+  .main-header,
+  .pdf-bar,
+  .main-footer {
+    display: none;
+  }
+
+  .pagina {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+}
+
 
 
