@@ -230,3 +230,23 @@ a { text-decoration:none; color:inherit; }
   .content-block .image { border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.12); }
 }
 
+/* Logo horizontal: imagen a la izquierda, texto a la derecha */
+.logo {
+  display:flex;
+  align-items:center; /* alinea verticalmente */
+  gap:10px; /* espacio entre imagen y texto */
+  font-family:'Playfair Display', serif;
+  color:#fff;
+  font-size:20px;
+}
+
+.logo-text {
+  display:flex;
+  flex-direction:column; /* The / Alazan Griller en dos líneas */
+  line-height:1.1;
+}
+
+.logo-text span {
+  font-size:14px;
+  color:#c89b3c;
+}
