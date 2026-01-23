@@ -203,4 +203,43 @@
     margin: 1rem auto;
   }
 }
+.pdf-document {
+  width: 816px;       /* 8.5 pulgadas */
+  margin: auto;
+}
 
+.pdf-page {
+  width: 816px;
+  height: 1056px;     /* 11 pulgadas */
+  padding: 2in 1in;   /* márgenes tipo PDF */
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  overflow: hidden;   /* Oculta contenido que pasa de la página */
+  page-break-after: always; /* Salto de página para impresión */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header y secciones iguales a lo que ya hiciste */
+.pdf-header { text-align: center; margin-bottom: 2rem; }
+.pdf-header h1 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.pdf-header p { font-size: 1rem; color: #666; }
+
+.pdf-section { margin-bottom: 2rem; }
+.pdf-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; border-bottom: 2px solid #ccc; padding-bottom: 0.3rem; margin-bottom: 1rem; }
+.pdf-section p, .pdf-section ul li { font-size: 1rem; color: #444; line-height: 1.6; }
+.pdf-section ul { padding-left: 1.5rem; list-style-type: disc; }
+
+.pdf-footer { text-align: center; font-size: 0.9rem; color: #999; margin-top: auto; border-top: 1px solid #eee; padding-top: 1rem; }
+
+/* Impresión */
+@media print {
+  .pdf-page {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    page-break-after: always;
+    overflow: visible;
+  }
+}
