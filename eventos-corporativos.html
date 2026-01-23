@@ -8,13 +8,7 @@
   <!-- FUENTES -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS GLOBAL -->
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-
-  <!-- CSS CATÁLOGO CORPORATIVO -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/corporativos.css">
 </head>
 
@@ -22,44 +16,31 @@
 
 <header class="main-header">
   <div class="header-container">
-    
-<div class="logo">
-  <img src="img/logores1.png" alt="Logo" class="logo-img">
-  <div class="logo-text">
-    <span>The</span>
-    Alazan Griller
-  </div>
-</div>
-
-<nav class="main-nav" id="mainNav">
-  <a href="index.html">Inicio</a>
-  <a href="menu.html">Menú</a>
-  <a href="eventos.html">Eventos</a>
-  <a href="eventos-corporativos.html" class="nav-highlight">Corporativos</a>
-  <a href="quienes.html">Quiénes Somos</a>
-  <a href="contacto.html">Contacto</a>
-</nav>
-
-    <div class="header-actions">
-      <button class="menu-toggle" id="menuToggle">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="logo">
+      <img src="img/logores1.png" alt="Logo" class="logo-img">
+      <div class="logo-text"><span>The</span> Alazan Griller</div>
     </div>
   </div>
 </header>
 
-<main class="catalogo">
+<!-- BOTÓN PDF -->
+<div class="pdf-actions">
+  <button onclick="descargarPDF()">📄 Descargar en PDF</button>
+</div>
 
-  <!-- CABECERA -->
-  <section class="catalogo-header">
+<main id="catalogo-pdf">
+
+  <!-- PAGINA 1 -->
+  <section class="pagina portada">
     <h1>Eventos Corporativos</h1>
-    <p>Gastronomía profesional en un ambiente elegante y funcional</p>
+    <h2>THE ALAZAN GRILLER</h2>
+    <p class="slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
   </section>
 
-  <!-- INCLUYE -->
-  <section class="catalogo-section">
-    <h2>Incluye</h2>
-    <ul class="catalogo-lista">
+  <!-- PAGINA 2 -->
+  <section class="pagina">
+    <h3>Incluye</h3>
+    <ul>
       <li>Uso de salón con aire acondicionado</li>
       <li>Montaje según capacidad del salón</li>
       <li>Sillas y mesas</li>
@@ -72,92 +53,82 @@
     </ul>
   </section>
 
-  <!-- PAQUETES -->
-  <section id="paquetes" class="catalogo-section">
-    <h2>Paquetes</h2>
+  <!-- PAGINA 3 -->
+  <section class="pagina">
+    <h3>Paquetes</h3>
 
-    <div class="catalogo-grid">
-      <div class="catalogo-card">
-        <h3>Break sencillo</h3>
-        <p>Uso de salón por 4, 6 u 8 horas</p>
-        <span>Precio: Consultar</span>
-      </div>
+    <div class="paquete">
+      <h4>Break Sencillo</h4>
+      <p>Uso de salón por 4, 6 u 8 horas</p>
+    </div>
 
-      <div class="catalogo-card">
-        <h3>Break doble</h3>
-        <p>1 dulce y 1 salado</p>
-        <span>Precio: Consultar</span>
-      </div>
+    <div class="paquete">
+      <h4>Break Doble</h4>
+      <p>1 dulce y 1 salado</p>
+    </div>
 
-      <div class="catalogo-card">
-        <h3>Media jornada</h3>
-        <p>Break AM + Almuerzo</p>
-        <span>Precio: Consultar</span>
-      </div>
+    <div class="paquete">
+      <h4>Media Jornada</h4>
+      <p>Break AM + Almuerzo</p>
+    </div>
 
-      <div class="catalogo-card">
-        <h3>Jornada completa</h3>
-        <p>Break AM + Almuerzo + Break PM</p>
-        <span>Precio: Consultar</span>
-      </div>
+    <div class="paquete">
+      <h4>Jornada Completa</h4>
+      <p>Break AM + Almuerzo + Break PM</p>
     </div>
   </section>
 
-  <!-- MENÚ -->
-  <section class="catalogo-section">
-    <h2>Menú</h2>
+  <!-- PAGINA 4 -->
+  <section class="pagina">
+    <h3>Menú</h3>
 
-    <div class="catalogo-menu">
-      <div>
-        <h4>Break AM</h4>
-        <p>Croissant · Sándwich de jamón y queso</p>
-      </div>
+    <h4>Break AM</h4>
+    <p>Croissant · Sándwich de jamón y queso</p>
 
-      <div>
-        <h4>Almuerzos</h4>
-        <p>
-          Lomo de cerdo BBQ · Filete de pollo (hongos o jalapeña) ·
-          Churrasquito · Punta de res
-        </p>
-      </div>
+    <h4>Almuerzos</h4>
+    <p>
+      Lomo de cerdo BBQ · Filete de pollo (hongos o jalapeña) ·
+      Churrasquito · Punta de res
+    </p>
 
-      <div>
-        <h4>Break PM</h4>
-        <p>
-          Cheesecake · Pastel de chocolate · Pie de limón · Quesadilla ·
-          Empanada de leche
-        </p>
-      </div>
-    </div>
+    <h4>Break PM</h4>
+    <p>
+      Cheesecake · Pastel de chocolate · Pie de limón · Quesadilla ·
+      Empanada de leche
+    </p>
   </section>
 
-  <!-- CONTACTO -->
-  <section class="catalogo-contacto">
+  <!-- PAGINA 5 -->
+  <section class="pagina">
+    <h3>Contacto</h3>
     <p><strong>Email:</strong> elrodeo.restaurant2024@gmail.com</p>
     <p><strong>Dirección:</strong> Carretera a Sonsonate km 28, polígono B #130</p>
-
-    <a href="https://wa.me/50369578713" class="btn primary">
-      Cotizar por WhatsApp
-    </a>
-
-    <p class="catalogo-slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
+    <p class="slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
   </section>
 
 </main>
 
 <footer class="main-footer">
-  <div class="footer-bottom">
-    <p>© 2026 The Alazan Griller. Todos los derechos reservados.</p>
-  </div>
+  <p>© 2026 The Alazan Griller. Todos los derechos reservados.</p>
 </footer>
 
-<script src="js/menu.js"></script>
+<!-- LIBRERIA PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+function descargarPDF() {
+  const element = document.getElementById('catalogo-pdf');
+  html2pdf()
+    .set({
+      margin: 0,
+      filename: 'Eventos_Corporativos_The_Alazan_Griller.pdf',
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    })
+    .from(element)
+    .save();
+}
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
