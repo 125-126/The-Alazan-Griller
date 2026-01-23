@@ -9,63 +9,156 @@
 
 @media print{
 
+/* Forzar colores */
 *{
-  -webkit-print-color-adjust:exact;
-  print-color-adjust:exact;
+  -webkit-print-color-adjust:exact !important;
+  print-color-adjust:exact !important;
 }
 
+/* Quitar web */
+.main-header,
+.pdf-bar,
+.main-footer{
+  display:none !important;
+}
+
+/* Base */
 body{
-  background:white;
+  background:#fff !important;
+  margin:0;
   counter-reset:page;
 }
 
-.main-header,.pdf-bar,.main-footer{
-  display:none;
-}
-
+/* Contenedor */
 .catalogo{
   width:210mm;
   margin:0 auto;
+  padding:0;
 }
+
+/* ================= HOJAS ================= */
 
 .pagina{
+  width:210mm;
+  min-height:297mm;
+  padding:28mm 22mm 28mm;
+  box-sizing:border-box;
   page-break-after:always;
   break-after:page;
-  padding:28mm 22mm 30mm;
+  position:relative;
 }
 
-.pagina:last-child{
-  page-break-after:auto;
+/* Nunca cortar bloques */
+.page-body{
+  display:block;
 }
+
+/* ================= HEADER ================= */
 
 .pagina::before{
   content:"THE ALAZAN GRILLER";
-  display:block;
-  text-align:center;
-  margin-bottom:10px;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:26px;
+  background:linear-gradient(90deg,#e8c97a,#c89b3c,#e8c97a);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-family:'Playfair Display',serif;
+  font-size:10px;
   letter-spacing:3px;
+  color:#2b2b2b;
 }
+
+/* ================= FOOTER ================= */
 
 .pagina::after{
   content:"Página " counter(page);
   counter-increment:page;
-  display:block;
-  text-align:right;
-  margin-top:12px;
-  font-size:11px;
-  color:#666;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:22px;
+  background:#f0f0f0;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding-right:18mm;
+  font-size:10px;
+  color:#444;
 }
 
-.content-block,
-h2,h3,h4,p,ul{
+/* ================= TÍTULOS ================= */
+
+h2{
+  color:#7a1f1f;
+  border-bottom:2px solid #c89b3c;
+  padding-bottom:6px;
+  margin-bottom:10px;
+}
+
+/* ================= BLOQUES ================= */
+
+.content-block{
+  display:flex;
+  gap:16px;
+  margin:12px 0;
+  align-items:center;
   break-inside:avoid;
   page-break-inside:avoid;
 }
 
+/* Imagen controlada */
 .content-block .image{
+  flex:0 0 32%;
   height:130px;
-  flex:0 0 35%;
+  background-size:cover;
+  background-position:center;
+  border-radius:8px;
+}
+
+/* Texto */
+.content-block .text{
+  flex:1;
+}
+
+/* Texto compacto */
+p, li{
+  font-size:12.8px;
+  line-height:1.35;
+}
+
+/* Listas */
+ul{
+  margin:6px 0;
+  padding-left:18px;
+}
+
+/* Nada se puede partir */
+h2,h3,h4,p,ul,.content-block{
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+/* ================= PORTADA ================= */
+
+.portada{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.portada h1{
+  font-size:44px;
+}
+
+.portada .slogan{
+  margin-top:10px;
+  letter-spacing:4px;
 }
 
 }
