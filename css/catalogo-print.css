@@ -1,0 +1,65 @@
+/* ================================
+   CATÁLOGO – MODO IMPRESIÓN PDF
+   ================================ */
+
+@media print{
+
+/* Forzar colores, fondos e imágenes */
+*{
+  -webkit-print-color-adjust:exact !important;
+  print-color-adjust:exact !important;
+}
+
+/* Quitar fondo web */
+body{
+  background:white !important;
+}
+
+/* Contenedor del catálogo */
+.catalogo{
+  width:210mm !important;
+  padding:0 !important;
+  background:white !important;
+}
+
+/* Cada página = una hoja A4 */
+.pagina{
+  width:210mm !important;
+  height:297mm !important;
+  min-height:297mm !important;
+  max-height:297mm !important;
+  margin:0 !important;
+  padding:45mm 32mm 40mm !important;
+  box-shadow:none !important;
+  page-break-after:always !important;
+  break-after:page !important;
+  overflow:hidden !important;
+}
+
+/* Quitar header web */
+.main-header,.pdf-bar,.main-footer{
+  display:none !important;
+}
+
+/* Evitar que el navegador meta márgenes */
+@page{
+  size:A4;
+  margin:0;
+}
+
+/* Mantener franjas */
+.pagina::before,.pagina::after{
+  position:absolute !important;
+}
+
+/* Mantener bloques alineados */
+.content-block{
+  page-break-inside:avoid;
+}
+
+/* Imágenes nunca se cortan */
+.image{
+  page-break-inside:avoid;
+}
+
+}
