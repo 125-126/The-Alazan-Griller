@@ -142,6 +142,7 @@ ul li { margin-bottom:8px; font-size:15px; }
   font-size:13px;
   letter-spacing:3px;
   color:#2b2b2b;
+  z-index:2;
 }
 
 /* ========================= */
@@ -157,24 +158,25 @@ ul li { margin-bottom:8px; font-size:15px; }
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  padding-right:32mm;
+  padding-right:25mm;
   font-size:12px;
   color:#2b2b2b;
+  z-index:2;
 }
 
 /* ========================= */
 /* NÚMERO DE PÁGINA */
 /* ========================= */
-.page-number::after{
-  content:counter(page);
-}
-
 body{
   counter-reset:page;
 }
 
 .pagina{
   counter-increment:page;
+}
+
+.page-number::after{
+  content:counter(page);
 }
 
 /* ========================= */
@@ -193,83 +195,17 @@ body{
 }
 
 /* ========================= */
-/* BLOQUEO RESPONSIVE */
+/* AJUSTES NECESARIOS */
 /* ========================= */
-html, body {
-  min-width: 1024px;
+.pagina{
+  overflow:hidden;
 }
 
-.catalogo {
-  overflow-x: auto;
-}
-
-.pagina {
-  width: 900px;
-}
-
-.content-block {
-  min-width: 800px;
-}
-
-/* ========================= */
-/* FRANJA SUPERIOR */
-/* ========================= */
-.pagina::before{
-  content:"THE ALAZAN GRILLER";
-  position:absolute;
-  top:0;
-  left:0;
+.image{
   width:100%;
-  height:34px;
-  background:linear-gradient(90deg,#ecd58a,#c89b3c,#ecd58a);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'Playfair Display',serif;
-  font-size:12px;
-  letter-spacing:3px;
-  color:#2b2b2b;
+  max-width:100%;
 }
 
-/* ========================= */
-/* FRANJA INFERIOR */
-/* ========================= */
-.pagina::after{
-  content:"Página " counter(page);
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:30px;
-  background:linear-gradient(90deg,#ecd58a,#c89b3c,#ecd58a);
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  padding-right:30mm;
-  font-size:12px;
-  color:#2b2b2b;
-}
-.pagina {
-  overflow: hidden;
-}
-
-.image {
-  width: 100%;
-  max-width: 100%;
-}
-
-.image {
-  width: 100%;
-  max-width: 100%;
-}
-
-html, body {
-  min-width: 1024px;
-}
-
-html, body {
-  min-width: 1024px;
-}
 
 
 
