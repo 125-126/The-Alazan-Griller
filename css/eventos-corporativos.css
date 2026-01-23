@@ -202,4 +202,51 @@
   border-radius: 10px;
   margin-top: 2rem;
 }
+/* ================= PORTADA TAMAÑO CARTA ================= */
+.pdf-page.portada {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 816px;       /* 8.5 pulgadas */
+  height: 1056px;     /* 11 pulgadas */
+  background-color: #fff;
+  page-break-after: always; /* asegura que la portada sea solo esta página */
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 2in 1in;   /* márgenes tipo documento */
+}
+
+.portada-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.portada-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.2em;
+}
+
+.portada-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.portada-img {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
 
