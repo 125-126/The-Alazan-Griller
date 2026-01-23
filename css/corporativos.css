@@ -7,12 +7,8 @@
 /* BARRA PDF */
 /* ========================= */
 .pdf-bar{text-align:center;padding:20px;background:#111}
-.pdf-bar button{
-  background:linear-gradient(135deg,#c89b3c,#e8c97a);
-  box-shadow:0 10px 30px rgba(200,155,60,.5);
-  border-radius:50px;
-  text-transform:uppercase;
-}
+.pdf-bar button{background:#c89b3c;color:#111;border:none;padding:12px 28px;font-weight:600;letter-spacing:2px;cursor:pointer}
+
 /* ========================= */
 /* CONTADOR */
 /* ========================= */
@@ -27,38 +23,25 @@ body{counter-reset:page}
 /* ========================= */
 /* FRANJA SUPERIOR */
 /* ========================= */
-.pagina::before{content:"THE ALAZAN GRILLER";position:absolute;top:0;left:0;width:100%;height:38px;background:linear-gradient(90deg,#e8c97a,#c89b3c,#e8c97a);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;letter-spacing:3px;color:#2b2b2b;z-index:10}
+.pagina::before{content:"THE ALAZAN GRILLER";position:absolute;top:0;left:0;width:100%;height:38px;background:#2b2b2b;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;letter-spacing:3px;color:#fff;z-index:10}
 
 /* ========================= */
 /* FRANJA INFERIOR */
 /* ========================= */
-.pagina::before,
-.pagina::after{
-  background:
-    linear-gradient(90deg,#7a1f1f,#c89b3c,#7a1f1f);
-  color:#fff;
-}
+.pagina::after{content:"Página " counter(page);position:absolute;bottom:0;left:0;width:100%;height:32px;background:#f0f0f0;display:flex;align-items:center;justify-content:flex-end;padding-right:25mm;font-size:12px;color:#444;z-index:10}
+
 /* ========================= */
 /* PORTADA */
 /* ========================= */
-.portada{
-  background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url("../img/cor-portada.jpg") center/cover;
-  color:#fff;
-}
-.portada h1{
-  color:#fff;
-  text-shadow:0 10px 30px rgba(0,0,0,.7);
-}
-.portada .slogan{
-  color:#f1f1f1;
-}
+.portada{background:#f7f2ed;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.portada h1{font-family:'Playfair Display',serif;font-size:52px;letter-spacing:2px;color:#1f1f1f;margin-bottom:20px}
+.portada h1 span{font-style:italic;font-weight:500}
+.portada .slogan{margin-top:60px;font-size:14px;letter-spacing:4px;color:#777}
 
 /* ========================= */
 /* ETIQUETAS */
 /* ========================= */
-.section-tag{display:inline-block;background:#7a1f1f;color:#fff;padding:6px 14px;font-size:12px;letter-spacing:1px;border-radius:4px;margin-bottom:25px;text-transform:uppercase}
+.section-tag{display:inline-block;background:#2b2b2b;color:#fff;padding:6px 14px;font-size:12px;letter-spacing:1px;border-radius:2px;margin-bottom:25px;text-transform:uppercase}
 
 /* ========================= */
 /* TÍTULOS */
@@ -83,18 +66,14 @@ ul li{margin-bottom:8px;font-size:15px}
 /* ========================= */
 /* BLOQUES TEXTO + IMAGEN */
 /* ========================= */
-.content-block{
-  background:linear-gradient(135deg,#ffffff,#f3efe9);
-  border:1px solid rgba(0,0,0,.06);
-  box-shadow:0 15px 40px rgba(0,0,0,.08);
-}
+.content-block{display:grid;grid-template-columns:45% 55%;gap:30px;margin:40px 0;align-items:center;background:#faf9f7;padding:24px;border:1px solid #e5e5e5;border-radius:4px}
 .content-block.reverse{grid-template-columns:55% 45%}
 .content-block.reverse .image{order:2}
 
 /* ========================= */
 /* IMÁGENES */
 /* ========================= */
-.image{height:260px;background-size:cover;background-position:center;border-radius:8px;box-shadow:0 10px 25px rgba(0,0,0,.15);width:100%}
+.image{height:260px;background-size:cover;background-position:center;border-radius:4px;width:100%}
 .image-block{height:260px;border:1px solid #ddd;margin:40px 0;display:flex;align-items:center;justify-content:center;color:#999;font-style:italic}
 
 /* ========================= */
@@ -103,19 +82,7 @@ ul li{margin-bottom:8px;font-size:15px}
 .detalle{font-size:14px;letter-spacing:1px;text-transform:uppercase;color:#777;margin-bottom:10px}
 .descripcion{font-size:15px;margin-bottom:12px}
 .descripcion.extra{font-style:italic}
-.precio{
-  font-size:22px;
-  font-weight:700;
-  color:#7a1f1f;
-  letter-spacing:1px;
-  margin-top:10px;
-  display:inline-block;
-}
-.precio::before{
-  content:"Desde ";
-  font-size:12px;
-  color:#777;
-}
+.precio{font-size:18px;font-weight:600;color:#2b2b2b;border-left:4px solid #c89b3c;padding-left:12px}
 
 /* ========================= */
 /* MENÚ */
@@ -127,39 +94,16 @@ ul li{margin-bottom:8px;font-size:15px}
 /* ========================= */
 /* IMPRESIÓN */
 /* ========================= */
-@media print{
-  .main-header,.pdf-bar,.main-footer{display:none}
-  .pagina{margin:0;box-shadow:none}
-  @page{margin:0}
-}
+@media print{.main-header,.pdf-bar,.main-footer{display:none}.pagina{margin:0;box-shadow:none}@page{margin:0}}
 
 /* ========================= */
-/* ESCALADO CELULAR (CATÁLOGO) */
+/* MODO CELULAR */
 /* ========================= */
-@media (max-width:1024px){
-  body{overflow-x:auto}
-  .catalogo{width:210mm;transform:scale(.7);transform-origin:top center;margin:0 auto}
-}
 @media (max-width:768px){
-  .catalogo{
-    width:100%;
-    transform:none;
-    padding:20px;
-  }
-  .pagina{
-    width:100%;
-    min-height:auto;
-    margin:20px auto;
-    padding:80px 20px 60px;
-  }
-  .content-block{
-    grid-template-columns:1fr;
-  }
+.catalogo{width:100%;padding:20px}
+.pagina{width:100%;min-height:auto;margin:20px auto;padding:80px 20px 60px}
+.content-block{grid-template-columns:1fr}
 }
-@media (max-width:500px){
-  .catalogo{transform:scale(.45)}
-}
-
 
 
 
