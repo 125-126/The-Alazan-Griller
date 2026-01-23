@@ -12,24 +12,17 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/eventos-corporativos.css">
   <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/eventos-corporativos.css">
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="main-header">
   <div class="header-container">
-
     <div class="logo">
       <img src="img/logores1.png" alt="Logo" class="logo-img">
-      <div class="logo-text">
-        <span>The</span>
-        Alazan Griller
-      </div>
+      <div class="logo-text"><span>The</span>Alazan Griller</div>
     </div>
-
     <nav class="main-nav" id="mainNav">
       <a href="index.html">Inicio</a>
       <a href="menu.html">Menú</a>
@@ -38,74 +31,122 @@
       <a href="quienes.html">Quiénes Somos</a>
       <a href="contacto.html">Contacto</a>
     </nav>
-
     <div class="header-actions">
-      <button class="menu-toggle" id="menuToggle">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
     </div>
-
   </div>
 </header>
 
-<!-- ================= CONTENIDO SIMULANDO PDF ================= -->
-  
-<main class="pdf-document">
+<!-- ================= CONTENIDO PDF ================= -->
+<main class="pdf-document" id="pdf-document">
 
-  <div class="pdf-page">
-    <!-- Contenido de la primera página -->
-    <section class="pdf-header">
+  <!-- Portada -->
+  <div class="pdf-page portada">
+    <div class="portada-content">
       <h1>Eventos Corporativos</h1>
-      <p>Creando experiencias gastronómicas únicas para su empresa</p>
+      <h2>The Alazan Griller</h2>
+      <p>Experiencias gastronómicas únicas para empresas</p>
+      <img src="img/eventos/portada.jpg" alt="Portada Eventos" class="portada-img">
+    </div>
+  </div>
+
+  <!-- Paquetes -->
+  <div class="pdf-page">
+    <section class="pdf-header">
+      <h1>Nuestros Paquetes</h1>
     </section>
 
     <section class="pdf-section">
-      <h2>1. Introducción</h2>
       <p>
-        En <strong>The Alazan Griller</strong> entendemos la importancia de los eventos corporativos bien organizados. Nuestro objetivo es ofrecer experiencias culinarias premium que fortalezcan la relación entre su empresa y sus colaboradores, clientes o socios estratégicos.
+        Todos nuestros paquetes incluyen:
       </p>
+      <ul>
+        <li>Exquisita gastronomía</li>
+        <li>Uso de salón con aire acondicionado</li>
+        <li>Montaje según cantidad de participantes y capacidad del salón</li>
+        <li>Silla plástica</li>
+        <li>Mesa para proyección</li>
+        <li>Mesa de apoyo para materiales</li>
+        <li>Extensión y regleta</li>
+        <li>Pizarra y plumón</li>
+        <li>Mantelería blanca</li>
+        <li>Estación de agua</li>
+        <li>Estación de café</li>
+        <li>Amplio parqueo</li>
+      </ul>
     </section>
 
     <section class="pdf-section">
-      <h2>2. Servicios</h2>
+      <h2>Break AM</h2>
+      <p>Uso de salón por 4 horas</p>
       <ul>
-        <li>Catering para reuniones corporativas y conferencias.</li>
-        <li>Buffet gourmet y menús personalizados.</li>
-        <li>Ambientación elegante y profesional.</li>
-        <li>Opciones vegetarianas, veganas y sin gluten.</li>
-        <li>Equipo de servicio altamente capacitado.</li>
+        <li>Break sencillo: $____ (1 dulce y 1 salado)</li>
+        <li>Break doble: $____</li>
       </ul>
+    </section>
+
+    <section class="pdf-section">
+      <h2>Media Jornada</h2>
+      <p>Uso de salón por 6 horas</p>
     </section>
   </div>
 
+  <!-- Fotos de Menú -->
   <div class="pdf-page">
-    <!-- Segunda página -->
-    <section class="pdf-section">
-      <h2>3. Paquetes Especiales</h2>
-      <p>Ofrecemos paquetes adaptados al tamaño y tipo de evento:</p>
-      <ul>
-        <li><strong>Paquete Ejecutivo:</strong> Menú de tres tiempos con bebidas incluidas.</li>
-        <li><strong>Paquete Premium:</strong> Menú gourmet con barra de postres y coctelería.</li>
-        <li><strong>Paquete Personalizado:</strong> Diseñado según sus necesidades y presupuesto.</li>
-      </ul>
+    <section class="pdf-header">
+      <h1>Menús y Platillos</h1>
     </section>
+    <section class="pdf-section galeria-menus">
+      <div class="menu-item"><img src="img/eventos/menu1.jpg" alt="Platillo 1"><p>Descripción del platillo 1</p></div>
+      <div class="menu-item"><img src="img/eventos/menu2.jpg" alt="Platillo 2"><p>Descripción del platillo 2</p></div>
+      <div class="menu-item"><img src="img/eventos/menu3.jpg" alt="Platillo 3"><p>Descripción del platillo 3</p></div>
+      <!-- Añadir más según sea necesario -->
+    </section>
+  </div>
 
+  <!-- Contacto -->
+  <div class="pdf-page">
+    <section class="pdf-header">
+      <h1>Contacto</h1>
+    </section>
     <section class="pdf-section">
-      <h2>4. Contacto</h2>
-      <p>Para más información y cotizaciones, contacte a nuestro equipo:</p>
+      <p>Para más información y reservas:</p>
       <p>
         <strong>Teléfono:</strong> +503 1234 5678 <br>
         <strong>Email:</strong> eventos@alazangriller.com <br>
         <strong>Dirección:</strong> Av. Principal #123, San Salvador, El Salvador
       </p>
     </section>
+    <footer class="pdf-footer">
+      © 2026 The Alazan Griller. Todos los derechos reservados.
+    </footer>
   </div>
 
 </main>
 
+<!-- Botón para descargar PDF -->
+<div class="download-pdf">
+  <button id="downloadPDF">Descargar PDF</button>
+</div>
+
 <!-- ================= SCRIPTS ================= -->
 <script src="js/menu.js"></script>
 <script src="js/animations.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+  // Descargar PDF
+  document.getElementById("downloadPDF").addEventListener("click", () => {
+    const element = document.getElementById("pdf-document");
+    const opt = {
+      margin:       0,
+      filename:     'Eventos-Corporativos-Alazan-Griller.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'pt', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
+  });
+</script>
 
 </body>
 </html>
