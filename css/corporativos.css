@@ -24,68 +24,96 @@ a { text-decoration:none; color:inherit; }
   box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* LOGO igual que otras páginas */
+/* LOGO */
 .logo {
-  display:inline-block; /* antes era flex */
+  display:flex;
+  flex-direction:column;
   font-family:'Playfair Display', serif;
   color:#fff;
-  font-size:20px; /* tamaño igual al de otras páginas */
-  line-height:1.1; /* para separar líneas de texto */
+  font-size:22px;
+  align-items:center;
+  gap:4px;
 }
 .logo span {
-  display:block; /* cada palabra en línea diferente */
   font-size:14px;
   color:#c89b3c;
+  line-height:1.1;
 }
 
-/* MENÚ principal igual que otras páginas */
+/* MENÚ principal */
 .main-nav {
   display:flex;
-  gap:12px; /* igual que tus otras páginas */
+  gap:12px;
 }
 .main-nav a {
   color:#fff;
-  padding:4px 10px; /* igual que tus otras páginas */
-  border-radius:0; /* sin redondeo */
+  padding:4px 10px;
   font-weight:500;
   transition:0.3s;
 }
-.main-nav a:hover, .main-nav a.nav-highlight {
+.main-nav a:hover,
+.main-nav a.nav-highlight {
   background:#c89b3c;
   color:#111;
 }
 
 /* -----------------------
-   MENÚ MÓVIL
+   BOTÓN MENÚ MÓVIL
 ----------------------- */
-.mobile-menu-toggle { display:none; font-size:28px; color:#fff; cursor:pointer; }
+.menu-toggle { display:none; cursor:pointer; }
+.menu-toggle span {
+  display:block;
+  width:28px;
+  height:3px;
+  background:#fff;
+  margin:5px 0;
+  transition:0.3s;
+}
+
+/* -----------------------
+   MENÚ MÓVIL RESPONSIVE
+----------------------- */
 @media(max-width:768px){
-  .mobile-menu-toggle { display:block; }
+  .menu-toggle { display:block; }
+
   .main-nav {
-    position:absolute;
-    top:60px; /* ajustado al header */
-    right:0;
-    background:#0b1220;
-    flex-direction:column;
-    width:100%; /* igual que otras páginas */
-    padding:16px 0;
-    border-radius:0; /* sin borde redondeado */
     display:none;
+    flex-direction:column;
+    background:#0b1220;
+    width:100%;
+    padding:12px 0;
+    position:absolute;
+    top:64px;
+    right:0;
+    gap:8px;
   }
+
   .main-nav.open { display:flex; }
-  .main-nav a { margin:8px 0; padding:8px 16px; } /* consistente con otras páginas */
+
+  .main-nav a {
+    padding:10px 16px;
+    color:#fff;
+    border-top:1px solid #333;
+  }
 }
 
 /* -----------------------
    PDF BAR
 ----------------------- */
 .pdf-bar { text-align:center; padding:20px; background:#111; }
-.pdf-bar button {
-  background:#c89b3c; color:#111; border:none; padding:12px 28px;
-  font-weight:600; letter-spacing:2px; cursor:pointer; border-radius:6px;
-  transition:0.3s;
+.pdf-btn {
+  background:#c89b3c; 
+  color:#111; 
+  border:none; 
+  padding:12px 28px;
+  font-weight:600; 
+  letter-spacing:2px; 
+  cursor:pointer; 
+  border-radius:6px;
+  transition:0.3s; 
+  display:inline-block;
 }
-.pdf-bar button:hover { background:#e8c97a; }
+.pdf-btn:hover { background:#e8c97a; }
 
 /* -----------------------
    PÁGINA & BLOQUES
@@ -104,21 +132,44 @@ a { text-decoration:none; color:inherit; }
 .page-body { display:flex; flex-direction:column; gap:28px; }
 
 /* PORTADA */
-.portada { text-align:center; background:#f7f2ed; padding:60px 20px; border-radius:16px; }
-.portada h1 { font-family:'Playfair Display',serif; font-size:48px; color:#1f1f1f; margin-bottom:16px; }
+.portada {
+  text-align:center;
+  background:#f7f2ed;
+  padding:60px 20px;
+  border-radius:16px;
+  height:auto;
+  min-height:60vh;
+}
+.portada h1 { 
+  font-family:'Playfair Display',serif; 
+  font-size:48px; 
+  color:#1f1f1f; 
+  margin-bottom:16px; 
+}
 .portada .slogan { font-size:16px; letter-spacing:4px; color:#777; }
 
 /* BLOQUES DE CONTENIDO */
 .content-block {
-  display:flex; gap:20px; align-items:center; flex-wrap:wrap;
-  background:#f9fafb; padding:16px; border-radius:12px;
-  box-shadow:0 6px 20px rgba(0,0,0,.08); transition:0.3s;
+  display:flex; 
+  gap:20px; 
+  align-items:center; 
+  flex-wrap:wrap;
+  background:#f9fafb; 
+  padding:16px; 
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,.08); 
+  transition:0.3s;
 }
 .content-block:hover { transform:translateY(-4px); }
 .content-block.reverse { flex-direction:row-reverse; }
+
 .content-block .image {
-  flex:0 0 35%; height:180px; background-size:cover; background-position:center;
-  border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,.1);
+  flex:0 0 35%; 
+  height:180px; 
+  background-size:cover; 
+  background-position:center;
+  border-radius:12px; 
+  box-shadow:0 6px 15px rgba(0,0,0,.1);
 }
 .content-block .text { flex:1; }
 .intro-text { font-size:14px; line-height:1.6; color:#374151; }
@@ -132,7 +183,7 @@ a { text-decoration:none; color:inherit; }
 ----------------------- */
 @media(max-width:768px){
   .pagina { margin:20px 16px; padding:24px; box-shadow:none; }
-  .content-block { flex-direction:column; gap:16px; }
+  .content-block { flex-direction:column !important; gap:16px; }
   .content-block .image { width:100%; height:auto; aspect-ratio:16/9; }
   .portada h1 { font-size:32px; }
   .portada .slogan { font-size:14px; }
@@ -178,77 +229,4 @@ a { text-decoration:none; color:inherit; }
   .content-block.reverse { flex-direction:row-reverse; }
   .content-block .image { border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.12); }
 }
-/* Ajuste específico para esta página sin afectar otras */
-.main-header .logo {
-  font-size:22px; /* igual que en otras páginas */
-  display:flex;   /* mantenemos flex */
-  flex-direction:column; /* para que las palabras se alineen verticalmente */
-  gap:0; /* sin separación extra */
-}
 
-.main-header .logo span {
-  font-size:14px; /* tamaño consistente */
-  line-height:1.1; 
-}
-
-/* -----------------------
-   LOGO & PÁGINA CORPORATIVOS
------------------------ */
-body.eventos-corporativos .logo {
-  flex-direction: column; /* texto debajo de la imagen */
-  align-items: center;
-  gap: 4px;
-}
-
-body.eventos-corporativos .logo-text {
-  text-align: center;
-}
-
-/* Ajuste menú móvil */
-body.eventos-corporativos .mobile-menu-toggle {
-  display: block; /* aseguramos que se vea en móvil */
-}
-
-/* Asegurar que nav se abra en móvil */
-body.eventos-corporativos .main-nav {
-  display: none;
-}
-
-body.eventos-corporativos .main-nav.open {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 64px;
-  right: 0;
-  width: 200px;
-  padding: 16px;
-  background: #0b1220;
-  border-radius: 0 0 12px 12px;
-  gap: 8px;
-}
-
-/* ===== MENU MOVIL FUNCIONAL ===== */
-
-/* Esconder por defecto en móvil */
-@media (max-width: 768px) {
-  .main-nav {
-    display: none; /* se oculta */
-    flex-direction: column;
-    background: #0b1220;
-    width: 100%;
-    padding-top: 12px;
-    gap: 8px;
-    position: absolute;
-    top: 64px; /* abajo del header */
-    right: 0;
-  }
-  .main-nav.open {
-    display: flex; /* muestra cuando está .open */
-  }
-
-  .main-nav a {
-    padding: 10px 16px;
-    color: #fff;
-    border-top: 1px solid #333; /* separación visual */
-  }
-}
