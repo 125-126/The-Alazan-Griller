@@ -1,55 +1,32 @@
-body {
-  background: #eaeaea;
-  font-family: 'Inter', sans-serif;
-  margin: 0;
+.catalogo {
+  background: #f2f2f2;
+  padding-bottom: 60px;
 }
 
-/* HEADER */
-.main-header {
-  background: #111;
-  color: #fff;
-  padding: 15px 40px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.logo-img {
-  height: 50px;
-}
-
-.logo-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-}
-
-/* BOTON PDF */
-.pdf-actions {
+/* BARRA PDF */
+.pdf-bar {
   text-align: center;
-  margin: 20px;
+  padding: 20px;
+  background: #111;
 }
 
-.pdf-actions button {
-  padding: 12px 25px;
-  font-size: 16px;
-  cursor: pointer;
+.pdf-bar button {
+  background: #c89b3c;
+  color: #000;
   border: none;
-  background: #000;
-  color: #fff;
-  border-radius: 4px;
+  padding: 12px 25px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-/* PAGINAS TIPO PDF */
+/* PÁGINAS */
 .pagina {
   width: 210mm;
   min-height: 297mm;
-  background: white;
-  margin: 30px auto;
-  padding: 30mm;
-  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  background: #fff;
+  margin: 40px auto;
+  padding: 35mm;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   box-sizing: border-box;
 }
 
@@ -60,33 +37,28 @@ body {
 
 .portada h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 42px;
+  font-size: 40px;
   margin-top: 80px;
 }
 
-.portada h2 {
-  letter-spacing: 4px;
-  margin: 20px 0;
-}
-
-.slogan {
-  margin-top: 60px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-/* CONTENIDO */
-h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
+.section-tag {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #c89b3c;
   margin-bottom: 20px;
 }
 
-h4 {
-  margin-top: 20px;
-  font-size: 18px;
+h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
 }
 
+h3 {
+  margin-top: 25px;
+}
+
+/* LISTAS */
 ul {
   padding-left: 20px;
 }
@@ -97,16 +69,28 @@ ul li {
 
 /* PAQUETES */
 .paquete {
-  border: 1px solid #ddd;
-  padding: 15px;
+  border-left: 4px solid #c89b3c;
+  padding: 12px 15px;
   margin-bottom: 15px;
+  background: #fafafa;
 }
 
-/* FOOTER */
-.main-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-  color: white;
+/* IMPRESIÓN PDF */
+@media print {
+  body {
+    background: white;
+  }
+
+  .main-header,
+  .pdf-bar,
+  .main-footer {
+    display: none;
+  }
+
+  .pagina {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
 }
 
