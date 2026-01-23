@@ -1,182 +1,112 @@
-/* =============================
-   CORPORATIVOS – ESTILO CATÁLOGO
-============================= */
+body {
+  background: #eaeaea;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
 
-/* =============================
-   HERO CORPORATIVO
-============================= */
+/* HEADER */
+.main-header {
+  background: #111;
+  color: #fff;
+  padding: 15px 40px;
+}
 
-.corporativo-hero{
-  min-height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.85)),
-    url("../img/eve/evento2.jpg") center / cover no-repeat;
+.logo {
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  gap: 15px;
 }
 
-.corporativo-hero .hero-inner{
-  max-width: 820px;
-  margin: auto;
-  text-align: center;
+.logo-img {
+  height: 50px;
 }
 
-.corporativo-hero h1{
+.logo-text {
   font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  line-height: 1.1;
-  margin-bottom: 18px;
-}
-
-.corporativo-hero h1 strong{
-  color: var(--dorado);
-}
-
-.corporativo-hero p{
-  font-size: 18px;
-  color: #d1d5db;
-  max-width: 640px;
-  margin: auto;
-}
-
-/* =============================
-   BLOQUE INCLUYE
-============================= */
-
-.about-section{
-  padding: 90px 20px;
-  background: #0b1220;
-}
-
-.about-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.about-card{
-  background: #020617;
-  border-radius: 18px;
-  padding: 26px 22px;
-  font-size: 15px;
-  line-height: 1.6;
-  text-align: center;
-  box-shadow: 0 15px 35px rgba(0,0,0,.45);
-  color: #e5e7eb;
-}
-
-/* =============================
-   PAQUETES CORPORATIVOS
-============================= */
-
-#paquetes{
-  padding: 90px 20px;
-  background: #020617;
-}
-
-#paquetes .events-grid{
-  max-width: 1200px;
-  margin: auto;
-}
-
-#paquetes .event-card{
-  text-align: center;
-  padding: 28px 24px;
-}
-
-#paquetes h3{
   font-size: 22px;
-  margin-bottom: 10px;
 }
 
-#paquetes p{
-  font-size: 15px;
-  color: #9ca3af;
-  margin-bottom: 12px;
+/* BOTON PDF */
+.pdf-actions {
+  text-align: center;
+  margin: 20px;
 }
 
-#paquetes strong{
-  color: var(--dorado);
+.pdf-actions button {
+  padding: 12px 25px;
   font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background: #000;
+  color: #fff;
+  border-radius: 4px;
 }
 
-/* =============================
-   MENÚ CATÁLOGO
-============================= */
-
-.menu-section{
-  padding: 90px 20px;
-  background: #0b1220;
+/* PAGINAS TIPO PDF */
+.pagina {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  margin: 30px auto;
+  padding: 30mm;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  box-sizing: border-box;
 }
 
-.menu-grid{
-  max-width: 1000px;
-  margin: auto;
-}
-
-.menu-card{
+/* PORTADA */
+.portada {
   text-align: center;
-  padding: 26px;
 }
 
-.menu-card h3{
-  font-size: 20px;
+.portada h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-top: 80px;
+}
+
+.portada h2 {
+  letter-spacing: 4px;
+  margin: 20px 0;
+}
+
+.slogan {
+  margin-top: 60px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* CONTENIDO */
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
   margin-bottom: 10px;
 }
 
-.menu-card p{
-  font-size: 15px;
-  color: #9ca3af;
-  line-height: 1.6;
+/* PAQUETES */
+.paquete {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
 }
 
-/* =============================
-   BLOQUE FINAL / CONTACTO
-============================= */
-
-.events-cta{
-  padding: 90px 20px;
-  background: #020617;
+/* FOOTER */
+.main-footer {
   text-align: center;
-}
-
-.events-cta p{
-  font-size: 15px;
-  color: #d1d5db;
-  margin-bottom: 14px;
-}
-
-.events-cta .btn{
-  margin-top: 20px;
-}
-
-.corp-slogan{
-  margin-top: 32px;
-  font-weight: 600;
-  color: var(--dorado);
-  letter-spacing: 1px;
-  font-size: 14px;
-}
-
-/* =============================
-   RESPONSIVE FINO
-============================= */
-
-@media (max-width: 768px){
-
-  .corporativo-hero h1{
-    font-size: 36px;
-  }
-
-  .corporativo-hero p{
-    font-size: 16px;
-  }
-
-  .about-grid{
-    gap: 18px;
-  }
+  padding: 20px;
+  background: #111;
+  color: white;
 }
 
