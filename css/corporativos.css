@@ -19,28 +19,62 @@
   cursor: pointer;
 }
 
-/* PÁGINAS */
+/* ========================= */
+/* PÁGINAS (PANTALLA) */
+/* ========================= */
 .pagina {
-  width: 210mm;
-  min-height: 297mm;
   background: #fff;
   margin: 40px auto;
   padding: 35mm;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   box-sizing: border-box;
+
+  /* VISUAL CORRECTO EN PC Y CEL */
+  width: 90%;
+  max-width: 900px;
+  min-height: 1100px;
 }
 
+/* ========================= */
 /* PORTADA */
+/* ========================= */
 .portada {
   text-align: center;
+  background: #f7f2ed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .portada h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  margin-top: 80px;
+  font-size: 48px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
+.portada h1 span {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.portada .logo-portada {
+  margin: 40px auto;
+}
+
+.portada .logo-portada img {
+  width: 120px;
+}
+
+.portada .slogan {
+  margin-top: 50px;
+  letter-spacing: 3px;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* TEXTO GENERAL */
+/* ========================= */
 .section-tag {
   display: block;
   font-size: 14px;
@@ -75,7 +109,9 @@ ul li {
   background: #fafafa;
 }
 
-/* IMPRESIÓN PDF */
+/* ========================= */
+/* IMPRESIÓN / PDF REAL */
+/* ========================= */
 @media print {
   body {
     background: white;
@@ -88,6 +124,8 @@ ul li {
   }
 
   .pagina {
+    width: 210mm;
+    min-height: 297mm;
     margin: 0;
     box-shadow: none;
     page-break-after: always;
