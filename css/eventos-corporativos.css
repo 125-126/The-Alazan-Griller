@@ -2,23 +2,11 @@
 
 /* Contenedor principal: simula un documento con múltiples hojas */
 .pdf-document {
-  width: 816px;       /* 8.5 pulgadas */
+  width: 816px;          /* 8.5 pulgadas */
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
   color: #333;
   line-height: 1.5;
-}
-
-/* Cada "página" tamaño carta */
-.pdf-page {
-  width: 816px;             /* 8.5 pulgadas */
-  min-height: 1056px;       /* 11 pulgadas */
-  padding: 1.5in 1in;       /* márgenes tipo carta */
-  background: #fff;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  page-break-after: always; /* Cada contenedor simula una hoja */
 }
 
 /* Portada */
@@ -28,17 +16,39 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  page-break-after: always; /* Portada ocupa una hoja completa */
 }
 
-.portada h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: #111; margin-bottom: 0.5rem; }
-.portada h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin-bottom: 1rem; }
-.portada p  { font-size: 1.2rem; color: #666; margin-bottom: 2rem; }
-.portada-img { width: 80%; border-radius: 10px; margin-top: 1rem; }
+.portada h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.portada h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.portada p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.portada-img {
+  width: 80%;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
 
 /* Secciones internas */
 .pdf-section {
   margin-bottom: 1.5rem;
-  page-break-inside: avoid; /* Evita cortar secciones a la mitad */
+  page-break-inside: avoid; /* evita cortar secciones importantes */
 }
 
 .pdf-section h1 {
@@ -81,14 +91,17 @@
   margin-bottom: 1rem;
 }
 
-.menu-item img { width: 100%; border-radius: 10px; }
+.menu-item img {
+  width: 100%;
+  border-radius: 10px;
+}
 
 /* Footer */
 .pdf-footer {
   text-align: center;
   font-size: 0.9rem;
   color: #999;
-  margin-top: auto;
+  margin-top: 2rem;
   border-top: 1px solid #eee;
   padding-top: 1rem;
 }
@@ -124,15 +137,13 @@
     padding: 1in;
   }
 
-  .pdf-page {
-    width: 100%;
-    min-height: auto;
-    page-break-after: always;
-    overflow: visible; /* para que el contenido largo fluya */
+  .pdf-section {
+    page-break-inside: avoid;
   }
 
-  .pdf-section {
-    page-break-inside: avoid; /* evita cortar secciones importantes */
+  /* Cada hoja tamaño carta real */
+  .pdf-document > * {
+    page-break-after: auto;
   }
 }
 
@@ -148,3 +159,4 @@
     width: 100%;
   }
 }
+
