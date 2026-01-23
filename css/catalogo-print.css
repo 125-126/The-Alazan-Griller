@@ -156,3 +156,59 @@ h2,h3,h4,p,ul,.content-block{
 }
 
 }
+@media print{
+
+.main-header,.pdf-bar,.main-footer{
+  display:none !important;
+}
+
+body{
+  background:#fff;
+  counter-reset:page;
+}
+
+.catalogo{
+  width:210mm;
+  margin:0 auto;
+}
+
+.pagina{
+  width:210mm;
+  padding:30mm 22mm 28mm;
+  page-break-after:always;
+}
+
+/* Evitar cortes feos */
+.content-block,
+h2,h3,h4,p,ul{
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+/* Imágenes compactas */
+.content-block .image{
+  height:140px;
+  flex:0 0 35%;
+}
+
+/* Header y footer */
+.pagina::before{
+  content:"THE ALAZAN GRILLER";
+  display:block;
+  text-align:center;
+  margin-bottom:12px;
+  font-family:'Playfair Display',serif;
+  letter-spacing:3px;
+}
+
+.pagina::after{
+  content:"Página " counter(page);
+  counter-increment:page;
+  display:block;
+  text-align:right;
+  margin-top:12px;
+  font-size:11px;
+  color:#666;
+}
+
+}
