@@ -8,68 +8,69 @@
   <!-- FUENTES -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS GLOBAL -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/corporativos.css"> <!-- tu CSS del catálogo -->
+  <link rel="stylesheet" href="css/corporativos.css">
 </head>
 
+<body class="eventos-corporativos">
 
-<!-- ================= HEADER ================= -->
-<header class="main-header">
-  <div class="header-container">
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="header-container">
 
-    <!-- LOGO: imagen a la izquierda, texto a la derecha en línea -->
-    <div class="logo">
-      <img src="img/logores1.png" alt="Logo" class="logo-img" style="height:50px;">
-      <div class="logo-text">
-        <span>The</span> Alazan Griller
-      </div>
+      <!-- LOGO -->
+      <a href="index.html" class="logo">
+        <img src="img/logores1.png" alt="Logo The Alazan Griller">
+        <div class="logo-text">
+          <span>The</span> Alazan Griller
+        </div>
+      </a>
+
+      <!-- MENÚ -->
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="eventos-corporativos.html" class="nav-highlight">Corporativos</a>
+        <a href="quienes.html">Quiénes Somos</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <!-- BOTÓN MÓVIL -->
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
+  </header>
 
-    <!-- MENÚ -->
-    <nav class="main-nav" id="mainNav">
-      <a href="index.html">Inicio</a>
-      <a href="menu.html">Menú</a>
-      <a href="eventos.html">Eventos</a>
-      <a href="eventos-corporativos.html" class="nav-highlight">Corporativos</a>
-      <a href="quienes.html">Quiénes Somos</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
+  <!-- ================= HERO ================= -->
+  <section class="hero portada" style="background: url('img/eve/evento2.jpg') center/cover no-repeat; height:80vh;">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner reveal">
+      <h1>Eventos<br><strong>Corporativos</strong></h1>
+      <p class="slogan">THE ALAZAN GRILLER</p>
+    </div>
+  </section>
 
-    <!-- TOGGLE MÓVIL -->
-    <button class="menu-toggle" id="menuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  <!-- ================= PDF DESCARGA ================= -->
+  <section class="pdf-bar">
+    <button class="pdf-btn" onclick="window.print()">📄 Descargar catálogo en PDF</button>
+  </section>
 
-  </div>
-</header>
-<!-- ================= HERO / PORTADA ================= -->
-<section class="hero portada" style="background: url('img/eve/evento2.jpg') center/cover no-repeat; height:80vh;">
-  <div class="hero-overlay"></div>
-  <div class="hero-inner reveal">
-    <h1>Eventos<br><strong>Corporativos</strong></h1>
-    <p class="slogan">THE ALAZAN GRILLER</p>
-  </div>
-</section>
-
-<!-- ================= PDF DESCARGA ================= -->
-<section class="pdf-bar">
-  <a href="catalogo.pdf" download class="pdf-btn">📄 Descargar catálogo en PDF</a>
-</section>
-
-<main class="catalogo">
-
-  <!-- ================= INCLUYE ================= -->
-  <section class="pagina">
-    <div class="page-body">
-      <span class="section-tag">INCLUYE</span>
-      <h2 class="titulo-seccion">Nuestros paquetes incluyen</h2>
-      <div class="content-block">
+  <!-- ================= CATÁLOGO ================= -->
+  <main class="catalogo">
+    <!-- INCLUYE -->
+    <section class="pagina">
+      <div class="page-body">
+        <span class="section-tag">INCLUYE</span>
+        <h2 class="titulo-seccion">Nuestros paquetes incluyen</h2>
         <ul class="lista-ejecutiva">
           <li>Exquisita gastronomía</li>
           <li>Uso de salón con aire acondicionado</li>
@@ -83,114 +84,101 @@
           <li>Amplio parqueo</li>
         </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= PAQUETES ================= -->
-  <section class="pagina">
-    <div class="page-body">
-      <span class="section-tag">PAQUETES</span>
-      <h2 class="titulo-seccion">Nuestros paquetes</h2>
-
-      <div class="content-block">
-        <h3>Break Sencillo</h3>
-        <p class="detalle">Uso de salón por 4 horas</p>
-        <p class="precio">$ XXX</p>
+    <!-- PAQUETES -->
+    <section class="pagina">
+      <div class="page-body">
+        <span class="section-tag">PAQUETES</span>
+        <h2 class="titulo-seccion">Nuestros paquetes</h2>
+        <div class="content-block">
+          <h3>Break Sencillo</h3>
+          <p class="detalle">Uso de salón por 4 horas</p>
+          <p class="precio">$ XXX</p>
+        </div>
+        <div class="content-block reverse">
+          <h3>Break Doble</h3>
+          <p class="detalle">1 dulce y 1 salado</p>
+          <p class="precio">$ XXX</p>
+        </div>
+        <div class="content-block">
+          <h3>Jornada Completa</h3>
+          <p class="detalle">8 horas · Break AM + Almuerzo + Break PM</p>
+          <p class="precio">$ XXX</p>
+        </div>
       </div>
+    </section>
 
-      <div class="content-block reverse">
-        <h3>Break Doble</h3>
-        <p class="detalle">1 dulce y 1 salado</p>
-        <p class="precio">$ XXX</p>
+    <!-- MENÚ BREAK AM -->
+    <section class="pagina">
+      <div class="page-body">
+        <span class="section-tag">MENÚ</span>
+        <h2 class="titulo-seccion">Break AM</h2>
+        <ul class="menu-list">
+          <li>Croissant: Jamón de pavo, Lechuga, Tomate, Mayonesa</li>
+          <li>Sándwich de jamón y queso: Pan Pullman, Jamón de pavo, Queso amarillo</li>
+        </ul>
       </div>
+    </section>
 
-      <div class="content-block">
-        <h3>Jornada Completa</h3>
-        <p class="detalle">8 horas · Break AM + Almuerzo + Break PM</p>
-        <p class="precio">$ XXX</p>
+    <!-- MENÚ ALMUERZO -->
+    <section class="pagina">
+      <div class="page-body">
+        <span class="section-tag">MENÚ</span>
+        <h2 class="titulo-seccion">Almuerzo</h2>
+        <ul class="menu-list">
+          <li>Lomo de cerdo en salsa barbacoa: Papa al horno, vegetales, 2 panes</li>
+          <li>Filete de pollo en salsa de hongos o jalapeña: Arroz con vegetales, ensalada, 2 panes</li>
+        </ul>
       </div>
+    </section>
+
+    <!-- MENÚ BREAK PM -->
+    <section class="pagina">
+      <div class="page-body">
+        <span class="section-tag">MENÚ</span>
+        <h2 class="titulo-seccion">Break PM</h2>
+        <ul class="menu-list">
+          <li>Pera al vino o a la moda</li>
+          <li>Canoa</li>
+          <li>Empanada de leche (2 unidades)</li>
+          <li>Quesadilla</li>
+          <li>Pastel de chocolate</li>
+          <li>Cheesecake</li>
+          <li>Pie de limón</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="pagina">
+      <div class="page-body">
+        <span class="section-tag">CONTACTO</span>
+        <h2 class="titulo-seccion">Contáctanos</h2>
+        <p><strong>Email:</strong> elrodeo.restaurant2024@gmail.com</p>
+        <p><strong>Dirección:</strong> Carretera a Sonsonate km 28, polígono B #130</p>
+        <p class="slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer">
+    <div class="footer-bottom">
+      <p>© 2026 The Alazan Griller. Todos los derechos reservados.</p>
     </div>
-  </section>
+  </footer>
 
-  <!-- ================= MENÚ BREAK AM ================= -->
-  <section class="pagina">
-    <div class="page-body">
-      <span class="section-tag">MENÚ</span>
-      <h2 class="titulo-seccion">Break AM</h2>
-      <ul class="menu-list">
-        <li>Croissant: Jamón de pavo, Lechuga, Tomate, Mayonesa</li>
-        <li>Sándwich de jamón y queso: Pan Pullman, Jamón de pavo, Queso amarillo</li>
-      </ul>
-    </div>
-  </section>
+  <!-- ================= SCRIPTS ================= -->
+  <script src="js/menu.js"></script>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
 
-  <!-- ================= MENÚ ALMUERZO ================= -->
-  <section class="pagina">
-    <div class="page-body">
-      <span class="section-tag">MENÚ</span>
-      <h2 class="titulo-seccion">Almuerzo</h2>
-      <ul class="menu-list">
-        <li>Lomo de cerdo en salsa barbacoa: Papa al horno, vegetales, 2 panes</li>
-        <li>Filete de pollo en salsa de hongos o jalapeña: Arroz con vegetales, ensalada, 2 panes</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ================= MENÚ BREAK PM ================= -->
-  <section class="pagina">
-    <div class="page-body">
-      <span class="section-tag">MENÚ</span>
-      <h2 class="titulo-seccion">Break PM</h2>
-      <ul class="menu-list">
-        <li>Pera al vino o a la moda</li>
-        <li>Canoa</li>
-        <li>Empanada de leche (2 unidades)</li>
-        <li>Quesadilla</li>
-        <li>Pastel de chocolate</li>
-        <li>Cheesecake</li>
-        <li>Pie de limón</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ================= CONTACTO ================= -->
-  <section class="pagina">
-    <div class="page-body">
-      <span class="section-tag">CONTACTO</span>
-      <h2 class="titulo-seccion">Contáctanos</h2>
-      <p><strong>Email:</strong> elrodeo.restaurant2024@gmail.com</p>
-      <p><strong>Dirección:</strong> Carretera a Sonsonate km 28, polígono B #130</p>
-      <p class="slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
-    </div>
-  </section>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer class="main-footer">
-  <div class="footer-bottom">
-    <p>© 2026 The Alazan Griller. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-<!-- ================= SCRIPTS ================= -->
-<script src="js/menu.js"></script>
-<script src="js/animations.js"></script>
-<script>
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-
-menuToggle.addEventListener('click', () => {
-  mainNav.classList.toggle('open');
-});
-</script>
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+  </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
