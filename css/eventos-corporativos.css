@@ -1,166 +1,101 @@
-/* ================= EVENTOS CORPORATIVOS CSS ================= */
+/* ================= EVENTOS CORPORATIVOS CSS OPTIMIZADO ================= */
 
-/* Contenedor principal tipo PDF */
-.pdf-container {
-  max-width: 800px;       /* ancho similar a hoja A4 */
-  margin: 2rem auto;      /* centrado vertical y horizontal */
-  padding: 3rem;          /* espacio interno */
-  background-color: #fff; /* fondo blanco de documento */
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  font-family: 'Inter', sans-serif;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Encabezado del PDF */
-.pdf-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.pdf-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  color: #111;
-}
-
-.pdf-header p {
-  font-size: 1rem;
-  color: #666;
-  font-weight: 400;
-}
-
-/* Secciones del PDF */
-.pdf-section {
-  margin-bottom: 2rem;
-}
-
-.pdf-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid #ccc;
-  color: #222;
-}
-
-.pdf-section p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  color: #444;
-}
-
-/* Listas */
-.pdf-section ul {
-  padding-left: 1.5rem;
-  list-style-type: disc;
-}
-
-.pdf-section ul li {
-  margin-bottom: 0.5rem;
-}
-
-/* Footer tipo PDF */
-.pdf-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #999;
-  margin-top: 3rem;
-  border-top: 1px solid #eee;
-  padding-top: 1rem;
-}
-
-/* Estilo adicional opcional: simular "páginas" si quieres imprimir */
-@media print {
-  body {
-    background: #fff;
-  }
-
-  .pdf-container {
-    box-shadow: none;
-    margin: 0;
-    padding: 2cm;
-    page-break-after: always;
-  }
-}
-
-/* Responsivo */
-@media (max-width: 900px) {
-  .pdf-container {
-    padding: 2rem;
-    margin: 1rem;
-  }
-}
-
-/* ================= EVENTOS CORPORATIVOS PDF CSS ================= */
-
-/* Contenedor tipo PDF: cada "página" */
-.pdf-container {
-  width: 816px;            /* 8.5 pulgadas * 96px */
-  min-height: 1056px;      /* 11 pulgadas * 96px */
+/* Contenedor principal tipo PDF (fluido) */
+.pdf-document {
+  width: 816px;             /* 8.5 pulgadas */
   margin: 2rem auto;
-  padding: 2in 1in;        /* Márgenes tipo documento */
+  padding: 2in 1in;         /* márgenes tipo hoja carta */
   background-color: #fff;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   color: #333;
-  line-height: 1.6;
-  box-sizing: border-box;
-  page-break-after: always; /* Cada contenedor simula una hoja */
+  line-height: 1.5;
 }
 
-/* Encabezado PDF */
-.pdf-header {
+/* ================= PORTADA ================= */
+.portada {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.pdf-header h1 {
+.portada h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.portada h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #111;
+  color: #222;
+  margin-bottom: 1rem;
 }
 
-.pdf-header p {
-  font-size: 1rem;
+.portada p {
+  font-size: 1.2rem;
   color: #666;
+  margin-bottom: 2rem;
 }
 
-/* Secciones del PDF */
+.portada-img {
+  width: 80%;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+/* ================= SECCIONES ================= */
 .pdf-section {
   margin-bottom: 2rem;
+  page-break-inside: avoid; /* evita cortar secciones a la mitad */
+}
+
+.pdf-section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin: 1.5rem 0 1rem 0;
 }
 
 .pdf-section h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
-  color: #222;
+  margin: 1rem 0 0.5rem 0;
   border-bottom: 2px solid #ccc;
   padding-bottom: 0.3rem;
-  margin-bottom: 1rem;
 }
 
-.pdf-section p {
+.pdf-section p,
+.pdf-section ul li {
   font-size: 1rem;
   color: #444;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
-/* Listas dentro de secciones */
 .pdf-section ul {
   padding-left: 1.5rem;
   list-style-type: disc;
 }
 
-.pdf-section ul li {
-  margin-bottom: 0.5rem;
+/* ================= GALERÍA DE MENÚS ================= */
+.galeria-menus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-/* Footer tipo PDF */
+.menu-item {
+  width: calc(50% - 1rem);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.menu-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ================= FOOTER ================= */
 .pdf-footer {
   text-align: center;
   font-size: 0.9rem;
@@ -170,118 +105,52 @@
   padding-top: 1rem;
 }
 
-/* Numeración de páginas simulada (opcional) */
-.pdf-footer::after {
-  content: "Página " counter(page);
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: #aaa;
+/* ================= BOTÓN DESCARGA PDF ================= */
+.download-pdf {
+  text-align: center;
+  margin: 2rem 0;
 }
 
-/* Impresión: mantener el tamaño de hoja carta y saltos de página */
+.download-pdf button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.download-pdf button:hover {
+  background-color: #e74c3c;
+}
+
+/* ================= IMPRESIÓN PDF ================= */
 @media print {
   body {
     background: #fff;
   }
 
-  .pdf-container {
+  .pdf-document {
     width: 100%;
-    min-height: auto;
-    box-shadow: none;
-    margin: 0;
-    padding: 2in 1in;
-    page-break-after: always;
+    padding: 1in;
+  }
+
+  /* Evita cortar secciones a la mitad */
+  .pdf-document * {
+    page-break-inside: avoid;
   }
 }
 
-/* Responsivo para pantallas pequeñas */
+/* ================= RESPONSIVO ================= */
 @media (max-width: 900px) {
-  .pdf-container {
+  .pdf-document {
     width: 95%;
-    padding: 2rem;
+    padding: 1.5rem;
     margin: 1rem auto;
   }
-}
-.pdf-document {
-  width: 816px;       /* 8.5 pulgadas */
-  margin: auto;
-}
 
-.pdf-page {
-  width: 816px;
-  height: 1056px;     /* 11 pulgadas */
-  padding: 2in 1in;   /* márgenes tipo PDF */
-  background: #fff;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  box-sizing: border-box;
-  overflow: hidden;   /* Oculta contenido que pasa de la página */
-  page-break-after: always; /* Salto de página para impresión */
-  display: flex;
-  flex-direction: column;
-}
-
-/* Header y secciones iguales a lo que ya hiciste */
-.pdf-header { text-align: center; margin-bottom: 2rem; }
-.pdf-header h1 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
-.pdf-header p { font-size: 1rem; color: #666; }
-
-.pdf-section { margin-bottom: 2rem; }
-.pdf-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; border-bottom: 2px solid #ccc; padding-bottom: 0.3rem; margin-bottom: 1rem; }
-.pdf-section p, .pdf-section ul li { font-size: 1rem; color: #444; line-height: 1.6; }
-.pdf-section ul { padding-left: 1.5rem; list-style-type: disc; }
-
-.pdf-footer { text-align: center; font-size: 0.9rem; color: #999; margin-top: auto; border-top: 1px solid #eee; padding-top: 1rem; }
-
-/* Impresión */
-@media print {
-  .pdf-page {
+  .menu-item {
     width: 100%;
-    height: auto;
-    box-shadow: none;
-    page-break-after: always;
-    overflow: visible;
   }
 }
-.pdf-document { width: 816px; margin: auto; }
-
-.pdf-page {
-  width: 816px;
-  min-height: 1056px;  /* 11 pulgadas */
-  padding: 2in 1in;
-  background: #fff;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  box-sizing: border-box;
-  overflow: hidden;
-  page-break-after: always;
-  display: flex;
-  flex-direction: column;
-}
-
-.portada-content {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.portada-content h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: #111; }
-.portada-content h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin-bottom: 1rem; }
-.portada-content p { font-size: 1.2rem; color: #666; margin-bottom: 2rem; }
-.portada-img { width: 80%; border-radius: 10px; margin-top: 1rem; }
-
-.pdf-header { text-align: center; margin-bottom: 2rem; }
-.pdf-header h1 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.5rem; }
-
-.pdf-section { margin-bottom: 2rem; }
-.pdf-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; border-bottom: 2px solid #ccc; padding-bottom: 0.3rem; margin-bottom: 1rem; }
-.pdf-section p, .pdf-section ul li { font-size: 1rem; color: #444; line-height: 1.6; }
-.pdf-section ul { padding-left: 1.5rem; list-style-type: disc; }
-
-.galeria-menus { display: flex; gap: 1rem; flex-wrap: wrap; }
-.menu-item { width: calc(50% - 1rem); margin-bottom: 1rem; text-align: center; }
-.menu-item img { width: 100%; border-radius: 10px; }
-
-.pdf-footer { text-align: center; font-size: 0.9rem; color: #999; margin-top: auto; border-top: 1px solid #eee; padding-top: 1rem; }
-
-.download-pdf { text-align: center; margin: 2rem 0; }
-.download-pdf button { padding: 0.8rem 1.5rem; font-size: 1rem; background-color: #c0392b; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
-.download-pdf button:hover { background-color: #e74c3c; }
