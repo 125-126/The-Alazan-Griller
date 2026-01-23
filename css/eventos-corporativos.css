@@ -249,4 +249,45 @@
   border-radius: 10px;
   margin-top: 2rem;
 }
+.pdf-page {
+  width: 816px;           /* 8.5 pulgadas */
+  height: 1056px;         /* 11 pulgadas */
+  padding: 1.5in 1in;     /* márgenes tipo carta */
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
+  text-align: center;
+  page-break-after: always; /* cada página es independiente */
+}
 
+.portada-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.portada-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2em;
+}
+
+.portada-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.portada-img {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
