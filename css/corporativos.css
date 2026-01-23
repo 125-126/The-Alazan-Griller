@@ -510,4 +510,26 @@ ul li {
   border-radius: 6px;
 }
 
+.content-block {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 40px;
+  margin: 50px 0;
+  align-items: center;
+}
+
+.content-block.reverse {
+  grid-template-columns: 55% 45%;
+}
+
+.content-block.reverse .image {
+  order: 2;
+}
+
+.image {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+}
 
