@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eventos Corporativos | The Alazan Griller</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos Corporativos | The Alazan Griller</title>
 
-<!-- Fuentes -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- CSS -->
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/variables.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/layout.css">
-<link rel="stylesheet" href="css/corporativos.css">
-
+  <!-- CSS GLOBAL -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/corporativos.css"> <!-- tu CSS del catálogo -->
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header class="main-header">
   <div class="header-container">
+
     <div class="logo">
-      <img src="img/logores1.png" class="logo-img" alt="Logo The Alazan Griller">
-      <div class="logo-text"><span>The</span> Alazan Griller</div>
+      <img src="img/logores1.png" alt="Logo" class="logo-img">
+      <div class="logo-text">
+        <span>The</span> Alazan Griller
+      </div>
     </div>
 
-    <nav class="main-nav">
+    <nav class="main-nav" id="mainNav">
       <a href="index.html">Inicio</a>
       <a href="menu.html">Menú</a>
       <a href="eventos.html">Eventos</a>
@@ -35,47 +38,49 @@
       <a href="contacto.html">Contacto</a>
     </nav>
 
-    <!-- Menú móvil -->
-    <div class="mobile-menu-toggle">☰</div>
+    <div class="header-actions">
+      <button class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
   </div>
 </header>
 
+<!-- ================= HERO / PORTADA ================= -->
+<section class="hero portada" style="background: url('img/eve/evento2.jpg') center/cover no-repeat; height:80vh;">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner reveal">
+    <h1>Eventos<br><strong>Corporativos</strong></h1>
+    <p class="slogan">THE ALAZAN GRILLER</p>
+  </div>
+</section>
+
+<!-- ================= PDF DESCARGA ================= -->
 <section class="pdf-bar">
   <button onclick="window.print()">📄 Descargar catálogo en PDF</button>
 </section>
 
 <main class="catalogo">
 
-  <!-- ================= PORTADA ================= -->
-  <section class="pagina portada">
-    <div class="page-body">
-      <span class="section-tag">EVENTOS CORPORATIVOS</span>
-      <h1><span>Eventos</span><br>CORPORATIVOS</h1>
-      <p class="slogan">THE ALAZAN GRILLER</p>
-    </div>
-  </section>
-
   <!-- ================= INCLUYE ================= -->
   <section class="pagina">
     <div class="page-body">
       <span class="section-tag">INCLUYE</span>
       <h2 class="titulo-seccion">Nuestros paquetes incluyen</h2>
-
       <div class="content-block">
-        <div class="image" style="background-image:url('img/cor1.png')"></div>
-        <div class="text">
-          <p class="intro-text">
-            Nuestros paquetes corporativos están diseñados para ofrecer una experiencia profesional completa.
-          </p>
-          <ul class="lista-ejecutiva">
-            <li>Exquisita gastronomía</li>
-            <li>Uso de salón con aire acondicionado</li>
-            <li>Montaje según capacidad del salón</li>
-            <li>Sillas plásticas</li>
-            <li>Mesa para proyección</li>
-            <li>Estación de café</li>
-          </ul>
-        </div>
+        <ul class="lista-ejecutiva">
+          <li>Exquisita gastronomía</li>
+          <li>Uso de salón con aire acondicionado</li>
+          <li>Montaje según capacidad del salón</li>
+          <li>Sillas plásticas</li>
+          <li>Mesa para proyección</li>
+          <li>Extensión y regleta</li>
+          <li>Pizarra y plumón</li>
+          <li>Mantelería blanca</li>
+          <li>Estación de agua y café</li>
+          <li>Amplio parqueo</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -87,73 +92,63 @@
       <h2 class="titulo-seccion">Nuestros paquetes</h2>
 
       <div class="content-block">
-        <div class="image" style="background-image:url('img/cor2.png')"></div>
-        <div class="text">
-          <h3>Break Sencillo</h3>
-          <p class="detalle">Uso de salón por 4 horas</p>
-          <p class="precio">$ XXX</p>
-        </div>
+        <h3>Break Sencillo</h3>
+        <p class="detalle">Uso de salón por 4 horas</p>
+        <p class="precio">$ XXX</p>
       </div>
 
       <div class="content-block reverse">
-        <div class="image" style="background-image:url('img/cor3.png')"></div>
-        <div class="text">
-          <h3>Break Doble</h3>
-          <p class="detalle">1 dulce y 1 salado</p>
-          <p class="precio">$ XXX</p>
-        </div>
+        <h3>Break Doble</h3>
+        <p class="detalle">1 dulce y 1 salado</p>
+        <p class="precio">$ XXX</p>
       </div>
 
       <div class="content-block">
-        <div class="image" style="background-image:url('img/cor4.png')"></div>
-        <div class="text">
-          <h3>Media Jornada</h3>
-          <p class="detalle">6 horas · Break AM + Almuerzo</p>
-          <p class="precio">$ XXX</p>
-        </div>
-      </div>
-
-      <div class="content-block reverse">
-        <div class="image" style="background-image:url('img/cor11.png')"></div>
-        <div class="text">
-          <h3>Jornada Completa</h3>
-          <p class="detalle">8 horas · Break AM + Almuerzo + Break PM</p>
-          <p class="precio">$ XXX</p>
-        </div>
+        <h3>Jornada Completa</h3>
+        <p class="detalle">8 horas · Break AM + Almuerzo + Break PM</p>
+        <p class="precio">$ XXX</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= MENÚS ================= -->
+  <!-- ================= MENÚ BREAK AM ================= -->
   <section class="pagina">
     <div class="page-body">
       <span class="section-tag">MENÚ</span>
       <h2 class="titulo-seccion">Break AM</h2>
+      <ul class="menu-list">
+        <li>Croissant: Jamón de pavo, Lechuga, Tomate, Mayonesa</li>
+        <li>Sándwich de jamón y queso: Pan Pullman, Jamón de pavo, Queso amarillo</li>
+      </ul>
+    </div>
+  </section>
 
-      <div class="content-block">
-        <div class="image" style="background-image:url('img/cor5.png')"></div>
-        <div class="text">
-          <h4>Croissant</h4>
-          <ul class="menu-list">
-            <li>Jamón de pavo</li>
-            <li>Lechuga</li>
-            <li>Tomate</li>
-            <li>Mayonesa</li>
-          </ul>
-        </div>
-      </div>
+  <!-- ================= MENÚ ALMUERZO ================= -->
+  <section class="pagina">
+    <div class="page-body">
+      <span class="section-tag">MENÚ</span>
+      <h2 class="titulo-seccion">Almuerzo</h2>
+      <ul class="menu-list">
+        <li>Lomo de cerdo en salsa barbacoa: Papa al horno, vegetales, 2 panes</li>
+        <li>Filete de pollo en salsa de hongos o jalapeña: Arroz con vegetales, ensalada, 2 panes</li>
+      </ul>
+    </div>
+  </section>
 
-      <div class="content-block reverse">
-        <div class="image" style="background-image:url('img/cor6.png')"></div>
-        <div class="text">
-          <h4>Sándwich de jamón y queso</h4>
-          <ul class="menu-list">
-            <li>Pan Pullman</li>
-            <li>Jamón de pavo</li>
-            <li>Queso amarillo</li>
-          </ul>
-        </div>
-      </div>
+  <!-- ================= MENÚ BREAK PM ================= -->
+  <section class="pagina">
+    <div class="page-body">
+      <span class="section-tag">MENÚ</span>
+      <h2 class="titulo-seccion">Break PM</h2>
+      <ul class="menu-list">
+        <li>Pera al vino o a la moda</li>
+        <li>Canoa</li>
+        <li>Empanada de leche (2 unidades)</li>
+        <li>Quesadilla</li>
+        <li>Pastel de chocolate</li>
+        <li>Cheesecake</li>
+        <li>Pie de limón</li>
+      </ul>
     </div>
   </section>
 
@@ -163,26 +158,23 @@
       <span class="section-tag">CONTACTO</span>
       <h2 class="titulo-seccion">Contáctanos</h2>
       <p><strong>Email:</strong> elrodeo.restaurant2024@gmail.com</p>
-      <p><strong>Dirección:</strong> Carretera a Sonsonate km 28</p>
+      <p><strong>Dirección:</strong> Carretera a Sonsonate km 28, polígono B #130</p>
       <p class="slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
     </div>
   </section>
 
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer class="main-footer">
-  <p>© 2026 The Alazan Griller</p>
+  <div class="footer-bottom">
+    <p>© 2026 The Alazan Griller. Todos los derechos reservados.</p>
+  </div>
 </footer>
 
-<!-- Script menú móvil -->
-<script>
-  const toggle = document.querySelector('.mobile-menu-toggle');
-  const nav = document.querySelector('.main-nav');
-
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
-</script>
+<!-- ================= SCRIPTS ================= -->
+<script src="js/menu.js"></script>
+<script src="js/animations.js"></script>
 
 </body>
 </html>
