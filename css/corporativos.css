@@ -110,3 +110,80 @@ ul li { margin-bottom:8px; font-size:15px; }
   .pagina::after { content:"Página " counter(page); }
 }
 
+/* ========================= */
+/* ESTRUCTURA DE PÁGINA A4 */
+/* ========================= */
+.pagina{
+  position:relative;
+  min-height:297mm;
+  padding:45mm 32mm 40mm;
+  page-break-after:always;
+  break-after:page;
+}
+
+/* ========================= */
+/* FRANJA SUPERIOR */
+/* ========================= */
+.page-header{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:38px;
+  background:linear-gradient(90deg,#e8c97a,#c89b3c,#e8c97a);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:13px;
+  letter-spacing:3px;
+  color:#2b2b2b;
+}
+
+/* ========================= */
+/* FRANJA INFERIOR */
+/* ========================= */
+.page-footer{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:32px;
+  background:linear-gradient(90deg,#e8c97a,#c89b3c,#e8c97a);
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding-right:32mm;
+  font-size:12px;
+  color:#2b2b2b;
+}
+
+/* ========================= */
+/* NÚMERO DE PÁGINA */
+/* ========================= */
+.page-number::after{
+  content:counter(page);
+}
+
+body{
+  counter-reset:page;
+}
+
+.pagina{
+  counter-increment:page;
+}
+
+/* ========================= */
+/* IMPRESIÓN REAL */
+/* ========================= */
+@media print{
+  .main-header,
+  .pdf-bar,
+  .main-footer{
+    display:none !important;
+  }
+
+  @page{
+    margin:0;
+  }
+}
