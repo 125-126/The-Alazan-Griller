@@ -9,14 +9,10 @@
 
 @media print{
 
+/* Fuerza colores */
 *{
-  -webkit-print-color-adjust:exact;
-  print-color-adjust:exact;
-}
-
-body{
-  background:#fff !important;
-  counter-reset:page;
+  -webkit-print-color-adjust:exact !important;
+  print-color-adjust:exact !important;
 }
 
 /* Ocultar web */
@@ -24,6 +20,12 @@ body{
 .pdf-bar,
 .main-footer{
   display:none !important;
+}
+
+/* Fondo real */
+body{
+  background:#fff !important;
+  counter-reset:page;
 }
 
 /* Contenedor */
@@ -34,18 +36,20 @@ body{
   background:#fff;
 }
 
-/* Cada sección es una hoja */
+/* ================= HOJAS ================= */
+
 .pagina{
   position:relative;
   width:210mm;
   min-height:297mm;
-  padding:42mm 28mm 36mm;
+  padding:32mm 22mm 30mm;
   box-sizing:border-box;
   page-break-after:always;
   break-after:page;
 }
 
 /* ================= HEADER ================= */
+
 .pagina::before{
   content:"THE ALAZAN GRILLER";
   position:absolute;
@@ -64,6 +68,7 @@ body{
 }
 
 /* ================= FOOTER ================= */
+
 .pagina::after{
   content:"Página " counter(page);
   counter-increment:page;
@@ -82,26 +87,29 @@ body{
 }
 
 /* ================= TÍTULOS ================= */
+
 h2{
   color:#7a1f1f;
   border-bottom:2px solid #c89b3c;
   padding-bottom:6px;
+  margin-bottom:12px;
 }
 
 /* ================= BLOQUES ================= */
+
 .content-block{
   display:flex;
-  gap:22px;
-  margin:22px 0;
+  gap:18px;
+  margin:14px 0;
   align-items:center;
   page-break-inside:avoid;
   break-inside:avoid;
 }
 
-/* Imagen más pequeña para que quepa todo */
+/* Imagen compacta */
 .content-block .image{
-  flex:0 0 38%;
-  height:180px;
+  flex:0 0 34%;
+  height:140px;
   border-radius:8px;
   page-break-inside:avoid;
 }
@@ -111,13 +119,27 @@ h2{
   flex:1;
 }
 
-/* Nada se parte */
+/* Texto más compacto */
+.content-block .text p,
+.content-block .text li{
+  font-size:13px;
+  line-height:1.35;
+}
+
+/* Listas sin aire */
+ul{
+  margin:6px 0;
+  padding-left:18px;
+}
+
+/* Nada se corta */
 h2,h3,h4,p,ul,.content-block{
   page-break-inside:avoid;
   break-inside:avoid;
 }
 
-/* Portada centrada */
+/* ================= PORTADA ================= */
+
 .portada{
   display:flex;
   justify-content:center;
@@ -126,64 +148,11 @@ h2,h3,h4,p,ul,.content-block{
 }
 
 .portada h1{
-  font-size:48px;
+  font-size:42px;
 }
 
-}
-@media print{
-
-/* Reducir espacios generales */
-.pagina{
-  padding:32mm 22mm 30mm !important;
-}
-
-/* Títulos más compactos */
-h2{
-  margin-bottom:12px !important;
-}
-
-.section-tag{
-  margin-bottom:6px !important;
-}
-
-/* Bloques más juntos */
-.content-block{
-  margin:14px 0 !important;
-  gap:18px !important;
-}
-
-/* Imágenes mucho más pequeñas */
-.content-block .image{
-  height:140px !important;
-  flex:0 0 34% !important;
-}
-
-/* Texto más compacto */
-.content-block .text p,
-.content-block .text li{
-  font-size:13px !important;
-  line-height:1.35 !important;
-}
-
-/* Listas sin aire */
-ul{
-  margin:6px 0 !important;
-  padding-left:18px !important;
-}
-
-/* Evitar hojas medio vacías */
-.page-body{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-}
-
-/* Portada más apretada */
-.portada h1{
-  font-size:42px !important;
-}
 .portada .slogan{
-  margin-top:8px !important;
+  margin-top:8px;
 }
 
 }
