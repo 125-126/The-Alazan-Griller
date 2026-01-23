@@ -243,3 +243,45 @@
     overflow: visible;
   }
 }
+.pdf-document { width: 816px; margin: auto; }
+
+.pdf-page {
+  width: 816px;
+  min-height: 1056px;  /* 11 pulgadas */
+  padding: 2in 1in;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  overflow: hidden;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+}
+
+.portada-content {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.portada-content h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: #111; }
+.portada-content h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin-bottom: 1rem; }
+.portada-content p { font-size: 1.2rem; color: #666; margin-bottom: 2rem; }
+.portada-img { width: 80%; border-radius: 10px; margin-top: 1rem; }
+
+.pdf-header { text-align: center; margin-bottom: 2rem; }
+.pdf-header h1 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.5rem; }
+
+.pdf-section { margin-bottom: 2rem; }
+.pdf-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; border-bottom: 2px solid #ccc; padding-bottom: 0.3rem; margin-bottom: 1rem; }
+.pdf-section p, .pdf-section ul li { font-size: 1rem; color: #444; line-height: 1.6; }
+.pdf-section ul { padding-left: 1.5rem; list-style-type: disc; }
+
+.galeria-menus { display: flex; gap: 1rem; flex-wrap: wrap; }
+.menu-item { width: calc(50% - 1rem); margin-bottom: 1rem; text-align: center; }
+.menu-item img { width: 100%; border-radius: 10px; }
+
+.pdf-footer { text-align: center; font-size: 0.9rem; color: #999; margin-top: auto; border-top: 1px solid #eee; padding-top: 1rem; }
+
+.download-pdf { text-align: center; margin: 2rem 0; }
+.download-pdf button { padding: 0.8rem 1.5rem; font-size: 1rem; background-color: #c0392b; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+.download-pdf button:hover { background-color: #e74c3c; }
