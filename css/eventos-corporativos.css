@@ -93,3 +93,114 @@
     margin: 1rem;
   }
 }
+
+/* ================= EVENTOS CORPORATIVOS PDF CSS ================= */
+
+/* Contenedor tipo PDF: cada "página" */
+.pdf-container {
+  width: 816px;            /* 8.5 pulgadas * 96px */
+  min-height: 1056px;      /* 11 pulgadas * 96px */
+  margin: 2rem auto;
+  padding: 2in 1in;        /* Márgenes tipo documento */
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  box-sizing: border-box;
+  page-break-after: always; /* Cada contenedor simula una hoja */
+}
+
+/* Encabezado PDF */
+.pdf-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pdf-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.pdf-header p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Secciones del PDF */
+.pdf-section {
+  margin-bottom: 2rem;
+}
+
+.pdf-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #222;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.pdf-section p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* Listas dentro de secciones */
+.pdf-section ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.pdf-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer tipo PDF */
+.pdf-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #999;
+  margin-top: 2rem;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+/* Numeración de páginas simulada (opcional) */
+.pdf-footer::after {
+  content: "Página " counter(page);
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Impresión: mantener el tamaño de hoja carta y saltos de página */
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .pdf-container {
+    width: 100%;
+    min-height: auto;
+    box-shadow: none;
+    margin: 0;
+    padding: 2in 1in;
+    page-break-after: always;
+  }
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 900px) {
+  .pdf-container {
+    width: 95%;
+    padding: 2rem;
+    margin: 1rem auto;
+  }
+}
+
