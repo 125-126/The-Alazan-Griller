@@ -1,627 +1,93 @@
 /* ========================= */
 /* CONTENEDOR GENERAL */
 /* ========================= */
-.catalogo {
-  background: #f2f2f2;
-  padding-bottom: 80px;
-  font-family: 'Inter', sans-serif;
-  color: #2b2b2b; /* TEXTO VISIBLE Y FORMAL */
-}
+.catalogo { background:#eaeaea; padding:60px 0; font-family:'Inter',sans-serif; color:#2b2b2b; }
 
 /* ========================= */
 /* BARRA PDF */
 /* ========================= */
-.pdf-bar {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-}
-
-.pdf-bar button {
-  background: #c89b3c;
-  color: #111;
-  border: none;
-  padding: 12px 28px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
+.pdf-bar { text-align:center; padding:20px; background:#111; }
+.pdf-bar button { background:#c89b3c; color:#111; border:none; padding:12px 28px; font-weight:600; letter-spacing:1px; cursor:pointer; }
 
 /* ========================= */
-/* PÁGINAS (PANTALLA) */
+/* PÁGINAS */
 /* ========================= */
-.pagina {
-  background: #ffffff;
-  margin: 50px auto;
-  padding: 32mm;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-  box-sizing: border-box;
-
-  width: 90%;
-  max-width: 900px;
-  min-height: 1100px;
-
-  line-height: 1.8; /* MUY IMPORTANTE PARA EJECUTIVOS */
-}
+.pagina { background:#fff; margin:60px auto; padding:32mm; width:90%; max-width:900px; min-height:297mm; box-shadow:0 20px 45px rgba(0,0,0,.18); border-radius:6px; line-height:1.8; page-break-after:always; break-after:page; position:relative; }
+.pagina:last-child { page-break-after:auto; break-after:auto; }
 
 /* ========================= */
 /* PORTADA */
 /* ========================= */
-.portada {
-  background: #f7f2ed;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.portada h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  color: #1f1f1f;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
-.portada h1 span {
-  font-style: italic;
-  font-weight: 500;
-}
-
-.portada .slogan {
-  margin-top: 60px;
-  font-size: 14px;
-  letter-spacing: 4px;
-  color: #555;
-}
+.portada { background:#f7f2ed; display:flex; flex-direction:column; justify-content:center; text-align:center; }
+.portada h1 { font-family:'Playfair Display',serif; font-size:52px; letter-spacing:2px; color:#1f1f1f; margin-bottom:20px; }
+.portada h1 span { font-style:italic; font-weight:500; }
+.portada .slogan { margin-top:60px; font-size:14px; letter-spacing:4px; color:#555; }
 
 /* ========================= */
-/* ETIQUETAS DE SECCIÓN */
+/* ETIQUETAS */
 /* ========================= */
-.section-tag {
-  display: block;
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: #c89b3c;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
+.section-tag { display:inline-block; background:#7a1f1f; color:#fff; padding:6px 14px; font-size:12px; letter-spacing:1px; border-radius:4px; margin-bottom:25px; text-transform:uppercase; }
 
 /* ========================= */
 /* TÍTULOS */
 /* ========================= */
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  color: #1f1f1f;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  margin-top: 30px;
-  color: #1f1f1f;
-}
+h2 { font-family:'Playfair Display',serif; font-size:42px; color:#2b2b2b; margin:0 0 30px; }
+h3 { font-family:'Playfair Display',serif; font-size:26px; margin-top:30px; color:#1f1f1f; }
+h4 { font-family:'Playfair Display',serif; font-size:22px; margin-bottom:10px; }
 
 /* ========================= */
 /* TEXTO */
 /* ========================= */
-p {
-  font-size: 15px;
-  color: #333;
-  max-width: 90%;
-}
+p { font-size:15px; color:#444; max-width:90%; }
+.intro-text { margin-bottom:20px; }
 
+/* ========================= */
 /* LISTAS */
-ul {
-  padding-left: 22px;
-  max-width: 90%;
-}
+/* ========================= */
+ul { padding-left:22px; max-width:90%; }
+ul li { margin-bottom:8px; font-size:15px; }
+.lista-ejecutiva li::marker { color:#c89b3c; }
 
-ul li {
-  margin-bottom: 10px;
-  font-size: 15px;
-}
+/* ========================= */
+/* BLOQUES TEXTO + IMAGEN */
+/* ========================= */
+.content-block { display:grid; grid-template-columns:45% 55%; gap:40px; margin:50px 0; align-items:center; background:#faf9f7; padding:30px; border-radius:8px; }
+.content-block.reverse { grid-template-columns:55% 45%; }
+.content-block.reverse .image { order:2; }
+
+/* ========================= */
+/* IMÁGENES */
+/* ========================= */
+.image { height:260px; background-size:cover; background-position:center; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.15); }
+.image-block { height:260px; border:1px solid #ddd; margin:40px 0; display:flex; align-items:center; justify-content:center; color:#999; font-style:italic; }
 
 /* ========================= */
 /* PAQUETES */
 /* ========================= */
-.paquete {
-  border-left: 4px solid #c89b3c;
-  padding: 14px 18px;
-  margin-bottom: 18px;
-  background: #fafafa;
-  font-size: 15px;
-}
+.detalle { font-size:14px; letter-spacing:1px; text-transform:uppercase; color:#777; margin-bottom:10px; }
+.descripcion { font-size:15px; margin-bottom:12px; }
+.descripcion.extra { font-style:italic; }
+.precio { font-size:16px; font-weight:600; color:#000; border-left:4px solid #c89b3c; padding-left:12px; }
 
 /* ========================= */
-/* BLOQUES PARA IMÁGENES */
+/* MENÚ */
 /* ========================= */
-.image-block {
-  width: 100%;
-  height: 260px;
-  border: 1px solid #ddd;
-  margin: 40px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #999;
-  font-style: italic;
-  font-size: 14px;
-}
+.menu-title { font-family:'Playfair Display',serif; font-size:30px; margin:40px 0 20px; border-bottom:2px solid #c89b3c; padding-bottom:8px; }
+.menu-list { padding-left:18px; }
+.menu-list li { font-size:15px; color:#444; margin-bottom:6px; }
 
 /* ========================= */
-/* IMPRESIÓN / PDF REAL */
-/* ========================= */
-@media print {
-  body {
-    background: white;
-  }
-
-  .main-header,
-  .pdf-bar,
-  .main-footer {
-    display: none;
-  }
-
-  .pagina {
-    width: 210mm;
-    min-height: 297mm;
-    margin: 0;
-    box-shadow: none;
-    page-break-after: always;
-  }
-}
-/* ========================= */
-/* BLOQUES TEXTO + IMAGEN */
-/* ========================= */
-.content-block {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: center;
-  margin: 40px 0;
-}
-
-/* IMAGEN */
-.content-block .image {
-  width: 100%;
-  height: 260px;
-  background-size: cover;
-  background-position: center;
-  border: 1px solid #ddd;
-}
-
-/* TEXTO */
-.content-block .text {
-  font-size: 15px;
-}
-
-/* IMAGEN A LA DERECHA */
-.content-block.reverse {
-  grid-template-columns: 1fr 1fr;
-}
-
-.content-block.reverse .image {
-  order: 2;
-}
-
-.content-block.reverse .text {
-  order: 1;
-}
-
-/* RESPONSIVE (CELULAR) */
-@media (max-width: 768px) {
-  .content-block {
-    grid-template-columns: 1fr;
-  }
-
-  .content-block .image {
-    height: 220px;
-  }
-}
-
-.catalogo {
-  background: #f2f2f2;
-  padding-bottom: 80px;
-  font-family: 'Inter', sans-serif;
-  color: #2b2b2b;
-}
-
-/* ================= PDF BAR ================= */
-.pdf-bar {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-}
-
-.pdf-bar button {
-  background: #c89b3c;
-  color: #111;
-  border: none;
-  padding: 12px 28px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-/* ================= PÁGINAS ================= */
-.pagina {
-  background: #fff;
-  margin: 50px auto;
-  padding: 32mm;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-  width: 90%;
-  max-width: 900px;
-  min-height: 1100px;
-  line-height: 1.8;
-}
-
-/* ================= PORTADA ================= */
-.portada {
-  background: #f7f2ed;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.portada h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  letter-spacing: 2px;
-  color: #1f1f1f;
-}
-
-.portada h1 span {
-  font-style: italic;
-}
-
-.portada .slogan {
-  margin-top: 60px;
-  letter-spacing: 4px;
-  font-size: 14px;
-  color: #555;
-}
-
-/* ================= TÍTULOS ================= */
-.section-tag {
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: #c89b3c;
-  margin-bottom: 15px;
-  display: block;
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-family: 'Playfair Display', serif;
-  margin-top: 30px;
-}
-
-/* ================= LISTAS ================= */
-ul {
-  padding-left: 22px;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-/* ================= PAQUETES ================= */
-.paquete {
-  border-left: 4px solid #c89b3c;
-  padding: 14px 18px;
-  background: #fafafa;
-  margin-bottom: 15px;
-}
-
-/* ================= TEXTO + IMAGEN ================= */
-.content-block {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: center;
-  margin: 40px 0;
-}
-
-.content-block.reverse .image {
-  order: 2;
-}
-
-.content-block.reverse .text {
-  order: 1;
-}
-
-.image {
-  height: 260px;
-  background-size: cover;
-  background-position: center;
-  border: 1px solid #ddd;
-}
-
-.image-block {
-  height: 260px;
-  border: 1px solid #ddd;
-  margin: 40px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #999;
-  font-style: italic;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .content-block {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ================= IMPRESIÓN ================= */
-@media print {
-  .main-header,
-  .pdf-bar,
-  .main-footer {
-    display: none;
-  }
-
-  .pagina {
-    width: 210mm;
-    min-height: 297mm;
-    margin: 0;
-    box-shadow: none;
-    page-break-after: always;
-  }
-}
-
-.intro-text {
-  margin-bottom: 20px;
-  font-size: 15px;
-  color: #444;
-}
-
-.lista-ejecutiva {
-  padding-left: 20px;
-}
-
-.lista-ejecutiva li {
-  margin-bottom: 8px;
-  position: relative;
-  padding-left: 10px;
-}
-
-.lista-ejecutiva li::marker {
-  color: #c89b3c;
-}
-
-/* ========================= */
-/* BLOQUES CON IMAGEN + TEXTO */
-/* ========================= */
-.content-block {
-  display: grid;
-  grid-template-columns: 45% 55%;
-  gap: 40px;
-  margin: 50px 0;
-  align-items: center;
-}
-
-.content-block.reverse {
-  grid-template-columns: 55% 45%;
-}
-
-.content-block.reverse .image {
-  order: 2;
-}
-
-/* IMÁGENES */
-.image {
-  height: 260px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 6px;
-}
-
-/* TEXTO */
-.text h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  margin-bottom: 8px;
-}
-
-.detalle {
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #777;
-  margin-bottom: 10px;
-}
-
-.descripcion {
-  font-size: 15px;
-  margin-bottom: 12px;
-  color: #444;
-}
-
-.descripcion.extra {
-  font-style: italic;
-}
-
-.precio {
-  font-size: 16px;
-  font-weight: 600;
-  color: #000;
-  border-left: 4px solid #c89b3c;
-  padding-left: 12px;
-}
-
 /* RESPONSIVE */
-@media (max-width: 768px) {
-  .content-block,
-  .content-block.reverse {
-    grid-template-columns: 1fr;
-  }
-
-  .image {
-    height: 220px;
-  }
+/* ========================= */
+@media (max-width:768px){
+  .content-block,.content-block.reverse{ grid-template-columns:1fr; }
+  .image{ height:220px; }
 }
-
 
 /* ========================= */
-/* MENÚ GASTRONÓMICO */
+/* IMPRESIÓN */
 /* ========================= */
-.menu-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  margin: 40px 0 20px;
-  border-bottom: 2px solid #c89b3c;
-  padding-bottom: 8px;
+@media print{
+  .main-header,.pdf-bar,.main-footer{ display:none; }
+  .pagina{ margin:0; box-shadow:none; border-radius:0; }
 }
-
-/* TÍTULO DE CADA PLATILLO */
-.text h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-/* LISTA DE INGREDIENTES */
-.menu-list {
-  padding-left: 18px;
-}
-
-.menu-list li {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  margin-bottom: 6px;
-  color: #444;
-}
-
-/* AJUSTE IMÁGENES MENÚ */
-.image {
-  height: 240px;
-  border-radius: 6px;
-}
-
-.content-block {
-  display: grid;
-  grid-template-columns: 45% 55%;
-  gap: 40px;
-  margin: 50px 0;
-  align-items: center;
-}
-
-.content-block.reverse {
-  grid-template-columns: 55% 45%;
-}
-
-.content-block.reverse .image {
-  order: 2;
-}
-
-.image {
-  height: 240px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 6px;
-}
-.catalogo {
-  background: linear-gradient(180deg, #f8f6f2 0%, #ffffff 100%);
-}
-
-.pagina {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 80px 70px;
-  margin-bottom: 60px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
-
-.section-tag {
-  display: inline-block;
-  background: #7a1f1f;
-  color: #fff;
-  padding: 6px 14px;
-  font-size: 12px;
-  letter-spacing: 1px;
-  border-radius: 4px;
-  margin-bottom: 20px;
-}
-.pagina h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  color: #2b2b2b;
-  margin-bottom: 30px;
-}
-.content-block {
-  background: #faf9f7;
-  border-radius: 8px;
-  padding: 30px;
-}
-
-.image {
-  height: 260px;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.menu-list li {
-  margin-bottom: 6px;
-  color: #444;
-}
-/* ========================= */
-/* SEPARACIÓN REAL DE PÁGINAS */
-/* ========================= */
-
-.pagina {
-  page-break-after: always;   /* PDF */
-  break-after: page;          /* Navegadores modernos */
-  min-height: 297mm;          /* Tamaño A4 real */
-  position: relative;
-}
-
-/* Evita que dos páginas se peguen */
-.pagina:last-child {
-  page-break-after: auto;
-  break-after: auto;
-}
-
-.catalogo {
-  background: #eaeaea;
-  padding: 60px 0;
-}
-
-.pagina {
-  background: #ffffff;
-  margin: 60px auto;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
-  border-radius: 6px;
-}
-
-.pagina h2 {
-  margin-top: 0;
-}
-
-.section-tag {
-  margin-bottom: 25px;
-}
-
-.pagina h2 {
-  margin-top: 0;
-}
-
-.section-tag {
-  margin-bottom: 25px;
-}
-
-
-
-
-
