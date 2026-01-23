@@ -8,38 +8,64 @@
   <!-- FUENTES -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- CSS GLOBAL (LOS MISMOS QUE YA USAS) -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- CSS CATÁLOGO -->
   <link rel="stylesheet" href="css/corporativos.css">
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header class="main-header">
   <div class="header-container">
+
     <div class="logo">
       <img src="img/logores1.png" alt="Logo" class="logo-img">
       <div class="logo-text"><span>The</span> Alazan Griller</div>
     </div>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Inicio</a>
+      <a href="menu.html">Menú</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="eventos-corporativos.html" class="nav-highlight">Corporativos</a>
+      <a href="quienes.html">Quiénes Somos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
   </div>
 </header>
 
-<!-- BOTÓN PDF -->
-<div class="pdf-actions">
-  <button onclick="descargarPDF()">📄 Descargar en PDF</button>
-</div>
+<!-- ================= BOTÓN PDF ================= -->
+<section class="pdf-bar">
+  <button onclick="window.print()">📄 Descargar catálogo en PDF</button>
+</section>
 
-<main id="catalogo-pdf">
+<!-- ================= CATÁLOGO ================= -->
+<main class="catalogo">
 
-  <!-- PAGINA 1 -->
+  <!-- PÁGINA 1 -->
   <section class="pagina portada">
-    <h1>Eventos Corporativos</h1>
-    <h2>THE ALAZAN GRILLER</h2>
+    <span class="section-tag">EVENTOS CORPORATIVOS</span>
+    <h1>Exquisita gastronomía<br><strong>para eventos empresariales</strong></h1>
     <p class="slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
   </section>
 
-  <!-- PAGINA 2 -->
+  <!-- PÁGINA 2 -->
   <section class="pagina">
-    <h3>Incluye</h3>
+    <span class="section-tag">INCLUYE</span>
+    <h2>Servicios incluidos</h2>
     <ul>
       <li>Uso de salón con aire acondicionado</li>
       <li>Montaje según capacidad del salón</li>
@@ -47,60 +73,41 @@
       <li>Mesa para proyección y mesa de apoyo</li>
       <li>Extensión, regleta, pizarra y plumón</li>
       <li>Mantelería blanca</li>
-      <li>Estación de agua</li>
-      <li>Estación de café</li>
+      <li>Estación de agua y café</li>
       <li>Amplio parqueo</li>
     </ul>
   </section>
 
-  <!-- PAGINA 3 -->
+  <!-- PÁGINA 3 -->
   <section class="pagina">
-    <h3>Paquetes</h3>
+    <span class="section-tag">PAQUETES</span>
+    <h2>Nuestros paquetes</h2>
 
-    <div class="paquete">
-      <h4>Break Sencillo</h4>
-      <p>Uso de salón por 4, 6 u 8 horas</p>
-    </div>
-
-    <div class="paquete">
-      <h4>Break Doble</h4>
-      <p>1 dulce y 1 salado</p>
-    </div>
-
-    <div class="paquete">
-      <h4>Media Jornada</h4>
-      <p>Break AM + Almuerzo</p>
-    </div>
-
-    <div class="paquete">
-      <h4>Jornada Completa</h4>
-      <p>Break AM + Almuerzo + Break PM</p>
-    </div>
+    <div class="paquete">Break sencillo – Uso de salón por 4, 6 u 8 horas</div>
+    <div class="paquete">Break doble – 1 dulce y 1 salado</div>
+    <div class="paquete">Media jornada – Break AM + Almuerzo</div>
+    <div class="paquete">Jornada completa – Break AM + Almuerzo + Break PM</div>
   </section>
 
-  <!-- PAGINA 4 -->
+  <!-- PÁGINA 4 -->
   <section class="pagina">
-    <h3>Menú</h3>
+    <span class="section-tag">MENÚ</span>
+    <h2>Opciones gastronómicas</h2>
 
-    <h4>Break AM</h4>
+    <h3>Break AM</h3>
     <p>Croissant · Sándwich de jamón y queso</p>
 
-    <h4>Almuerzos</h4>
-    <p>
-      Lomo de cerdo BBQ · Filete de pollo (hongos o jalapeña) ·
-      Churrasquito · Punta de res
-    </p>
+    <h3>Almuerzos</h3>
+    <p>Lomo de cerdo BBQ · Filete de pollo (hongos o jalapeña) · Churrasquito · Punta de res</p>
 
-    <h4>Break PM</h4>
-    <p>
-      Cheesecake · Pastel de chocolate · Pie de limón · Quesadilla ·
-      Empanada de leche
-    </p>
+    <h3>Break PM</h3>
+    <p>Cheesecake · Pastel de chocolate · Pie de limón · Quesadilla · Empanada de leche</p>
   </section>
 
-  <!-- PAGINA 5 -->
+  <!-- PÁGINA 5 -->
   <section class="pagina">
-    <h3>Contacto</h3>
+    <span class="section-tag">CONTACTO</span>
+    <h2>Contáctanos</h2>
     <p><strong>Email:</strong> elrodeo.restaurant2024@gmail.com</p>
     <p><strong>Dirección:</strong> Carretera a Sonsonate km 28, polígono B #130</p>
     <p class="slogan">EL SABOR DEL GRILL EN UN SOLO LUGAR</p>
@@ -108,27 +115,14 @@
 
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer class="main-footer">
-  <p>© 2026 The Alazan Griller. Todos los derechos reservados.</p>
+  <div class="footer-bottom">
+    <p>© 2026 The Alazan Griller. Todos los derechos reservados.</p>
+  </div>
 </footer>
 
-<!-- LIBRERIA PDF -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-<script>
-function descargarPDF() {
-  const element = document.getElementById('catalogo-pdf');
-  html2pdf()
-    .set({
-      margin: 0,
-      filename: 'Eventos_Corporativos_The_Alazan_Griller.pdf',
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    })
-    .from(element)
-    .save();
-}
-</script>
+<script src="js/menu.js"></script>
 
 </body>
 </html>
