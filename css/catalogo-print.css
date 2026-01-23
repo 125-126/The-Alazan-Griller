@@ -9,7 +9,7 @@
 
 @media print{
 
-/* Fuerza colores */
+/* Forzar colores reales */
 *{
   -webkit-print-color-adjust:exact !important;
   print-color-adjust:exact !important;
@@ -22,13 +22,13 @@
   display:none !important;
 }
 
-/* Fondo real */
+/* Reset */
 body{
   background:#fff !important;
   counter-reset:page;
 }
 
-/* Contenedor */
+/* Contenedor general */
 .catalogo{
   width:210mm;
   margin:0 auto;
@@ -36,16 +36,22 @@ body{
   background:#fff;
 }
 
-/* ================= HOJAS ================= */
+/* ================= PÁGINAS ================= */
 
 .pagina{
   position:relative;
   width:210mm;
   min-height:297mm;
-  padding:32mm 22mm 30mm;
+  padding:34mm 22mm 30mm;
   box-sizing:border-box;
   page-break-after:always;
   break-after:page;
+}
+
+/* Evitar última hoja vacía */
+.pagina:last-child{
+  page-break-after:auto;
+  break-after:auto;
 }
 
 /* ================= HEADER ================= */
@@ -56,13 +62,13 @@ body{
   top:0;
   left:0;
   width:100%;
-  height:34px;
+  height:32px;
   background:linear-gradient(90deg,#e8c97a,#c89b3c,#e8c97a);
   display:flex;
   align-items:center;
   justify-content:center;
   font-family:'Playfair Display',serif;
-  font-size:12px;
+  font-size:11px;
   letter-spacing:3px;
   color:#2b2b2b;
 }
@@ -76,13 +82,13 @@ body{
   bottom:0;
   left:0;
   width:100%;
-  height:28px;
+  height:26px;
   background:#f0f0f0;
   display:flex;
   align-items:center;
   justify-content:flex-end;
   padding-right:22mm;
-  font-size:11px;
+  font-size:10px;
   color:#444;
 }
 
@@ -102,16 +108,18 @@ h2{
   gap:18px;
   margin:14px 0;
   align-items:center;
-  page-break-inside:avoid;
   break-inside:avoid;
+  page-break-inside:avoid;
 }
 
 /* Imagen compacta */
 .content-block .image{
   flex:0 0 34%;
-  height:140px;
+  height:135px;
   border-radius:8px;
-  page-break-inside:avoid;
+  background-size:cover;
+  background-position:center;
+  break-inside:avoid;
 }
 
 /* Texto */
@@ -119,7 +127,7 @@ h2{
   flex:1;
 }
 
-/* Texto más compacto */
+/* Texto compacto */
 .content-block .text p,
 .content-block .text li{
   font-size:13px;
@@ -132,10 +140,10 @@ ul{
   padding-left:18px;
 }
 
-/* Nada se corta */
+/* Nada se puede partir */
 h2,h3,h4,p,ul,.content-block{
-  page-break-inside:avoid;
   break-inside:avoid;
+  page-break-inside:avoid;
 }
 
 /* ================= PORTADA ================= */
@@ -153,62 +161,6 @@ h2,h3,h4,p,ul,.content-block{
 
 .portada .slogan{
   margin-top:8px;
-}
-
-}
-@media print{
-
-.main-header,.pdf-bar,.main-footer{
-  display:none !important;
-}
-
-body{
-  background:#fff;
-  counter-reset:page;
-}
-
-.catalogo{
-  width:210mm;
-  margin:0 auto;
-}
-
-.pagina{
-  width:210mm;
-  padding:30mm 22mm 28mm;
-  page-break-after:always;
-}
-
-/* Evitar cortes feos */
-.content-block,
-h2,h3,h4,p,ul{
-  break-inside:avoid;
-  page-break-inside:avoid;
-}
-
-/* Imágenes compactas */
-.content-block .image{
-  height:140px;
-  flex:0 0 35%;
-}
-
-/* Header y footer */
-.pagina::before{
-  content:"THE ALAZAN GRILLER";
-  display:block;
-  text-align:center;
-  margin-bottom:12px;
-  font-family:'Playfair Display',serif;
-  letter-spacing:3px;
-}
-
-.pagina::after{
-  content:"Página " counter(page);
-  counter-increment:page;
-  display:block;
-  text-align:right;
-  margin-top:12px;
-  font-size:11px;
-  color:#666;
 }
 
 }
