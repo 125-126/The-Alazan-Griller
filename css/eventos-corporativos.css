@@ -1,65 +1,56 @@
-/* ================= EVENTOS CORPORATIVOS CSS OPTIMIZADO ================= */
+/* ================= EVENTOS CORPORATIVOS - PÁGINAS TAMAÑO CARTA ================= */
 
-/* Contenedor principal tipo PDF (fluido) */
+/* Contenedor principal: simula un documento con múltiples hojas */
 .pdf-document {
-  width: 816px;             /* 8.5 pulgadas */
-  margin: 2rem auto;
-  padding: 2in 1in;         /* márgenes tipo hoja carta */
-  background-color: #fff;
-  box-sizing: border-box;
+  width: 816px;       /* 8.5 pulgadas */
+  margin: 0 auto;
   font-family: 'Inter', sans-serif;
   color: #333;
   line-height: 1.5;
 }
 
-/* ================= PORTADA ================= */
+/* Cada "página" tamaño carta */
+.pdf-page {
+  width: 816px;             /* 8.5 pulgadas */
+  min-height: 1056px;       /* 11 pulgadas */
+  padding: 1.5in 1in;       /* márgenes tipo carta */
+  background: #fff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  page-break-after: always; /* Cada contenedor simula una hoja */
+}
+
+/* Portada */
 .portada {
   text-align: center;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
-.portada h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #111;
-  margin-bottom: 0.5rem;
-}
+.portada h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: #111; margin-bottom: 0.5rem; }
+.portada h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin-bottom: 1rem; }
+.portada p  { font-size: 1.2rem; color: #666; margin-bottom: 2rem; }
+.portada-img { width: 80%; border-radius: 10px; margin-top: 1rem; }
 
-.portada h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #222;
-  margin-bottom: 1rem;
-}
-
-.portada p {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.portada-img {
-  width: 80%;
-  border-radius: 10px;
-  margin-top: 1rem;
-}
-
-/* ================= SECCIONES ================= */
+/* Secciones internas */
 .pdf-section {
-  margin-bottom: 2rem;
-  page-break-inside: avoid; /* evita cortar secciones a la mitad */
+  margin-bottom: 1.5rem;
+  page-break-inside: avoid; /* Evita cortar secciones a la mitad */
 }
 
 .pdf-section h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
-  margin: 1.5rem 0 1rem 0;
+  margin: 1rem 0 0.5rem 0;
 }
 
 .pdf-section h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
-  margin: 1rem 0 0.5rem 0;
+  margin: 0.8rem 0 0.5rem 0;
   border-bottom: 2px solid #ccc;
   padding-bottom: 0.3rem;
 }
@@ -68,7 +59,7 @@
 .pdf-section ul li {
   font-size: 1rem;
   color: #444;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 }
 
 .pdf-section ul {
@@ -76,7 +67,7 @@
   list-style-type: disc;
 }
 
-/* ================= GALERÍA DE MENÚS ================= */
+/* Galería de Menús */
 .galeria-menus {
   display: flex;
   flex-wrap: wrap;
@@ -85,27 +76,24 @@
 }
 
 .menu-item {
-  width: calc(50% - 1rem);
+  width: calc(50% - 0.5rem);
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.menu-item img {
-  width: 100%;
-  border-radius: 10px;
-}
+.menu-item img { width: 100%; border-radius: 10px; }
 
-/* ================= FOOTER ================= */
+/* Footer */
 .pdf-footer {
   text-align: center;
   font-size: 0.9rem;
   color: #999;
-  margin-top: 2rem;
+  margin-top: auto;
   border-top: 1px solid #eee;
   padding-top: 1rem;
 }
 
-/* ================= BOTÓN DESCARGA PDF ================= */
+/* Botón descarga PDF */
 .download-pdf {
   text-align: center;
   margin: 2rem 0;
@@ -125,7 +113,7 @@
   background-color: #e74c3c;
 }
 
-/* ================= IMPRESIÓN PDF ================= */
+/* ================= IMPRESIÓN ================= */
 @media print {
   body {
     background: #fff;
@@ -136,13 +124,19 @@
     padding: 1in;
   }
 
-  /* Evita cortar secciones a la mitad */
-  .pdf-document * {
-    page-break-inside: avoid;
+  .pdf-page {
+    width: 100%;
+    min-height: auto;
+    page-break-after: always;
+    overflow: visible; /* para que el contenido largo fluya */
+  }
+
+  .pdf-section {
+    page-break-inside: avoid; /* evita cortar secciones importantes */
   }
 }
 
-/* ================= RESPONSIVO ================= */
+/* Responsivo */
 @media (max-width: 900px) {
   .pdf-document {
     width: 95%;
