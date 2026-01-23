@@ -1,52 +1,241 @@
-.catalogo{background:#eaeaea;padding:60px 0;font-family:'Inter',sans-serif;color:#2b2b2b}
-.pdf-bar{text-align:center;padding:20px;background:#111}
-.pdf-bar button{background:#c89b3c;color:#111;border:none;padding:12px 28px;font-weight:600;letter-spacing:2px;cursor:pointer}
-body{counter-reset:page}
+/* ============================
+   CATÁLOGO BASE (WEB)
+============================ */
+
+.catalogo{
+  background:#eaeaea;
+  padding:60px 0;
+  font-family:'Inter',sans-serif;
+  color:#2b2b2b;
+}
+
+.pdf-bar{
+  text-align:center;
+  padding:20px;
+  background:#111;
+}
+
+.pdf-bar button{
+  background:#c89b3c;
+  color:#111;
+  border:none;
+  padding:12px 28px;
+  font-weight:600;
+  letter-spacing:2px;
+  cursor:pointer;
+}
+
+/* ============================
+   PAGINAS WEB
+============================ */
+
 .pagina{
   position:relative;
   width:210mm;
-  height:297mm;   /* altura fija */
-  margin:60px auto;
-  padding:45mm 32mm 40mm;
+  min-height:297mm;      /* CLAVE: NO altura fija */
+  margin:40px auto;
+  padding:40mm 32mm 40mm;
   background:#fff;
   box-shadow:0 20px 45px rgba(0,0,0,.18);
-  overflow:hidden;   /* nada se sale */
+  box-sizing:border-box;
+  overflow:visible;     /* DEJA CRECER */
 }
-.pagina:last-child{page-break-after:auto;break-after:auto}
 
-.portada{background:#f7f2ed;display:flex;flex-direction:column;justify-content:center;text-align:center}
-.portada h1{font-family:'Playfair Display',serif;font-size:52px;letter-spacing:2px;color:#1f1f1f;margin-bottom:20px}
-.portada .slogan{margin-top:60px;font-size:14px;letter-spacing:4px;color:#777}
+/* ============================
+   PORTADA
+============================ */
+
+.portada{
+  background:#f7f2ed;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+}
+
+.portada h1{
+  font-family:'Playfair Display',serif;
+  font-size:52px;
+  letter-spacing:2px;
+  color:#1f1f1f;
+  margin-bottom:20px;
+}
+
+.portada .slogan{
+  margin-top:40px;
+  font-size:14px;
+  letter-spacing:4px;
+  color:#777;
+}
+
+/* ============================
+   BLOQUES DE CONTENIDO
+============================ */
+
 .content-block{
   display:flex;
-  gap:30px;
+  gap:20px;
   align-items:center;
-}
-.content-block .image{
-  flex:0 0 45%;
-}
-.content-block .text{
-  flex:1;
+  margin:20px 0;
+  break-inside:avoid;
+  page-break-inside:avoid;
 }
 
-.image{
-  width:100%;
-  aspect-ratio: 4 / 3;
+.content-block.reverse{
+  flex-direction:row-reverse;
+}
+
+/* Imagen compacta */
+.content-block .image{
+  flex:0 0 34%;
+  height:150px;
   background-size:cover;
   background-position:center;
   border-radius:8px;
 }
 
-/* MOBILE */
-@media (max-width:768px){
-  .catalogo{padding:20px}
-  .pagina{width:100%;min-height:auto;margin:20px 0;padding:30px 20px 40px}
-.content-block{
-  break-inside:avoid;
-  page-break-inside:avoid;
-}
+/* Texto */
+.content-block .text{
+  flex:1;
 }
 
+/* Tipografía compacta */
+.content-block p,
+.content-block li{
+  font-size:13px;
+  line-height:1.4;
+}
+
+/* ============================
+   IMAGENES
+============================ */
+
+.image{
+  width:100%;
+  background-size:cover;
+  background-position:center;
+  border-radius:8px;
+}
+
+/* ============================
+   LISTAS
+============================ */
+
+ul{
+  margin:6px 0;
+  padding-left:18px;
+}
+
+/* ============================
+   MOBILE (TELÉFONO)
+============================ */
+
+@media (max-width:768px){
+
+  .catalogo{
+    padding:10px;
+  }
+
+  .pagina{
+    width:100%;
+    min-height:auto;
+    margin:12px 0;
+    padding:20px 16px 30px;
+    box-shadow:none;
+  }
+
+  .content-block{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .content-block.reverse{
+    flex-direction:column;
+  }
+
+  .content-block .image{
+    width:100%;
+    height:160px;
+  }
+
+}
+
+/* ============================
+   IMPRESIÓN PDF
+============================ */
+
+@media print{
+
+  body{
+    background:#fff;
+    counter-reset:page;
+  }
+
+  .main-header,
+  .pdf-bar,
+  .main-footer{
+    display:none !important;
+  }
+
+  .catalogo{
+    width:210mm;
+    margin:0;
+    padding:0;
+    background:#fff;
+  }
+
+  .pagina{
+    width:210mm;
+    min-height:297mm;
+    padding:32mm 22mm 30mm;
+    page-break-after:always;
+    break-after:page;
+    box-shadow:none;
+    overflow:visible;
+  }
+
+  /* Encabezado */
+  .pagina::before{
+    content:"THE ALAZAN GRILLER";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:28px;
+    background:linear-gradient(90deg,#e8c97a,#c89b3c,#e8c97a);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-size:11px;
+    letter-spacing:3px;
+    color:#2b2b2b;
+  }
+
+  /* Pie */
+  .pagina::after{
+    content:"Página " counter(page);
+    counter-increment:page;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:26px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding-right:22mm;
+    font-size:11px;
+    color:#444;
+  }
+
+  /* Evitar cortes */
+  h2,h3,h4,p,ul,.content-block{
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+}
 
 
 
