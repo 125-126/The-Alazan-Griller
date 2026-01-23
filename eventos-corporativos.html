@@ -176,9 +176,18 @@
 <!-- ================= SCRIPTS ================= -->
 <script src="js/menu.js"></script>
 <script src="js/animations.js"></script>
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+
+menuToggle.addEventListener('click', () => {
+  mainNav.classList.toggle('open');
+});
+</script>
 
 </body>
 </html>
+
 
 
 
