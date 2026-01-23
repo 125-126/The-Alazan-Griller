@@ -178,3 +178,15 @@ a { text-decoration:none; color:inherit; }
   .content-block.reverse { flex-direction:row-reverse; }
   .content-block .image { border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,.12); }
 }
+/* Ajuste específico para esta página sin afectar otras */
+.main-header .logo {
+  font-size:22px; /* igual que en otras páginas */
+  display:flex;   /* mantenemos flex */
+  flex-direction:column; /* para que las palabras se alineen verticalmente */
+  gap:0; /* sin separación extra */
+}
+
+.main-header .logo span {
+  font-size:14px; /* tamaño consistente */
+  line-height:1.1; 
+}
