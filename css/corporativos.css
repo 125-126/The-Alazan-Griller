@@ -226,3 +226,29 @@ body.eventos-corporativos .main-nav.open {
   border-radius: 0 0 12px 12px;
   gap: 8px;
 }
+
+/* ===== MENU MOVIL FUNCIONAL ===== */
+
+/* Esconder por defecto en móvil */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none; /* se oculta */
+    flex-direction: column;
+    background: #0b1220;
+    width: 100%;
+    padding-top: 12px;
+    gap: 8px;
+    position: absolute;
+    top: 64px; /* abajo del header */
+    right: 0;
+  }
+  .main-nav.open {
+    display: flex; /* muestra cuando está .open */
+  }
+
+  .main-nav a {
+    padding: 10px 16px;
+    color: #fff;
+    border-top: 1px solid #333; /* separación visual */
+  }
+}
