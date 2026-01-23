@@ -159,4 +159,47 @@
     width: 100%;
   }
 }
+/* ================= PORTADA ================= */
+.pdf-page.portada {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  background-color: #fff;
+  page-break-after: always; /* cada página es carta */
+}
+
+.portada-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.portada-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.2em;
+}
+
+.portada-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.portada-img {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
 
