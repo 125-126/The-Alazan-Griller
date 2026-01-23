@@ -158,4 +158,65 @@ section{scroll-margin-top:120px;}
 .menu-card:hover img { transform:scale(1.05); }
 .menu-info { position:static; width:100%; padding:12px 16px; background:none; text-align:center; color:#fff; font-weight:600; border-top:1px solid rgba(250,204,21,0.3); }
 
+/* ==========================
+   BLOQUEO TOTAL RESPONSIVE
+   MISMO DISEÑO EN CELULAR
+========================== */
 
+/* Fuerza vista desktop siempre */
+body{
+  min-width:1200px;
+  overflow-x:auto;
+}
+
+/* Evita que grids se colapsen */
+.menu-grid,
+.gallery-grid,
+.events-grid,
+.about-grid,
+.footer-container,
+.contact-container{
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) !important;
+}
+
+/* Header y navegación SIEMPRE desktop */
+.menu-toggle{
+  display:none !important;
+}
+
+.main-nav{
+  position:static !important;
+  height:auto !important;
+  width:auto !important;
+  flex-direction:row !important;
+  background:none !important;
+  padding:0 !important;
+}
+
+/* Hero mantiene proporción */
+.hero{
+  min-height:88vh !important;
+  text-align:left !important;
+}
+
+.hero-inner{
+  margin-left:8% !important;
+  max-width:720px;
+}
+
+/* Imágenes NO se achican */
+.menu-card img,
+.gallery-grid img,
+.event-card img,
+.event-media{
+  height:220px !important;
+}
+
+/* Elimina ajustes móviles */
+@media(max-width:1024px),
+@media(max-width:768px),
+@media(max-width:500px){
+  *{
+    all:unset;
+  }
+}
