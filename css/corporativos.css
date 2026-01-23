@@ -576,6 +576,52 @@ ul li {
   margin-bottom: 6px;
   color: #444;
 }
+/* ========================= */
+/* SEPARACIÓN REAL DE PÁGINAS */
+/* ========================= */
+
+.pagina {
+  page-break-after: always;   /* PDF */
+  break-after: page;          /* Navegadores modernos */
+  min-height: 297mm;          /* Tamaño A4 real */
+  position: relative;
+}
+
+/* Evita que dos páginas se peguen */
+.pagina:last-child {
+  page-break-after: auto;
+  break-after: auto;
+}
+
+.catalogo {
+  background: #eaeaea;
+  padding: 60px 0;
+}
+
+.pagina {
+  background: #ffffff;
+  margin: 60px auto;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+  border-radius: 6px;
+}
+
+.pagina h2 {
+  margin-top: 0;
+}
+
+.section-tag {
+  margin-bottom: 25px;
+}
+
+.pagina h2 {
+  margin-top: 0;
+}
+
+.section-tag {
+  margin-bottom: 25px;
+}
+
+
 
 
 
