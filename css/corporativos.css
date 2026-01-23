@@ -227,6 +227,33 @@ body{
     transform:scale(0.45);
   }
 }
+/* ========================= */
+/* SOLUCIÓN DEFINITIVA CELULAR */
+/* ========================= */
+@media (max-width: 1024px){
+
+  body{
+    overflow-x:auto;
+    background:#eaeaea;
+  }
+
+  .catalogo{
+    width:210mm;
+    margin:0 auto;
+    transform:scale(0.7);
+    transform-origin:top center;
+  }
+
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 600px){
+
+  .catalogo{
+    transform:scale(0.45);
+  }
+
+}
 
 
 
