@@ -255,6 +255,20 @@ body{
 
 }
 
+/* Escalado del catálogo en pantallas pequeñas */
+@media (max-width: 768px){
+  .catalogo{
+    transform: scale(0.55);
+    transform-origin: top center;
+    width:210mm;
+    margin:0 auto;
+  }
+}
+@media (max-width: 500px){
+  .catalogo{
+    transform: scale(0.45);
+  }
+}
 
 
 
