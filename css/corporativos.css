@@ -532,4 +532,50 @@ ul li {
   background-position: center;
   border-radius: 6px;
 }
+.catalogo {
+  background: linear-gradient(180deg, #f8f6f2 0%, #ffffff 100%);
+}
+
+.pagina {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 80px 70px;
+  margin-bottom: 60px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.section-tag {
+  display: inline-block;
+  background: #7a1f1f;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.pagina h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #2b2b2b;
+  margin-bottom: 30px;
+}
+.content-block {
+  background: #faf9f7;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.image {
+  height: 260px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.menu-list li {
+  margin-bottom: 6px;
+  color: #444;
+}
+
+
 
