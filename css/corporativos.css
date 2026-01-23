@@ -17,7 +17,18 @@ body{counter-reset:page}
 .portada{background:#f7f2ed;display:flex;flex-direction:column;justify-content:center;text-align:center}
 .portada h1{font-family:'Playfair Display',serif;font-size:52px;letter-spacing:2px;color:#1f1f1f;margin-bottom:20px}
 .portada .slogan{margin-top:60px;font-size:14px;letter-spacing:4px;color:#777}
-.content-block{display:grid;grid-template-columns:45% 55%;gap:30px;margin:40px 0;align-items:center;background:#faf9f7;padding:24px;border-radius:8px}
+.content-block{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+.content-block .image{
+  flex:0 0 45%;
+}
+.content-block .text{
+  flex:1;
+}
+
 .image{
   width:100%;
   aspect-ratio: 4 / 3;
@@ -35,6 +46,7 @@ body{counter-reset:page}
   page-break-inside:avoid;
 }
 }
+
 
 
 
