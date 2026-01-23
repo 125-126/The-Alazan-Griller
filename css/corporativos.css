@@ -250,3 +250,64 @@ a { text-decoration:none; color:inherit; }
   font-size:14px;
   color:#c89b3c;
 }
+
+/* LOGO HORIZONTAL */
+.logo {
+  display:flex;           /* horizontal */
+  align-items:center;     /* alinea la imagen y el texto verticalmente */
+  gap:12px;               /* espacio entre imagen y texto */
+}
+
+.logo img {
+  height:50px;            /* tamaño de la imagen */
+}
+
+.logo-text {
+  font-family:'Playfair Display', serif;
+  color:#fff;
+  font-size:20px;
+  line-height:1.1;
+}
+
+.logo-text span {
+  color:#c89b3c;          /* color del "The" */
+  font-size:14px;
+}
+
+/* MENU MÓVIL */
+.menu-toggle {
+  display:none;
+  cursor:pointer;
+}
+.menu-toggle span {
+  display:block;
+  width:28px;
+  height:3px;
+  background:#fff;
+  margin:5px 0;
+  transition:0.3s;
+}
+
+@media(max-width:768px){
+  .menu-toggle { display:block; }
+
+  .main-nav {
+    display:none;
+    flex-direction:column;
+    background:#0b1220;
+    width:100%;
+    padding:12px 0;
+    position:absolute;
+    top:64px;
+    right:0;
+    gap:8px;
+  }
+
+  .main-nav.open { display:flex; }
+
+  .main-nav a {
+    padding:10px 16px;
+    color:#fff;
+    border-top:1px solid #333;
+  }
+}
