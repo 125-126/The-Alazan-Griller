@@ -381,5 +381,25 @@ ul li {
   }
 }
 
+.intro-text {
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #444;
+}
+
+.lista-ejecutiva {
+  padding-left: 20px;
+}
+
+.lista-ejecutiva li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 10px;
+}
+
+.lista-ejecutiva li::marker {
+  color: #c89b3c;
+}
+
 
 
