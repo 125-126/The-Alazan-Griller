@@ -130,3 +130,60 @@ h2,h3,h4,p,ul,.content-block{
 }
 
 }
+@media print{
+
+/* Reducir espacios generales */
+.pagina{
+  padding:32mm 22mm 30mm !important;
+}
+
+/* Títulos más compactos */
+h2{
+  margin-bottom:12px !important;
+}
+
+.section-tag{
+  margin-bottom:6px !important;
+}
+
+/* Bloques más juntos */
+.content-block{
+  margin:14px 0 !important;
+  gap:18px !important;
+}
+
+/* Imágenes mucho más pequeñas */
+.content-block .image{
+  height:140px !important;
+  flex:0 0 34% !important;
+}
+
+/* Texto más compacto */
+.content-block .text p,
+.content-block .text li{
+  font-size:13px !important;
+  line-height:1.35 !important;
+}
+
+/* Listas sin aire */
+ul{
+  margin:6px 0 !important;
+  padding-left:18px !important;
+}
+
+/* Evitar hojas medio vacías */
+.page-body{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+/* Portada más apretada */
+.portada h1{
+  font-size:42px !important;
+}
+.portada .slogan{
+  margin-top:8px !important;
+}
+
+}
