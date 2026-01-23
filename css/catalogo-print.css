@@ -9,34 +9,28 @@
 
 @media print{
 
-/* Forzar colores reales */
 *{
   -webkit-print-color-adjust:exact !important;
   print-color-adjust:exact !important;
 }
 
-/* Ocultar web */
 .main-header,
 .pdf-bar,
 .main-footer{
   display:none !important;
 }
 
-/* Reset */
 body{
   background:#fff !important;
   counter-reset:page;
 }
 
-/* Contenedor general */
 .catalogo{
   width:210mm;
   margin:0 auto;
   padding:0;
   background:#fff;
 }
-
-/* ================= PÁGINAS ================= */
 
 .pagina{
   position:relative;
@@ -48,13 +42,10 @@ body{
   break-after:page;
 }
 
-/* Evitar última hoja vacía */
 .pagina:last-child{
   page-break-after:auto;
   break-after:auto;
 }
-
-/* ================= HEADER ================= */
 
 .pagina::before{
   content:"THE ALAZAN GRILLER";
@@ -73,8 +64,6 @@ body{
   color:#2b2b2b;
 }
 
-/* ================= FOOTER ================= */
-
 .pagina::after{
   content:"Página " counter(page);
   counter-increment:page;
@@ -92,16 +81,12 @@ body{
   color:#444;
 }
 
-/* ================= TÍTULOS ================= */
-
 h2{
   color:#7a1f1f;
   border-bottom:2px solid #c89b3c;
   padding-bottom:6px;
   margin-bottom:12px;
 }
-
-/* ================= BLOQUES ================= */
 
 .content-block{
   display:flex;
@@ -112,7 +97,6 @@ h2{
   page-break-inside:avoid;
 }
 
-/* Imagen compacta */
 .content-block .image{
   flex:0 0 34%;
   height:135px;
@@ -122,31 +106,25 @@ h2{
   break-inside:avoid;
 }
 
-/* Texto */
 .content-block .text{
   flex:1;
 }
 
-/* Texto compacto */
 .content-block .text p,
 .content-block .text li{
   font-size:13px;
   line-height:1.35;
 }
 
-/* Listas sin aire */
 ul{
   margin:6px 0;
   padding-left:18px;
 }
 
-/* Nada se puede partir */
 h2,h3,h4,p,ul,.content-block{
   break-inside:avoid;
   page-break-inside:avoid;
 }
-
-/* ================= PORTADA ================= */
 
 .portada{
   display:flex;
