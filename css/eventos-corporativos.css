@@ -313,4 +313,53 @@
     margin: 0 auto !important;
   }
 }
+@media print {
+
+  /* DESTRUIR EL HEADER EN IMPRESION */
+  header,
+  .main-header {
+    position: static !important;
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* OCULTAR TODO EL SITIO */
+  body > * {
+    display: none !important;
+  }
+
+  /* MOSTRAR SOLO EL CATALOGO */
+  #catalogo {
+    display: block !important;
+  }
+
+  #catalogo,
+  #catalogo * {
+    visibility: visible !important;
+  }
+
+  #catalogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    page-break-after: always;
+    break-after: page;
+    margin: 0 auto !important;
+  }
+}
+
+
 
