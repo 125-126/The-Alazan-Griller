@@ -1,4 +1,4 @@
-  
+    
         @page {
             size: letter;
             margin: 0;
@@ -76,7 +76,7 @@
  
 /* LOGO PORTADA */
 .page .logo-img {
-    width: 300mm;              /* 👈 MAS GRANDE */
+    width: 130mm;              /* 👈 MAS GRANDE */
     max-width: 85%;
     height: auto;
     margin-top: 10mm;
