@@ -1,20 +1,18 @@
-    
-        @page {
-            size: letter;
-            margin: 0;
-        }
+@page {
+    size: letter;
+    margin: 0;
+}
 
-        body {
-            margin: 0;
-            background: #eaeaea;
-            
-        }
+body {
+    margin: 0;
+    background: #eaeaea;
+}
 
-        /* ===== PAGINA CARTA ===== */
+/* ===== PAGINA CARTA ===== */
 .page {
     width: 215.9mm;
     height: 279.4mm;
-    background: radial-gradient(circle at center, #111 0%, #000 70%);
+    background: #000; /* fondo negro sólido */
     color: #fff;
     margin: 0 auto;
     padding: 0;
@@ -28,55 +26,54 @@
     break-after: page;
 }
 
-        /* LINEAS */
-        .top-line {
-            position: absolute;
-            top: 35mm;
-            width: 55%;
-            height: 1.5px;
-            background: linear-gradient(to right, red, gold);
-        }
+/* LINEAS */
+.top-line {
+    position: absolute;
+    top: 35mm;
+    width: 55%;
+    height: 1.5px;
+    background: linear-gradient(to right, red, gold);
+}
 
-        .bottom-line {
-            position: absolute;
-            bottom: 35mm;
-            width: 55%;
-            height: 1.5px;
-            background: linear-gradient(to right, gold, red);
-        }
+.bottom-line {
+    position: absolute;
+    bottom: 35mm;
+    width: 55%;
+    height: 1.5px;
+    background: linear-gradient(to right, gold, red);
+}
 
-        /* TITULOS PORTADA */
-        .eventos {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 28px;
-            letter-spacing: 10px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
+/* TITULOS PORTADA */
+.eventos {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
 
-        .corporativos {
-            font-family: 'Playfair Display', serif;
-            font-size: 60px;
-            letter-spacing: 8px;
-            color: gold;
-            margin-bottom: 22px;
-            text-transform: uppercase;
-        }
+.corporativos {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    letter-spacing: 8px;
+    color: gold;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
 
-        .valores {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            opacity: 0.75;
-            margin-bottom: 60px;
-            text-align: center;
-        }
+.valores {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 60px;
+    text-align: center;
+}
 
- 
 /* LOGO PORTADA */
 .page .logo-img {
-    width: 160mm;
+    width: 160mm;              /* LOGO MÁS GRANDE */
     max-width: 85%;
     height: auto;
     margin-top: 10mm;
@@ -84,52 +81,48 @@
     display: block;
     image-rendering: auto;
 
+    /* PARA QUE NO HAYA BORDE/CONTORNO */
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
     background: transparent !important;
 
+    /* SIN HALO */
     mix-blend-mode: normal !important;
     filter: none !important;
 }
 
-/* FONDO NEGRO REAL */
-.page {
-    background: #000 !important;
+/* PAGINA 2 */
+.titulo-interno {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    letter-spacing: 4px;
+    color: gold;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
+.descripcion-carta {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14.5px;
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+    text-align: center;
+    max-width: 70%;
+    margin-bottom: 45px;
+    color: #f2f2f2;
+}
 
-/* PAGINA 2 */
-        .titulo-interno {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            letter-spacing: 4px;
-            color: gold;
-            margin-bottom: 28px;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .descripcion-carta {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 14.5px;
-            line-height: 1.9;
-            letter-spacing: 0.3px;
-            text-align: center;
-            max-width: 70%;
-            margin-bottom: 45px;
-            color: #f2f2f2;
-        }
-
-        .valores-texto {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 14px;
-            line-height: 1.8;
-            letter-spacing: 0.3px;
-            text-align: center;
-            max-width: 68%;
-            color: #f2f2f2;
-        }
+.valores-texto {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+    text-align: center;
+    max-width: 68%;
+    color: #f2f2f2;
+}
 
 /* ===== PAGINA PAQUETES ===== */
 .contenido-dos-columnas {
@@ -232,39 +225,46 @@
     opacity: 0.9;
 }
 
-@media print {
-    body {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-
-    .page {
-        background: radial-gradient(circle at center, #111 0%, #000 70%) !important;
-        color: #fff !important;
-    }
-}
-
-@media print {
-    body {
-        margin: 0;
-        padding: 0;
-        background: #fff;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-
-    .page {
-        box-shadow: none !important;
-        margin: 0 !important;
-    }
-}
-
-   /* =========================
-   OCULTAR HEADER EN PDF
-   ========================= */
+/* ===== IMPRESIÓN (PDF) ===== */
 @media print {
 
-  /* OCULTA TODO LO QUE NO ES PDF */
+  /* SOLO MOSTRAR EL CATALOGO */
+  body > *:not(#catalogo) {
+    display: none !important;
+  }
+
+  #catalogo {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: visible !important;
+  }
+
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #000 !important; /* NEGRO REAL */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    background: #000 !important; /* NEGRO REAL */
+    color: #fff !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .page .logo-img {
+    mix-blend-mode: normal !important;
+    filter: none !important;
+  }
+
+  /* OCULTAR HEADER / NAV / ETC */
   header,
   .main-header,
   nav,
@@ -272,118 +272,6 @@
   .menu-toggle {
     display: none !important;
   }
-
-  /* EL BODY NO DEBE TENER ESPACIOS */
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* EL PDF DEBE COMENZAR ARRIBA */
-  .pdf-document {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* CADA PAGINA ES CARTA REAL */
-  .page {
-    page-break-after: always;
-    break-after: page;
-    margin: 0 auto !important;
-  }
-}
-/* =========================
-   IMPRESION LIMPIA SOLO PDF
-   ========================= */
-@media print {
-
-  /* OCULTA TODO */
-  body * {
-    visibility: hidden !important;
-  }
-
-  /* MUESTRA SOLO EL CATALOGO */
-  #catalogo,
-  #catalogo * {
-    visibility: visible !important;
-  }
-
-  /* POSICIONA EL PDF DESDE ARRIBA */
-  #catalogo {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
-
-  /* AJUSTES GENERALES */
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #fff !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  /* CADA PAGINA ES CARTA */
-  .page {
-    page-break-after: always;
-    break-after: page;
-    margin: 0 auto !important;
-  }
-}
-@media print {
-
-  /* DESTRUIR EL HEADER EN IMPRESION */
-  header,
-  .main-header {
-    position: static !important;
-    display: none !important;
-    height: 0 !important;
-    overflow: hidden !important;
-  }
-
-  /* OCULTAR TODO EL SITIO */
-  body > * {
-    display: none !important;
-  }
-
-  /* MOSTRAR SOLO EL CATALOGO */
-  #catalogo {
-    display: block !important;
-  }
-
-  #catalogo,
-  #catalogo * {
-    visibility: visible !important;
-  }
-
-  #catalogo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #fff !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  .page {
-    page-break-after: always;
-    break-after: page;
-    margin: 0 auto !important;
-  }
 }
 
-@media print {
-  .page .logo-img {
-    mix-blend-mode: normal !important;
-    filter: none !important;
-  }
-}
 
