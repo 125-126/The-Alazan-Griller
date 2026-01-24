@@ -1,63 +1,277 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eventos Corporativos | The Alazan Griller</title>
+    <meta charset="UTF-8">
+    <title>EVENTOS CORPORATIVOS - THE ALAZAN GRILLER</title>
 
-  <!-- FUENTES -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- CSS GLOBAL -->
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <!-- CSS EVENTOS CORPORATIVOS -->
-  <link rel="stylesheet" href="css/eventos-corporativos.css">
+    <style>
+        @page {
+            size: letter;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            background: #eaeaea;
+            
+        }
+
+        /* ===== PAGINA CARTA ===== */
+.page {
+    width: 215.9mm;
+    height: 279.4mm;
+    background: radial-gradient(circle at center, #111 0%, #000 70%);
+    color: #fff;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    page-break-after: always;
+    break-after: page;
+}
+
+        /* LINEAS */
+        .top-line {
+            position: absolute;
+            top: 35mm;
+            width: 55%;
+            height: 1.5px;
+            background: linear-gradient(to right, red, gold);
+        }
+
+        .bottom-line {
+            position: absolute;
+            bottom: 35mm;
+            width: 55%;
+            height: 1.5px;
+            background: linear-gradient(to right, gold, red);
+        }
+
+        /* TITULOS PORTADA */
+        .eventos {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            letter-spacing: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .corporativos {
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            letter-spacing: 8px;
+            color: gold;
+            margin-bottom: 22px;
+            text-transform: uppercase;
+        }
+
+        .valores {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            opacity: 0.75;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        /* LOGO */
+        .logo-img {
+            width: 120mm;
+            max-width: 80%;
+            mix-blend-mode: screen;
+        }
+
+        /* PAGINA 2 */
+        .titulo-interno {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            letter-spacing: 4px;
+            color: gold;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .descripcion-carta {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 14.5px;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+            text-align: center;
+            max-width: 70%;
+            margin-bottom: 45px;
+            color: #f2f2f2;
+        }
+
+        .valores-texto {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 14px;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+            text-align: center;
+            max-width: 68%;
+            color: #f2f2f2;
+        }
+
+/* ===== PAGINA PAQUETES ===== */
+.contenido-dos-columnas {
+    display: flex;
+    width: 80%;
+    height: 60%;
+    gap: 40px;
+    align-items: center;
+}
+
+.col-izquierda {
+    width: 50%;
+    text-align: left;
+}
+
+.col-derecha {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-derecha img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.lista-paquetes {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #f2f2f2;
+    padding-left: 18px;
+}
+
+.lista-paquetes li {
+    margin-bottom: 10px;
+}
+
+/* ===== PAQUETES ===== */
+.paquete {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.paquete-texto {
+    width: 50%;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #f2f2f2;
+}
+
+.paquete-texto h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: gold;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.paquete-img {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.paquete-img img {
+    width: 70%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.btn-pdf {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, gold, red);
+    color: #000;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.btn-pdf:hover {
+    opacity: 0.9;
+}
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .page {
+        background: radial-gradient(circle at center, #111 0%, #000 70%) !important;
+        color: #fff !important;
+    }
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .page {
+        box-shadow: none !important;
+        margin: 0 !important;
+    }
+}
+
+    </style>
 </head>
+
 <body>
 
-<header class="main-header">
-  <div class="header-container">
-    <div class="logo">
-      <img src="img/logores1.png" alt="Logo" class="logo-img">
-      <div class="logo-text"><span>The</span>Alazan Griller</div>
-    </div>
-    <nav class="main-nav" id="mainNav">
-      <a href="index.html">Inicio</a>
-      <a href="menu.html">Menú</a>
-      <a href="eventos.html">Eventos</a>
-      <a href="eventos-corporativos.html" class="nav-highlight">Corporativos</a>
-      <a href="quienes.html">Quiénes Somos</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    <div class="header-actions">
-      <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</header>
+<div id="catalogo">
+<!-- ================= PAGINA 1 ================= -->
+<div class="page">
 
-<!-- ================= CONTENIDO PDF ================= -->
-<main class="pdf-document" id="pdf-document">
+    <div class="top-line"></div>
 
-  <div id="catalogo">
+    <div class="eventos">EVENTOS</div>
+    <div class="corporativos">CORPORATIVOS</div>
 
-    <!-- ================= PAGINA 1 ================= -->
-    <div class="page">
-      <div class="top-line"></div>
-
-      <div class="eventos">EVENTOS</div>
-      <div class="corporativos">CORPORATIVOS</div>
-
-      <div class="valores">
+    <div class="valores">
         PLANIFICACIÓN · MONTAJE · SERVICIO · CALIDAD
-      </div>
-
-      <img src="img/logores1.png" alt="THE ALAZAN GRILLER" class="logo-img">
-
-      <div class="bottom-line"></div>
     </div>
+
+    <img src="img/logores1.png" alt="THE ALAZAN GRILLER" class="logo-img">
+
+    <div class="bottom-line"></div>
+
+</div>
 
 <!-- ================= PAGINA 2 ================= -->
 <div class="page">
@@ -433,7 +647,7 @@
 
 </div> <!-- ✅ CIERRE PAGINA FINAL -->
 </div> <!-- ✅ CIERRE DE catalogo -->
-</main>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
