@@ -76,7 +76,7 @@
  
 /* LOGO PORTADA */
 .page .logo-img {
-    width: 150mm;              /* 👈 MAS GRANDE */
+    width: 300mm;              /* 👈 MAS GRANDE */
     max-width: 85%;
     height: auto;
     margin-top: 10mm;
