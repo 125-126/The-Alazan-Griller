@@ -273,3 +273,44 @@
     margin: 0 auto !important;
   }
 }
+/* =========================
+   IMPRESION LIMPIA SOLO PDF
+   ========================= */
+@media print {
+
+  /* OCULTA TODO */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* MUESTRA SOLO EL CATALOGO */
+  #catalogo,
+  #catalogo * {
+    visibility: visible !important;
+  }
+
+  /* POSICIONA EL PDF DESDE ARRIBA */
+  #catalogo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  /* AJUSTES GENERALES */
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* CADA PAGINA ES CARTA */
+  .page {
+    page-break-after: always;
+    break-after: page;
+    margin: 0 auto !important;
+  }
+}
+
