@@ -72,25 +72,12 @@ body {
 }
 
 /* LOGO PORTADA */
-.page .logo-img {
-    width: 160mm;              /* LOGO MÁS GRANDE */
-    max-width: 85%;
-    height: auto;
-    margin-top: 10mm;
-
-    display: block;
-    image-rendering: auto;
-
-    /* PARA QUE NO HAYA BORDE/CONTORNO */
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-
-    /* SIN HALO */
-    mix-blend-mode: normal !important;
-    filter: none !important;
-}
+        /* LOGO */
+        .logo-img {
+            width: 120mm;
+            max-width: 80%;
+            mix-blend-mode: screen;
+        }
 
 /* PAGINA 2 */
 .titulo-interno {
