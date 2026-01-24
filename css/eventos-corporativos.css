@@ -1,293 +1,243 @@
-/* ================= EVENTOS CORPORATIVOS - PÁGINAS TAMAÑO CARTA ================= */
+  
+        @page {
+            size: letter;
+            margin: 0;
+        }
 
-/* Contenedor principal: simula un documento con múltiples hojas */
-.pdf-document {
-  width: 816px;          /* 8.5 pulgadas */
-  margin: 0 auto;
-  font-family: 'Inter', sans-serif;
-  color: #333;
-  line-height: 1.5;
+        body {
+            margin: 0;
+            background: #eaeaea;
+            
+        }
+
+        /* ===== PAGINA CARTA ===== */
+.page {
+    width: 215.9mm;
+    height: 279.4mm;
+    background: radial-gradient(circle at center, #111 0%, #000 70%);
+    color: #fff;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    page-break-after: always;
+    break-after: page;
 }
 
-/* Portada */
-.portada {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  page-break-after: always; /* Portada ocupa una hoja completa */
+        /* LINEAS */
+        .top-line {
+            position: absolute;
+            top: 35mm;
+            width: 55%;
+            height: 1.5px;
+            background: linear-gradient(to right, red, gold);
+        }
+
+        .bottom-line {
+            position: absolute;
+            bottom: 35mm;
+            width: 55%;
+            height: 1.5px;
+            background: linear-gradient(to right, gold, red);
+        }
+
+        /* TITULOS PORTADA */
+        .eventos {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            letter-spacing: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .corporativos {
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            letter-spacing: 8px;
+            color: gold;
+            margin-bottom: 22px;
+            text-transform: uppercase;
+        }
+
+        .valores {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            opacity: 0.75;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        /* LOGO */
+        .logo-img {
+            width: 120mm;
+            max-width: 80%;
+            mix-blend-mode: screen;
+        }
+
+        /* PAGINA 2 */
+        .titulo-interno {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            letter-spacing: 4px;
+            color: gold;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .descripcion-carta {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 14.5px;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+            text-align: center;
+            max-width: 70%;
+            margin-bottom: 45px;
+            color: #f2f2f2;
+        }
+
+        .valores-texto {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 14px;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+            text-align: center;
+            max-width: 68%;
+            color: #f2f2f2;
+        }
+
+/* ===== PAGINA PAQUETES ===== */
+.contenido-dos-columnas {
+    display: flex;
+    width: 80%;
+    height: 60%;
+    gap: 40px;
+    align-items: center;
 }
 
-.portada h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #111;
-  margin-bottom: 0.5rem;
+.col-izquierda {
+    width: 50%;
+    text-align: left;
 }
 
-.portada h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #222;
-  margin-bottom: 1rem;
+.col-derecha {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.portada p {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 2rem;
+.col-derecha img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-.portada-img {
-  width: 80%;
-  border-radius: 10px;
-  margin-top: 1rem;
+.lista-paquetes {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #f2f2f2;
+    padding-left: 18px;
 }
 
-/* Secciones internas */
-.pdf-section {
-  margin-bottom: 1.5rem;
-  page-break-inside: avoid; /* evita cortar secciones importantes */
+.lista-paquetes li {
+    margin-bottom: 10px;
 }
 
-.pdf-section h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin: 1rem 0 0.5rem 0;
+/* ===== PAQUETES ===== */
+.paquete {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
 }
 
-.pdf-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  margin: 0.8rem 0 0.5rem 0;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 0.3rem;
+.paquete-texto {
+    width: 50%;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #f2f2f2;
 }
 
-.pdf-section p,
-.pdf-section ul li {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 0.6rem;
+.paquete-texto h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: gold;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
-.pdf-section ul {
-  padding-left: 1.5rem;
-  list-style-type: disc;
+.paquete-img {
+    width: 45%;
+    display: flex;
+    justify-content: center;
 }
 
-/* Galería de Menús */
-.galeria-menus {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
+.paquete-img img {
+    width: 70%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-.menu-item {
-  width: calc(50% - 0.5rem);
-  text-align: center;
-  margin-bottom: 1rem;
+.btn-pdf {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, gold, red);
+    color: #000;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
-.menu-item img {
-  width: 100%;
-  border-radius: 10px;
+.btn-pdf:hover {
+    opacity: 0.9;
 }
 
-/* Footer */
-.pdf-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #999;
-  margin-top: 2rem;
-  border-top: 1px solid #eee;
-  padding-top: 1rem;
-}
-
-/* Botón descarga PDF */
-.download-pdf {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.download-pdf button {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  background-color: #c0392b;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.download-pdf button:hover {
-  background-color: #e74c3c;
-}
-
-/* ================= IMPRESIÓN ================= */
 @media print {
-  body {
-    background: #fff;
-  }
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
 
-  .pdf-document {
-    width: 100%;
-    padding: 1in;
-  }
-
-  .pdf-section {
-    page-break-inside: avoid;
-  }
-
-  /* Cada hoja tamaño carta real */
-  .pdf-document > * {
-    page-break-after: auto;
-  }
+    .page {
+        background: radial-gradient(circle at center, #111 0%, #000 70%) !important;
+        color: #fff !important;
+    }
 }
 
-/* Responsivo */
-@media (max-width: 900px) {
-  .pdf-document {
-    width: 95%;
-    padding: 1.5rem;
-    margin: 1rem auto;
-  }
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
 
-  .menu-item {
-    width: 100%;
-  }
-}
-/* ================= PORTADA ================= */
-.pdf-page.portada {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-  background-color: #fff;
-  page-break-after: always; /* cada página es carta */
+    .page {
+        box-shadow: none !important;
+        margin: 0 !important;
+    }
 }
 
-.portada-content h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 2rem;
-  line-height: 1.2;
-}
-
-.portada-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #222;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.2em;
-}
-
-.portada-content p {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.portada-img {
-  width: 80%;
-  max-width: 600px;
-  border-radius: 10px;
-  margin-top: 2rem;
-}
-/* ================= PORTADA TAMAÑO CARTA ================= */
-.pdf-page.portada {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 816px;       /* 8.5 pulgadas */
-  height: 1056px;     /* 11 pulgadas */
-  background-color: #fff;
-  page-break-after: always; /* asegura que la portada sea solo esta página */
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 2in 1in;   /* márgenes tipo documento */
-}
-
-.portada-content h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 2rem;
-  line-height: 1.2;
-}
-
-.portada-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #222;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.2em;
-}
-
-.portada-content p {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.portada-img {
-  width: 80%;
-  max-width: 600px;
-  border-radius: 10px;
-  margin-top: 2rem;
-}
-.pdf-page {
-  width: 816px;           /* 8.5 pulgadas */
-  height: 1056px;         /* 11 pulgadas */
-  padding: 1.5in 1in;     /* márgenes tipo carta */
-  box-sizing: border-box;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centra verticalmente */
-  align-items: center;     /* centra horizontalmente */
-  text-align: center;
-  page-break-after: always; /* cada página es independiente */
-}
-
-.portada-content h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #111;
-  margin-bottom: 1rem;
-}
-
-.portada-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #222;
-  margin-bottom: 1rem;
-  letter-spacing: 0.2em;
-}
-
-.portada-content p {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.portada-img {
-  width: 80%;
-  max-width: 600px;
-  border-radius: 10px;
-  margin-top: 2rem;
-}
+   
