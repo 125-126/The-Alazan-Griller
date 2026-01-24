@@ -240,4 +240,36 @@
     }
 }
 
-   
+   /* =========================
+   OCULTAR HEADER EN PDF
+   ========================= */
+@media print {
+
+  /* OCULTA TODO LO QUE NO ES PDF */
+  header,
+  .main-header,
+  nav,
+  .header-container,
+  .menu-toggle {
+    display: none !important;
+  }
+
+  /* EL BODY NO DEBE TENER ESPACIOS */
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* EL PDF DEBE COMENZAR ARRIBA */
+  .pdf-document {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* CADA PAGINA ES CARTA REAL */
+  .page {
+    page-break-after: always;
+    break-after: page;
+    margin: 0 auto !important;
+  }
+}
