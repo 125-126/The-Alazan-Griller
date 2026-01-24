@@ -73,13 +73,22 @@
             text-align: center;
         }
 
-        /* LOGO */
-        .logo-img {
-            width: 120mm;
-            max-width: 80%;
-            mix-blend-mode: screen;
-        }
+ 
+/* LOGO PORTADA */
+.page .logo-img {
+    width: 150mm;              /* 👈 MAS GRANDE */
+    max-width: 85%;
+    height: auto;
+    margin-top: 10mm;
+    mix-blend-mode: screen;    /* integra con fondo oscuro */
+    filter: brightness(1.05);  /* leve ajuste, opcional */
 
+    /* PARA QUE NO HAYA BORDE/CONTORNO */
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
         /* PAGINA 2 */
         .titulo-interno {
             font-family: 'Playfair Display', serif;
@@ -361,5 +370,10 @@
   }
 }
 
-
+@media print {
+  .page .logo-img {
+    mix-blend-mode: normal !important;
+    filter: none !important;
+  }
+}
 
