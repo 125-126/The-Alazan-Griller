@@ -1,7 +1,4 @@
-@page {
-    size: letter;
-    margin: 0;
-}
+@page { size: letter; margin: 0; }
 
 body {
     margin: 0;
@@ -21,20 +18,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     page-break-after: always;
     break-after: page;
 }
 
-.page {
-    background: #000; /* esto sigue */
+/* FONDO REAL (elemento) */
+.page-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, #111 0%, #000 70%);
+    z-index: 0;
 }
 
-@media print {
-  .page {
-    background: #000 !important;
-  }
-}
+/* Contenido encima */
 .page > * {
     position: relative;
     z-index: 1;
@@ -85,13 +81,12 @@ body {
     text-align: center;
 }
 
-/* LOGO PORTADA */
-        /* LOGO */
-        .logo-img {
-            width: 120mm;
-            max-width: 80%;
-            mix-blend-mode: screen;
-        }
+/* LOGO */
+.logo-img {
+    width: 120mm;
+    max-width: 80%;
+    mix-blend-mode: screen;
+}
 
 /* PAGINA 2 */
 .titulo-interno {
@@ -228,51 +223,13 @@ body {
 
 /* ===== IMPRESIÓN (PDF) ===== */
 @media print {
-
-  /* SOLO MOSTRAR EL CATALOGO */
-  body > *:not(#catalogo) {
-    display: none !important;
-  }
-
-  #catalogo {
-    display: block !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    visibility: visible !important;
-  }
-
   body {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #000 !important; /* NEGRO REAL */
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
   .page {
-    background: #000 !important; /* NEGRO REAL */
+    background: radial-gradient(circle at center, #111 0%, #000 70%) !important;
     color: #fff !important;
-    box-shadow: none !important;
-    margin: 0 auto !important;
-    page-break-after: always;
-    break-after: page;
-  }
-
-  .page .logo-img {
-    mix-blend-mode: normal !important;
-    filter: none !important;
-  }
-
-  /* OCULTAR HEADER / NAV / ETC */
-  header,
-  .main-header,
-  nav,
-  .header-container,
-  .menu-toggle {
-    display: none !important;
   }
 }
-
-
