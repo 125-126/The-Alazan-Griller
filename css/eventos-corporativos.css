@@ -76,20 +76,30 @@
  
 /* LOGO PORTADA */
 .page .logo-img {
-    width: 130mm;              /* 👈 MAS GRANDE */
+    width: 160mm;
     max-width: 85%;
     height: auto;
     margin-top: 10mm;
-    mix-blend-mode: screen;    /* integra con fondo oscuro */
-    filter: brightness(1.05);  /* leve ajuste, opcional */
 
-    /* PARA QUE NO HAYA BORDE/CONTORNO */
+    display: block;
+    image-rendering: auto;
+
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
     background: transparent !important;
+
+    mix-blend-mode: normal !important;
+    filter: none !important;
 }
-        /* PAGINA 2 */
+
+/* FONDO NEGRO REAL */
+.page {
+    background: #000 !important;
+}
+
+
+/* PAGINA 2 */
         .titulo-interno {
             font-family: 'Playfair Display', serif;
             font-size: 36px;
