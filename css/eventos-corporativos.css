@@ -12,7 +12,8 @@ body {
 .page {
     width: 215.9mm;
     height: 279.4mm;
-    background: #000; /* fondo negro sólido */
+    position: relative;
+    overflow: hidden;
     color: #fff;
     margin: 0 auto;
     padding: 0;
@@ -20,10 +21,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
 
     page-break-after: always;
     break-after: page;
+}
+
+.page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #000;
+    z-index: 0;
+}
+
+.page > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* LINEAS */
