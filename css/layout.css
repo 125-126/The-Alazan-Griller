@@ -294,3 +294,29 @@ h4{
   }
 }
 
+/* Quitar cualquier fondo o cuadro detrás del logo */
+.logo,
+.logo * {
+background: transparent !important;
+box-shadow: none !important;
+}
+
+
+/* El contenedor del logo NO debe pintar nada */
+.logo {
+padding: 0;
+border-radius: 0;
+}
+
+
+/* El PNG debe ser 100% limpio */
+.logo-img {
+background: transparent !important;
+mix-blend-mode: normal;
+display: block;
+}
+
+.logo-img{
+background: transparent;
+filter: brightness(1.02) contrast(1.05);
+}
