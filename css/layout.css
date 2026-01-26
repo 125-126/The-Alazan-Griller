@@ -333,3 +333,41 @@ display: block;
 background: transparent;
 filter: brightness(1.02) contrast(1.05);
 }
+@media(max-width:768px){
+
+
+/* Header más compacto */
+.main-header{
+padding:6px 0;
+}
+
+
+/* Logo optimizado para celular */
+.logo-img{
+height:52px !important;
+max-height:52px !important;
+}
+
+
+.logo-text{
+display:none; /* Oculta el texto si usas solo el logo */
+}
+
+
+/* Empuja el hero debajo del header */
+.hero{
+padding-top:110px !important;
+min-height:calc(100vh - 110px) !important;
+}
+
+
+.hero-inner{
+margin-top:20px;
+}
+
+
+/* Botones centrados */
+.hero-actions{
+justify-content:center !important;
+}
+}
