@@ -1,5 +1,6 @@
 /* ==========================
    VARIABLES Y RESET
+
 ========================== */
 :root{--dorado:#facc15;--oscuro:#020617;--azul:#0b1220;--gris:#9ca3af;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -15,8 +16,18 @@ video{background:#000;}
 .main-header{position:sticky;top:0;z-index:1000;background:var(--azul);box-shadow:0 10px 30px rgba(0,0,0,.4);}
 .header-container{max-width:1200px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
 .logo{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-size:22px;color:#fff;}
-.logo-img{height:100px;max-height:100px;width:auto;object-fit:contain;filter:drop-shadow(0 0 6px rgba(250,204,21,0.7));transition:filter 0.3s;}
-.logo-img:hover{filter:drop-shadow(0 0 10px rgba(250,204,21,1));}
+.logo-img{
+height:100px;
+max-height:100px;
+width:auto;
+object-fit:contain;
+filter:none; /* ❌ sin contorno */
+}
+
+
+.logo-img:hover{
+filter:none; /* ❌ sin glow al pasar el mouse */
+}
 .logo-text{display:flex;flex-direction:column;line-height:1.1;margin-left:6px;}
 .logo-text span{font-size:13px;letter-spacing:2px;color:var(--dorado);font-weight:500;}
 .main-nav{display:flex;gap:26px;}
