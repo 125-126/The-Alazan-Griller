@@ -322,36 +322,5 @@ border-radius: 0;
 }
 
 
-/* El PNG debe ser 100% limpio */
-.logo-img {
-background: transparent !important;
-mix-blend-mode: normal;
-display: block;
-}
-
-.logo-img{
-background: transparent;
-filter: brightness(1.02) contrast(1.05);
-}
-@media(max-width:768px){
-
-
-/* Header más compacto */
-.main-header{
-padding:6px 0;
-}
-
-
-/* Logo optimizado para celular */
-.logo-img{
-height:52px !important;
-max-height:52px !important;
-}
-
-
-.logo-text{
-display:none; /* Oculta el texto si usas solo el logo */
-}
-
 
 
