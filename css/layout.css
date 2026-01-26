@@ -51,7 +51,20 @@ filter:none; /* ❌ sin glow al pasar el mouse */
 .hero-inner h1{font-family:'Playfair Display',serif;font-size:48px;line-height:1.1;margin-bottom:20px;}
 .hero-inner h1 strong{color:var(--dorado);}
 .hero-inner p{font-size:18px;color:#e5e7eb;max-width:520px;margin-bottom:28px;}
-.hero-actions{display:flex;gap:16px;}
+.hero-actions{
+display:flex;
+flex-direction:row; /* 🔥 uno a la izquierda del otro */
+gap:16px;
+align-items:center;
+justify-content:flex-start;
+flex-wrap:nowrap; /* 🔥 evita que se bajen */
+}
+@media(max-width:768px){
+.hero-actions{
+justify-content:center;
+flex-wrap:wrap; /* aquí sí se permite bajar si no caben */
+}
+}
 .btn{padding:12px 26px;border-radius:30px;font-weight:600;transition:.3s;}
 .btn.primary{background:var(--dorado);color:#081226;}
 .btn.primary:hover{transform:translateY(-3px);}
