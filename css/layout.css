@@ -82,7 +82,11 @@ font-size:14px;
 .btn.primary:hover{transform:translateY(-3px);}
 .btn.outline{border:2px solid #fff;color:#fff;}
 .btn.outline:hover{background:#fff;color:#081226;}
-@media(max-width:768px){.hero{min-height:78vh;text-align:center;}.hero-inner{margin:auto;}.hero-inner h1{font-size:34px;}
+@media(max-width:768px){
+.hero{min-height:78vh;text-align:center;}
+.hero-inner{margin:auto;}
+.hero-inner h1{font-size:34px;}
+}
 /* ==========================
    MENU
 ========================== */
