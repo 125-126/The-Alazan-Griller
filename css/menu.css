@@ -16,3 +16,31 @@
   padding: 1rem;
   text-align: center;
 }
+
+/* WhatsApp flotante */
+.whatsapp-float {
+position: fixed;
+bottom: 20px;
+right: 20px;
+width: 60px;
+height: 60px;
+z-index: 1000;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #25D366;
+border-radius: 50%;
+box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+transition: transform 0.2s;
+}
+
+
+.whatsapp-float img {
+width: 35px;
+height: 35px;
+}
+
+
+.whatsapp-float:hover {
+transform: scale(1.1);
+}
