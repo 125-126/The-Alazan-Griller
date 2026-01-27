@@ -365,5 +365,59 @@ object-fit: contain;
 transform: scale(1.1);
 }
 
+IMAGEN CRECE
+.product-modal {
+position: fixed;
+inset: 0;
+display: none;
+z-index: 9999;
+}
 
+
+.product-modal.active {
+display: block;
+}
+
+
+.modal-overlay {
+position: absolute;
+inset: 0;
+background: rgba(0,0,0,.8);
+}
+
+
+.modal-content {
+position: relative;
+max-width: 600px;
+margin: 5vh auto;
+background: #111;
+padding: 20px;
+border-radius: 15px;
+text-align: center;
+color: white;
+animation: zoom .3s ease;
+}
+
+
+.modal-content img {
+width: 100%;
+border-radius: 12px;
+margin-bottom: 15px;
+}
+
+
+.modal-close {
+position: absolute;
+top: 10px;
+right: 15px;
+font-size: 32px;
+cursor: pointer;
+color: white;
+}
+
+
+@keyframes zoom {
+from {transform: scale(.7); opacity: 0;}
+to {transform: scale(1); opacity: 1;}
+}
 
