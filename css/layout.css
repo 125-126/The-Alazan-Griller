@@ -420,4 +420,7 @@ color: white;
 from {transform: scale(.7); opacity: 0;}
 to {transform: scale(1); opacity: 1;}
 }
+.menu-card img {
+pointer-events: none;
+}
 
