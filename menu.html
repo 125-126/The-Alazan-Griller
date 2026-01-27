@@ -309,18 +309,21 @@ showImage();
 
 
 closeBtn.onclick = () => {
-closeModal();
-history.back();
+  closeModal();
+  if(history.state && history.state.modal){
+    history.back();
+  }
 };
 
 
 modal.onclick = e => {
-if(e.target === modal){
-closeModal();
-history.back();
-}
+  if(e.target === modal){
+    closeModal();
+    if(history.state && history.state.modal){
+      history.back();
+    }
+  }
 };
-
 
 window.addEventListener("popstate", () => {
 if(modalOpen){
