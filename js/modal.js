@@ -10,13 +10,14 @@ const prevBtn = document.querySelector(".image-nav.prev");
 
 const images = Array.from(document.querySelectorAll(".modal-img"));
 let currentIndex = 0;
+let modalOpen = false;
 
 
 images.forEach((img, index) => {
 img.addEventListener("click", () => {
 currentIndex = index;
 showImage();
-modal.style.display = "flex";
+openModal();
 });
 });
 
@@ -24,6 +25,22 @@ modal.style.display = "flex";
 function showImage(){
 const img = images[currentIndex];
 modalImg.src = img.dataset.img || img.src;
+}
+
+
+function openModal(){
+modal.style.display = "flex";
+modalOpen = true;
+
+
+// 🔥 Agregamos estado al historial
+history.pushState({ modal: true }, "");
+}
+
+
+function closeModal(){
+modal.style.display = "none";
+modalOpen = false;
 }
 
 
@@ -42,13 +59,23 @@ showImage();
 
 
 closeBtn.addEventListener("click", () => {
-modal.style.display = "none";
+closeModal();
+history.back(); // sincroniza historial
 });
 
 
 modal.addEventListener("click", e => {
 if(e.target === modal){
-modal.style.display = "none";
+closeModal();
+history.back();
+}
+});
+
+
+// 🔥 Captura el botón "Atrás" del celular
+window.addEventListener("popstate", () => {
+if(modalOpen){
+closeModal();
 }
 });
 
