@@ -492,3 +492,51 @@ color: white;
 cursor: pointer;
 z-index: 10000;
 }
+.image-modal {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,.9);
+z-index: 9999;
+align-items: center;
+justify-content: center;
+}
+
+
+.image-modal img {
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
+border-radius: 10px;
+}
+
+
+.image-close {
+position: absolute;
+top: 20px;
+right: 30px;
+font-size: 40px;
+color: white;
+cursor: pointer;
+}
+
+
+.image-nav {
+position: absolute;
+top: 50%;
+font-size: 60px;
+color: white;
+cursor: pointer;
+user-select: none;
+transform: translateY(-50%);
+padding: 20px;
+}
+
+
+.image-nav.prev { left: 20px; }
+.image-nav.next { right: 20px; }
+
+
+.image-nav:hover {
+color: #facc15;
+}
