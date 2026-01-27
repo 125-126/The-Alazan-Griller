@@ -365,62 +365,66 @@ object-fit: contain;
 transform: scale(1.1);
 }
 
-IMAGEN CRECE
-.product-modal {
+/* ================= MODAL PRODUCTO (CORRECTO) ================= */
+
+
+.product-modal{
 position: fixed;
 inset: 0;
-display: none;
+display: flex;
+align-items: center;
+justify-content: center;
+background: rgba(0,0,0,.8);
 z-index: 9999;
+
+
+opacity: 0;
+pointer-events: none;
+transition: opacity .3s ease;
 }
 
 
-.product-modal.active {
-display: block;
+.product-modal.active{
+opacity: 1;
+pointer-events: auto;
 }
 
 
-.modal-overlay {
+.modal-overlay{
 position: absolute;
 inset: 0;
-background: rgba(0,0,0,.8);
 }
 
 
-.modal-content {
+.modal-content{
 position: relative;
-max-width: 600px;
-margin: 5vh auto;
 background: #111;
-padding: 20px;
-border-radius: 15px;
+max-width: 600px;
+width: 90%;
+padding: 24px;
+border-radius: 18px;
 text-align: center;
-color: white;
+color: #fff;
+box-shadow: 0 30px 80px rgba(0,0,0,.9);
 animation: zoom .3s ease;
+z-index: 2;
 }
 
 
-.modal-content img {
+.modal-content img{
 width: 100%;
+max-height: 70vh;
+object-fit: contain;
 border-radius: 12px;
 margin-bottom: 15px;
 }
 
 
-.modal-close {
+.modal-close{
 position: absolute;
-top: 10px;
-right: 15px;
+top: 12px;
+right: 18px;
 font-size: 32px;
 cursor: pointer;
 color: white;
 }
-
-
-@keyframes zoom {
-from {transform: scale(.7); opacity: 0;}
-to {transform: scale(1); opacity: 1;}
-}
-.menu-card img {
-pointer-events: none;
-}
-
