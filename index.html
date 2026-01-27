@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/febrero.css">
 </head>
 
 <body>
@@ -395,29 +396,39 @@ Parrilla premium, carnes seleccionadas y sabores que se recuerdan.
 <script>
   const indexForm = document.getElementById("indexContactForm");
 
-  indexForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    
+  if(indexForm){
+    indexForm.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    const nombre = document.getElementById("nombreIndex").value;
-    const dui = document.getElementById("duiIndex").value;
-    const telefono = document.getElementById("telefonoIndex").value;
-    const email = document.getElementById("emailIndex").value;
-    const comentario = document.getElementById("comentarioIndex").value;
+      const nombre = document.getElementById("nombreIndex").value;
+      const dui = document.getElementById("duiIndex").value;
+      const telefono = document.getElementById("telefonoIndex").value;
+      const email = document.getElementById("emailIndex").value;
+      const comentario = document.getElementById("comentarioIndex").value;
 
-    let text = `📩 *Nueva consulta*%0A`;
-    text += `*Nombre:* ${nombre}%0A`;
-    text += `*DUI:* ${dui}%0A`;
-    text += `*Teléfono:* ${telefono}%0A`;
-    text += `*Correo:* ${email}%0A`;
-    text += `*Comentario:* ${comentario}`;
+      let text = `📩 *Nueva consulta*%0A`;
+      text += `*Nombre:* ${nombre}%0A`;
+      text += `*DUI:* ${dui}%0A`;
+      text += `*Teléfono:* ${telefono}%0A`;
+      text += `*Correo:* ${email}%0A`;
+      text += `*Comentario:* ${comentario}`;
 
-    const url = `https://wa.me/50369578713?text=${text}`;
-    window.open(url, "_blank");
+      const url = `https://wa.me/50369578713?text=${text}`;
+      window.open(url, "_blank");
 
-    // LIMPIAR FORMULARIO
-    indexForm.reset();
-  });
+      indexForm.reset();
+    });
+  }
+
+  (function(){
+    const hoy = new Date();
+    const mes = hoy.getMonth(); // 0 = enero, 1 = febrero
+
+    if(mes !== 1){
+      const febrero = document.getElementById("febreroEspecial");
+      if(febrero) febrero.remove();
+    }
+  })();
 </script>
 <div class="image-modal" id="imageModal">
 <span class="image-close">&times;</span>
