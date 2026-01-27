@@ -71,7 +71,9 @@
             margin-bottom: 22px;
             text-transform: uppercase;
         }
-
+<div style="font-family: Montserrat; letter-spacing:4px; opacity:.8;">
+Experiencias gastronómicas para empresas
+</div>
         .valores {
             font-family: 'Montserrat', sans-serif;
             font-size: 12px;
@@ -199,6 +201,7 @@
     height: auto;
     border-radius: 6px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    filter: brightness(1.05) contrast(1.1) saturate(1.1);
 }
 
 .btn-pdf {
@@ -243,10 +246,12 @@
         print-color-adjust: exact;
     }
 
-    .page {
-        box-shadow: none !important;
-        margin: 0 !important;
-    }
+.page {
+box-shadow:
+0 0 0 1px rgba(255,215,0,0.08),
+0 25px 60px rgba(0,0,0,0.75);
+border-radius: 6px;
+}
 }
 /* ===== ARREGLA WHATSAPP FLOTANTE ===== */
 .whatsapp-float{
@@ -700,7 +705,7 @@ document.getElementById("btnPDF").addEventListener("click", function () {
         image: { type: "jpeg", quality: 0.95 },
         html2canvas: {
             scale: 2,
-            backgroundColor: "#ffffff"
+            backgroundColor: null
         },
         jsPDF: {
             unit: "mm",
