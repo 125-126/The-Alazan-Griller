@@ -31,3 +31,46 @@ section{
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+.image-modal{
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,.95);
+display: none;
+align-items: center;
+justify-content: center;
+z-index: 9999;
+}
+
+
+.image-modal img{
+max-width: 90%;
+max-height: 85%;
+border-radius: 10px;
+}
+
+
+.image-close{
+position:absolute;
+top:20px;
+right:25px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+
+.image-nav{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:50px;
+color:white;
+background:none;
+border:none;
+cursor:pointer;
+padding:20px;
+}
+
+
+.image-nav.prev{ left:20px; }
+.image-nav.next{ right:20px; }
