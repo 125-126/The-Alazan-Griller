@@ -1,14 +1,24 @@
-function openModal(title, text){
-  const modal = document.getElementById("infoModal");
-  if(!modal) return;
+// Modal de imagen grande
+const imageModal = document.getElementById("imageModal");
+const imageModalImg = document.getElementById("imageModalImg");
+const imageClose = document.querySelector(".image-close");
 
-  document.getElementById("infoTitle").textContent = title;
-  document.getElementById("infoText").textContent = text;
 
-  modal.style.display = "flex";
-}
+// Todas las imágenes que deben abrirse grandes
+document.querySelectorAll(".modal-img").forEach(img => {
+img.addEventListener("click", () => {
+imageModal.style.display = "flex";
+imageModalImg.src = img.dataset.img || img.src;
+});
+});
 
-function closeModal(){
-  const modal = document.getElementById("infoModal");
-  if(modal) modal.style.display = "none";
-}
+
+// Cerrar modal
+imageClose.addEventListener("click", () => {
+imageModal.style.display = "none";
+});
+
+
+imageModal.addEventListener("click", () => {
+imageModal.style.display = "none";
+});
