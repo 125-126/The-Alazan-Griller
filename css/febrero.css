@@ -1,62 +1,18 @@
-.febrero-wrapper{
-  display:flex;
-  justify-content:center;
-  padding:120px 0;
-  background:radial-gradient(circle at top,#1a0f14,#000);
-}
-
-.menu-especial-container{
-  perspective:1200px;
-}
-
-.card{
-  width:280px;
-  height:180px;
-  background:linear-gradient(135deg,#b8860b,#ffd700,#b8860b);
-  border-radius:20px;
-  box-shadow:
-    0 25px 50px rgba(0,0,0,.5),
-    0 0 60px rgba(255,215,0,.4);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  transition:1s ease;
-}
-
-.card-content{
-  text-align:left;
-  color:#4a1c24;
-}
-
-.card-tag{
-  font-weight:600;
-  letter-spacing:2px;
-  font-size:.9rem;
-}
-
-.card h2{
-  margin:10px 0;
-  font-size:1.6rem;
-}
-
-.card p{
-  font-size:.9rem;
-}
-/* CONTENEDOR FLOTANTE */
+/* ================= FEBRERO FLOTANTE ================= */
 .febrero-float{
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  z-index:9999;
-  animation:floatIn 1s ease forwards;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10000;
+
+  animation: floatIn 1.2s ease forwards;
 }
 
 /* animación entrada */
 @keyframes floatIn{
   from{
     opacity:0;
-    transform:translateY(40px) scale(.9);
+    transform:translateY(60px) scale(.85);
   }
   to{
     opacity:1;
@@ -64,7 +20,58 @@
   }
 }
 
-/* botón cerrar */
+/* ================= TARJETA ================= */
+.febrero-float .card{
+  width: 280px;
+  height: 180px;
+  background: linear-gradient(135deg,#b8860b,#ffd700,#b8860b);
+  border-radius: 22px;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.55),
+    0 0 80px rgba(255,215,0,.45);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+/* hover elegante */
+.febrero-float .card:hover{
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 40px 80px rgba(0,0,0,.6),
+    0 0 120px rgba(255,215,0,.6);
+}
+
+/* ================= CONTENIDO ================= */
+.card-content{
+  text-align:center;
+  color:#4a1c24;
+  font-family:'Playfair Display', serif;
+}
+
+.card-tag{
+  font-weight:600;
+  letter-spacing:2px;
+  font-size:.85rem;
+}
+
+.card-content h2{
+  margin:10px 0;
+  font-size:1.5rem;
+}
+
+.card-content p{
+  font-size:.9rem;
+}
+
+/* ================= BOTÓN CERRAR ================= */
 .febrero-close{
   position:absolute;
   top:10px;
@@ -72,6 +79,7 @@
   background:none;
   border:none;
   color:#4a1c1c;
-  font-size:20px;
+  font-size:22px;
   cursor:pointer;
+  z-index:2;
 }
