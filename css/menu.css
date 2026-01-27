@@ -17,7 +17,7 @@
   text-align: center;
 }
 
-/* Contenedor flotante */
+/* ===================== WhatsApp flotante ===================== */
 .whatsapp-float {
 position: fixed;
 bottom: 20px;
@@ -35,7 +35,6 @@ transition: transform 0.2s;
 }
 
 
-/* Imagen dentro del círculo */
 .whatsapp-float img {
 width: 50%; /* ajusta la imagen al 50% del círculo */
 height: 50%; /* mantiene proporción */
@@ -43,7 +42,6 @@ object-fit: contain;
 }
 
 
-/* Efecto al pasar el mouse */
 .whatsapp-float:hover {
 transform: scale(1.1);
 }
