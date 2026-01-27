@@ -251,6 +251,85 @@ data-img="img/bebida8.jpg">
 <!-- ================= SCRIPTS ================= -->
 <script src="js/menu.js"></script>
 <script src="js/animations.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("imageModalImg");
+const closeBtn = document.querySelector(".image-close");
+const nextBtn = document.querySelector(".image-nav.next");
+const prevBtn = document.querySelector(".image-nav.prev");
+
+
+const images = Array.from(document.querySelectorAll(".menu-card.modal-img"));
+let currentIndex = 0;
+let modalOpen = false;
+
+
+images.forEach((card, index) => {
+card.addEventListener("click", () => {
+currentIndex = index;
+showImage();
+openModal();
+});
+});
+
+
+function showImage(){
+modalImg.src = images[currentIndex].dataset.img;
+}
+
+
+function openModal(){
+modal.style.display = "flex";
+modalOpen = true;
+history.pushState({modal:true}, "");
+}
+
+
+function closeModal(){
+modal.style.display = "none";
+modalOpen = false;
+}
+
+
+nextBtn.onclick = e => {
+e.stopPropagation();
+currentIndex = (currentIndex + 1) % images.length;
+showImage();
+};
+
+
+prevBtn.onclick = e => {
+e.stopPropagation();
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+showImage();
+};
+
+
+closeBtn.onclick = () => {
+closeModal();
+history.back();
+};
+
+
+modal.onclick = e => {
+if(e.target === modal){
+closeModal();
+history.back();
+}
+};
+
+
+window.addEventListener("popstate", () => {
+if(modalOpen){
+closeModal();
+}
+});
+
+
+});
+</script>
 </body>
 </html>
