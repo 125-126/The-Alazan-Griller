@@ -77,19 +77,24 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
 </section>
 
 
-<!-- 💌 TARJETA FLOTANTE FEBRERO -->
-<div id="febreroEspecial" class="febrero-float">
-  <div class="card" id="card">
-    <div class="card-content">
-      <span class="card-tag">💌 Menú Especial</span>
-      <h2>Febrero del Amor</h2>
-      <p>Sabores pensados para compartir</p>
+<!-- 💌 MENÚ ESPECIAL FEBRERO -->
+<section id="febreroEspecial" class="febrero-float">
+  <div class="menu-especial-container">
+
+    <div class="card" id="card">
+      
+      <button class="febrero-close">&times;</button>
+
+      <div class="card-content">
+        <span class="card-tag">💌 Menú Especial</span>
+        <h2>Febrero del Amor</h2>
+        <p>Sabores pensados para compartir</p>
+      </div>
+
     </div>
 
-    <!-- cerrar (opcional) -->
-    <button class="febrero-close">×</button>
   </div>
-</div>
+</section>
   
 <!-- ================= MENÚ ================= -->
 <section id="menu" class="menu-section">
@@ -429,15 +434,22 @@ Parrilla premium, carnes seleccionadas y sabores que se recuerdan.
     }
   })();
 
-   /* ================= CERRAR TARJETA ================= */
+// CERRAR TARJETA
   const closeBtn = document.querySelector(".febrero-close");
   if(closeBtn){
     closeBtn.addEventListener("click", ()=>{
-      const febrero = document.getElementById("febreroEspecial");
-      if(febrero) febrero.remove();
+      document.getElementById("febreroEspecial").remove();
     });
   }
-  
+
+  // MOSTRAR SOLO EN FEBRERO
+  (function(){
+    const hoy = new Date();
+    const mes = hoy.getMonth(); // 0=enero, 1=febrero
+    if(mes !== 1){
+      document.getElementById("febreroEspecial")?.remove();
+    }
+  })();
 </script>
 <div class="image-modal" id="imageModal">
 <span class="image-close">&times;</span>
