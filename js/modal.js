@@ -1,33 +1,54 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 
-const imageModal = document.getElementById("imageModal");
-const imageModalImg = document.getElementById("imageModalImg");
-const imageClose = document.querySelector(".image-close");
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("imageModalImg");
+const closeBtn = document.querySelector(".image-close");
+const nextBtn = document.querySelector(".image-nav.next");
+const prevBtn = document.querySelector(".image-nav.prev");
 
 
-if (!imageModal || !imageModalImg || !imageClose) return;
+const images = Array.from(document.querySelectorAll(".modal-img"));
+let currentIndex = 0;
 
 
-// Todas las imágenes de la galería
-document.querySelectorAll(".modal-img").forEach(img => {
+images.forEach((img, index) => {
 img.addEventListener("click", () => {
-imageModal.style.display = "flex";
-imageModalImg.src = img.dataset.img || img.src;
+currentIndex = index;
+showImage();
+modal.style.display = "flex";
 });
 });
 
 
-// Botón X
-imageClose.addEventListener("click", () => {
-imageModal.style.display = "none";
+function showImage(){
+const img = images[currentIndex];
+modalImg.src = img.dataset.img || img.src;
+}
+
+
+nextBtn.addEventListener("click", (e) => {
+e.stopPropagation();
+currentIndex = (currentIndex + 1) % images.length;
+showImage();
 });
 
 
-// Clic fuera de la imagen
-imageModal.addEventListener("click", e => {
-if (e.target === imageModal) {
-imageModal.style.display = "none";
+prevBtn.addEventListener("click", (e) => {
+e.stopPropagation();
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+showImage();
+});
+
+
+closeBtn.addEventListener("click", () => {
+modal.style.display = "none";
+});
+
+
+modal.addEventListener("click", e => {
+if(e.target === modal){
+modal.style.display = "none";
 }
 });
 
