@@ -355,7 +355,7 @@ transition: transform 0.2s;
 
 
 .whatsapp-float img {
-width: 50%; /* ajusta la imagen al 50% del círculo */
+width: 100%; /* ajusta la imagen al 50% del círculo */
 height: 50%; /* mantiene proporción */
 object-fit: contain;
 }
