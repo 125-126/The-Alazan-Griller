@@ -461,3 +461,34 @@ cursor: pointer;
 from{transform:scale(.7);opacity:0}
 to{transform:scale(1);opacity:1}
 }
+/* ================= MODAL DE IMAGEN ================= */
+
+
+.image-modal {
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.85);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+}
+
+
+.image-modal img {
+max-width: 90%;
+max-height: 90%;
+border-radius: 16px;
+box-shadow: 0 0 40px rgba(0,0,0,0.7);
+}
+
+
+.image-close {
+position: absolute;
+top: 20px;
+right: 30px;
+font-size: 40px;
+color: white;
+cursor: pointer;
+z-index: 10000;
+}
