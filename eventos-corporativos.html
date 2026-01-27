@@ -248,7 +248,33 @@
         margin: 0 !important;
     }
 }
+/* ===== ARREGLA WHATSAPP FLOTANTE ===== */
+.whatsapp-float{
+position: fixed;
+bottom: 25px;
+right: 25px;
+width: 60px;
+height: 60px;
+background: #25d366;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
 
+
+/* ESTO es lo que faltaba */
+z-index: 9999999;
+
+
+box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+}
+
+
+.whatsapp-float img{
+width: 55%;
+height: 55%;
+object-fit: contain;
+}
     </style>
 </head>
 
