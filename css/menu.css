@@ -22,23 +22,19 @@
 position: fixed;
 bottom: 20px;
 right: 20px;
-width: 30px;
-height: 30px;
 z-index: 1000;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: #25D366; /* verde WhatsApp */
-border-radius: 50%;
-box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 transition: transform 0.2s;
 }
 
 
 .whatsapp-float img {
-width: 70%; /* la imagen ocupa el 70% del círculo */
-height: 70%;
-object-fit: contain; /* se mantiene proporcional */
+max-width: 50px; /* limita ancho máximo */
+max-height: 50px; /* limita alto máximo */
+width: auto; /* mantiene proporción */
+height: auto;
 }
 
 
