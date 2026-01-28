@@ -1,5 +1,4 @@
 /* ================= MENÚ CORRECTO ================= */
-
 .menu{
   max-width: 1200px;
   margin: auto;
@@ -33,8 +32,6 @@
   }
 }
 
-
-/* ================= MODAL IMAGEN ================= */
 /* ================= MODAL IMAGEN ================= */
 .image-modal {
   position: fixed;
@@ -52,27 +49,31 @@
   display: flex;
 }
 
+/* CONTENEDOR DEL MODAL */
 .modal-content {
-  background: transparent;
-  max-width: 600px; /* tamaño máximo del modal */
+  max-width: 600px;   /* ancho máximo del modal */
   width: 90%;
   text-align: center;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative; /* necesario para que las flechas estén dentro */
 }
 
+/* IMAGEN DEL MODAL */
 .modal-content img {
-  width: 100%;      /* imagen ocupa todo el ancho del modal */
-  height: auto;     /* mantiene proporción */
-  max-height: 300px; /* 🔥 altura fija para que el texto se vea */
-  object-fit: cover; 
+  width: 100%;
+  height: auto; 
+  max-height: 300px; /* altura fija para que el texto siempre se vea */
+  object-fit: cover;
   border-radius: 12px;
+  margin-bottom: 15px;
 }
 
+/* TITULO Y DESCRIPCIÓN */
 .modal-content h2 {
-  margin: 15px 0 5px 0;
+  margin: 10px 0 5px 0;
   font-size: 1.5rem;
 }
 
@@ -82,7 +83,7 @@
   line-height: 1.3;
 }
 
-/* BOTONES */
+/* BOTÓN CERRAR */
 .image-close {
   position: absolute;
   top: 20px;
@@ -90,50 +91,32 @@
   font-size: 40px;
   color: white;
   cursor: pointer;
+  z-index: 10000;
 }
 
+/* FLECHAS SIGUIENTE / ANTERIOR */
 .image-nav {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-background: rgba(0,0,0,0.5); /* Fondo semitransparente */
-border: none;
-color: white;
-font-size: 50px;
-cursor: pointer;
-padding: 10px;
-z-index: 10000; /* 🔥 Asegura que esté encima de la imagen */
-border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5); 
+  border: none;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10000; 
+  border-radius: 50%;
 }
-
 
 .image-nav.prev { left: 10px; }
 .image-nav.next { right: 10px; }
 
-/* 🔥 FORZAR IMAGEN GRANDE EN MODAL */
+/* 🔥 FORZAR IMAGEN GRANDE */
 .image-modal img{
-height: auto !important;
-width: auto !important;
-max-width: 95vw !important;
-max-height: 95vh !important;
-object-fit: contain;
-}
-
-
-.modal-content {
-text-align: center;
-color: white;
-max-width: 90%;
-}
-
-
-.modal-content h2 {
-margin-top: 15px;
-font-size: 1.5rem;
-}
-
-
-.modal-content p {
-margin-top: 10px;
-font-size: 1rem;
+  height: auto !important;
+  width: auto !important;
+  max-width: 95vw !important;
+  max-height: 95vh !important;
+  object-fit: contain;
 }
