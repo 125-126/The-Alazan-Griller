@@ -1,89 +1,82 @@
 /* ================= MENÚ CORRECTO ================= */
 
-
 .menu{
-max-width: 1200px;
-margin: auto;
-padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem 1rem;
 }
-
 
 /* GRID ÚNICO */
 .menu-grid{
-display: grid;
-grid-template-columns: repeat(4, 1fr); /* Desktop */
-gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
 }
-
 
 /* Tablet */
 @media (max-width: 900px){
-.menu-grid{
-grid-template-columns: repeat(3, 1fr);
+  .menu-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-}
-
 
 /* Celular — SIEMPRE 2 */
 @media (max-width: 600px){
-.menu-grid{
-grid-template-columns: repeat(2, 1fr);
-gap: 14px;
+  .menu-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .menu-card img{
+    height: 160px;
+    object-fit: cover;
+  }
 }
 
-
-.menu-card img{
-height: 160px;
-object-fit: cover;
-}
-}
-
+/* ================= MODAL IMAGEN ================= */
 
 .image-modal{
-position: fixed;
-inset: 0;
-background: rgba(0,0,0,.9);
-display: none;
-align-items: center;
-justify-content: center;
-z-index: 9999;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
-
 
 .image-modal.active{
-display: flex;
+  display: flex;
 }
-
 
 .image-modal img{
-max-width: 90%;
-max-height: 90%;
-border-radius: 12px;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
 }
 
-
+/* BOTÓN X */
 .image-close{
-position: absolute;
-top: 20px;
-right: 25px;
-font-size: 40px;
-color: white;
-cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
 }
 
-
+/* FLECHAS */
 .image-nav{
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-background: none;
-border: none;
-color: white;
-font-size: 60px;
-cursor: pointer;
-padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 60px;
+  cursor: pointer;
+  padding: 10px;
 }
-
 
 .image-nav.prev{ left: 20px; }
 .image-nav.next{ right: 20px; }
