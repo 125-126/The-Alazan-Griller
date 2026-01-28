@@ -93,19 +93,22 @@
 }
 
 .image-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: white;
-  font-size: 50px;
-  cursor: pointer;
-  padding: 10px;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(0,0,0,0.5); /* Fondo semitransparente */
+border: none;
+color: white;
+font-size: 50px;
+cursor: pointer;
+padding: 10px;
+z-index: 10000; /* 🔥 Asegura que esté encima de la imagen */
+border-radius: 50%;
 }
 
-.image-nav.prev { left: 20px; }
-.image-nav.next { right: 20px; }
+
+.image-nav.prev { left: 10px; }
+.image-nav.next { right: 10px; }
 
 /* 🔥 FORZAR IMAGEN GRANDE EN MODAL */
 .image-modal img{
