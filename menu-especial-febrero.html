@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú Especial Febrero</title>
+
+<style>
+/* ================== RESET ================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  background: radial-gradient(circle at top, #1a0f14, #000);
+  min-height:100vh;
+  overflow-x:hidden;
+  overflow-y:auto;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding-top:80px;
+  perspective:1200px;
+  color:#fff;
+}
+
+/* ================== TARJETA ================== */
+.card{
+  width:260px;
+  height:180px;
+
+  /* Oro elegante (no chillón) */
+  background:
+    linear-gradient(145deg,#f7d046,#e6b800,#b8860b);
+
+  border-radius:22px;
+
+  /* Profundidad real + brillo suave */
+  box-shadow:
+    0 18px 35px rgba(0,0,0,.45),
+    0 0 55px rgba(255,215,0,.35);
+
+  /* Borde premium sutil */
+  border:1px solid rgba(255,255,255,.18);
+
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+
+  cursor:pointer;
+  transform-style:preserve-3d;
+  transition:
+    transform 1s ease,
+    opacity .8s ease,
+    box-shadow 1s ease;
+
+  position:relative;
+  padding-left:28px;
+
+  /* Pulso romántico suave */
+  animation:softPulse 4s ease-in-out infinite;
+}
+
+@keyframes softPulse{
+  0%,100%{
+    box-shadow:
+      0 18px 35px rgba(0,0,0,.45),
+      0 0 45px rgba(255,215,0,.3);
+  }
+  50%{
+    box-shadow:
+      0 22px 45px rgba(0,0,0,.55),
+      0 0 70px rgba(255,215,0,.55);
+  }
+}
+
+.card h1{
+  color:#4a1c1c;
+  font-size:22px;
+  letter-spacing:2px;
+  text-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+
+.card.open{
+  transform: rotateX(60deg) translateZ(-80px);
+}
+
+/* ================== CANVAS ================== */
+canvas{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+}
+
+/* ================== MENÚ ================== */
+.menu-container{
+  position:relative;
+  top:40%;
+  width:100%;
+  text-align:center;
+  opacity:0;
+  transform:translateY(60px);
+  transition:2s ease;
+}
+
+.menu-container.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.menu-title{
+  font-size:36px;
+  margin-bottom:30px;
+  background: linear-gradient(90deg,#ffd700,#ff4d6d,#ffd700);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:3px;
+}
+
+.menus{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.menu-card{
+  width:200px;
+  padding:20px;
+  background:linear-gradient(145deg,#2a0f18,#12070c);
+  border:1px solid rgba(255,215,0,.4);
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
+  transform:translateY(40px);
+  opacity:0;
+  transition:1s ease;
+}
+
+.menu-card.show{
+  transform:translateY(0);
+  opacity:1;
+}
+
+.menu-card h3{
+  color:#ffd700;
+  margin-bottom:10px;
+}
+
+.menu-card p{
+  font-size:14px;
+  color:#f5cfd6;
+}
+
+/* ================== CTA ================== */
+.cta{
+  margin-top:40px;
+}
+
+.cta button{
+  padding:15px 40px;
+  font-size:18px;
+  border:none;
+  border-radius:40px;
+  background:linear-gradient(90deg,#ffd700,#ff4d6d);
+  color:#300;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(255,215,0,.7);
+  transition:.4s;
+}
+
+.cta button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 45px rgba(255,215,0,1);
+}
+
+.card-title{
+  font-size:22px;
+  letter-spacing:2px;
+  color:#4a1c1c;
+  text-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+
+.card-sub{
+  font-size:13px;
+  margin-top:6px;
+  color:#7a2a2a;
+  letter-spacing:1px;
+}
+
+.card-content{
+  text-align:left;
+  padding:28px;
+}
+
+.card-content .icon{
+  font-size:26px;
+  margin-bottom:14px;
+}
+
+.card-content h1{
+  font-size:26px;
+  letter-spacing:2px;
+  color:#4a1c1c;
+  margin-bottom:6px;
+}
+
+.card-content span{
+  font-size:13px;
+  letter-spacing:1.5px;
+  color:#7a2a2a;
+  opacity:.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <div class="card-content">
+    <div class="icon">💌</div>
+    <h1>MENÚ ESPECIAL</h1>
+    <span>Febrero del Amor</span>
+  </div>
+</div>
+<canvas id="heartCanvas"></canvas>
+
+<div class="menu-container" id="menuContainer">
+  <div class="menu-title">MENÚ ESPECIAL DE FEBRERO</div>
+
+  <div class="menus">
+    <div class="menu-card"> 
+      <h3>❤️ 14 Febrero</h3>
+      <p>Pasta artesanal<br>Vino tinto<br>Postre de autor</p>
+    </div>
+    <div class="menu-card">
+      <h3>🍷 20 Febrero</h3>
+      <p>Mar & Tierra<br>Salsa especial<br>Copa premium</p>
+    </div>
+    <div class="menu-card">
+      <h3>🍰 28 Febrero</h3>
+      <p>Degustación de postres<br>Chocolate belga</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <button>Reservar Ahora</button>
+  </div>
+</div>
+
+<script>
+/* ================== CANVAS SETUP ================== */
+const canvas = document.getElementById("heartCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+let particles=[];
+let phase=0;
+let active=false;
+
+function heart(t){
+  return{
+    x:16*Math.pow(Math.sin(t),3),
+    y:13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t)
+  }
+}
+
+/* ================== CREAR CORAZÓN ================== */
+function createHeart(){
+  particles=[];
+  for(let i=0;i<700;i++){
+    const t=Math.random()*Math.PI*2;
+    const pos=heart(t);
+    particles.push({
+      x:canvas.width/2,
+      y:canvas.height/2,
+      tx:pos.x*14+canvas.width/2,
+      ty:-pos.y*14+canvas.height/2,
+      a:0,
+      vx:0,
+      vy:0
+    });
+  }
+}
+
+/* ================== ANIMACIÓN ================== */
+function animate(){
+  ctx.fillStyle="rgba(0,0,0,0.2)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  if(active){
+    phase++;
+
+    particles.forEach(p=>{
+      if(phase<180){
+        p.vx+=(p.tx-p.x)*0.02;
+        p.vy+=(p.ty-p.y)*0.02;
+      }else{
+        p.vx+=Math.random()*1-0.5;
+        p.vy-=Math.random()*1.5;
+      }
+
+      p.x+=p.vx;
+      p.y+=p.vy;
+      p.vx*=0.9;
+      p.vy*=0.9;
+
+      if(p.a<1) p.a+=0.02;
+
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,2,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,80,120,${p.a})`;
+      ctx.shadowBlur=15;
+      ctx.shadowColor="rgba(255,80,120,.8)";
+      ctx.fill();
+    });
+
+    if(phase===220){
+      document.getElementById("menuContainer").classList.add("show");
+      document.querySelectorAll(".menu-card").forEach((m,i)=>{
+        setTimeout(()=>m.classList.add("show"),i*300);
+      });
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* ================== EVENTO TARJETA ================== */
+document.getElementById("card").addEventListener("click",()=>{
+  if(active) return;
+  active=true;
+
+  const card = document.getElementById("card");
+  card.classList.add("open");
+
+  // desaparecer suavemente
+  setTimeout(()=>{
+    card.style.opacity = "0";
+    card.style.transform += " scale(0.7)";
+  },600);
+
+  setTimeout(()=>{
+    card.style.display = "none";
+  },1200);
+
+  createHeart();
+});
+
+/* ================== RESIZE ================== */
+addEventListener("resize",()=>{
+  canvas.width=innerWidth;
+  canvas.height=innerHeight;
+});
+</script>
+
+</body>
+</html>
