@@ -281,83 +281,46 @@ Carnes premium, recetas tradicionales y porciones generosas que conquistan a cad
 
  <script>
 document.addEventListener("DOMContentLoaded", () => {
-
   const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("imageModalImg");
+  const modalImg = document.getElementById("modalImg");
   const modalTitle = document.getElementById("modalTitle");
   const modalDesc = document.getElementById("modalDesc");
   const closeBtn = document.querySelector(".image-close");
   const nextBtn = document.querySelector(".image-nav.next");
   const prevBtn = document.querySelector(".image-nav.prev");
 
-  // 👉 TODAS las tarjetas del menú
   const cards = Array.from(document.querySelectorAll(".menu-card"));
-
   let currentIndex = 0;
-  let modalOpen = false;
 
-  // ===== FUNCION PARA ACTUALIZAR CONTENIDO DEL MODAL =====
-  function updateModalContent() {
+  function updateModal() {
     const card = cards[currentIndex];
     modalImg.src = card.dataset.img;
     modalTitle.textContent = card.dataset.title;
     modalDesc.textContent = card.dataset.desc;
   }
 
-  // ===== ABRIR MODAL =====
   cards.forEach((card, index) => {
     card.addEventListener("click", () => {
       currentIndex = index;
-      updateModalContent();
-
+      updateModal();
       modal.classList.add("active");
-      modalOpen = true;
-
-      // 🔥 Evita que el botón atrás vaya al index anterior
-      history.pushState({ imageModal: true }, "");
     });
   });
 
-  // ===== CERRAR MODAL =====
-  function closeModal() {
-    modal.classList.remove("active");
-    modalOpen = false;
-  }
+  closeBtn.addEventListener("click", () => modal.classList.remove("active"));
+  modal.addEventListener("click", (e) => { if(e.target === modal) modal.classList.remove("active"); });
 
-  // ===== BOTONES SIGUIENTE / ANTERIOR =====
   nextBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     currentIndex = (currentIndex + 1) % cards.length;
-    updateModalContent();
+    updateModal();
   });
 
   prevBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    updateModalContent();
+    updateModal();
   });
-
-  // ===== BOTÓN X =====
-  closeBtn.addEventListener("click", () => {
-    closeModal();
-    history.back();
-  });
-
-  // ===== CLICK FUERA DE LA IMAGEN =====
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal();
-      history.back();
-    }
-  });
-
-  // ===== BOTÓN ATRÁS (CELULAR / NAVEGADOR) =====
-  window.addEventListener("popstate", () => {
-    if (modalOpen) {
-      closeModal();
-    }
-  });
-
 });
 </script>
 </body>
