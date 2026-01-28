@@ -258,16 +258,6 @@ Carnes premium, recetas tradicionales y porciones generosas que conquistan a cad
   </div>
 </footer>
   
-<!-- MODAL DE PRODUCTO -->
-<div class="product-modal" id="productModal">
-<div class="modal-overlay"></div>
-<div class="modal-content">
-<span class="modal-close">&times;</span>
-<img id="modalImg">
-<h3 id="modalTitle"></h3>
-<p id="modalDesc"></p>
-</div>
-</div>
 
   <div class="image-modal" id="imageModal">
   <span class="image-close">&times;</span>
@@ -275,81 +265,93 @@ Carnes premium, recetas tradicionales y porciones generosas que conquistan a cad
   <img id="imageModalImg">
   <button class="image-nav next">&#10095;</button>
 </div>
+  
 <!-- ================= SCRIPTS ================= -->
 <script src="js/menu.js"></script>
 <script src="js/animations.js"></script>
-<script>
+
+  <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("imageModalImg");
-  const closeBtn = document.querySelector(".image-close");
-  const nextBtn = document.querySelector(".image-nav.next");
-  const prevBtn = document.querySelector(".image-nav.prev");
 
-  const images = Array.from(document.querySelectorAll(".menu-card.modal-img"));
-  let currentIndex = 0;
-  let modalOpen = false;
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("imageModalImg");
+const closeBtn = document.querySelector(".image-close");
+const nextBtn = document.querySelector(".image-nav.next");
+const prevBtn = document.querySelector(".image-nav.prev");
 
-  images.forEach((card, index) => {
-    card.addEventListener("click", () => {
-      currentIndex = index;
-      showImage();
-      openModal();
-    });
-  });
 
-  function showImage(){
-    modalImg.src = images[currentIndex].dataset.img;
-  }
+// 👉 TODAS las imágenes del menú
+const cards = Array.from(document.querySelectorAll(".menu-card"));
 
-  function openModal(){
-    modal.style.display = "flex";
-    modalOpen = true;
-    history.pushState({ modal: true }, "");
-  }
 
-  function closeModal(){
-    modal.style.display = "none";
-    modalOpen = false;
-  }
+let currentIndex = 0;
+let modalOpen = false;
 
-  nextBtn.onclick = e => {
-    e.stopPropagation();
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage();
-  };
 
-  prevBtn.onclick = e => {
-    e.stopPropagation();
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage();
-  };
+// ===== ABRIR MODAL =====
+cards.forEach((card, index) => {
+card.addEventListener("click", () => {
+currentIndex = index;
+modalImg.src = card.dataset.img;
 
-  // ❌ Botón X
-  closeBtn.onclick = () => {
-    closeModal();
-    if (history.state && history.state.modal) {
-      history.back();
-    }
-  };
 
-  // 👆 Click fuera de la imagen
-  modal.onclick = e => {
-    if (e.target === modal) {
-      closeModal();
-      if (history.state && history.state.modal) {
-        history.back();
-      }
-    }
-  };
+modal.classList.add("active");
+modalOpen = true;
 
-  // ⬅️ Botón Atrás del celular o navegador
-  window.addEventListener("popstate", () => {
-    if (modalOpen) {
-      closeModal();
-    }
-  });
+
+// 🔥 Esto evita que el botón atrás se vaya al index
+history.pushState({ imageModal: true }, "");
+});
+});
+
+
+// ===== CERRAR MODAL =====
+function closeModal() {
+modal.classList.remove("active");
+modalOpen = false;
+}
+
+
+// ===== SIGUIENTE =====
+nextBtn.addEventListener("click", (e) => {
+e.stopPropagation();
+currentIndex = (currentIndex + 1) % cards.length;
+modalImg.src = cards[currentIndex].dataset.img;
+});
+
+
+// ===== ANTERIOR =====
+prevBtn.addEventListener("click", (e) => {
+e.stopPropagation();
+currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+modalImg.src = cards[currentIndex].dataset.img;
+});
+
+
+// ===== BOTÓN X =====
+closeBtn.addEventListener("click", () => {
+closeModal();
+history.back();
+});
+
+
+// ===== CLICK FUERA DE LA IMAGEN =====
+modal.addEventListener("click", (e) => {
+if (e.target === modal) {
+closeModal();
+history.back();
+}
+});
+
+
+// ===== BOTÓN ATRÁS (CELULAR / NAVEGADOR) =====
+window.addEventListener("popstate", () => {
+if (modalOpen) {
+closeModal();
+}
+});
+
 
 });
 </script>
