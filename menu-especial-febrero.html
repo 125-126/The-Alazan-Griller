@@ -281,6 +281,88 @@ font-size: 16px;
 font-size: 13px;
 }
 }
+
+  /* ================= CTA BOTÓN ================= */
+.cta{
+margin-top: 50px;
+display: flex;
+justify-content: center;
+}
+
+
+.btn.primary{
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 16px 44px;
+font-size: 18px;
+font-weight: 600;
+letter-spacing: 1px;
+text-decoration: none;
+
+
+color: #3b0a12;
+background: linear-gradient(135deg, #ffd700, #ff4d6d);
+border-radius: 50px;
+
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.4),
+0 0 30px rgba(255,215,0,.6);
+
+
+transition:
+transform .35s ease,
+box-shadow .35s ease,
+filter .35s ease;
+}
+
+
+/* HOVER */
+.btn.primary:hover{
+transform: translateY(-4px) scale(1.05);
+box-shadow:
+0 18px 45px rgba(0,0,0,.55),
+0 0 55px rgba(255,215,0,.9);
+filter: brightness(1.1);
+}
+
+
+/* CLICK */
+.btn.primary:active{
+transform: scale(.96);
+box-shadow:
+0 8px 18px rgba(0,0,0,.45);
+}
+
+
+/* EFECTO LATIDO SUAVE */
+@keyframes ctaPulse{
+0%,100%{
+box-shadow:
+0 10px 25px rgba(0,0,0,.4),
+0 0 30px rgba(255,215,0,.5);
+}
+50%{
+box-shadow:
+0 14px 35px rgba(0,0,0,.5),
+0 0 55px rgba(255,215,0,.85);
+}
+}
+
+
+.btn.primary{
+animation: ctaPulse 3.5s ease-in-out infinite;
+}
+
+
+/* MÓVIL */
+@media (max-width: 480px){
+.btn.primary{
+font-size: 16px;
+padding: 14px 36px;
+}
+}
 </style>
 </head>
 
