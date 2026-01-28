@@ -260,99 +260,101 @@ Carnes premium, recetas tradicionales y porciones generosas que conquistan a cad
 </footer>
   
 
-  <div class="image-modal" id="imageModal">
-  <span class="image-close">&times;</span>
-  <button class="image-nav prev">&#10094;</button>
-  <img id="imageModalImg">
-  <button class="image-nav next">&#10095;</button>
+<div class="image-modal" id="imageModal">
+<span class="image-close">&times;</span>
+<button class="image-nav prev">&#10094;</button>
+<div class="modal-content">
+<img id="imageModalImg">
+<h2 id="modalTitle"></h2>
+<p id="modalDesc"></p>
+</div>
+
+
+<button class="image-nav next">&#10095;</button>
 </div>
   
 <!-- ================= SCRIPTS ================= -->
 <script src="js/menu.js"></script>
 <script src="js/animations.js"></script>
 
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", () => {
 
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("imageModalImg");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDesc");
+  const closeBtn = document.querySelector(".image-close");
+  const nextBtn = document.querySelector(".image-nav.next");
+  const prevBtn = document.querySelector(".image-nav.prev");
 
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("imageModalImg");
-const closeBtn = document.querySelector(".image-close");
-const nextBtn = document.querySelector(".image-nav.next");
-const prevBtn = document.querySelector(".image-nav.prev");
+  // 👉 TODAS las tarjetas del menú
+  const cards = Array.from(document.querySelectorAll(".menu-card"));
 
+  let currentIndex = 0;
+  let modalOpen = false;
 
-// 👉 TODAS las imágenes del menú
-const cards = Array.from(document.querySelectorAll(".menu-card"));
+  // ===== FUNCION PARA ACTUALIZAR CONTENIDO DEL MODAL =====
+  function updateModalContent() {
+    const card = cards[currentIndex];
+    modalImg.src = card.dataset.img;
+    modalTitle.textContent = card.dataset.title;
+    modalDesc.textContent = card.dataset.desc;
+  }
 
+  // ===== ABRIR MODAL =====
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      currentIndex = index;
+      updateModalContent();
 
-let currentIndex = 0;
-let modalOpen = false;
+      modal.classList.add("active");
+      modalOpen = true;
 
+      // 🔥 Evita que el botón atrás vaya al index anterior
+      history.pushState({ imageModal: true }, "");
+    });
+  });
 
-// ===== ABRIR MODAL =====
-cards.forEach((card, index) => {
-card.addEventListener("click", () => {
-currentIndex = index;
-modalImg.src = card.dataset.img;
+  // ===== CERRAR MODAL =====
+  function closeModal() {
+    modal.classList.remove("active");
+    modalOpen = false;
+  }
 
+  // ===== BOTONES SIGUIENTE / ANTERIOR =====
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateModalContent();
+  });
 
-modal.classList.add("active");
-modalOpen = true;
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateModalContent();
+  });
 
+  // ===== BOTÓN X =====
+  closeBtn.addEventListener("click", () => {
+    closeModal();
+    history.back();
+  });
 
-// 🔥 Esto evita que el botón atrás se vaya al index
-history.pushState({ imageModal: true }, "");
-});
-});
+  // ===== CLICK FUERA DE LA IMAGEN =====
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+      history.back();
+    }
+  });
 
-
-// ===== CERRAR MODAL =====
-function closeModal() {
-modal.classList.remove("active");
-modalOpen = false;
-}
-
-
-// ===== SIGUIENTE =====
-nextBtn.addEventListener("click", (e) => {
-e.stopPropagation();
-currentIndex = (currentIndex + 1) % cards.length;
-modalImg.src = cards[currentIndex].dataset.img;
-});
-
-
-// ===== ANTERIOR =====
-prevBtn.addEventListener("click", (e) => {
-e.stopPropagation();
-currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-modalImg.src = cards[currentIndex].dataset.img;
-});
-
-
-// ===== BOTÓN X =====
-closeBtn.addEventListener("click", () => {
-closeModal();
-history.back();
-});
-
-
-// ===== CLICK FUERA DE LA IMAGEN =====
-modal.addEventListener("click", (e) => {
-if (e.target === modal) {
-closeModal();
-history.back();
-}
-});
-
-
-// ===== BOTÓN ATRÁS (CELULAR / NAVEGADOR) =====
-window.addEventListener("popstate", () => {
-if (modalOpen) {
-closeModal();
-}
-});
-
+  // ===== BOTÓN ATRÁS (CELULAR / NAVEGADOR) =====
+  window.addEventListener("popstate", () => {
+    if (modalOpen) {
+      closeModal();
+    }
+  });
 
 });
 </script>
