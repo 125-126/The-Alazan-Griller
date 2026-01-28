@@ -569,3 +569,17 @@ height: 160px;
 object-fit: cover;
 }
 }
+/* ================= MENÚ: 2 COLUMNAS EN CELULAR ================= */
+@media (max-width: 600px) {
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 en vez de auto-fit */
+    gap: 14px; /* espacio entre fotos */
+  }
+
+
+  .menu-card img {
+    height: 120px;
+    object-fit: cover;
+  }
+}
