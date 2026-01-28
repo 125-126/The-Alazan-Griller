@@ -241,18 +241,17 @@ parrilla en vivo y un ambiente cálido para compartir.
 <a href="https://wa.me/50369578713" class="whatsapp-float" target="_blank">
 <img src="img/eve/whatsapp.png" alt="WhatsApp" />
 </a>
-  
-  <div class="image-modal" id="imageModal">
-  <span class="image-close">&times;</span>
-  <button class="image-nav prev">&#10094;</button>
 
-  <div class="modal-content">
-    <img id="modalImg" src="" alt="Evento">
-    <h2 id="modalTitle"></h2>
-    <p id="modalDesc"></p>
-  </div>
+  MODAL
+<div class="image-modal" id="imageModal">
+<span class="image-close">&times;</span>
+<button class="image-nav prev">&#10094;</button>
 
-  <button class="image-nav next">&#10095;</button>
+<div class="modal-content">
+<img id="modalImg" src="" alt="Evento">
+</div>
+
+<button class="image-nav next">&#10095;</button>
 </div>
 
   
@@ -268,19 +267,16 @@ parrilla en vivo y un ambiente cálido para compartir.
 <script src="js/animations.js"></script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
 
 
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
-const modalTitle = document.getElementById("modalTitle");
-const modalDesc = document.getElementById("modalDesc");
 const closeBtn = document.querySelector(".image-close");
 const nextBtn = document.querySelector(".image-nav.next");
 const prevBtn = document.querySelector(".image-nav.prev");
 
 
-// Todas las imágenes de la galería
 const cards = Array.from(document.querySelectorAll(".gallery-item img"));
 
 
@@ -289,10 +285,7 @@ let modalOpen = false;
 
 
 function updateModalContent() {
-const card = cards[currentIndex];
-modalImg.src = card.src;
-modalTitle.textContent = card.alt || ""; // usar alt como título
-modalDesc.textContent = ""; // puedes agregar descripciones si quieres
+modalImg.src = cards[currentIndex].src;
 }
 
 
