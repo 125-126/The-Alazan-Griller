@@ -281,46 +281,82 @@ Carnes premium, recetas tradicionales y porciones generosas que conquistan a cad
 
  <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImg");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalDesc = document.getElementById("modalDesc");
-  const closeBtn = document.querySelector(".image-close");
-  const nextBtn = document.querySelector(".image-nav.next");
-  const prevBtn = document.querySelector(".image-nav.prev");
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const closeBtn = document.querySelector(".image-close");
+const nextBtn = document.querySelector(".image-nav.next");
+const prevBtn = document.querySelector(".image-nav.prev");
 
-  const cards = Array.from(document.querySelectorAll(".menu-card"));
-  let currentIndex = 0;
 
-  function updateModal() {
-    const card = cards[currentIndex];
-    modalImg.src = card.dataset.img;
-    modalTitle.textContent = card.dataset.title;
-    modalDesc.textContent = card.dataset.desc;
-  }
+const cards = Array.from(document.querySelectorAll(".menu-card"));
+let currentIndex = 0;
+let modalOpen = false;
 
-  cards.forEach((card, index) => {
-    card.addEventListener("click", () => {
-      currentIndex = index;
-      updateModal();
-      modal.classList.add("active");
-    });
-  });
 
-  closeBtn.addEventListener("click", () => modal.classList.remove("active"));
-  modal.addEventListener("click", (e) => { if(e.target === modal) modal.classList.remove("active"); });
+// Actualiza contenido del modal
+function updateModal() {
+const card = cards[currentIndex];
+modalImg.src = card.dataset.img;
+modalTitle.textContent = card.dataset.title;
+modalDesc.textContent = card.dataset.desc;
+}
 
-  nextBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    currentIndex = (currentIndex + 1) % cards.length;
-    updateModal();
-  });
 
-  prevBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    updateModal();
-  });
+// Abrir modal
+cards.forEach((card, index) => {
+card.addEventListener("click", () => {
+currentIndex = index;
+updateModal();
+modal.classList.add("active");
+modalOpen = true;
+
+
+// Agregamos un estado al historial solo para cerrar modal sin ir al index
+history.pushState({ modalOpen: true }, "");
+});
+});
+
+
+// Cerrar modal
+function closeModal() {
+modal.classList.remove("active");
+modalOpen = false;
+}
+
+
+// Botón X
+closeBtn.addEventListener("click", closeModal);
+
+
+// Click fuera de la imagen
+modal.addEventListener("click", (e) => {
+if (e.target === modal) closeModal();
+});
+
+
+// Navegar con flechas
+nextBtn.addEventListener("click", (e) => {
+e.stopPropagation(); // evita que cierre el modal
+currentIndex = (currentIndex + 1) % cards.length;
+updateModal();
+});
+
+
+prevBtn.addEventListener("click", (e) => {
+e.stopPropagation(); // evita que cierre el modal
+currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+updateModal();
+});
+
+
+// Presionar botón “atrás” del navegador
+window.addEventListener("popstate", (e) => {
+if (modalOpen) {
+closeModal();
+}
+});
 });
 </script>
 </body>
