@@ -93,3 +93,22 @@ max-width: 95vw !important;
 max-height: 95vh !important;
 object-fit: contain;
 }
+
+
+.modal-content {
+text-align: center;
+color: white;
+max-width: 90%;
+}
+
+
+.modal-content h2 {
+margin-top: 15px;
+font-size: 1.5rem;
+}
+
+
+.modal-content p {
+margin-top: 10px;
+font-size: 1rem;
+}
