@@ -560,7 +560,7 @@ color: #facc15;
 
 .modal-content {
   background: transparent;
-  max-width: 800px;
+  max-width: 900px;
   width: 90%;
   text-align: center;
   color: white;
@@ -573,7 +573,7 @@ color: #facc15;
 .modal-content img {
   width: 100%;
   height: auto;
-  max-height: 80vh; 
+  max-height: 90vh; 
   object-fit: contain;
   border-radius: 12px;
 }
