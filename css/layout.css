@@ -540,3 +540,32 @@ padding: 20px;
 .image-nav:hover {
 color: #facc15;
 }
+/* ================= GRID MENÚ (FIX MÓVIL) ================= */
+.menu-grid{
+display: grid;
+grid-template-columns: repeat(4, 1fr); /* Desktop */
+gap: 22px;
+}
+
+
+/* Tablet */
+@media (max-width: 900px){
+.menu-grid{
+grid-template-columns: repeat(3, 1fr);
+}
+}
+
+
+/* MÓVIL — SIEMPRE 2 FOTOS */
+@media (max-width: 600px){
+.menu-grid{
+grid-template-columns: repeat(2, 1fr);
+gap: 14px;
+}
+
+
+.menu-card img{
+height: 160px;
+object-fit: cover;
+}
+}
