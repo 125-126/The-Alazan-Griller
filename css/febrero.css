@@ -71,3 +71,12 @@
     transform:translateY(0) scale(1);
   }
 }
+
+/* TARJETA FEBRERO - HACER MÁS PEQUEÑA */
+#febreroEspecial .card {
+width: 250px; /* ancho más pequeño */
+height: 300px; /* altura más pequeña */
+padding: 15px; /* ajusta el relleno si es necesario */
+font-size: 0.9rem; /* reducir un poco el texto */
+border-radius: 12px; /* bordes redondeados */
+}
