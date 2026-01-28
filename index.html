@@ -79,6 +79,7 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
 
 <!-- TARJETA FLOTANTE -->
 <section id="febreroEspecial" class="febrero-float">
+<a href="menu-especial-febrero.html">
 <div class="card" id="febreroCard">
 <button class="febrero-close" type="button">×</button>
 <div class="card-content">
@@ -87,35 +88,8 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
 <p>Ver detalles</p>
 </div>
 </div>
+</a>
 </section>
-
-
-<!-- CANVAS PARA CORAZONES -->
-<canvas id="heartCanvas"></canvas>
-
-
-<!-- MENÚ QUE APARECE DESPUÉS -->
-<div class="menu-container" id="menuContainer">
-<div class="menu-title">MENÚ ESPECIAL DE FEBRERO</div>
-<div class="menus">
-<div class="menu-card">
-<h3>❤️ 14 Febrero</h3>
-<p>Pasta artesanal<br>Vino tinto<br>Postre de autor</p>
-</div>
-<div class="menu-card">
-<h3>🍷 20 Febrero</h3>
-<p>Mar & Tierra<br>Salsa especial<br>Copa premium</p>
-</div>
-<div class="menu-card">
-<h3>🍰 28 Febrero</h3>
-<p>Degustación de postres<br>Chocolate belga</p>
-</div>
-</div>
-<div class="cta">
-<button>Reservar Ahora</button>
-</div>
-</div>
-
   
 <!-- ================= MENÚ ================= -->
 <section id="menu" class="menu-section">
@@ -448,46 +422,87 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
  <!-- ================= JAVASCRIPT TARJETA FEBRERO ================= -->
+
+const canvas = document.getElementById("heartCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+
+let particles=[];
+let phase=0;
+let active=true; // <- INICIAR ANIMACIÓN AUTOMÁTICAMENTE
+
+
+function heart(t){
+return{
+x:16*Math.pow(Math.sin(t),3),
+y:13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t)
 }
 }
 
 
-// Animación de partículas
-function animate() {
-ctx.fillStyle = "rgba(0,0,0,0.2)";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+/* ================== CREAR CORAZÓN ================== */
+function createHeart(){
+particles=[];
+for(let i=0;i<700;i++){
+const t=Math.random()*Math.PI*2;
+const pos=heart(t);
+particles.push({
+x:canvas.width/2,
+y:canvas.height/2,
+tx:pos.x*14+canvas.width/2,
+ty:-pos.y*14+canvas.height/2,
+a:0,
+vx:0,
+vy:0
+});
+}
+}
 
 
-if (active) {
+/* ================== ANIMACIÓN ================== */
+function animate(){
+ctx.fillStyle="rgba(0,0,0,0.2)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+
+if(active){
 phase++;
-particles.forEach(p => {
-if (phase < 180) {
-p.vx += (p.tx - p.x) * 0.02;
-p.vy += (p.ty - p.y) * 0.02;
-} else {
-p.vx += Math.random() - 0.5;
-p.vy -= Math.random() * 1.5;
+
+
+particles.forEach(p=>{
+if(phase<180){
+p.vx+=(p.tx-p.x)*0.02;
+p.vy+=(p.ty-p.y)*0.02;
+}else{
+p.vx+=Math.random()*1-0.5;
+p.vy-=Math.random()*1.5;
 }
-p.x += p.vx;
-p.y += p.vy;
-p.vx *= 0.9;
-p.vy *= 0.9;
-if (p.a < 1) p.a += 0.02;
+
+
+p.x+=p.vx;
+p.y+=p.vy;
+p.vx*=0.9;
+p.vy*=0.9;
+
+
+if(p.a<1) p.a+=0.02;
 
 
 ctx.beginPath();
-ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-ctx.fillStyle = `rgba(255,80,120,${p.a})`;
-ctx.shadowBlur = 15;
-ctx.shadowColor = "rgba(255,80,120,.8)";
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle=`rgba(255,80,120,${p.a})`;
+ctx.shadowBlur=15;
+ctx.shadowColor="rgba(255,80,120,.8)";
 ctx.fill();
 });
 
 
-if (phase === 220) {
-menuContainer.classList.add("show");
-document.querySelectorAll(".menu-card").forEach((m, i) => {
-setTimeout(() => m.classList.add("show"), i * 300);
+if(phase===220){
+document.getElementById("menuContainer").classList.add("show");
+document.querySelectorAll(".menu-card").forEach((m,i)=>{
+setTimeout(()=>m.classList.add("show"),i*300);
 });
 }
 }
@@ -495,51 +510,17 @@ setTimeout(() => m.classList.add("show"), i * 300);
 
 requestAnimationFrame(animate);
 }
+
+
+/* ================== INICIAR ANIMACIÓN AUTOMÁTICA ================== */
+createHeart();
 animate();
 
 
-// CLICK EN TARJETA
-if (febreroCard) {
-febreroCard.addEventListener("click", () => {
-if (active) return;
-active = true;
-febreroCard.classList.add("open");
-
-
-setTimeout(() => {
-febreroCard.style.opacity = "0";
-febreroCard.style.transform += " scale(0.7)";
-}, 600);
-
-
-setTimeout(() => {
-febreroCard.style.display = "none";
-}, 1200);
-
-
-createHeart();
-});
-}
-
-
-// BOTÓN CERRAR
-const closeBtn = document.querySelector(".febrero-close");
-if (closeBtn) {
-closeBtn.addEventListener("click", (e) => {
-e.stopPropagation();
-const container = document.getElementById("febreroEspecial");
-if (container) container.remove();
-});
-}
-
-
-// AJUSTAR CANVAS AL REDIMENSIONAR
-window.addEventListener("resize", () => {
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-});
-
-
+/* ================== RESIZE ================== */
+addEventListener("resize",()=>{
+canvas.width=innerWidth;
+canvas.height=innerHeight;
 });
 </script>
 
