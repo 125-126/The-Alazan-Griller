@@ -77,6 +77,13 @@
   cursor: pointer;
   padding: 10px;
 }
-
+/* ===== IMAGEN GRANDE EN MODAL ===== */
+.image-modal img{
+width: auto;
+height: auto;
+max-width: 95vw;
+max-height: 95vh;
+object-fit: contain;
+}
 .image-nav.prev{ left: 20px; }
 .image-nav.next{ right: 20px; }
