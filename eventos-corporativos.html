@@ -231,12 +231,11 @@ body {
   object-fit: contain;
 }
 
-/* ===== BOTON PDF FLOTANTE (SOLO MOBILE) ===== */
+/* ===== BOTON PDF FLOTANTE ===== */
 .btn-pdf-mobile {
   position: fixed;
   bottom: 110px;
   right: 20px;
-
   padding: 16px 22px;
   border-radius: 999px;
 
@@ -259,18 +258,10 @@ body {
   z-index: 99999999;
 }
 
-.btn-pdf-mobile .icon {
-  font-size: 18px;
-}
-
-.btn-pdf-mobile:active {
-  transform: scale(0.95);
-}
-
-/* ===== OCULTAR EN DESKTOP ===== */
-@media (min-width: 768px) {
+/* ❌ NUNCA EN PDF */
+@media print {
   .btn-pdf-mobile {
-    display: none;
+    display: none !important;
   }
 }
 
