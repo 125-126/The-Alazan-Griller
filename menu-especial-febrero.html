@@ -4,23 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menú Especial Febrero</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
+body{
+  font-family:'Montserrat', sans-serif;
+}
+  
 /* ===== BODY ===== */
 body{
   min-height:100vh;
-  background:#0a0005;
-  color:#fff;
+  background:radial-gradient(circle at top, #2a020f, #050002 70%);
+  color:#f8f5f5;
   overflow-x:hidden;
 }
-
+  
 /* ===== CORAZÓN ===== */
 #heartCanvas{
   position:fixed;
@@ -46,9 +49,16 @@ body{
 }
 
 .menu-title{
-  font-size:32px;
-  letter-spacing:4px;
-  margin-bottom:40px;
+  font-family:'Playfair Display', serif;
+  font-size:40px;
+  letter-spacing:6px;
+  margin-bottom:12px;
+}
+.menu-subtitle{
+  font-size:15px;
+  letter-spacing:2px;
+  color:#e6b7c6;
+  margin-bottom:50px;
 }
 
 .menus{
@@ -60,16 +70,15 @@ body{
 }
 
 .menu-card{
-  background:#0b1220;
-  border-radius:20px;
+  background:linear-gradient(180deg,#12040b,#050002);
+  border-radius:22px;
   overflow:hidden;
   cursor:pointer;
-  box-shadow:0 18px 40px rgba(0,0,0,.45);
-  transition:.3s;
+  box-shadow:0 25px 60px rgba(120,10,40,.35);
+  transition:.35s ease;
 }
-
 .menu-card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-8px) scale(1.02);
 }
 
 .menu-card img{
@@ -79,8 +88,10 @@ body{
 }
 
 .menu-card h3{
-  color:#facc15;
-  margin:16px 0 6px;
+  font-family:'Playfair Display', serif;
+  color:#f3c2cf;
+  margin:18px 0 8px;
+  font-size:20px;
 }
 
 .menu-card p{
@@ -98,12 +109,12 @@ body{
 .btn{
   display:inline-block;
   padding:16px 44px;
-  background:linear-gradient(135deg,#ffd700,#ff4d6d);
-  color:#3b0a12;
+  background:linear-gradient(135deg,#b1123d,#ff6b8a);
+  color:#fff;
   border-radius:50px;
   font-size:18px;
   text-decoration:none;
-  box-shadow:0 0 40px rgba(255,215,0,.6);
+  box-shadow:0 0 40px rgba(255,80,120,.45);
 }
 
 /* ===== MODAL ===== */
@@ -168,29 +179,41 @@ body{
 
 <div class="menu-container" id="menuContainer">
   <div class="menu-title">MENÚ ESPECIAL DE FEBRERO</div>
+<div class="menu-subtitle">
+  Momentos que se comparten, sabores que se recuerdan
+</div>
 
   <div class="menus">
     <div class="menu-card">
       <img src="img/menu2.jpg">
       <h3>❤️ 14 Febrero</h3>
-      <p>Pasta artesanal<br>Vino tinto<br>Postre de autor</p>
+      <p>
+  Una cena pensada para mirarse sin prisa,<br>
+  acompañada de vino y un final dulce.
+</p>
     </div>
 
     <div class="menu-card">
       <img src="img/menu3.jpg">
       <h3>🍷 20 Febrero</h3>
-      <p>Mar & Tierra<br>Salsa especial<br>Copa premium</p>
+      <p>
+  Una cena pensada para mirarse sin prisa,<br>
+  acompañada de vino y un final dulce.
+</p>
     </div>
 
     <div class="menu-card">
       <img src="img/menu4.jpg">
       <h3>🍰 28 Febrero</h3>
-      <p>Degustación de postres<br>Chocolate belga</p>
+      <p>
+  Una cena pensada para mirarse sin prisa,<br>
+  acompañada de vino y un final dulce.
+</p>
     </div>
   </div>
 
   <div class="cta">
-    <a href="contacto.html" class="btn">Reservar ahora</a>
+    <a href="contacto.html" class="btn">Vivir esta experiencia</a>
   </div>
 </div>
 
