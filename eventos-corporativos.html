@@ -325,7 +325,45 @@ margin-bottom: 20px;
   }
 }
 
-    
+ /* ===== BOTON PDF FLOTANTE ===== */
+.btn-pdf-mobile {
+  position: fixed;
+  bottom: 95px;
+  right: 18px;
+  padding: 14px 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, gold, #c62828);
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 999999;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-pdf-mobile:hover {
+  opacity: 0.9;
+}
+
+/* SOLO EN DESKTOP LO OCULTAMOS */
+@media (min-width: 769px) {
+  .btn-pdf-mobile {
+    display: none;
+  }
+}
+
+/* OCULTAR AL IMPRIMIR */
+@media print {
+  .btn-pdf-mobile {
+    display: none !important;
+  }
+}   
     </style>
 </head>
 
@@ -333,7 +371,7 @@ margin-bottom: 20px;
 
     
 <button id="btnPDF" class="btn-pdf-mobile">
-  Descargar PDF
+  📄 Descargar PDF
 </button>
 
     
@@ -736,12 +774,11 @@ margin-bottom: 20px;
 <script>
 document.getElementById("btnPDF").addEventListener("click", function () {
 
+    const boton = document.getElementById("btnPDF");
     const contenido = document.getElementById("catalogo");
 
-    if (!contenido) {
-        alert("ERROR: No existe el contenedor #catalogo");
-        return;
-    }
+    // 🔥 OCULTAR BOTON ANTES DE GENERAR PDF
+    boton.style.display = "none";
 
     const opciones = {
         margin: 0,
@@ -758,7 +795,11 @@ document.getElementById("btnPDF").addEventListener("click", function () {
         }
     };
 
-    html2pdf().set(opciones).from(contenido).save();
+    html2pdf().set(opciones).from(contenido).save()
+    .then(() => {
+        // 🔥 VOLVER A MOSTRAR EL BOTON
+        boton.style.display = "flex";
+    });
 });
 </script>
     <!-- ================= WHATSAPP FLOTANTE ================= -->
