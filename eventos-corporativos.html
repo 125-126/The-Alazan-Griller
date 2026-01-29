@@ -21,33 +21,39 @@ body {
 /* ===== PAGINA CARTA ===== */
 .page {
   width: 215.9mm;
-  height: 279.4mm;              /* ⬅️ NO min-height */
+  height: 279.4mm;         /* ⬅️ ALTURA FIJA */
   background: radial-gradient(circle at center, #111 0%, #000 70%);
   color: #fff;
   margin: 0 auto;
-  padding: 0;
+  padding-top: 45mm;      /* ⬅️ espacio para línea superior */
+  padding-bottom: 45mm;   /* ⬅️ espacio para línea inferior */
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;  /* ⬅️ QUITAR CENTER */
+  justify-content: flex-start;
 
   position: relative;
-  overflow: hidden;             /* ⬅️ CLAVE */
+  overflow: hidden;
+
   page-break-after: always;
-  break-after: page;
 }
 
 .top-line,
 .bottom-line {
-  position: relative; /* antes era absolute */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   width: 55%;
   height: 1.5px;
-  margin: 35mm auto; /* separa de arriba o abajo */
   background: linear-gradient(to right, red, gold);
 }
-
+.top-line {
+  top: 25mm;
+}
+        
 .bottom-line {
+  bottom: 25mm;
   background: linear-gradient(to right, gold, red);
 }
         
@@ -701,40 +707,36 @@ html, body {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-document.getElementById("btnPDF").addEventListener("click", function () {
+document.getElementById("btnPDF").addEventListener("click", () => {
 
-    const boton = document.getElementById("btnPDF");
-    const contenido = document.getElementById("catalogo");
+  const boton = document.getElementById("btnPDF");
+  const contenido = document.getElementById("catalogo");
 
-    // OCULTAR BOTÓN
-    boton.style.display = "none";
+  boton.style.display = "none";
 
-    const opciones = {
-        margin: 0,
-        filename: "The_Alazan_Griller_Eventos.pdf",
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: {
-            scale: 2,
-            backgroundColor: "#000",   // 🔴 CLAVE: elimina espacio blanco
-            useCORS: true
-        },
-        jsPDF: {
-            unit: "mm",
-            format: "letter",
-            orientation: "portrait"
-        },
-        pagebreak: {
-            mode: ["css", "legacy"]    // 🔴 CLAVE: respeta cada .page
-        }
-    };
+  const opciones = {
+    margin: 0,
+    filename: "The_Alazan_Griller_Eventos.pdf",
+    image: { type: "jpeg", quality: 1 },
+    html2canvas: {
+      scale: 2,
+      backgroundColor: "#000",
+      useCORS: true
+    },
+    jsPDF: {
+      unit: "mm",
+      format: "letter",
+      orientation: "portrait"
+    },
+    pagebreak: {
+      mode: ["css"]
+    }
+  };
 
-    html2pdf()
-        .set(opciones)
-        .from(contenido)
-        .save()
-        .then(() => {
-            boton.style.display = "flex";
-        });
+  html2pdf(contenido, opciones).then(() => {
+    boton.style.display = "flex";
+  });
+
 });
 </script>
 
