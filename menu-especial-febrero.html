@@ -241,30 +241,50 @@ requestAnimationFrame(anim);
 anim();
 
 /* ===== MODAL ===== */
-const modal=document.getElementById("productModal");
-const mImg=document.getElementById("modalImg");
-const mTitle=document.getElementById("modalTitle");
-const mDesc=document.getElementById("modalDesc");
-const close=document.querySelector(".product-close");
+/* ===== MODAL ===== */
+const modal = document.getElementById("productModal");
+const modalImg = document.getElementById("modalImg");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const closeBtn = document.querySelector(".product-close");
 
-document.querySelectorAll(".menu-card").forEach(c=>{
-c.onclick=()=>{
-mImg.src=c.querySelector("img").src;
-mTitle.textContent=c.querySelector("h3").textContent;
-mDesc.innerHTML=c.querySelector("p").innerHTML;
-modal.classList.add("show");
-document.body.style.overflow="hidden";
-}
+/* ABRIR MODAL */
+document.querySelectorAll(".menu-card").forEach(card=>{
+  card.addEventListener("click", ()=>{
+    modalImg.src = card.querySelector("img").src;
+    modalTitle.textContent = card.querySelector("h3").textContent;
+    modalDesc.innerHTML = card.querySelector("p").innerHTML;
+
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden";
+
+    // 👉 ESTO ES LA CLAVE
+    history.pushState({ modalOpen: true }, "");
+  });
 });
 
+/* FUNCIÓN DE CIERRE */
 function closeModal(){
-modal.classList.remove("show");
-document.body.style.overflow="";
+  modal.classList.remove("show");
+  document.body.style.overflow = "";
 }
 
-modal.onclick=e=>{
-if(e.target===modal||e.target===close)closeModal();
-};
+/* CERRAR CON X O FONDO */
+modal.addEventListener("click", e=>{
+  if(e.target === modal || e.target === closeBtn){
+    closeModal();
+    history.back(); // vuelve al estado anterior SIN salir de la página
+  }
+});
+
+/* BOTÓN ATRÁS DEL CEL */
+window.addEventListener("popstate", ()=>{
+  if(modal.classList.contains("show")){
+    closeModal();
+  }
+});
+
+
 </script>
 
 </body>
