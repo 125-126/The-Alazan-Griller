@@ -602,97 +602,83 @@ const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
-
 let particles = [];
 let phase = 0;
-let active = true; // <- ANIMACIÓN AUTOMÁTICA
-
+let active = true;
 
 function heart(t){
-return {
-x: 16*Math.pow(Math.sin(t),3),
-y: 13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t)
+  return {
+    x: 16 * Math.pow(Math.sin(t), 3),
+    y: 13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)
+  };
 }
-}
-
 
 function createHeart(){
-particles=[];
-for(let i=0;i<700;i++){
-const t=Math.random()*Math.PI*2;
-const pos = heart(t);
-particles.push({
-x: canvas.width/2,
-y: canvas.height/2,
-tx: pos.x*14 + canvas.width/2,
-ty: -pos.y*14 + canvas.height/2,
-a: 0,
-vx: 0,
-vy: 0
-});
+  particles = [];
+  for(let i = 0; i < 700; i++){
+    const t = Math.random() * Math.PI * 2;
+    const pos = heart(t);
+    particles.push({
+      x: canvas.width / 2,
+      y: canvas.height / 2,
+      tx: pos.x * 14 + canvas.width / 2,
+      ty: -pos.y * 14 + canvas.height / 2,
+      a: 0,
+      vx: 0,
+      vy: 0
+    });
+  }
 }
-}
 
-
-createHeart(); // <- Crear partículas desde el inicio
-
+createHeart();
 
 function animate(){
-ctx.fillStyle = "rgba(0,0,0,0.2)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = "rgba(0,0,0,0.2)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
 
+  if(active){
+    phase++;
 
-if(active){
-phase++;
+    particles.forEach(p=>{
+      if(phase < 180){
+        p.vx += (p.tx - p.x) * 0.02;
+        p.vy += (p.ty - p.y) * 0.02;
+      } else {
+        p.vx += Math.random() - 0.5;
+        p.vy -= Math.random() * 1.5;
+      }
 
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.9;
+      p.vy *= 0.9;
 
-particles.forEach(p=>{
-if(phase < 180){
-p.vx += (p.tx - p.x) * 0.02;
-p.vy += (p.ty - p.y) * 0.02;
-} else {
-p.vx += Math.random() - 0.5;
-p.vy -= Math.random() * 1.5;
+      if(p.a < 1) p.a += 0.02;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,80,120,${p.a})`;
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = "rgba(255,80,120,.8)";
+      ctx.fill();
+    });
+
+    if(phase === 220){
+      document.getElementById("menuContainer").classList.add("show");
+      document.querySelectorAll(".menu-card").forEach((m,i)=>{
+        setTimeout(()=>m.classList.add("show"), i * 300);
+      });
+    }
+  }
+
+  requestAnimationFrame(animate);
 }
-
-
-p.x += p.vx;
-p.y += p.vy;
-p.vx *= 0.9;
-p.vy *= 0.9;
-
-
-if(p.a < 1) p.a += 0.02;
-
-
-ctx.beginPath();
-ctx.arc(p.x, p.y, 2, 0, Math.PI*2);
-ctx.fillStyle = `rgba(255,80,120,${p.a})`;
-ctx.shadowBlur = 15;
-ctx.shadowColor = "rgba(255,80,120,.8)";
-ctx.fill();
-});
-
-
-if(phase === 220){
-document.getElementById("menuContainer").classList.add("show");
-document.querySelectorAll(".menu-card").forEach((m,i)=>{
-setTimeout(()=>m.classList.add("show"), i*300);
-});
-}
-}
-
-
-requestAnimationFrame(animate);
-}
-
 
 animate();
 
-
 window.addEventListener("resize", ()=>{
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
 });
 
 /* ================= PRODUCT MODAL SCRIPT ================= */
@@ -702,13 +688,24 @@ const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
 const closeBtn = document.querySelector(".product-close");
 
+/* === FUNCIÓN ÚNICA PARA CERRAR (X, fondo y back) === */
+function closeModal(){
+  modal.classList.remove("show");
+  document.body.style.overflow = "";
+
+  if(history.state && history.state.modal){
+    history.back();
+  }
+}
+
+/* === ABRIR MODAL === */
 document.querySelectorAll(".menu-card").forEach(card=>{
   card.addEventListener("click", ()=>{
     const img = card.querySelector("img");
     const title = card.querySelector("h3");
     const desc = card.querySelector("p");
 
-    modalImg.src = img.getAttribute("src");
+    modalImg.src = img.src;
     modalTitle.textContent = title.textContent;
     modalDesc.innerHTML = desc.innerHTML;
 
@@ -718,12 +715,21 @@ document.querySelectorAll(".menu-card").forEach(card=>{
     history.pushState({ modal: true }, "");
   });
 });
- window.addEventListener("popstate", () => {
-  if (modal.classList.contains("show")) {
+
+/* === CERRAR CON X O FONDO === */
+modal.addEventListener("click", e=>{
+  if(e.target === modal || e.target === closeBtn){
+    closeModal();
+  }
+});
+
+/* === BOTÓN ATRÁS DEL CELULAR === */
+window.addEventListener("popstate", ()=>{
+  if(modal.classList.contains("show")){
     modal.classList.remove("show");
     document.body.style.overflow = "";
   }
-}); 
+});
 </script>
 
 </body>
