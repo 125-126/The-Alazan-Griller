@@ -21,7 +21,7 @@ body {
 /* ===== PAGINA CARTA ===== */
 .page {
   width: 215.9mm;
-  min-height: 279.4mm; /* altura carta */
+  height: 279.4mm;              /* ⬅️ NO min-height */
   background: radial-gradient(circle at center, #111 0%, #000 70%);
   color: #fff;
   margin: 0 auto;
@@ -29,10 +29,11 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centrado vertical */
   align-items: center;
+  justify-content: flex-start;  /* ⬅️ QUITAR CENTER */
 
   position: relative;
+  overflow: hidden;             /* ⬅️ CLAVE */
   page-break-after: always;
   break-after: page;
 }
@@ -49,7 +50,11 @@ body {
 .bottom-line {
   background: linear-gradient(to right, gold, red);
 }
-
+        
+html, body {
+  width: 100%;
+  height: 100%;
+}
 /* ===== TITULOS PORTADA ===== */
 .eventos {
   font-family: 'Montserrat', sans-serif;
@@ -289,6 +294,7 @@ body {
     </style>
 </head>
 
+    
 <body>
 
     
@@ -700,29 +706,35 @@ document.getElementById("btnPDF").addEventListener("click", function () {
     const boton = document.getElementById("btnPDF");
     const contenido = document.getElementById("catalogo");
 
-    // 🔥 OCULTAR BOTON ANTES DE GENERAR PDF
+    // OCULTAR BOTÓN
     boton.style.display = "none";
 
     const opciones = {
         margin: 0,
         filename: "The_Alazan_Griller_Eventos.pdf",
-        image: { type: "jpeg", quality: 0.95 },
+        image: { type: "jpeg", quality: 0.98 },
         html2canvas: {
             scale: 2,
-            backgroundColor: null
+            backgroundColor: "#000",   // 🔴 CLAVE: elimina espacio blanco
+            useCORS: true
         },
         jsPDF: {
             unit: "mm",
             format: "letter",
             orientation: "portrait"
+        },
+        pagebreak: {
+            mode: ["css", "legacy"]    // 🔴 CLAVE: respeta cada .page
         }
     };
 
-    html2pdf().set(opciones).from(contenido).save()
-    .then(() => {
-        // 🔥 VOLVER A MOSTRAR EL BOTON
-        boton.style.display = "flex";
-    });
+    html2pdf()
+        .set(opciones)
+        .from(contenido)
+        .save()
+        .then(() => {
+            boton.style.display = "flex";
+        });
 });
 </script>
 
