@@ -8,322 +8,241 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        @page {
-            size: letter;
-            margin: 0;
-        }
+@page {
+  size: letter;
+  margin: 0;
+}
 
-        body {
-            margin: 0;
-            background: #eaeaea;
-            
-        }
+body {
+  margin: 0;
+  background: #eaeaea;
+}
 
-        /* ===== PAGINA CARTA ===== */
+/* ===== PAGINA CARTA ===== */
 .page {
-    width: 215.9mm;
-    height: 279.4mm;
-    background: radial-gradient(circle at center, #111 0%, #000 70%);
-    color: #fff;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  width: 215.9mm;
+  height: 279.4mm;
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+  color: #fff;
+  margin: 0 auto;
+  padding: 0;
 
-    page-break-after: always;
-    break-after: page;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  page-break-after: always;
+  break-after: page;
 }
 
-        /* LINEAS */
-        .top-line {
-            position: absolute;
-            top: 35mm;
-            width: 55%;
-            height: 1.5px;
-            background: linear-gradient(to right, red, gold);
-        }
+/* ===== LINEAS ===== */
+.top-line {
+  position: absolute;
+  top: 35mm;
+  width: 55%;
+  height: 1.5px;
+  background: linear-gradient(to right, red, gold);
+}
 
-        .bottom-line {
-            position: absolute;
-            bottom: 35mm;
-            width: 55%;
-            height: 1.5px;
-            background: linear-gradient(to right, gold, red);
-        }
+.bottom-line {
+  position: absolute;
+  bottom: 35mm;
+  width: 55%;
+  height: 1.5px;
+  background: linear-gradient(to right, gold, red);
+}
 
-        /* TITULOS PORTADA */
-        .eventos {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 28px;
-            letter-spacing: 10px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
+/* ===== TITULOS PORTADA ===== */
+.eventos {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
 
-        .corporativos {
-            font-family: 'Playfair Display', serif;
-            font-size: 60px;
-            letter-spacing: 8px;
-            color: gold;
-            margin-bottom: 22px;
-            text-transform: uppercase;
-        }
+.corporativos {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  letter-spacing: 8px;
+  color: gold;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
 
-        .valores {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            opacity: 0.75;
-            margin-bottom: 60px;
-            text-align: center;
-        }
+.valores {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 60px;
+  text-align: center;
+}
 
-        /* LOGO */
-        .logo-img {
-            width: 120mm;
-            max-width: 80%;
-            mix-blend-mode: screen;
-        }
+/* ===== LOGO ===== */
+.logo-img {
+  width: 120mm;
+  max-width: 80%;
+  mix-blend-mode: screen;
+}
 
-        /* PAGINA 2 */
-        .titulo-interno {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            letter-spacing: 4px;
-            color: gold;
-            margin-bottom: 28px;
-            text-transform: uppercase;
-            text-align: center;
-        }
+/* ===== TITULOS INTERNOS ===== */
+.titulo-interno {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  letter-spacing: 4px;
+  color: gold;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  text-align: center;
+}
 
-        .descripcion-carta {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 14.5px;
-            line-height: 1.9;
-            letter-spacing: 0.3px;
-            text-align: center;
-            max-width: 70%;
-            margin-bottom: 45px;
-            color: #f2f2f2;
-        }
+.subtitulo-portada {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 4px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
 
-        .valores-texto {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 14px;
-            line-height: 1.8;
-            letter-spacing: 0.3px;
-            text-align: center;
-            max-width: 68%;
-            color: #f2f2f2;
-        }
+/* ===== TEXTOS ===== */
+.descripcion-carta,
+.valores-texto {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14.5px;
+  line-height: 1.9;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #f2f2f2;
+}
 
-/* ===== PAGINA PAQUETES ===== */
+.descripcion-carta {
+  max-width: 70%;
+  margin-bottom: 45px;
+}
+
+.valores-texto {
+  max-width: 68%;
+}
+
+/* ===== CONTENIDO DOS COLUMNAS ===== */
 .contenido-dos-columnas {
-    display: flex;
-    width: 80%;
-    height: 60%;
-    gap: 40px;
-    align-items: center;
+  display: flex;
+  width: 80%;
+  height: 60%;
+  gap: 40px;
+  align-items: center;
 }
 
-.col-izquierda {
-    width: 50%;
-    text-align: left;
+.col-izquierda,
+.col-derecha {
+  width: 50%;
 }
 
 .col-derecha {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .col-derecha img {
-    width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
+/* ===== LISTAS ===== */
 .lista-paquetes {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 14px;
-    line-height: 1.9;
-    color: #f2f2f2;
-    padding-left: 18px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #f2f2f2;
+  padding-left: 18px;
 }
 
 .lista-paquetes li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* ===== PAQUETES ===== */
 .paquete {
-    width: 85%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 35px;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
 }
 
 .paquete-texto {
-    width: 50%;
-    font-family: 'Libre Baskerville', serif;
-    font-size: 14px;
-    line-height: 1.8;
-    color: #f2f2f2;
+  width: 50%;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #f2f2f2;
 }
 
 .paquete-texto h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    letter-spacing: 2px;
-    color: gold;
-    margin-bottom: 12px;
-    text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: gold;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .paquete-img {
-    width: 45%;
-    display: flex;
-    justify-content: center;
+  width: 45%;
+  display: flex;
+  justify-content: center;
 }
 
 .paquete-img img {
-    width: 70%;
-    height: auto;
-    border-radius: 6px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    filter: brightness(1.05) contrast(1.1) saturate(1.1);
+  width: 70%;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  filter: brightness(1.05) contrast(1.1) saturate(1.1);
 }
 
-
-.btn-pdf:hover {
-    opacity: 0.9;
-}
-
-@media print {
-    body {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-
-    .page {
-        background: radial-gradient(circle at center, #111 0%, #000 70%) !important;
-        color: #fff !important;
-    }
-}
-
-@media print {
-    body {
-        margin: 0;
-        padding: 0;
-        background: #fff;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-
-.page {
-...
-box-shadow:
-0 0 0 1px rgba(255,215,0,0.08),
-0 25px 60px rgba(0,0,0,0.75);
-border-radius: 6px;
-}
-/* ===== ARREGLA WHATSAPP FLOTANTE ===== */
-.whatsapp-float{
-position: fixed;
-bottom: 25px;
-right: 25px;
-width: 60px;
-height: 60px;
-background: #25d366;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-
-
-/* ESTO es lo que faltaba */
-z-index: 9999999;
-
-
-box-shadow: 0 8px 25px rgba(0,0,0,0.45);
-}
-
-
-.whatsapp-float img{
-width: 55%;
-height: 55%;
-object-fit: contain;
-}
-
-        /* ===== OCULTAR WHATSAPP AL IMPRIMIR ===== */
-@media print {
+/* ===== WHATSAPP FLOTANTE ===== */
 .whatsapp-float {
-display: none !important;
-}
-}
-      .subtitulo-portada{
-font-family: 'Montserrat', sans-serif;
-letter-spacing: 4px;
-opacity: .8;
-margin-bottom: 20px;
-}  
-
-
-
- /* ===== BOTON PDF FLOTANTE ===== */
-.btn-pdf-mobile {
   position: fixed;
-  bottom: 95px;
-  right: 18px;
-  padding: 14px 22px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, gold, #c62828);
-  color: #000;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  z-index: 999999;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+
+  z-index: 9999999;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
 }
 
-.btn-pdf-mobile:hover {
-  opacity: 0.9;
+.whatsapp-float img {
+  width: 55%;
+  height: 55%;
+  object-fit: contain;
 }
 
-/* SOLO EN DESKTOP LO OCULTAMOS */
-@media (min-width: 769px) {
-  .btn-pdf-mobile {
-    display: none;
-  }
-}
-
-
-    /* ===== BOTON PDF FLOTANTE MOBILE ===== */
+/* ===== BOTON PDF FLOTANTE (SOLO MOBILE) ===== */
 .btn-pdf-mobile {
   position: fixed;
-  bottom: 110px; /* arriba de WhatsApp */
+  bottom: 110px;
   right: 20px;
 
-  padding: 16px 20px;
+  padding: 16px 22px;
   border-radius: 999px;
 
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
 
   background: linear-gradient(135deg, #FFD700, #C62828);
@@ -336,8 +255,8 @@ margin-bottom: 20px;
   align-items: center;
   gap: 10px;
 
-  box-shadow: 0 12px 30px rgba(0,0,0,0.55);
-  z-index: 9999999;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  z-index: 99999999;
 }
 
 .btn-pdf-mobile .icon {
@@ -348,21 +267,35 @@ margin-bottom: 20px;
   transform: scale(0.95);
 }
 
-/* ❌ OCULTO EN ESCRITORIO */
+/* ===== OCULTAR EN DESKTOP ===== */
 @media (min-width: 768px) {
   .btn-pdf-mobile {
     display: none;
   }
 }
 
-/* ❌ NUNCA EN PDF */
+/* ===== PRINT ===== */
 @media print {
-  .btn-pdf-mobile {
+  body {
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    background: radial-gradient(circle at center, #111 0%, #000 70%) !important;
+    box-shadow:
+      0 0 0 1px rgba(255,215,0,0.08),
+      0 25px 60px rgba(0,0,0,0.75);
+    border-radius: 6px;
+  }
+
+  .btn-pdf-mobile,
+  .whatsapp-float {
     display: none !important;
   }
 }
-
-        
+ 
     </style>
 </head>
 
