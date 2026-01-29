@@ -21,7 +21,7 @@ body {
 /* ===== PAGINA CARTA ===== */
 .page {
   width: 215.9mm;
-  height: 279.4mm;
+  min-height: 279.4mm; /* altura carta */
   background: radial-gradient(circle at center, #111 0%, #000 70%);
   color: #fff;
   margin: 0 auto;
@@ -29,28 +29,24 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Antes era center */
+  justify-content: center; /* centrado vertical */
   align-items: center;
-  min-height: 279.4mm; /* Asegura que cada página tenga altura carta */
+
   position: relative;
   page-break-after: always;
   break-after: page;
 }
 
-/* ===== LINEAS ===== */
-.top-line {
-  position: absolute;
-  top: 35mm;
+.top-line,
+.bottom-line {
+  position: relative; /* antes era absolute */
   width: 55%;
   height: 1.5px;
+  margin: 35mm auto; /* separa de arriba o abajo */
   background: linear-gradient(to right, red, gold);
 }
 
 .bottom-line {
-  position: absolute;
-  bottom: 35mm;
-  width: 55%;
-  height: 1.5px;
   background: linear-gradient(to right, gold, red);
 }
 
