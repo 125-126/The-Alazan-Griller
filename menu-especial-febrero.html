@@ -471,6 +471,69 @@ font-size: 14px;
 .lightbox-close:hover{
   opacity: 1;
 }
+
+  /* ================= PRODUCT MODAL ================= */
+.product-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+  z-index: 999999;
+}
+
+.product-modal.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.product-box{
+  width: 92%;
+  max-width: 380px;
+  background: #0b1220;
+  border-radius: 22px;
+  overflow: hidden;
+  text-align: center;
+  animation: zoomIn .35s ease;
+  box-shadow: 0 30px 80px rgba(0,0,0,.8);
+}
+
+.product-box img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.product-box h3{
+  margin: 18px 0 8px;
+  color: #facc15;
+  font-size: 20px;
+}
+
+.product-box p{
+  padding: 0 20px 24px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.product-close{
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  opacity: .8;
+}
+
+.product-close:hover{
+  opacity: 1;
+}
 </style>
 </head>
 
@@ -521,10 +584,16 @@ Reservar ahora
 </a>
 </div>
   
-  <!-- ================= LIGHTBOX ================= -->
-<div class="lightbox" id="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img src="" alt="Vista completa" id="lightboxImg">
+<!-- ================= PRODUCTO MODAL ================= -->
+<div class="product-modal" id="productModal">
+  <div class="product-box">
+    <span class="product-close">&times;</span>
+
+    <img src="" id="modalImg" alt="Producto">
+
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+  </div>
 </div>
   
 <script>
@@ -627,20 +696,31 @@ canvas.width = innerWidth;
 canvas.height = innerHeight;
 });
 
-/* ================= LIGHTBOX SCRIPT ================= */
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
+/* ================= PRODUCT MODAL SCRIPT ================= */
+const modal = document.getElementById("productModal");
+const modalImg = document.getElementById("modalImg");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const closeBtn = document.querySelector(".product-close");
 
-document.querySelectorAll(".menu-img").forEach(img=>{
-  img.addEventListener("click", ()=>{
-    lightboxImg.src = img.src;
-    lightbox.classList.add("show");
+document.querySelectorAll(".menu-card").forEach(card=>{
+  card.addEventListener("click", ()=>{
+    modalImg.src = card.querySelector("img").src;
+    modalTitle.innerHTML = card.querySelector("h3").innerHTML;
+    modalDesc.innerHTML = card.querySelector("p").innerHTML;
+
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden";
   });
 });
 
-lightbox.addEventListener("click", ()=>{
-  lightbox.classList.remove("show");
-}); 
+modal.addEventListener("click", e=>{
+  if(e.target === modal || e.target === closeBtn){
+    modal.classList.remove("show");
+    document.body.style.overflow = "";
+  }
+});
+  
 </script>
 
 </body>
