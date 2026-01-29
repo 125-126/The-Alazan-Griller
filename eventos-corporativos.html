@@ -198,11 +198,14 @@ body {
 
 .paquete-img img {
   width: 70%;
+  max-height: 120mm; /* <-- aquí limitas la altura para que no rompa la página */
   border-radius: 6px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   filter: brightness(1.05) contrast(1.1) saturate(1.1);
+  object-fit: cover; /* mantiene proporciones sin deformar */
 }
 
+        
 /* ===== WHATSAPP FLOTANTE ===== */
 .whatsapp-float {
   position: fixed;
