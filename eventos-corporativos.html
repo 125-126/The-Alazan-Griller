@@ -294,7 +294,33 @@ html, body {
     display: none !important;
   }
 }
- 
+ @media print {
+
+  html, body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  #catalogo {
+    width: 100%;
+  }
+
+  .page {
+    width: 215.9mm;
+    height: 279.4mm;
+    margin: 0;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .btn-pdf-mobile,
+  .whatsapp-float {
+    display: none !important;
+  }
+}
     </style>
 </head>
 
@@ -702,39 +728,11 @@ html, body {
 </div> <!-- ✅ CIERRE PAGINA FINAL -->
 </div> <!-- ✅ CIERRE DE catalogo -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 
 <script>
 document.getElementById("btnPDF").addEventListener("click", () => {
-
-  const boton = document.getElementById("btnPDF");
-  const contenido = document.getElementById("catalogo");
-
-  boton.style.display = "none";
-
-  const opciones = {
-    margin: 0,
-    filename: "The_Alazan_Griller_Eventos.pdf",
-    image: { type: "jpeg", quality: 1 },
-    html2canvas: {
-      scale: 2,
-      backgroundColor: "#000",
-      useCORS: true
-    },
-    jsPDF: {
-      unit: "mm",
-      format: "letter",
-      orientation: "portrait"
-    },
-    pagebreak: {
-      mode: ["css"]
-    }
-  };
-
-  html2pdf(contenido, opciones).then(() => {
-    boton.style.display = "flex";
-  });
-
+  window.print();
 });
 </script>
 
