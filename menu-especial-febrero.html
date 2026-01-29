@@ -10,133 +10,142 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Segoe UI',sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+/* ===== BODY ===== */
 body{
-  background: radial-gradient(circle at top, #3b0a12, #120004);
   min-height:100vh;
-  overflow-x:hidden;
+  background:#0a0005;
   color:#fff;
+  overflow-x:hidden;
 }
 
-canvas{
+/* ===== CORAZÓN ===== */
+#heartCanvas{
   position:fixed;
   inset:0;
-  z-index:-1;
+  z-index:1;
+  pointer-events:none;
 }
 
-/* CONTENIDO */
-.menu-container{
-  text-align:center;
-  padding:100px 20px 80px;
-  opacity:0;
-  transform:translateY(60px);
-  transition:1.2s ease;
+/* ===== OVERLAY VINO ===== */
+.bg-overlay{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at top, rgba(90,20,35,.65), rgba(10,0,5,.95));
+  z-index:2;
 }
-.menu-container.show{
-  opacity:1;
-  transform:none;
+
+/* ===== CONTENIDO ===== */
+.menu-container{
+  position:relative;
+  z-index:3;
+  padding:80px 16px;
+  text-align:center;
 }
 
 .menu-title{
-  font-size:clamp(26px,6vw,36px);
+  font-size:32px;
   letter-spacing:4px;
-  margin-bottom:50px;
+  margin-bottom:40px;
 }
 
 .menus{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  gap:28px;
   max-width:1100px;
   margin:0 auto;
 }
 
 .menu-card{
   background:#0b1220;
-  border-radius:22px;
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 18px 40px rgba(0,0,0,.55);
   cursor:pointer;
-  transform:translateY(50px);
-  opacity:0;
-  transition:.8s ease;
+  box-shadow:0 18px 40px rgba(0,0,0,.45);
+  transition:.3s;
 }
-.menu-card.show{
-  transform:none;
-  opacity:1;
+
+.menu-card:hover{
+  transform:translateY(-6px);
 }
 
 .menu-card img{
   width:100%;
-  height:200px;
+  height:180px;
   object-fit:cover;
 }
 
 .menu-card h3{
-  margin:18px 0 10px;
   color:#facc15;
+  margin:16px 0 6px;
 }
 
 .menu-card p{
-  padding:0 20px 24px;
-  color:#e5e7eb;
+  font-size:14px;
   line-height:1.6;
+  padding:0 16px 20px;
+  color:#e5e7eb;
 }
 
+/* ===== CTA ===== */
 .cta{
-  margin-top:70px;
+  margin-top:60px;
 }
+
 .btn{
   display:inline-block;
   padding:16px 44px;
-  border-radius:50px;
   background:linear-gradient(135deg,#ffd700,#ff4d6d);
   color:#3b0a12;
+  border-radius:50px;
+  font-size:18px;
   text-decoration:none;
-  font-weight:600;
-  box-shadow:0 12px 30px rgba(0,0,0,.5);
+  box-shadow:0 0 40px rgba(255,215,0,.6);
 }
 
-/* MODAL */
+/* ===== MODAL ===== */
 .product-modal{
   position:fixed;
   inset:0;
   background:rgba(0,0,0,.92);
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   opacity:0;
   pointer-events:none;
-  transition:.4s;
+  transition:.3s;
   z-index:9999;
 }
+
 .product-modal.show{
   opacity:1;
   pointer-events:auto;
 }
 
 .product-box{
+  width:92%;
+  max-width:420px;
   background:#0b1220;
   border-radius:22px;
-  max-width:420px;
-  width:92%;
   overflow:hidden;
   text-align:center;
 }
 
 .product-box img{
   width:100%;
-  max-height:70vh;
+  max-height:80vh;
   object-fit:contain;
   background:#000;
 }
 
 .product-box h3{
-  margin:16px 0 8px;
   color:#facc15;
+  margin:18px 0 6px;
 }
+
 .product-box p{
   padding:0 20px 24px;
   color:#e5e7eb;
@@ -147,7 +156,6 @@ canvas{
   top:18px;
   right:22px;
   font-size:32px;
-  color:#fff;
   cursor:pointer;
 }
 </style>
@@ -156,6 +164,7 @@ canvas{
 <body>
 
 <canvas id="heartCanvas"></canvas>
+<div class="bg-overlay"></div>
 
 <div class="menu-container" id="menuContainer">
   <div class="menu-title">MENÚ ESPECIAL DE FEBRERO</div>
@@ -185,7 +194,8 @@ canvas{
   </div>
 </div>
 
-<div class="product-modal" id="modal">
+<!-- MODAL -->
+<div class="product-modal" id="productModal">
   <div class="product-box">
     <span class="product-close">&times;</span>
     <img id="modalImg">
@@ -195,66 +205,69 @@ canvas{
 </div>
 
 <script>
-/* ❤️ CORAZÓN ROMÁNTICO ELEGANTE */
-const canvas = document.getElementById("heartCanvas");
-const ctx = canvas.getContext("2d");
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+/* ===== CORAZÓN ===== */
+const canvas=document.getElementById("heartCanvas");
+const ctx=canvas.getContext("2d");
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight}
+resize();addEventListener("resize",resize);
 
-let scale = 1;
-let growing = true;
-
-function drawHeart(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  ctx.save();
-  ctx.translate(canvas.width/2, canvas.height/2 - 40);
-  ctx.scale(scale, scale);
-
-  ctx.beginPath();
-  for(let t=0;t<Math.PI*2;t+=0.01){
-    const x = 16 * Math.pow(Math.sin(t),3);
-    const y = -(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t));
-    ctx.lineTo(x*10,y*10);
-  }
-
-  ctx.strokeStyle = "rgba(255,100,130,0.35)";
-  ctx.lineWidth = 3;
-  ctx.shadowBlur = 25;
-  ctx.shadowColor = "rgba(255,100,130,0.6)";
-  ctx.stroke();
-  ctx.restore();
-
-  scale += growing ? 0.0008 : -0.0008;
-  if(scale > 1.03) growing = false;
-  if(scale < 0.97) growing = true;
-
-  requestAnimationFrame(drawHeart);
+let p=[],phase=0;
+function heart(t){
+return{x:16*Math.sin(t)**3,y:13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t)}
 }
-drawHeart();
+for(let i=0;i<900;i++){
+let t=Math.random()*Math.PI*2,h=heart(t);
+p.push({x:innerWidth/2,y:innerHeight/2,tx:h.x*14+innerWidth/2,ty:-h.y*14+innerHeight/2,vx:0,vy:0,a:0})
+}
 
-/* APARICIÓN CONTENIDO */
-setTimeout(()=>{
-  document.getElementById("menuContainer").classList.add("show");
-  document.querySelectorAll(".menu-card").forEach((m,i)=>{
-    setTimeout(()=>m.classList.add("show"),i*300);
-  });
-},1200);
-
-/* MODAL */
-const modal=document.getElementById("modal");
-document.querySelectorAll(".menu-card").forEach(c=>{
-  c.onclick=()=>{
-    modal.classList.add("show");
-    modal.querySelector("#modalImg").src=c.querySelector("img").src;
-    modal.querySelector("#modalTitle").innerHTML=c.querySelector("h3").innerHTML;
-    modal.querySelector("#modalDesc").innerHTML=c.querySelector("p").innerHTML;
-  }
+function anim(){
+ctx.fillStyle="rgba(0,0,0,.15)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+phase++;
+p.forEach(o=>{
+o.vx+=(o.tx-o.x)*.02;
+o.vy+=(o.ty-o.y)*.02;
+o.x+=o.vx;o.y+=o.vy;o.vx*=.9;o.vy*=.9;
+o.a=Math.min(o.a+.02,1);
+ctx.beginPath();
+ctx.arc(o.x,o.y,2,0,Math.PI*2);
+ctx.fillStyle=`rgba(255,80,120,${o.a})`;
+ctx.shadowBlur=15;
+ctx.shadowColor="rgba(255,80,120,.8)";
+ctx.fill();
 });
-document.querySelector(".product-close").onclick=()=>modal.classList.remove("show");
-modal.onclick=e=>{if(e.target===modal)modal.classList.remove("show");}
+requestAnimationFrame(anim);
+}
+anim();
+
+/* ===== MODAL ===== */
+const modal=document.getElementById("productModal");
+const mImg=document.getElementById("modalImg");
+const mTitle=document.getElementById("modalTitle");
+const mDesc=document.getElementById("modalDesc");
+const close=document.querySelector(".product-close");
+
+document.querySelectorAll(".menu-card").forEach(c=>{
+c.onclick=()=>{
+mImg.src=c.querySelector("img").src;
+mTitle.textContent=c.querySelector("h3").textContent;
+mDesc.innerHTML=c.querySelector("p").innerHTML;
+modal.classList.add("show");
+document.body.style.overflow="hidden";
+}
+});
+
+function closeModal(){
+modal.classList.remove("show");
+document.body.style.overflow="";
+}
+
+modal.onclick=e=>{
+if(e.target===modal||e.target===close)closeModal();
+};
 </script>
 
 </body>
 </html>
+
 
