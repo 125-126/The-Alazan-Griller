@@ -499,8 +499,11 @@ font-size: 14px;
 
 .product-box img{
   width: 100%;
-  max-height: 70vh;
+  height: auto;
+  max-height: 80vh;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
   background: #000;
 }
 
@@ -701,22 +704,26 @@ const closeBtn = document.querySelector(".product-close");
 
 document.querySelectorAll(".menu-card").forEach(card=>{
   card.addEventListener("click", ()=>{
-    modalImg.src = card.querySelector("img").src;
-    modalTitle.innerHTML = card.querySelector("h3").innerHTML;
-    modalDesc.innerHTML = card.querySelector("p").innerHTML;
+    const img = card.querySelector("img");
+    const title = card.querySelector("h3");
+    const desc = card.querySelector("p");
+
+    modalImg.src = img.getAttribute("src");
+    modalTitle.textContent = title.textContent;
+    modalDesc.innerHTML = desc.innerHTML;
 
     modal.classList.add("show");
     document.body.style.overflow = "hidden";
+
+    history.pushState({ modal: true }, "");
   });
 });
-
-modal.addEventListener("click", e=>{
-  if(e.target === modal || e.target === closeBtn){
+ window.addEventListener("popstate", () => {
+  if (modal.classList.contains("show")) {
     modal.classList.remove("show");
     document.body.style.overflow = "";
   }
-});
-  
+}); 
 </script>
 
 </body>
