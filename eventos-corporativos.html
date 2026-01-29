@@ -202,22 +202,6 @@
     filter: brightness(1.05) contrast(1.1) saturate(1.1);
 }
 
-.btn-pdf {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 12px 22px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background: linear-gradient(to right, gold, red);
-    color: #000;
-    border: none;
-    cursor: pointer;
-    z-index: 9999;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-}
 
 .btn-pdf:hover {
     opacity: 0.9;
@@ -346,7 +330,59 @@ margin-bottom: 20px;
   .btn-pdf-mobile {
     display: none !important;
   }
-}   
+}  
+
+    /* ===== BOTON PDF FLOTANTE MOBILE ===== */
+.btn-pdf-mobile {
+  position: fixed;
+  bottom: 110px; /* arriba de WhatsApp */
+  right: 20px;
+
+  padding: 16px 20px;
+  border-radius: 999px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  background: linear-gradient(135deg, #FFD700, #C62828);
+  color: #111;
+
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+  z-index: 9999999;
+}
+
+.btn-pdf-mobile .icon {
+  font-size: 18px;
+}
+
+.btn-pdf-mobile:active {
+  transform: scale(0.95);
+}
+
+/* ❌ OCULTO EN ESCRITORIO */
+@media (min-width: 768px) {
+  .btn-pdf-mobile {
+    display: none;
+  }
+}
+
+/* ❌ NUNCA EN PDF */
+@media print {
+  .btn-pdf-mobile {
+    display: none !important;
+  }
+}
+
+        
     </style>
 </head>
 
