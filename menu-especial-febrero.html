@@ -15,7 +15,6 @@
 }
 
 body{
-  background: radial-gradient(circle at top, #1a0f14, #000);
   min-height:100vh;
   overflow-x:hidden;
   overflow-y:auto;
@@ -25,6 +24,7 @@ body{
   padding-top:80px;
   perspective:1200px;
   color:#fff;
+  background: transparent;
 }
 
 /* ================== TARJETA ================== */
@@ -374,7 +374,13 @@ padding: 14px 36px;
     flex-direction: column;
     justify-content: center;
   }
-
+.menu-container{
+  position: relative;
+  z-index: 2;
+}
+.product-modal{
+  z-index: 9999;
+}
   .menu-title{
     font-size: 28px;
     margin-bottom: 24px;
@@ -534,12 +540,13 @@ font-size: 14px;
   opacity: 1;
 }
 
-  #heartCanvas{
+#heartCanvas{
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
+  
 .menu-container,
 .product-modal{
   position: relative;
