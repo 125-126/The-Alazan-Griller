@@ -291,11 +291,52 @@ letter-spacing: 4px;
 opacity: .8;
 margin-bottom: 20px;
 }  
+
+    /* ===== BOTON PDF MOBILE ===== */
+.btn-pdf-mobile {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  padding: 14px 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, gold, red);
+  color: #000;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  z-index: 999999;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+}
+
+/* SOLO EN ESCRITORIO LO OCULTAMOS */
+@media (min-width: 769px) {
+  .btn-pdf-mobile {
+    display: none;
+  }
+}
+
+/* OCULTAR AL IMPRIMIR */
+@media print {
+  .btn-pdf-mobile {
+    display: none !important;
+  }
+}
+
+    
     </style>
 </head>
 
 <body>
 
+    
+<button id="btnPDF" class="btn-pdf-mobile">
+  Descargar PDF
+</button>
+
+    
 <div id="catalogo">
 <!-- ================= PAGINA 1 ================= -->
 <div class="page">
