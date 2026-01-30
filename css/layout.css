@@ -739,8 +739,8 @@ color: #facc15;
 
 .event-media.vertical-video{
   width: 100%;
-  max-width: 320px;           /* Controla el ancho */
-  aspect-ratio: 9 / 16;       /* FORMATO VERTICAL */
+  max-width: 420px;           /* Controla el ancho */
+  aspect-ratio: 15 / 22;       /* FORMATO VERTICAL */
   margin: 0 auto;
   overflow: hidden;
   border-radius: 16px;
