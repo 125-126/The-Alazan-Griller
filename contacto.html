@@ -142,18 +142,19 @@ form.addEventListener("submit", async (e) => {
 
   const data = { nombre, dui, telefono, email, comentario };
 
-  const url = "https://script.google.com/macros/s/AKfycbwmqUFMnH7zxt1l7MOY-8NvuRoZUSccflUJgn0GEFVgJ84meVCVPu0LqVGqJ_8ZFjSbPw/exec";
+  const url = "https://script.google.com/macros/s/AKfycbxJrev5r62C-75jUr-ldJdFHI14uz9qPsvMoOuhvf9ZOk28Ig2LYjXcbAhW-k4N0NM52A/exec";
 
   try {
-    // 1️⃣ Guardar en Google Sheets
-    await fetch(url, {
+    const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
 
-    // 2️⃣ Abrir WhatsApp
-    const mensaje = 
+    const result = await response.json();
+    if (result.status !== "ok") throw new Error(result.message);
+
+    const mensaje =
 `📩 Nueva consulta
 Nombre: ${nombre}
 DUI: ${dui}
@@ -166,14 +167,14 @@ Comentario: ${comentario}`;
       encodeURIComponent(mensaje);
 
     window.open(whatsappURL, "_blank");
-
     form.reset();
 
   } catch (error) {
-    alert("Error al enviar ❌");
     console.error(error);
+    alert("Error al enviar ❌");
   }
 });
 </script>
+
 </body>
 </html>
