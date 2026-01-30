@@ -129,30 +129,43 @@
 <script src="js/sliders.js"></script>
 
 <script>
-  const form = document.getElementById("contactForm");
+const form = document.getElementById("contactForm");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const nombre = document.getElementById("nombre").value;
-    const dui = document.getElementById("dui").value;
-    const telefono = document.getElementById("telefono").value;
-    const email = document.getElementById("email").value;
-    const comentario = document.getElementById("comentario").value;
+  const data = {
+    nombre: document.getElementById("nombre").value,
+    dui: document.getElementById("dui").value,
+    telefono: document.getElementById("telefono").value,
+    email: document.getElementById("email").value,
+    comentario: document.getElementById("comentario").value
+  };
 
-    let text = `📩 *Nueva consulta*%0A`;
-    text += `*Nombre:* ${nombre}%0A`;
-    text += `*DUI:* ${dui}%0A`;
-    text += `*Teléfono:* ${telefono}%0A`;
-    text += `*Correo:* ${email}%0A`;
-    text += `*Comentario:* ${comentario}`;
+  const url = "https://script.google.com/macros/s/AKfycbwmqUFMnH7zxt1l7MOY-8NvuRoZUSccflUJgn0GEFVgJ84meVCVPu0LqVGqJ_8ZFjSbPw/exec";
 
-    const url = `https://wa.me/5036957-8713?text=${text}`;
-    window.open(url, "_blank");
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
 
-    // LIMPIAR FORMULARIO
-    form.reset();
-  });
+    const result = await res.json();
+
+    if (result.status === "ok") {
+      alert("Mensaje enviado correctamente ✅");
+      form.reset();
+    } else {
+      alert("Error al guardar ❌");
+      console.error(result);
+    }
+
+  } catch (err) {
+    alert("Error de conexión ❌");
+    console.error(err);
+  }
+});
 </script>
 
 </body>
