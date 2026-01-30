@@ -145,24 +145,27 @@ form.addEventListener("submit", async (e) => {
   const url = "https://script.google.com/macros/s/AKfycbwmqUFMnH7zxt1l7MOY-8NvuRoZUSccflUJgn0GEFVgJ84meVCVPu0LqVGqJ_8ZFjSbPw/exec";
 
   try {
+    // 1️⃣ Guardar en Google Sheets
     await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
 
-    const text =
-      `📩 *Nueva consulta*%0A` +
-      `*Nombre:* ${nombre}%0A` +
-      `*DUI:* ${dui}%0A` +
-      `*Teléfono:* ${telefono}%0A` +
-      `*Correo:* ${email}%0A` +
-      `*Comentario:* ${comentario}`;
+    // 2️⃣ Abrir WhatsApp
+    const mensaje = 
+`📩 Nueva consulta
+Nombre: ${nombre}
+DUI: ${dui}
+Teléfono: ${telefono}
+Correo: ${email}
+Comentario: ${comentario}`;
 
-    window.open(
-      "https://wa.me/50360014234?text=" + text,
-      "_blank"
-    );
+    const whatsappURL =
+      "https://wa.me/50360014234?text=" +
+      encodeURIComponent(mensaje);
+
+    window.open(whatsappURL, "_blank");
 
     form.reset();
 
