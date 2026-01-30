@@ -145,37 +145,30 @@ form.addEventListener("submit", async (e) => {
   const url = "https://script.google.com/macros/s/AKfycbyB0crXWR5TX9OM3tzDwTDp7AvXbRGWQdasxyWh5l8GdEmFfRNjcgx45Cr6QCODmf9B3A/exec";
 
   try {
-    // Enviar datos a Google Sheets
+    // Enviar datos a Google Sheets (uso interno)
     await fetch(url, {
       method: "POST",
       body: JSON.stringify(data)
     });
 
-    // Crear mensaje profesional para WhatsApp
-    const fecha = new Date().toLocaleString(); // Fecha y hora local
-    const mensaje = 
-`💌 *¡Nuevo contacto desde la web!*
+    // Mensaje que verá y enviará el CLIENTE por WhatsApp
+    const mensaje =
+`Hola 👋, buen día.
 
-📄 *Formulario:* Contactos Web
-🕒 *Fecha y hora:* ${fecha}
+Mi nombre es *${data.nombre}*.
 
-👤 *Datos del contacto:*
-- *Nombre:* ${data.nombre}
-- *DUI:* ${data.dui}
-- *Teléfono / WhatsApp:* ${data.telefono}
-- *Correo:* ${data.email}
+Me comunico desde la página web de *The Alazan Griller* para solicitar información.
 
-📝 *Mensaje / Comentario:*
-"${data.comentario}"
+🪪 DUI (para identificación): ${data.dui}
+📞 Teléfono: ${data.telefono}
+✉️ Correo: ${data.email}
 
-✅ *Acción recomendada:*
-1️⃣ Revisar los datos del contacto
-2️⃣ Responder por WhatsApp o correo
-3️⃣ Registrar seguimiento en CRM
+📝 Mensaje:
+${data.comentario}
 
-💡 *Nota interna:* Todos los datos se almacenan en Google Sheets "Contactos Web".`;
+Quedo atento(a). ¡Gracias!`;
 
-    // Abrir WhatsApp con el mensaje
+    // Abrir WhatsApp con el mensaje listo
     window.open(
       "https://wa.me/50360014234?text=" + encodeURIComponent(mensaje),
       "_blank"
