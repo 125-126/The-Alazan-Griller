@@ -59,27 +59,36 @@
 
       
     <!-- FORMULARIO -->
-    <form class="contact-form reveal left" id="contactForm">
-      <h2>Envíanos un mensaje</h2>
+<form class="contact-form reveal left" id="contactForm">
+  <h2>Envíanos un mensaje</h2>
 
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" placeholder="Tu nombre" required>
+  <label for="nombre">Nombre</label>
+  <input type="text" id="nombre" placeholder="Tu nombre" required>
 
-      <label for="dui">DUI</label>
-      <input type="text" id="dui" placeholder="00000000-0" required>
+  <label for="dui">DUI</label>
+  <input type="text" id="dui" placeholder="00000000-0" required>
 
-      <label for="telefono">Teléfono</label>
-      <input type="tel" id="telefono" placeholder="+503 7000 0000" required>
+  <label for="telefono">Teléfono</label>
+  <input type="tel" id="telefono" placeholder="+503 7000 0000" required>
 
-      <label for="email">Correo</label>
-      <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+  <label for="email">Correo</label>
+  <input type="email" id="email" placeholder="ejemplo@correo.com" required>
 
-      <label for="comentario">Comentario</label>
-      <textarea id="comentario" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+  <!-- NUEVOS CAMPOS -->
+  <label for="fecha">Fecha a reservar</label>
+  <input type="date" id="fecha" required>
 
-      <button type="submit" class="btn primary">Enviar por WhatsApp</button>
-    </form>
+  <label for="horaInicio">Hora de inicio</label>
+  <input type="time" id="horaInicio" required>
 
+  <label for="horaFin">Hora de finalización</label>
+  <input type="time" id="horaFin" required>
+
+  <label for="comentario">Comentario</label>
+  <textarea id="comentario" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+
+  <button type="submit" class="btn primary">Enviar por WhatsApp</button>
+</form>
 </section>
       
       <!-- MAPA -->
@@ -139,42 +148,48 @@ form.addEventListener("submit", async (e) => {
     dui: document.getElementById("dui").value,
     telefono: document.getElementById("telefono").value,
     email: document.getElementById("email").value,
+    fecha: document.getElementById("fecha").value,
+    horaInicio: document.getElementById("horaInicio").value,
+    horaFin: document.getElementById("horaFin").value,
     comentario: document.getElementById("comentario").value
   };
 
   const url = "https://script.google.com/macros/s/AKfycbyB0crXWR5TX9OM3tzDwTDp7AvXbRGWQdasxyWh5l8GdEmFfRNjcgx45Cr6QCODmf9B3A/exec";
 
   try {
-    // Enviar datos a Google Sheets (uso interno)
+    // Envío interno a Google Sheets
     await fetch(url, {
       method: "POST",
       body: JSON.stringify(data)
     });
 
-    // Mensaje que verá y enviará el CLIENTE por WhatsApp
+    // Mensaje que envía el CLIENTE por WhatsApp
     const mensaje =
 `Hola 👋, buen día.
 
 Mi nombre es *${data.nombre}*.
 
-Me comunico desde la página web de *The Alazan Griller* para solicitar información.
+Me comunico desde la página web de *The Alazan Griller* para solicitar una reserva.
 
 🪪 DUI (para identificación): ${data.dui}
 📞 Teléfono: ${data.telefono}
 ✉️ Correo: ${data.email}
 
-📝 Mensaje:
+📅 *Datos de la reserva:*
+- Fecha: ${data.fecha}
+- Hora de inicio: ${data.horaInicio}
+- Hora de finalización: ${data.horaFin}
+
+📝 Comentario:
 ${data.comentario}
 
 Quedo atento(a). ¡Gracias!`;
 
-    // Abrir WhatsApp con el mensaje listo
     window.open(
       "https://wa.me/50360014234?text=" + encodeURIComponent(mensaje),
       "_blank"
     );
 
-    // Limpiar formulario
     form.reset();
 
   } catch (error) {
