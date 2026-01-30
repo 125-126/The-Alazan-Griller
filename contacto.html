@@ -134,47 +134,43 @@ const form = document.getElementById("contactForm");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const nombre = document.getElementById("nombre").value;
-  const dui = document.getElementById("dui").value;
-  const telefono = document.getElementById("telefono").value;
-  const email = document.getElementById("email").value;
-  const comentario = document.getElementById("comentario").value;
+  const data = {
+    nombre: nombre.value,
+    dui: dui.value,
+    telefono: telefono.value,
+    email: email.value,
+    comentario: comentario.value
+  };
 
-  const data = { nombre, dui, telefono, email, comentario };
-
-  const url = "https://script.google.com/macros/s/AKfycbxJrev5r62C-75jUr-ldJdFHI14uz9qPsvMoOuhvf9ZOk28Ig2LYjXcbAhW-k4N0NM52A/exec";
+  const url = "https://script.google.com/macros/s/AKfycbyB0crXWR5TX9OM3tzDwTDp7AvXbRGWQdasxyWh5l8GdEmFfRNjcgx45Cr6QCODmf9B3A/exec";
 
   try {
-    const response = await fetch(url, {
+    await fetch(url, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
 
-    const result = await response.json();
-    if (result.status !== "ok") throw new Error(result.message);
-
     const mensaje =
 `📩 Nueva consulta
-Nombre: ${nombre}
-DUI: ${dui}
-Teléfono: ${telefono}
-Correo: ${email}
-Comentario: ${comentario}`;
+Nombre: ${data.nombre}
+DUI: ${data.dui}
+Teléfono: ${data.telefono}
+Correo: ${data.email}
+Comentario: ${data.comentario}`;
 
-    const whatsappURL =
-      "https://wa.me/50360014234?text=" +
-      encodeURIComponent(mensaje);
+    window.open(
+      "https://wa.me/50360014234?text=" + encodeURIComponent(mensaje),
+      "_blank"
+    );
 
-    window.open(whatsappURL, "_blank");
     form.reset();
 
-  } catch (error) {
-    console.error(error);
+  } catch (e) {
     alert("Error al enviar ❌");
+    console.error(e);
   }
 });
 </script>
-
+  
 </body>
 </html>
