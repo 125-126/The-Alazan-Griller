@@ -761,3 +761,20 @@ color: #facc15;
     aspect-ratio: 9 / 16;
   }
 }
+
+.sound-btn{
+  margin-top: 12px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #ff5f8f;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background .3s ease, transform .2s ease;
+}
+
+.sound-btn:hover{
+  background: #ff3f78;
+  transform: scale(1.05);
+}
