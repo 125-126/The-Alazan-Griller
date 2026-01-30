@@ -135,26 +135,29 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const data = {
-    nombre: nombre.value,
-    dui: dui.value,
-    telefono: telefono.value,
-    email: email.value,
-    comentario: comentario.value
+    nombre: document.getElementById("nombre").value,
+    dui: document.getElementById("dui").value,
+    telefono: document.getElementById("telefono").value,
+    email: document.getElementById("email").value,
+    comentario: document.getElementById("comentario").value
   };
 
   const url = "https://script.google.com/macros/s/AKfycbyB0crXWR5TX9OM3tzDwTDp7AvXbRGWQdasxyWh5l8GdEmFfRNjcgx45Cr6QCODmf9B3A/exec";
 
   try {
+    // Enviar datos a Google Sheets
     await fetch(url, {
       method: "POST",
       body: JSON.stringify(data)
     });
 
-const mensaje =
+    // Crear mensaje profesional para WhatsApp
+    const fecha = new Date().toLocaleString(); // Fecha y hora local
+    const mensaje = 
 `💌 *¡Nuevo contacto desde la web!*
 
 📄 *Formulario:* Contactos Web
-🕒 *Fecha y hora:* ${new Date().toLocaleString()}
+🕒 *Fecha y hora:* ${fecha}
 
 👤 *Datos del contacto:*
 - *Nombre:* ${data.nombre}
@@ -165,16 +168,25 @@ const mensaje =
 📝 *Mensaje / Comentario:*
 "${data.comentario}"
 
+✅ *Acción recomendada:*
+1️⃣ Revisar los datos del contacto
+2️⃣ Responder por WhatsApp o correo
+3️⃣ Registrar seguimiento en CRM
+
+💡 *Nota interna:* Todos los datos se almacenan en Google Sheets "Contactos Web".`;
+
+    // Abrir WhatsApp con el mensaje
     window.open(
       "https://wa.me/50360014234?text=" + encodeURIComponent(mensaje),
       "_blank"
     );
 
+    // Limpiar formulario
     form.reset();
 
-  } catch (e) {
-    alert("Error al enviar ❌");
-    console.error(e);
+  } catch (error) {
+    alert("❌ Error al enviar. Intenta de nuevo.");
+    console.error(error);
   }
 });
 </script>
