@@ -135,7 +135,7 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
 </section>
 
 
-<!-- 🎥 CUMPLEAÑOS (VIDEO EN TARJETA) -->
+<!-- 🎥 VIDEO INSTALACIONES -->
 <article class="event-card reveal left">
   <div class="event-content" style="text-align:center;">
     <h3>Conoce nuestras instalaciones</h3>
@@ -145,10 +145,12 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
   </div>
 
   <div class="event-media vertical-video">
-    <video autoplay muted loop playsinline>
+    <video id="videoInstalaciones" autoplay muted loop playsinline>
       <source src="img/video2.mp4" type="video/mp4">
       Tu navegador no soporta video.
     </video>
+
+    <button class="sound-btn" onclick="activarSonido()">🔊 Activar sonido</button>
   </div>
 </article>
 
@@ -516,6 +518,13 @@ addEventListener("resize", ()=>{
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 });
+
+  function activarSonido(){
+  const video = document.getElementById("videoInstalaciones");
+  video.muted = false;
+  video.volume = 1;
+}
+  
 </script>
 
 <div class="image-modal" id="imageModal">
