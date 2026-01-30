@@ -513,6 +513,28 @@ function activarSonido() {
     video.play();
   }
 }
+
+  let sonidoActivo = false;
+
+function toggleSonido(){
+  const video = document.getElementById("videoInstalaciones");
+  const btn = document.getElementById("soundToggle");
+
+  if(!video) return;
+
+  if(sonidoActivo){
+    video.muted = true;
+    btn.innerHTML = "🔊 Activar sonido";
+    sonidoActivo = false;
+  } else {
+    video.muted = false;
+    video.volume = 1;
+    video.play();
+    btn.innerHTML = "🔇 Silenciar";
+    sonidoActivo = true;
+  }
+}
+  
 </script>
 
 
