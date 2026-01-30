@@ -1,14 +1,14 @@
 /* ================= TARJETA FEBRERO ================= */
 
-/* CONTENEDOR FLOTANTE */
+/* CONTENEDOR FLOTANTE – SUPERIOR IZQUIERDA */
 .febrero-float{
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
   opacity: 0;
-  animation: showFebrero 1s ease forwards;
-  animation-delay: 2.5s;
+  animation: showFebrero 0.8s ease forwards;
+  animation-delay: 1.5s;
 }
 
 /* EVITA QUE EL <a> SEA GIGANTE */
@@ -71,6 +71,11 @@
 
 /* MÓVIL */
 @media (max-width: 480px){
+  .febrero-float{
+    top: 12px;
+    left: 12px;
+  }
+
   #febreroCard{
     width: 140px;
     min-height: 90px;
@@ -84,55 +89,16 @@
   #febreroCard p{
     font-size: 11px;
   }
-
-  .febrero-float{
-    bottom: 14px;
-    right: 14px;
-  }
 }
 
-/* ANIMACIÓN */
+/* ANIMACIÓN DE ENTRADA */
 @keyframes showFebrero{
-  to{ opacity: 1; }
-}
-
-
-/* ================= TARJETA FLOTANTE FEBRERO ================= */
-
-.febrero-float {
-  position: fixed;
-  right: 30px;           /* Separación del borde derecho */
-  top: 50%;              /* Centro vertical */
-  transform: translateY(-50%);
-  z-index: 9999;
-}
-
-.febrero-float {
-  animation: floatIn 0.8s ease-out;
-}
-
-@keyframes floatIn {
-  from {
+  from{
     opacity: 0;
-    transform: translate(50px, -50%);
+    transform: translateX(-30px);
   }
-  to {
+  to{
     opacity: 1;
-    transform: translateY(-50%);
-  }
-}
-
-.febrero-float {
-  animation: floatIn 0.8s ease-out;
-}
-
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translate(50px, -50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-50%);
+    transform: translateX(0);
   }
 }
