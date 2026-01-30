@@ -2,315 +2,632 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menú Especial Febrero</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+:root {
+  --rojo-frambuesa: #B52A3A;
+  --rosa-coral: #FF6F7D;
+  --beige-crema: #F3E4CC;
+  --beige-rosado: #FFE4E1;
+  --dorado-suave: #D9AE6B;
+  --naranja: #FF8A33;
+  --blanco: #ffffff;
+  --gris-texto: #444;
 }
 
-body{
-  font-family:'Montserrat', sans-serif;
-}
-  
-/* ===== BODY ===== */
-body{
-  min-height:100vh;
-  background:radial-gradient(circle at top, #2a020f, #050002 70%);
-  color:#f8f5f5;
-  overflow-x:hidden;
-}
-  
-/* ===== CORAZÓN ===== */
-#heartCanvas{
-  position:fixed;
-  inset:0;
-  z-index:1;
-  pointer-events:none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ===== OVERLAY VINO ===== */
-.bg-overlay{
-  position:fixed;
-  inset:0;
-  background:radial-gradient(circle at top, rgba(90,20,35,.65), rgba(10,0,5,.95));
-  z-index:2;
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--gris-texto);
+  background: var(--beige-crema);
 }
 
-/* ===== CONTENIDO ===== */
-.menu-container{
-  position:relative;
-  z-index:3;
-  padding:80px 16px;
-  text-align:center;
+/* ================= HERO ================= */
+.hero {
+  min-height: 90vh;
+  background: url("img/febrero1.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.menu-title{
-  font-family:'Playfair Display', serif;
-  font-size:40px;
-  letter-spacing:6px;
-  margin-bottom:12px;
-}
-.menu-subtitle{
-  font-size:15px;
-  letter-spacing:2px;
-  color:#e6b7c6;
-  margin-bottom:50px;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(177,43,59,0.65),
+    rgba(177,43,59,0.35)
+  );
 }
 
-.menus{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
-  max-width:1100px;
-  margin:0 auto;
+.hero h1,
+.hero p {
+  text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+}
+.hero-text-box {
+  background: rgba(242,225,198,0.15);
+  backdrop-filter: blur(6px);
+  padding: 35px 40px;
+border: 1px solid rgba(217,174,107,0.35);
+  border-radius: 25px;
+  display: inline-block;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  color: #fff;
+  padding: 40px 20px;
 }
 
-.menu-card{
-  background:linear-gradient(180deg,#12040b,#050002);
-  border-radius:22px;
-  overflow:hidden;
-  cursor:pointer;
-  box-shadow:0 25px 60px rgba(120,10,40,.35);
-  transition:.35s ease;
-}
-.menu-card:hover{
-  transform:translateY(-8px) scale(1.02);
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
 }
 
-.menu-card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
+.hero h1 span {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 400;
+  margin-top: 10px;
 }
 
-.menu-card h3{
-  font-family:'Playfair Display', serif;
-  color:#f3c2cf;
-  margin:18px 0 8px;
-  font-size:20px;
+.hero p {
+  margin: 25px auto 40px;
+  font-size: 1.2rem;
+  max-width: 600px;
 }
 
-.menu-card p{
-  font-size:14px;
-  line-height:1.6;
-  padding:0 16px 20px;
-  color:#e5e7eb;
+.hero a {
+  display: inline-block;
+  padding: 14px 34px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 0 10px;
 }
 
-/* ===== CTA ===== */
-.cta{
-  margin-top:60px;
+.btn-white {
+  background: var(--blanco);
+  color: var(--rojo-frambuesa);
 }
 
-.btn{
-  display:inline-block;
-  padding:16px 44px;
-  background:linear-gradient(135deg,#b1123d,#ff6b8a);
-  color:#fff;
-  border-radius:50px;
-  font-size:18px;
-  text-decoration:none;
-  box-shadow:0 0 40px rgba(255,80,120,.45);
+.btn-outline {
+  border: 2px solid var(--blanco);
+  color: var(--blanco);
 }
 
-/* ===== MODAL ===== */
-.product-modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.92);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  opacity:0;
-  pointer-events:none;
-  transition:.3s;
-  z-index:9999;
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--dorado-suave);
+  margin-top: 12px;
+  border-radius: 2px;
 }
 
-.product-modal.show{
-  opacity:1;
-  pointer-events:auto;
+/* ================= CONTENEDOR IMÁGENES HERO ================= */
+.hero-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 45px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
-.product-box{
-  width:92%;
-  max-width:420px;
-  background:#0b1220;
-  border-radius:22px;
-  overflow:hidden;
-  text-align:center;
+/* IMÁGENES – SIN CORTES */
+.hero-images img {
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  transition: transform 0.4s ease;
+  height: auto;              /* CLAVE */
+ max-height: 650px; /* MÁS IMPACTO */
+  background: #fff;
 }
 
-.product-box img{
-  width:100%;
-  max-height:80vh;
-  object-fit:contain;
-  background:#000;
+/* IMAGEN CENTRAL */
+
+.img-center {
+  width: 460px;     /* GRANDE */
+  z-index: 2;
 }
 
-.product-box h3{
-  color:#facc15;
-  margin:18px 0 6px;
+/* IMÁGENES LATERALES */
+.img-side {
+  width: 360px;     /* CASI GRANDES */
+  opacity: 0.97;
 }
 
-.product-box p{
-  padding:0 20px 24px;
-  color:#e5e7eb;
+.left {
+  transform: rotate(-4deg);
 }
 
-.product-close{
-  position:absolute;
-  top:18px;
-  right:22px;
-  font-size:32px;
-  cursor:pointer;
+.right {
+  transform: rotate(4deg);
 }
+
+/* HOVER */
+.hero-images img:hover {
+  transform: scale(1.05);
+}
+
+/* ================= ADORNOS ================= */
+.heart {
+color: var(--dorado-suave);
+  position: absolute;
+  font-size: 2.4rem;
+  animation: float 6s infinite ease-in-out;
+  opacity: 0.85;
+}
+
+.heart-1 { top: 15%; left: 10%; }
+.heart-2 { top: 28%; right: 12%; animation-delay: 2s; }
+.heart-3 { bottom: 18%; left: 18%; animation-delay: 4s; }
+
+/* ANIMACIÓN */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+/* ================= SECCIONES ================= */
+.section {
+  padding: 80px 6%;
+}
+
+/* 🌸 Sección romántica – mosaico de platos */
+.bg-beige {
+  background: var(--beige-rosado);
+}
+
+/* 🔥 CTA FINAL – fuerte y emocional */
+.bg-blue {
+  background: linear-gradient(
+    135deg,
+    var(--rojo-frambuesa),
+    #8f1f2d
+  );
+  color: var(--blanco);
+}
+
+/* 🤍 Sección de información – elegante y limpia */
+.bg-white {
+  background: var(--beige-crema);
+}
+
+/* ================= GRID MOSAICO ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: transparent; /* 🔥 clave */
+  border-radius: 20px;
+border: none;
+box-shadow: none;
+  overflow: hidden;
+  text-align: center;
+}
+
+
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.card h3 {
+color: var(--rojo-frambuesa);
+  margin: 20px 0 10px;
+margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+.card p {
+color: #5A5A5A;
+max-width: 260px;
+margin: 0 auto;
+  padding: 0 20px 30px;
+  font-size: 0.95rem;
+}
+
+.card:hover {
+  box-shadow: 0 18px 45px rgba(217,174,107,0.35);
+}
+
+/* ================= BLOQUE IMAGEN + TEXTO ================= */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.split img {
+box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  width: 100%;
+  border-radius: 25px;
+}
+
+.split h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+color: var(--rojo-frambuesa);
+}
+
+.split p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+color: #444;
+}
+
+/* ================= CTA ================= */
+.cta {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 42px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #3a1f0a;
+  background: linear-gradient(135deg, #F3E4CC, #D9AE6B);
+  border-radius: 50px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 55px rgba(0,0,0,0.45);
+}
+
+.cta-btn::after {
+  content: "✨";
+  position: absolute;
+  right: 18px;
+  opacity: 0.6;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero h1 span {
+    font-size: 1.5rem;
+  }
+
+  .hero-images {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .img-center,
+  .img-side {
+    width: 90%;
+    max-height: none;
+    transform: none;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+gap: 60px;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section + .section {
+  border-top: 1px solid rgba(217,174,107,0.25);
+}
+
+.hero-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 35px;
+  align-items: center;
+  max-width: 900px;
+}
+
+.hero-img img {
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+}
+
+.hero-text span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+}
+
+.heart-img {
+  width: 300px;
+  height: 270px;
+  margin: 10px auto 20px;
+  position: relative;
+  background: var(--dorado-suave);
+  padding: 6px;
+  clip-path: path(
+    "M150 40
+     C150 0, 0 0, 0 80
+     C0 160, 150 240, 150 270
+     C150 240, 300 160, 300 80
+     C300 0, 150 0, 150 40 Z"
+  );
+}
+
+.heart-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: inherit;
+  background: var(--beige-crema);
+}
+
+.card:hover .heart-img {
+  transform: scale(1.05);
+}
+
+.heart-img {
+  transition: transform 0.35s ease;
+}
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 20px;
+  box-shadow: 0 0 60px rgba(217,174,107,0.5);
+}
+
+.lightbox {
+  cursor: zoom-in;
+}
+
+.bg-beige,
+.bg-white {
+  border-top: 1px solid rgba(217,174,107,0.35);
+}
+
+.section {
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.cta-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.bg-blue.cta {
+  animation: pulse 6s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: inset 0 0 0 rgba(255,255,255,0); }
+  50% { box-shadow: inset 0 0 120px rgba(255,255,255,0.05); }
+}
+
+.cta h2::after {
+  content: "♥";
+  display: block;
+  font-size: 1.4rem;
+  margin-top: 12px;
+  color: var(--dorado-suave);
+}
+
 </style>
+
 </head>
 
 <body>
 
-<canvas id="heartCanvas"></canvas>
-<div class="bg-overlay"></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text-box hero-card">
 
-<div class="menu-container" id="menuContainer">
-  <div class="menu-title">MENÚ ESPECIAL DE FEBRERO</div>
-<div class="menu-subtitle">
-  Momentos que se comparten, sabores que se recuerdan
-</div>
-
-  <div class="menus">
-    <div class="menu-card">
-      <img src="img/menu2.jpg">
-      <h3>❤️ 14 Febrero</h3>
-      <p>
-  Una cena pensada para mirarse sin prisa,<br>
-  acompañada de vino y un final dulce.
-</p>
+    <!-- IMAGEN -->
+    <div class="hero-img">
+      <img src="img/febrero1.jpeg" alt="Menú Febrero">
     </div>
 
-    <div class="menu-card">
-      <img src="img/menu3.jpg">
-      <h3>🍷 20 Febrero</h3>
-      <p>
-  Una cena pensada para mirarse sin prisa,<br>
-  acompañada de vino y un final dulce.
-</p>
+    <!-- TEXTO -->
+    <div class="hero-text">
+      <h1>❤️ Menú de Febrero ❤️
+        <span>Amor y Amistad</span>
+      </h1>
+      <p>Platos creados para compartir, celebrar y enamorar</p>
     </div>
 
-    <div class="menu-card">
-      <img src="img/menu4.jpg">
-      <h3>🍰 28 Febrero</h3>
+  </div>
+
+  <!-- ADORNOS -->
+  <div class="heart heart-1">❤️</div>
+  <div class="heart heart-2">💘</div>
+  <div class="heart heart-3">💞</div>
+</section>
+
+
+<!-- BLOQUE MOSAICO -->
+<section class="section bg-beige">
+  <div class="grid">
+
+    <div class="card">
+      <a href="img/febrero3.png" class="lightbox">
+        <div class="heart-img">
+          <img src="img/febrero3.png" alt="Entradas">
+        </div>
+      </a>
+      <h3>Entradas para compartir</h3>
+      <p>Sabores ligeros para comenzar la experiencia.</p>
+    </div>
+
+    <div class="card">
+      <a href="img/febrero2.png" class="lightbox">
+        <div class="heart-img">
+          <img src="img/febrero2.png" alt="Platos principales">
+        </div>
+      </a>
+      <h3>Platos principales</h3>
+      <p>Recetas pensadas para enamorar.</p>
+    </div>
+
+    <div class="card">
+      <a href="img/febrero4.png" class="lightbox">
+        <div class="heart-img">
+          <img src="img/febrero4.png" alt="Postres">
+        </div>
+      </a>
+      <h3>Postres del amor</h3>
+      <p>El final perfecto para una noche especial.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- IMAGEN + TEXTO -->
+<section class="section bg-white">
+  <div class="split">
+    <img src="img/febrero2.png" alt="Evento San Valentín The Alazan Griller">
+    <div>
+      <h2>Una velada romántica para celebrar el amor</h2>
       <p>
-  Una cena pensada para mirarse sin prisa,<br>
-  acompañada de vino y un final dulce.
-</p>
+        Este <strong>14 de febrero</strong>, en <strong>The Alazan Griller</strong>,
+        te invitamos a vivir una experiencia única con nuestra parrilla especial,
+        ambiente romántico y música en vivo que hará de tu noche un recuerdo inolvidable.
+      </p>
+      <p>
+        Disfruta de una cena pensada para compartir, sorprender y celebrar junto
+        a esa persona especial en una noche llena de sabor y emoción.
+      </p>
     </div>
   </div>
+</section>
 
-  <div class="cta">
-    <a href="contacto.html" class="btn">Vivir esta experiencia</a>
-  </div>
-</div>
 
-<!-- MODAL -->
-<div class="product-modal" id="productModal">
-  <div class="product-box">
-    <span class="product-close">&times;</span>
-    <img id="modalImg">
-    <h3 id="modalTitle"></h3>
-    <p id="modalDesc"></p>
-  </div>
+<!-- CTA FINAL -->
+<section class="section bg-blue cta">
+  <h2>Reserva hoy y vive una noche hecha para enamorar</h2>
+  <a href="#reservar" class="cta-btn">Reservar mi mesa ❤️</a>
+</section>
+
+<div id="lightbox">
+  <img src="" alt="Imagen ampliada">
 </div>
 
 <script>
-/* ===== CORAZÓN ===== */
-const canvas=document.getElementById("heartCanvas");
-const ctx=canvas.getContext("2d");
-function resize(){canvas.width=innerWidth;canvas.height=innerHeight}
-resize();addEventListener("resize",resize);
+  const links = document.querySelectorAll('.lightbox');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
 
-let p=[],phase=0;
-function heart(t){
-return{x:16*Math.sin(t)**3,y:13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t)}
-}
-for(let i=0;i<900;i++){
-let t=Math.random()*Math.PI*2,h=heart(t);
-p.push({x:innerWidth/2,y:innerHeight/2,tx:h.x*14+innerWidth/2,ty:-h.y*14+innerHeight/2,vx:0,vy:0,a:0})
-}
-
-function anim(){
-ctx.fillStyle="rgba(0,0,0,.15)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
-phase++;
-p.forEach(o=>{
-o.vx+=(o.tx-o.x)*.02;
-o.vy+=(o.ty-o.y)*.02;
-o.x+=o.vx;o.y+=o.vy;o.vx*=.9;o.vy*=.9;
-o.a=Math.min(o.a+.02,1);
-ctx.beginPath();
-ctx.arc(o.x,o.y,2,0,Math.PI*2);
-ctx.fillStyle=`rgba(255,80,120,${o.a})`;
-ctx.shadowBlur=15;
-ctx.shadowColor="rgba(255,80,120,.8)";
-ctx.fill();
-});
-requestAnimationFrame(anim);
-}
-anim();
-
-/* ===== MODAL ===== */
-/* ===== MODAL ===== */
-const modal = document.getElementById("productModal");
-const modalImg = document.getElementById("modalImg");
-const modalTitle = document.getElementById("modalTitle");
-const modalDesc = document.getElementById("modalDesc");
-const closeBtn = document.querySelector(".product-close");
-
-/* ABRIR MODAL */
-document.querySelectorAll(".menu-card").forEach(card=>{
-  card.addEventListener("click", ()=>{
-    modalImg.src = card.querySelector("img").src;
-    modalTitle.textContent = card.querySelector("h3").textContent;
-    modalDesc.innerHTML = card.querySelector("p").innerHTML;
-
-    modal.classList.add("show");
-    document.body.style.overflow = "hidden";
-
-    // 👉 ESTO ES LA CLAVE
-    history.pushState({ modalOpen: true }, "");
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      lightboxImg.src = link.href;
+      lightbox.style.display = 'flex';
+    });
   });
-});
 
-/* FUNCIÓN DE CIERRE */
-function closeModal(){
-  modal.classList.remove("show");
-  document.body.style.overflow = "";
-}
-
-/* CERRAR CON X O FONDO */
-modal.addEventListener("click", e=>{
-  if(e.target === modal || e.target === closeBtn){
-    closeModal();
-    history.back(); // vuelve al estado anterior SIN salir de la página
-  }
-});
-
-/* BOTÓN ATRÁS DEL CEL */
-window.addEventListener("popstate", ()=>{
-  if(modal.classList.contains("show")){
-    closeModal();
-  }
-});
-
-
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
 </script>
+
 
 </body>
 </html>
-
 
