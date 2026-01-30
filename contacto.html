@@ -111,7 +111,7 @@
 </section>
 
 <!-- ================= WHATSAPP FLOTANTE ================= -->
-<a href="https://wa.me/50369578713" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/50360014234" class="whatsapp-float" target="_blank">
 <img src="img/eve/whatsapp.png" alt="WhatsApp" />
 </a>
   
@@ -134,39 +134,43 @@ const form = document.getElementById("contactForm");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const data = {
-    nombre: document.getElementById("nombre").value,
-    dui: document.getElementById("dui").value,
-    telefono: document.getElementById("telefono").value,
-    email: document.getElementById("email").value,
-    comentario: document.getElementById("comentario").value
-  };
+  const nombre = document.getElementById("nombre").value;
+  const dui = document.getElementById("dui").value;
+  const telefono = document.getElementById("telefono").value;
+  const email = document.getElementById("email").value;
+  const comentario = document.getElementById("comentario").value;
+
+  const data = { nombre, dui, telefono, email, comentario };
 
   const url = "https://script.google.com/macros/s/AKfycbwmqUFMnH7zxt1l7MOY-8NvuRoZUSccflUJgn0GEFVgJ84meVCVPu0LqVGqJ_8ZFjSbPw/exec";
 
   try {
-    const res = await fetch(url, {
+    await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
 
-    const result = await res.json();
+    const text =
+      `📩 *Nueva consulta*%0A` +
+      `*Nombre:* ${nombre}%0A` +
+      `*DUI:* ${dui}%0A` +
+      `*Teléfono:* ${telefono}%0A` +
+      `*Correo:* ${email}%0A` +
+      `*Comentario:* ${comentario}`;
 
-    if (result.status === "ok") {
-      alert("Mensaje enviado correctamente ✅");
-      form.reset();
-    } else {
-      alert("Error al guardar ❌");
-      console.error(result);
-    }
+    window.open(
+      "https://wa.me/50360014234?text=" + text,
+      "_blank"
+    );
 
-  } catch (err) {
-    alert("Error de conexión ❌");
-    console.error(err);
+    form.reset();
+
+  } catch (error) {
+    alert("Error al enviar ❌");
+    console.error(error);
   }
 });
 </script>
-
 </body>
 </html>
