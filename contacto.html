@@ -150,13 +150,20 @@ form.addEventListener("submit", async (e) => {
       body: JSON.stringify(data)
     });
 
-    const mensaje =
-`📩 Nueva consulta
-Nombre: ${data.nombre}
-DUI: ${data.dui}
-Teléfono: ${data.telefono}
-Correo: ${data.email}
-Comentario: ${data.comentario}`;
+const mensaje =
+`💌 *¡Nuevo contacto desde la web!*
+
+📄 *Formulario:* Contactos Web
+🕒 *Fecha y hora:* ${new Date().toLocaleString()}
+
+👤 *Datos del contacto:*
+- *Nombre:* ${data.nombre}
+- *DUI:* ${data.dui}
+- *Teléfono / WhatsApp:* ${data.telefono}
+- *Correo:* ${data.email}
+
+📝 *Mensaje / Comentario:*
+"${data.comentario}"
 
     window.open(
       "https://wa.me/50360014234?text=" + encodeURIComponent(mensaje),
