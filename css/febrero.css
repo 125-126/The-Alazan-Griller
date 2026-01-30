@@ -95,3 +95,44 @@
 @keyframes showFebrero{
   to{ opacity: 1; }
 }
+
+
+/* ================= TARJETA FLOTANTE FEBRERO ================= */
+
+.febrero-float {
+  position: fixed;
+  right: 30px;           /* Separación del borde derecho */
+  top: 50%;              /* Centro vertical */
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+
+.febrero-float {
+  animation: floatIn 0.8s ease-out;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translate(50px, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+.febrero-float {
+  animation: floatIn 0.8s ease-out;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translate(50px, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
