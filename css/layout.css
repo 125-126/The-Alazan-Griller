@@ -911,3 +911,7 @@ color: #facc15;
   from { transform: translateY(0); }
   to { transform: translateY(-5px); }
 }
+.sound-btn {
+  z-index: 10;
+  position: absolute;
+}
