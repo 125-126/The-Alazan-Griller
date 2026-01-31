@@ -144,16 +144,15 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
     </p>
   </div>
 
-  <div class="event-media vertical-video">
-    <video id="videoInstalaciones" autoplay muted loop playsinline>
-      <source src="img/video2.mp4" type="video/mp4">
-      Tu navegador no soporta video.
-    </video>
+<div class="event-media vertical-video">
+  <video id="videoInstalaciones" autoplay muted loop playsinline>
+    <source src="img/video2.mp4" type="video/mp4">
+  </video>
 
-    <button id="soundToggle" class="sound-btn" onclick="toggleSonido()">
-      🔊 Activar sonido
-    </button>
-  </div>
+  <button id="soundToggle" class="sound-btn" onclick="toggleSonido()">
+    🔊 Activar sonido
+  </button>
+</div>
 </article>
 
 <!-- ================= GALERÍA ================= -->
@@ -512,18 +511,15 @@ function toggleSonido(){
   const video = document.getElementById("videoInstalaciones");
   const btn = document.getElementById("soundToggle");
 
-  if(!video || !btn) return;
+  if (!video) return;
 
-  if(sonidoActivo){
-    video.muted = true;
-    btn.textContent = "🔊 Activar sonido";
-    sonidoActivo = false;
-  } else {
+  if (video.muted) {
     video.muted = false;
     video.volume = 1;
-    video.play();
     btn.textContent = "🔇 Silenciar";
-    sonidoActivo = true;
+  } else {
+    video.muted = true;
+    btn.textContent = "🔊 Activar sonido";
   }
 }
   
