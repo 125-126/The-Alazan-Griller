@@ -827,3 +827,24 @@ color: #facc15;
 .event-card {
   align-self: stretch;
 }
+
+.event-media {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* VIDEO HORIZONTAL */
+.horizontal-video {
+  height: 400px; /* 👈 CLAVE: sin altura NO se ve */
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.horizontal-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 👈 llena el contenedor */
+  display: block;
+}
