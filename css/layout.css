@@ -743,6 +743,7 @@ color: #facc15;
 
 .event-media.vertical-video{
   width: 100%;
+   position: relative; /* 🔥 NECESARIO */
   max-width: 520px;           /* 🔥 MÁS ANCHO */
   aspect-ratio: 9 / 16;       /* 🔥 MÁS LARGO (vertical real) */
   margin: 0 auto;
@@ -767,15 +768,18 @@ color: #facc15;
 }
 
 .sound-btn{
-  margin-top: 12px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
   padding: 8px 14px;
   border: none;
   border-radius: 20px;
-  background: #ff5f8f;
+  background: rgba(0,0,0,.65);
   color: #fff;
   font-size: 13px;
   cursor: pointer;
-  transition: background .3s ease, transform .2s ease;
+  z-index: 5;
+  backdrop-filter: blur(4px);
 }
 
 .sound-btn:hover{
