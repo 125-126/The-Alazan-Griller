@@ -104,7 +104,7 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
 
   <div class="event-media vertical-video">
     <video
-      id="videoInstalaciones1"
+      data-video="1"
       autoplay
       muted
       loop
@@ -116,11 +116,10 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
       Tu navegador no soporta video.
     </video>
 
-    <button class="sound-btn" onclick="toggleSonido('videoInstalaciones1', this)">
-      🔊 Activar sonido
-    </button>
+    <button class="sound-btn" data-video="1">🔊 Activar sonido</button>
   </div>
 </article>
+  
   
 <!-- ================= MENÚ ================= -->
 <section id="menu" class="menu-section">
@@ -181,7 +180,7 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
 
   <div class="event-media vertical-video">
     <video
-      id="videoInstalaciones2"
+      data-video="2"
       autoplay
       muted
       loop
@@ -193,12 +192,12 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
       Tu navegador no soporta video.
     </video>
 
-    <button class="sound-btn" onclick="toggleSonido('videoInstalaciones2', this)">
-      🔊 Activar sonido
-    </button>
+    <button class="sound-btn" data-video="2">🔊 Activar sonido</button>
   </div>
 </article>
 
+
+  
 <!-- ================= GALERÍA ================= -->
 <section class="gallery-section">
 
@@ -263,7 +262,7 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
 
   <div class="event-media vertical-video">
     <video
-      id="videoCumpleanos"
+      data-video="3"
       autoplay
       muted
       loop
@@ -275,11 +274,10 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
       Tu navegador no soporta video.
     </video>
 
-    <button class="sound-btn" onclick="toggleSonido('videoCumpleanos', this)">
-      🔊 Activar sonido
-    </button>
+    <button class="sound-btn" data-video="3">🔊 Activar sonido</button>
   </div>
 </article>
+
   
 <section class="events-section">
 
@@ -603,19 +601,21 @@ Quedo atento(a). ¡Gracias!`;
 
 /* ================= ACTIVAR SONIDO VIDEO ================= */
 
-  function toggleSonido(videoId, btn) {
-  const video = document.getElementById(videoId);
-  if (!video) return;
+document.querySelectorAll('.sound-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const video = document.querySelector(`video[data-video="${btn.dataset.video}"]`);
+    if (!video) return;
 
-  if (video.muted) {
-    video.muted = false;
-    video.volume = 1;
-    btn.textContent = "🔇 Silenciar";
-  } else {
-    video.muted = true;
-    btn.textContent = "🔊 Activar sonido";
-  }
-}
+    if (video.muted) {
+      video.muted = false;
+      video.volume = 1;
+      btn.textContent = "🔇 Silenciar";
+    } else {
+      video.muted = true;
+      btn.textContent = "🔊 Activar sonido";
+    }
+  });
+});
 
 
   
