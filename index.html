@@ -85,7 +85,7 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
 
       <div class="card-content">
         <span class="card-tag">💖 Menú Especial</span>
-        <h2>Selecciona</h2>
+        <h2>Descúbrelo <span class="hint-arrow">→</span></h2>
       </div>
     </div>
   </a>
@@ -626,6 +626,13 @@ Quedo atento(a). ¡Gracias!`;
     btn.textContent = "🔊 Activar sonido";
   }
 }
+
+
+  
+  document.querySelector('.febrero-close').addEventListener('click', function(e){
+  e.preventDefault(); // Evita seguir el link al cerrar
+  document.getElementById('febreroEspecial').style.display = 'none';
+});
   
 </script>
 
