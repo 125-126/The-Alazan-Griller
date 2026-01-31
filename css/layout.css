@@ -786,3 +786,31 @@ color: #facc15;
   background: #ff3f78;
   transform: scale(1.05);
 }
+
+.vertical-video {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: auto;
+}
+
+.vertical-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.sound-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
