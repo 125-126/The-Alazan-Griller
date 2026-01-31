@@ -419,32 +419,65 @@ Parrilla premium, carnes seleccionadas y sabores que se recuerdan.
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= FORMULARIO WHATSAPP ================= */
-  const indexForm = document.getElementById("indexContactForm");
+ const form = document.getElementById("contactForm");
 
-  if (indexForm) {
-    indexForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-      const nombre = document.getElementById("nombreIndex").value;
-      const dui = document.getElementById("duiIndex").value;
-      const telefono = document.getElementById("telefonoIndex").value;
-      const email = document.getElementById("emailIndex").value;
-      const comentario = document.getElementById("comentarioIndex").value;
+  const data = {
+    nombre: document.getElementById("nombre").value,
+    dui: document.getElementById("dui").value,
+    telefono: document.getElementById("telefono").value,
+    email: document.getElementById("email").value,
+    fecha: document.getElementById("fecha").value,
+    horaInicio: document.getElementById("horaInicio").value,
+    horaFin: document.getElementById("horaFin").value,
+    comentario: document.getElementById("comentario").value
+  };
 
-      let text = `📩 *Nueva consulta*%0A`;
-      text += `*Nombre:* ${nombre}%0A`;
-      text += `*DUI:* ${dui}%0A`;
-      text += `*Teléfono:* ${telefono}%0A`;
-      text += `*Correo:* ${email}%0A`;
-      text += `*Comentario:* ${comentario}`;
+ const url = "https://script.google.com/macros/s/AKfycbxdeY3041nY-wpv2wDK18kt1MWfe19ZO7M22up7hh0PgsOkj5KO0mJFemYSHQlBl2rJVw/exec";
 
-      const url = `https://wa.me/50369578713?text=${text}`;
-      window.open(url, "_blank");
-
-      indexForm.reset();
+  try {
+    // Envío interno a Google Sheets
+    await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data)
     });
-  }
 
+    // Mensaje que envía el CLIENTE por WhatsApp
+    const mensaje =
+`Hola 👋, buen día.
+
+Mi nombre es *${data.nombre}*.
+
+Me comunico desde la página web de *The Alazan Griller* para solicitar una reserva.
+
+🪪 DUI (para identificación): ${data.dui}
+📞 Teléfono: ${data.telefono}
+✉️ Correo: ${data.email}
+
+📅 *Datos de la reserva:*
+- Fecha: ${data.fecha}
+- Hora de inicio: ${data.horaInicio}
+- Hora de finalización: ${data.horaFin}
+
+📝 Comentario:
+${data.comentario}
+
+Quedo atento(a). ¡Gracias!`;
+
+    window.open(
+      "https://wa.me/50360014234?text=" + encodeURIComponent(mensaje),
+      "_blank"
+    );
+
+    form.reset();
+
+  } catch (error) {
+    alert("❌ Error al enviar. Intenta de nuevo.");
+    console.error(error);
+  }
+});
   /* ================= CANVAS CORAZÓN FEBRERO ================= */
   const canvas = document.getElementById("heartCanvas");
 
