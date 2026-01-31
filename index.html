@@ -92,24 +92,31 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
 
 
 
-  <!-- 🎥 VIDEO MENU -->
+<!-- 🎥 VIDEO MENU -->
 <article class="event-card reveal left">
   <div class="event-content" style="text-align:center;">
-    <h3>Conoce nuestros menú</h3>
-    <p>
-      Celebrá tu día con un menú personalizado y atención excepcional.
-    </p>
+    <h3>Conoce nuestro menú</h3>
+    <p>Celebrá tu día con un menú personalizado y atención excepcional.</p>
   </div>
 
-<div class="event-media vertical-video">
-  <video id="videoInstalaciones" autoplay muted loop playsinline>
-    <source src="img/video3.mp4" type="video/mp4">
-  </video>
+  <div class="event-media vertical-video">
+    <video
+      id="videoMenu"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="img/video-menu-poster.jpg"
+    >
+      <source src="img/video3.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
 
-  <button id="soundToggle" class="sound-btn" onclick="toggleSonido()">
-    🔊 sonido
-  </button>
-</div>
+    <button class="sound-btn" onclick="toggleSonido('videoMenu', this)">
+      🔊 Activar sonido
+    </button>
+  </div>
 </article>
   
 <!-- ================= MENÚ ================= -->
@@ -160,20 +167,27 @@ En The Alazan Griller elevamos tu experiencia parrillera con ingredientes fresco
 <article class="event-card reveal left">
   <div class="event-content" style="text-align:center;">
     <h3>Conoce nuestras instalaciones</h3>
-    <p>
-      Celebrá tu día con un menú personalizado y atención excepcional.
-    </p>
+    <p>Espacios diseñados para compartir momentos inolvidables.</p>
   </div>
 
-<div class="event-media vertical-video">
-  <video id="videoInstalaciones" autoplay muted loop playsinline>
-    <source src="img/video2.mp4" type="video/mp4">
-  </video>
+  <div class="event-media vertical-video">
+    <video
+      id="videoInstalaciones"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="img/video-instalaciones-poster.jpg"
+    >
+      <source src="img/video2.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
 
-  <button id="soundToggle" class="sound-btn" onclick="toggleSonido()">
-    🔊 sonido
-  </button>
-</div>
+    <button class="sound-btn" onclick="toggleSonido('videoInstalaciones', this)">
+      🔊 Activar sonido
+    </button>
+  </div>
 </article>
 
 <!-- ================= GALERÍA ================= -->
@@ -592,6 +606,20 @@ function toggleSonido(){
   const video = document.getElementById("videoInstalaciones");
   const btn = document.getElementById("soundToggle");
 
+  if (!video) return;
+
+  if (video.muted) {
+    video.muted = false;
+    video.volume = 1;
+    btn.textContent = "🔇 Silenciar";
+  } else {
+    video.muted = true;
+    btn.textContent = "🔊 Activar sonido";
+  }
+}
+
+  function toggleSonido(videoId, btn) {
+  const video = document.getElementById(videoId);
   if (!video) return;
 
   if (video.muted) {
