@@ -814,3 +814,8 @@ color: #facc15;
   cursor: pointer;
 }
 
+/* 🔥 FORZAR VISIBILIDAD DE VIDEOS */
+.event-card.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
