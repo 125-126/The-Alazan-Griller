@@ -103,78 +103,55 @@
   }
 }
 
-.heart-card {
+.febrero-card {
+  background: linear-gradient(135deg, #ff5f8a, #ff8fb1);
+  border-radius: 28px;
+  padding: 22px 20px;
   width: 200px;
-  height: 180px;
-  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  box-shadow: 0 20px 40px rgba(255, 95, 138, 0.35);
   position: relative;
-  transform: rotate(-45deg);
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(255, 77, 109, 0.4);
+  transition: transform 0.3s ease;
 }
 
-/* Lóbulos del corazón */
-.heart-card::before,
-.heart-card::after {
-  content: "";
-  width: 200px;
-  height: 180px;
-  background: inherit;
+.febrero-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Icono corazón decorativo */
+.febrero-card::after {
+  content: "❤";
   position: absolute;
-  border-radius: 50%;
+  bottom: -18px;
+  right: -10px;
+  font-size: 42px;
+  color: rgba(255,255,255,0.35);
 }
 
-.heart-card::before {
-  top: -100px;
-  left: 0;
-}
-
-.heart-card::after {
-  left: 100px;
-  top: 0;
-}
-
-/* Contenido centrado */
-.heart-card .card-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: rotate(45deg) translate(-50%, -50%);
+.febrero-card .card-content {
   text-align: center;
-  color: white;
-  z-index: 2;
+  color: #fff;
 }
 
-.heart-card h2 {
-  margin: 5px 0 0;
+.febrero-card h2 {
+  margin: 6px 0 0;
   font-size: 1.2rem;
 }
 
-.heart-card .card-tag {
+.febrero-card .card-tag {
   font-size: 0.85rem;
   opacity: 0.9;
 }
 
 /* Botón cerrar */
-.heart-card .febrero-close {
+.febrero-close {
   position: absolute;
-  top: -20px;
-  right: -20px;
-  background: white;
-  color: #ff4d6d;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  top: 8px;
+  right: 10px;
+  background: rgba(255,255,255,0.9);
   border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-size: 16px;
   cursor: pointer;
-  z-index: 3;
-}
-
-@keyframes heartbeat {
-  0%, 100% { transform: rotate(-45deg) scale(1); }
-  50% { transform: rotate(-45deg) scale(1.05); }
-}
-
-.heart-card {
-  animation: heartbeat 2s infinite;
 }
