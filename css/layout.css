@@ -822,3 +822,8 @@ color: #facc15;
   height: 100%;
   object-fit: contain;
 }
+
+
+.event-card {
+  align-self: stretch;
+}
