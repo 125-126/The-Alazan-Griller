@@ -600,24 +600,6 @@ Quedo atento(a). ¡Gracias!`;
 
 /* ================= ACTIVAR SONIDO VIDEO ================= */
 
-let sonidoActivo = false;
-
-function toggleSonido(){
-  const video = document.getElementById("videoInstalaciones");
-  const btn = document.getElementById("soundToggle");
-
-  if (!video) return;
-
-  if (video.muted) {
-    video.muted = false;
-    video.volume = 1;
-    btn.textContent = "🔇 Silenciar";
-  } else {
-    video.muted = true;
-    btn.textContent = "🔊 Activar sonido";
-  }
-}
-
   function toggleSonido(videoId, btn) {
   const video = document.getElementById(videoId);
   if (!video) return;
