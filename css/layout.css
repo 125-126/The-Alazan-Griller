@@ -780,21 +780,6 @@ color: #facc15;
   transform: scale(1.05);
 }
 
-.vertical-video {
-  position: relative;
-  width: 100%;
-  max-width: 360px;
-  margin: auto;
-}
-
-.vertical-video video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-}
-
-
 
 /* 🔥 FORZAR VISIBILIDAD DE VIDEOS */
 .event-card.reveal {
@@ -803,8 +788,3 @@ color: #facc15;
 }
 
 
-/* 🔒 BLOQUEO TOTAL DE ALTURA PARA VIDEO */
-.event-media.vertical-video{
-  height: auto !important;
-  aspect-ratio: 9 / 16 !important;
-}
