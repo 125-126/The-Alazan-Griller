@@ -102,3 +102,79 @@
     transform: translateX(0);
   }
 }
+
+.heart-card {
+  width: 200px;
+  height: 180px;
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  position: relative;
+  transform: rotate(-45deg);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(255, 77, 109, 0.4);
+}
+
+/* Lóbulos del corazón */
+.heart-card::before,
+.heart-card::after {
+  content: "";
+  width: 200px;
+  height: 180px;
+  background: inherit;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.heart-card::before {
+  top: -100px;
+  left: 0;
+}
+
+.heart-card::after {
+  left: 100px;
+  top: 0;
+}
+
+/* Contenido centrado */
+.heart-card .card-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(45deg) translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.heart-card h2 {
+  margin: 5px 0 0;
+  font-size: 1.2rem;
+}
+
+.heart-card .card-tag {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Botón cerrar */
+.heart-card .febrero-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: white;
+  color: #ff4d6d;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: rotate(-45deg) scale(1); }
+  50% { transform: rotate(-45deg) scale(1.05); }
+}
+
+.heart-card {
+  animation: heartbeat 2s infinite;
+}
