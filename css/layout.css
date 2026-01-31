@@ -911,7 +911,19 @@ color: #facc15;
   from { transform: translateY(0); }
   to { transform: translateY(-5px); }
 }
+
+
 .sound-btn {
-  z-index: 10;
   position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(0,0,0,.65);
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  z-index: 999;  /* 🔥 aumentar muchísimo */
+  backdrop-filter: blur(4px);
 }
