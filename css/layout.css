@@ -802,21 +802,17 @@ color: #facc15;
   border-radius: 16px;
 }
 
-.sound-btn {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-}
+
 
 /* 🔥 FORZAR VISIBILIDAD DE VIDEOS */
 .event-card.reveal {
   opacity: 1 !important;
   transform: none !important;
+}
+
+
+/* 🔒 BLOQUEO TOTAL DE ALTURA PARA VIDEO */
+.event-media.vertical-video{
+  height: auto !important;
+  aspect-ratio: 9 / 16 !important;
 }
