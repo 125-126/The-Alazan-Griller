@@ -122,9 +122,9 @@ para ofrecer la mejor experiencia en cada platillo.
 </div>
 </section>
   
-  <!-- ================= WHATSAPP FLOTANTE ================= -->
-<a href="https://wa.me/50369578713" class="whatsapp-float" target="_blank">
-<img src="img/eve/whatsapp.png" alt="WhatsApp" />
+<!-- ================= WHATSAPP FLOTANTE PROFESIONAL ================= -->
+<a id="whatsapp-float" class="whatsapp-float" target="_blank">
+  <img src="img/eve/whatsapp.png" alt="WhatsApp" />
 </a>
   
 <!-- ================= FOOTER ================= -->
@@ -138,5 +138,23 @@ para ofrecer la mejor experiencia en cada platillo.
 <script src="js/menu.js"></script>
 <script src="js/animations.js"></script>
 
+  <script>
+// Número de WhatsApp
+  const phone = "50360014234";
+
+  // Mensaje prellenado
+  const message = "Hola, he visto su página The Alazán Griller y quisiera consultar sobre las reservaciones y los menús.";
+
+  // Detectar si es móvil
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  // URL de WhatsApp
+  const url = isMobile 
+    ? `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`
+    : `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+
+  // Asignar URL al botón
+  document.getElementById("whatsapp-float").href = url;
+</script>
 </body>
 </html>
